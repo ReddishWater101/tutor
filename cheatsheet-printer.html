@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cheat Sheet Printer</title>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<style>
+  /* ── Screen UI ── */
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: system-ui, sans-serif; background: #1a1a2e; color: #e0e0e0; min-height: 100vh; }
+
+  .toolbar {
+    position: sticky; top: 0; z-index: 100;
+    display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+    padding: 12px 20px;
+    background: #16213e; border-bottom: 1px solid #0f3460;
+  }
+  .toolbar label, .toolbar span { font-size: 13px; }
+  .toolbar input[type="file"] { font-size: 13px; }
+  .toolbar button {
+    padding: 6px 16px; border: none; border-radius: 4px;
+    font-size: 13px; cursor: pointer; font-weight: 600;
+  }
+  #btn-print { background: #e94560; color: #fff; }
+  #btn-print:hover { background: #c73e54; }
+
+  .controls {
+    display: flex; align-items: center; gap: 8px; margin-left: auto;
+  }
+  .controls label { font-size: 12px; color: #aaa; }
+  .controls input[type="range"] { width: 80px; }
+  .controls select, .controls input[type="number"] {
+    background: #0f3460; color: #e0e0e0; border: 1px solid #333;
+    border-radius: 3px; padding: 2px 6px; font-size: 12px;
+  }
+
+  .preview-wrap {
+    display: flex; justify-content: center; padding: 30px 10px;
+  }
+
+  /* ── The Page (screen preview) ── */
+  #page {
+    background: #fff; color: #000;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.5);
+  }
+  #page.letter  { width: 8.5in;  height: 11in; }
+  #page.legal   { width: 8.5in;  height: 14in; }
+  #page.a4      { width: 210mm;  height: 297mm; }
+
+  #page {
+    padding: 0.25in 0.3in;
+    overflow: hidden;
+    position: relative;
+  }
+
+  #content {
+    column-gap: 12px;
+    column-rule: 1px solid #ccc;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  /* ── Markdown content styles ── */
+  #content h1 {
+    font-size: 1.15em; font-weight: 800;
+    margin: 0.35em 0 0.1em 0;
+    border-bottom: 1.5px solid #000;
+    padding-bottom: 1px;
+    column-span: none;
+    break-after: avoid;
+  }
+  #content h1:first-child { margin-top: 0; }
+  #content h2 {
+    font-size: 0.95em; font-weight: 700;
+    margin: 0.25em 0 0.05em 0;
+    break-after: avoid;
+  }
+  #content h3 {
+    font-size: 0.85em; font-weight: 700;
+    margin: 0.2em 0 0.02em 0;
+    break-after: avoid;
+  }
+  #content p {
+    margin: 0.08em 0; line-height: 1.25;
+  }
+  #content ul, #content ol {
+    margin: 0.05em 0; padding-left: 1.1em;
+  }
+  #content li {
+    margin: 0.02em 0; line-height: 1.25;
+  }
+  #content pre {
+    background: #f4f4f4; border: 0.5px solid #ccc;
+    padding: 2px 4px; margin: 0.1em 0;
+    border-radius: 2px;
+    overflow-x: hidden;
+    white-space: pre-wrap;
+    word-break: break-all;
+  }
+  #content code {
+    font-family: 'Consolas', 'Courier New', monospace;
+    font-size: 0.92em;
+  }
+  #content pre code {
+    font-size: 0.88em;
+    line-height: 1.2;
+  }
+  #content strong { font-weight: 700; }
+  #content table {
+    border-collapse: collapse; margin: 0.1em 0; width: 100%;
+  }
+  #content th, #content td {
+    border: 0.5px solid #999; padding: 1px 3px;
+    font-size: 0.9em; line-height: 1.2;
+  }
+  #content th { background: #e8e8e8; font-weight: 700; }
+  #content hr { margin: 0.15em 0; border: none; border-top: 1px solid #999; }
+
+  /* Prevent awkward breaks */
+  #content h1, #content h2, #content h3 { break-inside: avoid; }
+  #content pre { break-inside: avoid; }
+  #content li { break-inside: avoid; }
+
+  /* ── Overflow indicator ── */
+  #overflow-warn {
+    display: none;
+    position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);
+    background: #e94560; color: #fff; padding: 8px 20px;
+    border-radius: 6px; font-size: 13px; font-weight: 600;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.4); z-index: 200;
+  }
+
+  /* ── Print styles ── */
+  @media print {
+    body { background: none; }
+    .toolbar, .preview-wrap, #overflow-warn { display: none !important; }
+    @page { margin: 0; }
+    #page {
+      box-shadow: none;
+      position: absolute; top: 0; left: 0;
+      margin: 0;
+      /* dimensions set by @page size — filled by JS */
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="toolbar">
+  <label><strong>Upload .md:</strong></label>
+  <input type="file" id="file-input" accept=".md,.markdown,.txt">
+  <button id="btn-print" onclick="window.print()">Print / Save PDF</button>
+
+  <div class="controls">
+    <label>Font:</label>
+    <input type="range" id="font-slider" min="4" max="10" step="0.25" value="6.5">
+    <span id="font-val">6.5pt</span>
+
+    <label>Cols:</label>
+    <select id="col-select">
+      <option value="2">2</option>
+      <option value="3" selected>3</option>
+      <option value="4">4</option>
+    </select>
+
+    <label>Page:</label>
+    <select id="page-select">
+      <option value="letter" selected>Letter</option>
+      <option value="legal">Legal</option>
+      <option value="a4">A4</option>
+    </select>
+  </div>
+</div>
+
+<div class="preview-wrap">
+  <div id="page" class="letter">
+    <div id="content">
+      <p style="color:#888; text-align:center; margin-top: 2in; font-size: 14px;">
+        Upload a markdown file to preview your cheat sheet.
+      </p>
+    </div>
+  </div>
+</div>
+
+<div id="overflow-warn">Content overflows the page — try smaller font or more columns</div>
+
+<script>
+  const content    = document.getElementById('content');
+  const page       = document.getElementById('page');
+  const fontSlider = document.getElementById('font-slider');
+  const fontVal    = document.getElementById('font-val');
+  const colSelect  = document.getElementById('col-select');
+  const pageSelect = document.getElementById('page-select');
+  const fileInput  = document.getElementById('file-input');
+  const overflowW  = document.getElementById('overflow-warn');
+
+  let rawMarkdown = '';
+
+  /* ── Render ── */
+  function render() {
+    if (!rawMarkdown) return;
+    content.innerHTML = marked.parse(rawMarkdown);
+    applySettings();
+  }
+
+  function applySettings() {
+    const fs = fontSlider.value;
+    fontVal.textContent = fs + 'pt';
+    content.style.fontSize = fs + 'pt';
+    content.style.columnCount = colSelect.value;
+
+    // page size class
+    page.className = pageSelect.value;
+
+    // Overflow check (small delay for reflow)
+    requestAnimationFrame(() => {
+      const isOver = content.scrollHeight > content.clientHeight + 2;
+      overflowW.style.display = isOver ? 'block' : 'none';
+    });
+  }
+
+  /* ── Events ── */
+  fileInput.addEventListener('change', (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = (ev) => {
+      rawMarkdown = ev.target.result;
+      render();
+    };
+    reader.readAsText(file);
+  });
+
+  fontSlider.addEventListener('input', applySettings);
+  colSelect.addEventListener('change', applySettings);
+  pageSelect.addEventListener('change', () => { applySettings(); });
+
+  /* ── Configure marked ── */
+  marked.setOptions({ breaks: false, gfm: true });
+
+  /* ── Auto-load CheatSheet.md if opened from same dir ── */
+  // (won't work from file:// due to CORS, but works from local server)
+</script>
+</body>
+</html>
