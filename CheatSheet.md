@@ -5,7 +5,7 @@
 - Net area = usable space, Gross area = all space (incl. unusable)
 - Width = horizontal, Depth = vertical (for the lot). But MW (module width) stacks along depth (vertical)
 ### Step 1: Determine number of spaces by type
-- Total spaces = all cars to park (employees, customers, etc.)
+- Total spaces = all cars to park (employees, customers, etc.). Hybrid scheduling: if X remote days per Y-day week, max onsite = total × (Y−X)/Y; parking spaces = drivers × (Y−X)/Y
 - Compact spaces ≈ 75% of compact car % (conservative — not all compact cars use compact spots)
 - Standard spaces = Total − Compact
 - Accessible spaces: look up Total in ADAAG 4.1.2 table to get required count
@@ -13,7 +13,7 @@
 - Pick config: W4 (no walls), W3 (one wall), W2 (two walls)
 - Pick parking angle θ (90° = perpendicular, or angular e.g. 60°)
 - Look up MW (module width) from the table for both standard SW (given in problem) and compact SW (8'0" from table). Modules stack along depth (on top of each other), cars stack along width (side by side)
-- **If 90°:** PW = SW (PW = horizontal width per stall along the row)
+- **If 90°:** PW = SW (PW = horizontal width per stall along the row). At 90° no-wall (W4): MW is looked up from table using SW and angle
 - **If angular:** PW = SW / sin(θ), and y = SD × cos(θ) (SD = stall depth, y = horizontal space lost once per row due to angle). Compute PW and y separately for compact and standard
 ### Step 3: Figure out how many modules of each type & check fit
 - Cars per row: round down(W / PW) for 90°, or round down((W − y) / PW) for angular — where W = lot width. Use the matching PW for each type (compact vs standard)
@@ -32,9 +32,9 @@
 - Consider module arrangement constraints (e.g., compact not in middle)
 ## Other
 - **Restrooms:** within 200' of every permanent workstation; decentralized > centralized. Sizes: toilet=2.5'×5', sink/urinal=3'×2', entrance/exit=15 ft^2. Doorway must block interior visibility when open.
-- **Food Services:** Vending machines: 1 ft^2/person, <200 employees. Serving lines: ≥200, full kitchen benefits at lower cost. Full kitchen: ≥400, high mgmt cost. Within 1000' of all workstations, centrally located. Eating shifts: only 2/3 of shift = actual eating.
+- **Food Services:** Vending machines: 1 ft^2/person, <200 employees. Serving lines: ≥200, full kitchen benefits at lower cost. Full kitchen: ≥400, high mgmt cost. Within 1000' of all workstations, centrally located. Eating shifts: only 2/3 of shift = actual eating. Lunch shifts: #shifts = floor((window − break) / (2/3 × break)) + 1. Cafeteria users = onsite employees × fraction eating on-site
 - **Health Services:** minimum first-aid room: kit, bed, 2 chairs, ≥100 ft^2. Located near most hazardous tasks.
-- **Barrier-Free (ADA):** reach range 3–4' above floor. PWD clearance 2'3"–2'5" wheelchair breadth. Aisle width ≥5'3" for turning diameter.
+- **Barrier-Free (ADA):** reach range 3–4' above floor. PWD clearance 2'3"–2'5" wheelchair breadth. Aisle width ≥5'3" for turning diameter. Two-wheelchair passing requires 2× breadth (~5'); turning requires length clearance (~5'6")
 - **Office Spaces:** Closed = floor-to-ceiling walls, privacy. Open = no walls, better communication/flexibility/cost, but noisy. Activity-based = different settings per task, agile, saves cost, but loss of identity.
 
 
@@ -125,6 +125,7 @@ w₁ = | A₁ |   S = | A₁ A₂ A₃ |
 - **Size** — variety of location sizes
 - **Characteristics** — perishable, hazmat, security, compatibility
 - Same entry/exit → store close to that point | Diff entry/exit, same qty → along direct route | Diff qty → smallest r/s ratio near shipping, largest near receiving
+- Receiving adjacent to storage: advantage = shorter put-away travel; disadvantage = farther from shipping, congestion at shared boundary
 ## Warehouse Layout Model (Dedicated Storage)
 ### Step 1: Compute Sj and Tj for each product
 - Sj = ⌈product_area / bay_area⌉ — number of bays product j needs
@@ -188,7 +189,7 @@ Aisle Cube = Σ(aisle_w × aisle_l × height)
 - Always round UP cranes & bays/row; always round DOWN loads/bay
 ## Cycle Times (Bozer & White)
 - S/R moves horiz & vert simultaneously → travel time = max(horiz, vert) — this is Chebyshev travel
-- SC = store OR retrieve (1 trip out + back) | DC = store AND retrieve (2 trips, no return between)
+- SC = store OR retrieve (1 trip out + back) | DC = store AND retrieve (2 trips, no return between). Chebyshev means travel time = max(H,V) not sum — reduces cycle time vs Manhattan distance
 ### Step 1: Convert rack dimensions to feet
 - L = horiz_dim × m (convert in→ft) — rack length
 - H = vert_dim × n (convert in→ft) — rack height
