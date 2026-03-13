@@ -6,4 +6,4 @@
 
 - For the CheatSheet, dont have more than is needed. Keep it super slim and concise. There is very limited space for the cheat sheet we are actually allowed.
 
-- Preferred Flat documents, 2 levels of titles max. Avoid crazy markdown formatting. For procedures, use small code-block visuals (matrices, diagrams) over long text explanations — the user learns better from seeing the pattern than reading about it.
+- Preferred Flat documents, 2 levels of titles max. Avoid crazy markdown formatting. Code blocks are ONLY for formulas and visuals (matrices, diagrams) — never for plain text lists or descriptions. Keep code block lines ≤60 characters. For non-formula content, use regular bullet points. Never delete content when reformatting — only change formatting, condense whitespace.
