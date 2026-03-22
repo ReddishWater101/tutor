@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Question Printer</title>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #1a1a2e;
+    color: #e0e0e0;
+  }
+
+  /* ---------- drop zone ---------- */
+  #drop-zone {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    gap: 16px;
+  }
+  #drop-zone.hidden { display: none; }
+
+  #drop-box {
+    width: 420px;
+    height: 220px;
+    border: 3px dashed #555;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: #888;
+    transition: border-color .2s, color .2s;
+    cursor: pointer;
+  }
+  #drop-box.over {
+    border-color: #7c8cf8;
+    color: #7c8cf8;
+  }
+
+  /* ---------- toolbar ---------- */
+  #toolbar {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    background: #16213e;
+    padding: 12px 24px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(0,0,0,.4);
+  }
+  #toolbar.hidden { display: none; }
+  #toolbar button {
+    padding: 8px 20px;
+    border: none;
+    border-radius: 6px;
+    background: #7c8cf8;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  #toolbar button:hover { background: #5a6ad4; }
+  #toolbar span { font-size: 14px; color: #aaa; }
+
+  /* ---------- pages container ---------- */
+  #pages {
+    padding: 60px 0 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+  }
+  #pages.hidden { display: none; }
+
+  /* ---------- single page ---------- */
+  .page {
+    width: 8.5in;
+    min-height: 11in;
+    background: #fff;
+    color: #111;
+    padding: 0.75in 1in;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 12pt;
+    line-height: 1.5;
+    box-shadow: 0 4px 24px rgba(0,0,0,.5);
+    page-break-after: always;
+    overflow: hidden;
+  }
+
+  .page h2 {
+    font-size: 14pt;
+    margin-bottom: 12px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 6px;
+  }
+
+  .page .q-number {
+    font-size: 13pt;
+    font-weight: bold;
+    margin-bottom: 6px;
+  }
+
+  .page .q-body {
+    margin-bottom: 12px;
+  }
+
+  .page .q-body p {
+    margin-bottom: 8px;
+  }
+
+  .page .q-body ul, .page .q-body ol {
+    margin: 6px 0 6px 24px;
+  }
+
+  .page .q-body li {
+    margin-bottom: 4px;
+  }
+
+  .page table {
+    border-collapse: collapse;
+    margin: 10px 0;
+    font-size: 11pt;
+    width: 100%;
+  }
+  .page th, .page td {
+    border: 1px solid #555;
+    padding: 4px 8px;
+    text-align: left;
+  }
+  .page th {
+    background: #eee;
+    font-weight: bold;
+  }
+
+  .page .source {
+    font-style: italic;
+    color: #555;
+    font-size: 10pt;
+    margin-top: 4px;
+  }
+
+  .page .answer-space {
+    margin-top: 24px;
+    border-top: 1px dashed #bbb;
+    padding-top: 8px;
+    color: #999;
+    font-size: 10pt;
+    font-style: italic;
+  }
+
+  /* ---------- print styles ---------- */
+  @media print {
+    body { background: #fff; }
+    #toolbar, #drop-zone { display: none !important; }
+    #pages { padding: 0; gap: 0; }
+    .page {
+      box-shadow: none;
+      margin: 0;
+      width: 100%;
+      min-height: auto;
+      height: auto;
+      page-break-after: always;
+      page-break-inside: avoid;
+    }
+    .page:last-child { page-break-after: auto; }
+  }
+</style>
+</head>
+<body>
+
+<div id="drop-zone">
+  <div id="drop-box">Drop .md file here</div>
+</div>
+
+<div id="toolbar" class="hidden">
+  <button onclick="window.print()">Print / Save as PDF</button>
+  <button onclick="location.reload()">Reset</button>
+  <span id="info"></span>
+</div>
+
+<div id="pages" class="hidden"></div>
+
+<script>
+const dropZone = document.getElementById('drop-zone');
+const dropBox = document.getElementById('drop-box');
+const toolbar = document.getElementById('toolbar');
+const pagesEl = document.getElementById('pages');
+const info = document.getElementById('info');
+
+dropBox.addEventListener('dragover', e => { e.preventDefault(); dropBox.classList.add('over'); });
+dropBox.addEventListener('dragleave', () => dropBox.classList.remove('over'));
+dropBox.addEventListener('drop', e => {
+  e.preventDefault();
+  dropBox.classList.remove('over');
+  const file = e.dataTransfer.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = ev => processMarkdown(ev.target.result);
+  reader.readAsText(file);
+});
+dropBox.addEventListener('click', () => {
+  const inp = document.createElement('input');
+  inp.type = 'file';
+  inp.accept = '.md';
+  inp.onchange = () => {
+    const reader = new FileReader();
+    reader.onload = ev => processMarkdown(ev.target.result);
+    reader.readAsText(inp.files[0]);
+  };
+  inp.click();
+});
+
+function processMarkdown(md) {
+  const questions = parseQuestions(md);
+  renderPages(questions);
+  dropZone.classList.add('hidden');
+  toolbar.classList.remove('hidden');
+  pagesEl.classList.remove('hidden');
+  info.textContent = questions.length + ' questions loaded';
+}
+
+function parseQuestions(md) {
+  const lines = md.split('\n');
+  const questions = [];
+  let currentSection = '';
+  let currentQ = null;
+
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i];
+
+    // Section headers (## )
+    if (/^## /.test(line)) {
+      currentSection = line.replace(/^## /, '').trim();
+      if (currentQ) { questions.push(currentQ); currentQ = null; }
+      continue;
+    }
+
+    // Question start: lines beginning with a number and period
+    const qMatch = line.match(/^(\d+)\.\s+(.*)/);
+    if (qMatch) {
+      if (currentQ) questions.push(currentQ);
+      currentQ = {
+        number: parseInt(qMatch[1]),
+        section: currentSection,
+        lines: [qMatch[2]],
+        source: ''
+      };
+      continue;
+    }
+
+    if (!currentQ) continue;
+
+    // Source reference line (italic parenthetical)
+    if (/^\*\(/.test(line.trim()) || /^\*\*?\(/.test(line.trim())) {
+      currentQ.source = line.trim().replace(/^\*+\(/, '(').replace(/\)\*+$/, ')');
+      continue;
+    }
+
+    currentQ.lines.push(line);
+  }
+  if (currentQ) questions.push(currentQ);
+  return questions;
+}
+
+function renderPages(questions) {
+  pagesEl.innerHTML = '';
+  let lastSection = '';
+
+  questions.forEach(q => {
+    const page = document.createElement('div');
+    page.className = 'page';
+
+    // Section header if new section
+    if (q.section && q.section !== lastSection) {
+      const h2 = document.createElement('h2');
+      h2.textContent = q.section;
+      page.appendChild(h2);
+      lastSection = q.section;
+    }
+
+    // Question number
+    const qNum = document.createElement('div');
+    qNum.className = 'q-number';
+    qNum.textContent = 'Question ' + q.number;
+    page.appendChild(qNum);
+
+    // Question body — render markdown
+    const body = document.createElement('div');
+    body.className = 'q-body';
+    const mdText = q.lines.join('\n').trim();
+    body.innerHTML = marked.parse(mdText);
+    page.appendChild(body);
+
+    // Source
+    if (q.source) {
+      const src = document.createElement('div');
+      src.className = 'source';
+      src.textContent = q.source;
+      page.appendChild(src);
+    }
+
+    // Answer space
+    const space = document.createElement('div');
+    space.className = 'answer-space';
+    space.textContent = 'Work space';
+    page.appendChild(space);
+
+    pagesEl.appendChild(page);
+  });
+}
+</script>
+</body>
+</html>
