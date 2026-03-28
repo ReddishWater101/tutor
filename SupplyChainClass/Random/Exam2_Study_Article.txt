@@ -1,0 +1,298 @@
+Everything You Need to Know for Exam 2: Newsvendor and Q R Policy
+
+This article will teach you everything on Exam 2. We are going to cover two major topics. The first is the Newsvendor model from Lecture 4, which handles inventory decisions when demand is random and you are working over a finite planning horizon. The second is the Q R policy from Lecture 5, which handles inventory decisions when demand is random but you are working over an infinite planning horizon with a continuous review system. By the end of this article, you should be able to solve any problem on the exam.
+
+
+PART ONE: THE NEWSVENDOR MODEL
+
+Let us start from the very beginning. Imagine you are running a business where you need to decide how much of something to stock before you know how much people are actually going to buy. Maybe you sell newspapers, maybe you sell seasonal holiday items, maybe you sell fresh popcorn on Saturday nights. The key problem is this: demand is uncertain. You do not know exactly how much you will sell. If you stock too much, you waste money on unsold items. If you stock too little, you miss out on sales. The Newsvendor model gives you a mathematical way to find the sweet spot.
+
+
+The Assumptions Behind the Newsvendor
+
+Before we dive into the math, you need to understand what assumptions this model makes. The professor will not ask you to list them, but you need to understand what they mean and how they shape the model.
+
+First, inventory is reviewed periodically, at the end of the planning period. Second, there is a single planning period, meaning you make one ordering decision and then you are done. Third, the demand is random, but we know its probability distribution. Fourth, the entire order arrives at the beginning of the period, so there is no waiting for delivery. Fifth, the order quantity can be continuous or discrete depending on what type of random variable represents demand. Sixth, we are looking at a single item. Seventh, all cost and revenue numbers are known. Eighth, there is no fixed cost for placing an order. Ninth, the lead time is zero, meaning your order shows up instantly. And tenth, shortages are allowed, meaning it is okay if demand exceeds your stock.
+
+These assumptions are important because they simplify the problem enough that we can solve it with calculus. In reality, things are more complicated, but this model captures the core tradeoff between ordering too much and ordering too little.
+
+
+The Two Costs: Overage and Underage
+
+At the heart of the Newsvendor model are two costs. The overage cost, which we call c sub o, is the cost per unit of having too much inventory. The underage cost, which we call c sub u, is the cost per unit of not having enough inventory.
+
+Think about it this way. If you order q units and demand turns out to be X, then one of two things happens. If demand X is less than or equal to q, you have leftover inventory. Each leftover unit costs you c sub o. If demand X is greater than q, you have a shortage. Each unit of unsatisfied demand costs you c sub u.
+
+The total cost depends on what demand turns out to be, and since demand is random, we work with the expected cost. The expected cost function, which we call capital C of q, adds up the expected overage cost and the expected underage cost across all possible values of demand.
+
+
+Finding the Optimal Order Quantity: Cost Minimization
+
+To find the optimal order quantity, we minimize the expected cost function. This is a standard calculus problem. We take the derivative of C of q with respect to q, set it equal to zero, and solve.
+
+When you apply Leibniz's rule to differentiate the integrals, the first derivative simplifies beautifully to c sub o times F of q minus c sub u times the quantity one minus F of q. Here, F of q is the cumulative distribution function of demand evaluated at q.
+
+The second derivative turns out to be c sub o times f of q plus c sub u times f of q, which is always positive. This confirms that the cost function is convex, meaning the point where the first derivative equals zero is indeed a minimum.
+
+Setting the first derivative equal to zero and solving gives us the famous result. F of q star equals c sub u divided by the quantity c sub u plus c sub o. This ratio, c sub u over c sub u plus c sub o, is called the critical ratio. It tells you what probability level you should target when choosing your order quantity. You find q star by looking up this critical ratio in the cumulative distribution function.
+
+Here is the intuition. If the underage cost is much larger than the overage cost, the critical ratio is close to one, which means you should order a lot because running out is very expensive. If the overage cost is much larger, the critical ratio is close to zero, and you should order conservatively.
+
+
+Working with Discrete Demand
+
+When demand is discrete, like in the Billy's Bagels example from class, you compute the critical ratio the same way. Then you look at the cumulative probability table and find the smallest demand value whose cumulative probability is greater than or equal to the critical ratio. That is your optimal order quantity.
+
+For example, in the bagels problem, the cost to bake is 8 cents, the selling price is 35 cents, and unsold bagels are sold for 3 cents. The underage cost is 35 minus 8, which is 27 cents. The overage cost is 8 minus 3, which is 5 cents. The critical ratio is 27 over 32, which is 0.8438. Looking at the cumulative probability table, the first value that reaches or exceeds 0.8438 is at 25 dozen, so that is the optimal order quantity.
+
+
+Working with Continuous Demand and the Normal Distribution
+
+When demand is normally distributed, you use the z table. First compute the critical ratio. Then find the z value whose cumulative probability F of z equals that critical ratio. If the exact value is not in the table, interpolate between the two closest entries. Finally, convert back to the original scale using q star equals mu plus z star times sigma, where mu is the mean of demand and sigma is the standard deviation.
+
+For example, in the bread problem, demand is normal with mean 300 and standard deviation 50. If the critical ratio works out to 0.50, then z star is 0, and q star is 300 plus 0 times 50, which is just 300 loaves. If the selling price goes up and the critical ratio becomes 0.6842, you interpolate in the z table to find z star equals 0.4795, and then q star is 300 plus 0.4795 times 50, which is about 324 loaves.
+
+
+Profit Maximization Version
+
+The Newsvendor model can also be set up as a profit maximization problem instead of cost minimization. In this version, you work with specific business parameters: p for the selling price per unit, c for the purchase cost per unit, v for the salvage revenue per unit of leftover inventory, and b for the loss of goodwill cost per unit of unsatisfied demand.
+
+The realized profit depends on whether demand is less than or greater than your order quantity. If demand X is less than or equal to q, you earn revenue on X units, salvage the remaining q minus X units, and subtract your purchase cost. If demand exceeds q, you sell all q units but incur a goodwill loss on the excess demand.
+
+When you take the derivative and set it equal to zero, you get F of q star equals the quantity p minus c plus b, divided by the quantity p plus b minus v. This is the profit maximization critical ratio.
+
+The beautiful thing is that the cost minimization and profit maximization formulas are equivalent. They give the same answer. The connection is that the underage cost c sub u equals p minus c plus b, which is the profit margin plus the goodwill cost. The overage cost c sub o equals c minus v, which is how much you lose on each unsold unit after salvage. So the critical ratio is the same either way.
+
+
+Multiple Periods with Full Backlogging
+
+Now let us extend the Newsvendor to multiple periods. Suppose the item does not perish at the end of each period. You can carry leftover inventory forward and use it to meet future demand. And if you run short, customers are willing to wait. This is called full backlogging.
+
+Here is the setup. Demand in each period is independent and identically distributed. You choose an order up to level q. At the start of the planning horizon, you order q units. At the end of each period from 1 through T minus 1, you observe demand and then order enough to bring inventory back up to q. In the final period T, you do not order again because the horizon is over.
+
+The key insight is that under full backlogging, the order quantity at the end of each intermediate period equals the observed demand, because you need to replenish exactly what was consumed to get back to q.
+
+When you work through the expected profit calculation for the entire horizon, you account for purchase costs, sales revenue, inventory holding costs at rate h per unit per period, and backlogging costs at rate b per unit per period.
+
+As the number of periods T goes to infinity, the average profit per period simplifies to p minus c times mu minus a function called script L of q. This script L function captures the holding and backlogging costs per period. Taking the derivative and setting it to zero gives the multi period full backlogging critical ratio: F of q star equals b divided by b plus h.
+
+Notice that the selling price p and the purchase cost c have dropped out. In a multi period setting with full backlogging, the optimal order up to level only depends on the backlogging cost b and the holding cost h. This makes sense because over the long run, every unit you buy eventually gets sold, so the purchase cost and selling price just contribute a constant profit of p minus c per unit of demand.
+
+In the bookstore example from class, the book sells for 35 dollars, costs 11.95 dollars, the goodwill cost is 4 dollars per backordered unit, and the holding cost is the interest rate times the cost, which is 0.05 times 11.95, or about 0.5975 dollars per unit per week. The critical ratio is 4 divided by 4 plus 0.5975, which is 0.87. Looking up F of z equals 0.87 in the z table gives z star of about 1.1264, and q star equals 20 plus 1.1264 times 8, which is about 29 books.
+
+
+Multiple Periods with Lost Sales
+
+Now consider the same multi period scenario, but when you run out of stock, customers go elsewhere. Their demand is lost forever. This is the lost sales case.
+
+The mechanics are similar but there is one key difference. When demand exceeds your order up to level, you can only sell what you have. The excess demand is gone. So the order quantity at the end of each intermediate period equals the minimum of q and the observed demand, not the full demand.
+
+When you work through the math and take the limit as T goes to infinity, the average profit per period now depends on p, c, b, and h. The critical ratio for the lost sales case is F of q star equals the quantity p plus b minus c, divided by the quantity p plus b minus c plus h.
+
+Notice that unlike full backlogging, the selling price p and the purchase cost c matter here. This is because under lost sales, you do not eventually sell every unit. Lost demand means lost revenue, so the selling price directly affects the optimal decision.
+
+In the same bookstore example but now with lost sales, the critical ratio is 35 plus 4 minus 11.95, divided by 35 plus 4 minus 11.95 plus 0.5975, which is about 0.9784. This is much higher than the 0.87 from the backlogging case. You look up z star and get about 2.0218, giving q star equals 20 plus 2.0218 times 8, which is about 36 books.
+
+This makes intuitive sense. Under lost sales, running out of stock is more costly because you permanently lose those sales. So you stock more inventory to protect against shortages.
+
+
+Summary of Newsvendor Critical Ratios
+
+To recap, here are all the critical ratio formulas you need.
+
+For single period cost minimization, F of q star equals c sub u divided by c sub u plus c sub o.
+
+For single period profit maximization, F of q star equals p minus c plus b, divided by p plus b minus v.
+
+For multi period with full backlogging, F of q star equals b divided by b plus h.
+
+For multi period with lost sales, F of q star equals p plus b minus c, divided by p plus b minus c plus h.
+
+And remember, in the profit maximization version, c sub u equals p minus c plus b, and c sub o equals c minus v. These let you convert between the two frameworks.
+
+
+PART TWO: THE Q R POLICY
+
+Now we move to Lecture 5, which introduces the q comma r policy. This is for situations where you continuously monitor your inventory, demand is random, and you are operating over an infinite time horizon. Unlike the Newsvendor, this model includes a fixed ordering cost and a positive delivery lead time.
+
+
+Why We Need a New Model
+
+The Newsvendor model assumed no fixed ordering cost and zero lead time. In reality, placing an order often costs money regardless of how much you order, like administrative costs, shipping setup fees, and so on. And deliveries take time. The q comma r policy addresses both of these.
+
+The idea is simple. You continuously watch your inventory level. When it drops down to a certain level called the reorder point r, you place an order for q units. After a lead time of tau time units, the order arrives. During that lead time, demand continues to occur, which is why you need to set r high enough to cover the expected demand during lead time, plus some safety stock.
+
+
+The Assumptions
+
+The q comma r policy has ten assumptions. Inventory is reviewed continuously, not periodically. The planning horizon is infinite. Demand is random with known, stationary parameters. The entire order arrives at the end of the lead time. The order quantity is continuous. It is a single item system. Costs are known and constant. There is a fixed cost K for each order. The lead time is finite and known. And shortages are allowed.
+
+
+Demand During Lead Time
+
+One of the most important concepts is demand during lead time, often abbreviated as D D L T. Since demand is random and lead time is positive, the total demand that occurs while you are waiting for your order is also random.
+
+If the demand per period has mean mu sub D and standard deviation sigma sub D, and the lead time is a constant tau, then the mean of D D L T is tau times mu sub D, and the variance of D D L T is tau times sigma sub D squared. The standard deviation of D D L T is the square root of tau times sigma sub D.
+
+If the lead time is also random with mean mu sub T and standard deviation sigma sub T, then the mean of D D L T is mu sub T times mu sub D, and the variance is mu sub T times sigma sub D squared plus mu sub D squared times sigma sub T squared. Notice that random lead time dramatically increases the variance of D D L T.
+
+
+Safety Stock
+
+Safety stock is a critical concept. The technical definition is the expected amount of inventory on hand when the next order arrives. Mathematically, for the full backlogging case, safety stock s equals r minus the expected value of D D L T. That is, s equals r minus mu sub L.
+
+If r is higher than the expected demand during lead time, you have positive safety stock, which means on average you still have inventory when your order shows up. If r is lower, you have negative safety stock, meaning on average you are in a shortage when the order arrives.
+
+
+Full Backlogging: The Cost Function
+
+Under full backlogging, when demand exceeds supply during the lead time, customers wait. The expected total cost per unit time has four components.
+
+First is the annual purchasing cost, which is c times lambda, where lambda is the annual demand rate. This does not depend on q or r, so it does not affect the optimization.
+
+Second is the annual ordering cost, which is K times lambda divided by q. This is because you place lambda over q orders per year, each costing K.
+
+Third is the annual holding cost, which is h times the quantity q over 2 plus r minus the expected D D L T. The q over 2 term is the average cycle stock, and r minus the expected D D L T is the safety stock.
+
+Fourth is the annual backlogging cost, which is b times n of r times lambda divided by q. Here, n of r is the expected number of units backordered per cycle, which is a function of the reorder point r. It is defined as the integral from r to infinity of x sub L minus r times f of x sub L dx sub L.
+
+
+Finding the Optimal Q and R: The Iterative Approach
+
+Taking partial derivatives and setting them to zero gives two equations. Equation one: q star equals the square root of 2 lambda times the quantity K plus b times n of r, all divided by h. Equation two: 1 minus F of r star equals q times h divided by b times lambda.
+
+These two equations are coupled. Q depends on n of r, which depends on r. And r depends on q through equation two. So we use an iterative approach.
+
+Step one: Set iteration counter j to zero. Initialize q sub zero using the E O Q formula, which is the square root of 2 K lambda over h. This is just equation one with n of r set to zero.
+
+Step two: Use q sub j in equation two to find r sub j. Compute F of r sub j equals 1 minus q sub j times h over b lambda. Look up this value in the z table to find z sub j. If z sub j equals z sub j minus 1, you have converged. Go to the reporting step.
+
+Step three: Use z sub j to find L of z sub j from the loss function column of the z table. Compute n of r sub j equals sigma sub L times L of z sub j.
+
+Step four: Increment j. Use n of r sub j minus 1 in equation one to compute q sub j. If q sub j does not equal q sub j minus 1, go back to step two.
+
+Step five: When converged, report q star equals q sub j, z star equals z sub j, and r star equals mu sub L plus z star times sigma sub L. Also compute safety stock s star equals r star minus mu sub L.
+
+An important detail for the exam: when you look up z values in the table, round z to two decimal places. When you compute L of z, interpolate and report three decimal places.
+
+
+The Lowes Paint Example for Full Backlogging
+
+Weekly demand is normal with mean 40 and standard deviation 3. Lead time is constant at 12 weeks. Unit cost is 7.20 dollars. Fixed ordering cost is 750 dollars. Backlogging cost is 3 dollars per unit. Annual carrying rate is 20 percent. The store operates 52 weeks per year.
+
+First, find D D L T parameters. Mu sub L is 12 times 40, which is 480 units. Sigma sub L is the square root of 12 times 3, which is 10.39 units.
+
+Next, find the annual demand rate. Lambda is 52 times 40, which is 2080 units per year. The holding cost is 0.20 times 7.20, which is 1.44 dollars per unit per year.
+
+Iteration zero: q sub zero equals the square root of 2 times 2080 times 750 divided by 1.44, which is 1471.96 units. Then F of r sub zero equals 1 minus 1471.96 times 1.44 over 3 times 2080, which is 0.6603. Looking up 0.6603 in the z table gives z sub zero approximately equal to 0.41. The loss function L of 0.41 is 0.227 by interpolation. So n of r sub zero is 10.39 times 0.227, which is 2.3585 units.
+
+Iteration one: q sub one equals the square root of 2 times 2080 times the quantity 750 plus 3 times 2.3585, divided by 1.44, which is 1478.89 units. Then F of r sub one equals 1 minus 1478.89 times 1.44 over 3 times 2080, which is 0.6588. This gives z sub one approximately 0.41, same as before. L of 0.41 is again 0.227. So n of r sub one equals 2.3585, same as the previous iteration. Convergence is achieved.
+
+The optimal policy: order 1478.89 units when inventory drops to r star equals 480 plus 0.41 times 10.39, which is 484.26 units. Safety stock is 484.26 minus 480, which is 4.26 units.
+
+
+Lost Sales: How the Model Changes
+
+Under lost sales, customers who cannot be served immediately go elsewhere. The key differences from full backlogging are in the safety stock formula and the reorder point equation.
+
+For lost sales, the expected safety stock is s equals r minus the expected D D L T plus n of r. The extra n of r term accounts for the fact that excess demand does not carry over as backorders, so on average you have more inventory on hand when the order arrives.
+
+The cost function is similar but uses this different safety stock. The first order conditions give equation three, which is the same q formula: q star equals the square root of 2 lambda times K plus b times n of r, divided by h. And equation four: 1 minus F of r star equals q times h divided by the quantity b times lambda plus q times h.
+
+Notice the difference. In full backlogging, the denominator of the reorder point equation is b times lambda. In lost sales, it is b times lambda plus q times h. This means the right hand side is smaller in lost sales, so F of r star is larger, and r star is higher. You stock more under lost sales, which makes sense because running out is worse when you permanently lose those sales.
+
+The iterative approach is exactly the same, just using equation four instead of equation two.
+
+In the Lowes paint example with lost sales, iteration zero gives q sub zero of 1471.96. Then 1 minus F of r sub zero equals 1471.96 times 1.44 divided by 3 times 2080 plus 1471.96 times 1.44, which gives F of r sub zero equals 0.7464. This gives z sub zero of about 0.66, with L of 0.66 of 0.153. So n of r sub zero is 10.39 times 0.153, which is 1.59.
+
+Iteration one gives q sub one of 1476.63. The F value stays at 0.7464 when rounded, z stays at 0.66, and convergence is achieved. The optimal policy is to order 1476.63 units when inventory drops to 480 plus 0.66 times 10.39, which is 486.86 units. Safety stock is 486.86 minus 480 plus 1.59, which is 8.45 units.
+
+Comparing the two: under lost sales, the reorder point is higher at 486.86 versus 484.26, and safety stock is higher at 8.45 versus 4.26. This confirms the intuition that you protect more aggressively against stockouts when demand is lost rather than backlogged.
+
+
+SERVICE LEVELS
+
+In practice, estimating the backlogging or lost sales cost b can be very difficult. How do you put a dollar value on customer dissatisfaction? One alternative is to use service levels. Instead of minimizing cost with an explicit b, you specify a desired level of product availability and determine the policy parameters accordingly.
+
+
+Type One Service Level
+
+The Type One service level, also called the cycle service level, is the probability of not stocking out during the lead time. If you want a Type One service level of alpha, you set F of r equals alpha and use the E O Q formula for q.
+
+Specifically, q equals the square root of 2 K lambda over h, which is just the basic E O Q. And r equals mu sub L plus z sub alpha times sigma sub L, where z sub alpha is the z value such that the cumulative probability F of z equals alpha.
+
+Notice that q and r are determined independently. The order quantity does not depend on the reorder point, and vice versa. This is because the Type One service level only constrains the reorder point, and the order quantity is determined by the classic economic order quantity formula.
+
+For example, with 99 percent Type One service level using the Lowes paint data, q is 1471.96 and z is 2.33 from the z table. So r is 480 plus 2.33 times 10.39, which is 504.21 units.
+
+
+Type Two Service Level
+
+The Type Two service level, also called the fill rate, is the fraction of demand satisfied directly from stock. If you want a Type Two service level of beta, the key equation is n of r equals the quantity 1 minus beta times q.
+
+The approximate approach uses q from the basic E O Q formula, computes n of r equals 1 minus beta times q, then works backward through the loss function to find r.
+
+Specifically, since n of r equals sigma sub L times L of z, we get L of z equals n of r divided by sigma sub L. Look up this L of z value in the z table to find z, possibly by interpolation. Then r equals mu sub L plus z times sigma sub L.
+
+For the Lowes paint example with 99 percent Type Two service level, q is 1471.96. Then n of r is 0.01 times 1471.96, which is 14.72 units. L of z equals 14.72 divided by 10.39, which is 1.417. Looking this up in the loss function table with interpolation gives z of about negative 1.38. So r is 480 plus negative 1.38 times 10.39, which is 465.66 units.
+
+Notice that the Type Two reorder point of 465.66 is much lower than the Type One reorder point of 504.21, even though both specify 99 percent. This is because Type One requires a 99 percent probability of no stockout in any cycle, which is a stricter requirement. Type Two only requires that 99 percent of total demand be filled from stock, which is more forgiving because even when stockouts occur, they might only affect a few units.
+
+
+Assessing the Implied Service Level of an Existing Policy
+
+On the exam, you may be given an existing policy with specific q and r values and asked to determine the implied service level.
+
+For Type One, compute z equals r minus mu sub L divided by sigma sub L. Look up F of z in the z table. That F of z value is the implied Type One service level alpha.
+
+For Type Two, compute z the same way. Then look up L of z from the loss function column. Compute n of r equals sigma sub L times L of z. The implied Type Two service level beta equals 1 minus n of r divided by q.
+
+
+Key Formulas to Commit to Memory
+
+For the Newsvendor single period cost minimization, F of q star equals c sub u over c sub u plus c sub o.
+
+For profit maximization, c sub u equals p minus c plus b, c sub o equals c minus v.
+
+For multi period full backlogging, F of q star equals b over b plus h.
+
+For multi period lost sales, F of q star equals p plus b minus c over p plus b minus c plus h.
+
+For Q R policy full backlogging, q star equals the square root of 2 lambda times K plus b n of r over h. The reorder point equation is 1 minus F of r star equals q h over b lambda.
+
+For Q R policy lost sales, same q formula. The reorder point equation is 1 minus F of r star equals q h over the quantity b lambda plus q h.
+
+Safety stock under full backlogging is s equals r minus mu sub L.
+
+Safety stock under lost sales is s equals r minus mu sub L plus n of r.
+
+D D L T with constant lead time tau: mu sub L equals tau times mu sub D, sigma sub L squared equals tau times sigma sub D squared.
+
+D D L T with random lead time: mu sub L equals mu sub T times mu sub D, sigma sub L squared equals mu sub T times sigma sub D squared plus mu sub D squared times sigma sub T squared.
+
+Type One service level: F of r equals alpha, q equals the square root of 2 K lambda over h.
+
+Type Two service level approximate: n of r equals 1 minus beta times q, q equals the square root of 2 K lambda over h.
+
+n of r equals sigma sub L times L of z, where z equals r minus mu sub L divided by sigma sub L.
+
+To convert between the original scale and the z scale, use r equals mu sub L plus z times sigma sub L, or equivalently z equals r minus mu sub L divided by sigma sub L.
+
+
+Final Tips for the Exam
+
+Always identify what type of problem you are dealing with before starting calculations. Is it a Newsvendor problem or a Q R policy problem? Is it cost minimization, profit maximization, full backlogging, or lost sales? Is it asking you to design a policy or assess an existing one?
+
+When using the z table, always interpolate. Round z values to two decimal places, and L of z values to three decimal places, as the professor instructs.
+
+Know how to compute demand during lead time parameters. This is often the first step in any Q R policy problem and an easy place to make errors.
+
+For the iterative approach, initialize with the E O Q. It typically converges in just one or two iterations.
+
+Understand the conceptual differences between full backlogging and lost sales. Under lost sales, you always stock more because running out is more costly when you cannot recover the demand later.
+
+Understand the difference between Type One and Type Two service levels. Type One is about the probability of zero stockouts per cycle. Type Two is about the fraction of total demand filled from stock. For the same percentage, Type One requires a higher reorder point because it is stricter.
+
+Be prepared for conceptual questions, true or false questions, and short proofs. For example, you might be asked to show that the total profit throughout the planning horizon under multi period full backlogging equals p times T minus 1 times mu. To prove this, write down the expected sales in each period and sum them up mathematically.
+
+Good luck on the exam.
