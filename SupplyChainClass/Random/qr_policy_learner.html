@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>(q,r) Policy - Interactive Learner</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#f8f9fa;color:#222;line-height:1.6}
+.progress-bar{position:fixed;top:0;left:0;width:100%;height:4px;background:#e0e0e0;z-index:1000}
+.progress-fill{height:100%;background:linear-gradient(90deg,#1a73e8,#ff6d00);width:0%;transition:width .3s}
+nav{position:fixed;top:4px;left:0;width:100%;background:rgba(255,255,255,0.95);backdrop-filter:blur(8px);z-index:999;border-bottom:1px solid #e0e0e0;padding:8px 0}
+nav ul{display:flex;justify-content:center;gap:4px;list-style:none;flex-wrap:wrap;padding:0 10px}
+nav a{text-decoration:none;color:#555;font-size:12px;padding:4px 10px;border-radius:16px;transition:all .2s;white-space:nowrap}
+nav a:hover,nav a.active{background:#1a73e8;color:#fff}
+section{max-width:900px;margin:0 auto;padding:80px 20px 40px}
+h1{font-size:28px;color:#0d47a1;margin-bottom:8px}
+h2{font-size:22px;color:#0d47a1;margin:30px 0 12px;border-bottom:2px solid #ff6d00;padding-bottom:6px;display:inline-block}
+.tldr{background:linear-gradient(135deg,#e3f2fd,#fff3e0);border-left:4px solid #ff6d00;padding:12px 16px;margin:16px 0;border-radius:0 8px 8px 0;font-weight:500;font-size:15px}
+.card{background:#fff;border-radius:12px;padding:24px;margin:20px 0;box-shadow:0 2px 8px rgba(0,0,0,0.08)}
+.card h3{color:#ff6d00;margin-bottom:10px}
+canvas{border:1px solid #e0e0e0;border-radius:8px;max-width:100%;display:block;margin:10px auto}
+.formula{background:#f0f4ff;border:1px solid #c5cae9;border-radius:8px;padding:12px 16px;margin:10px 0;font-family:'Courier New',monospace;font-size:14px;overflow-x:auto}
+.formula.highlight{background:#fff3e0;border-color:#ffcc80}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media(max-width:700px){.two-col{grid-template-columns:1fr}}
+.side-back{border-top:3px solid #1a73e8}
+.side-lost{border-top:3px solid #ff6d00}
+label{font-weight:600;display:block;margin:8px 0 4px;font-size:14px}
+input[type=number],select{width:100%;padding:8px;border:1px solid #ccc;border-radius:6px;font-size:14px;margin-bottom:6px}
+button{background:#1a73e8;color:#fff;border:none;padding:10px 20px;border-radius:8px;cursor:pointer;font-size:14px;transition:background .2s;margin:4px}
+button:hover{background:#0d47a1}
+button.orange{background:#ff6d00}
+button.orange:hover{background:#e65100}
+.result{background:#e8f5e9;border:1px solid #a5d6a7;border-radius:8px;padding:12px;margin:10px 0;font-weight:500}
+.step{background:#fff;border:1px solid #e0e0e0;border-radius:8px;padding:16px;margin:10px 0;display:none}
+.step.visible{display:block;animation:fadeIn .3s}
+@keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.step-num{display:inline-block;background:#1a73e8;color:#fff;width:28px;height:28px;border-radius:50%;text-align:center;line-height:28px;font-weight:700;font-size:13px;margin-right:8px}
+.z-table{width:100%;border-collapse:collapse;font-size:12px;margin:10px 0}
+.z-table th{background:#0d47a1;color:#fff;padding:6px;position:sticky;top:0}
+.z-table td{padding:4px 6px;text-align:center;border:1px solid #e0e0e0}
+.z-table tr:nth-child(even){background:#f5f5f5}
+.z-table tr.highlighted{background:#fff3e0;font-weight:700}
+.z-table-wrap{max-height:300px;overflow-y:auto;border:1px solid #ccc;border-radius:8px}
+.compare-table{width:100%;border-collapse:collapse;margin:10px 0}
+.compare-table th{background:#0d47a1;color:#fff;padding:10px}
+.compare-table td{padding:10px;border:1px solid #e0e0e0;text-align:center}
+.compare-table tr:nth-child(even){background:#f5f5f5}
+.iter-box{background:#f0f4ff;border:2px solid #1a73e8;border-radius:8px;padding:16px;margin:10px 0}
+.iter-box.converged{border-color:#4caf50;background:#e8f5e9}
+.slider-group{margin:10px 0}
+.slider-group input[type=range]{width:100%}
+.slider-val{font-weight:700;color:#1a73e8}
+hr{border:none;border-top:1px solid #e0e0e0;margin:20px 0}
+.practice-problem{background:#fff;border:2px solid #1a73e8;border-radius:12px;padding:20px;margin:20px 0}
+.practice-problem h3{color:#0d47a1}
+.cost-bar{display:flex;height:40px;border-radius:8px;overflow:hidden;margin:10px 0}
+.cost-bar div{display:flex;align-items:center;justify-content:center;color:#fff;font-size:11px;font-weight:600;transition:width .3s}
+</style>
+</head>
+<body>
+
+<div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+
+<nav>
+<ul>
+<li><a href="#s1">1. What is (q,r)?</a></li>
+<li><a href="#s2">2. DDLT</a></li>
+<li><a href="#s3">3. Costs</a></li>
+<li><a href="#s4">4. Backlog vs Lost</a></li>
+<li><a href="#s5">5. Iterative Solve</a></li>
+<li><a href="#s6">6. Service Levels</a></li>
+<li><a href="#s7">7. Practice</a></li>
+</ul>
+</nav>
+
+<!-- SECTION 1 -->
+<section id="s1">
+<h1>1. What is the (q,r) Policy?</h1>
+<div class="tldr">You continuously watch your inventory. When it drops to r units, you order q units. That's the whole rule.</div>
+
+<div class="card">
+<h3>The Inventory Cycle - Interactive</h3>
+<p>Drag the <strong style="color:#ff6d00">orange slider</strong> below the chart to change the reorder point r. Watch how it affects stockouts.</p>
+<canvas id="invCanvas" width="850" height="350"></canvas>
+<div style="text-align:center;margin:10px 0">
+<label>Reorder Point (r): <span id="rVal" class="slider-val">150</span></label>
+<input type="range" id="rSlider" min="50" max="300" value="150" style="width:80%;max-width:500px">
+<br>
+<button onclick="rerunSim()">Re-run Simulation</button>
+</div>
+</div>
+
+<div class="card">
+<h3>Key Concepts</h3>
+<p><strong>q (order quantity):</strong> How many units you order each time. The vertical jump up on the chart.</p>
+<p><strong>r (reorder point):</strong> The inventory level that triggers a new order. The horizontal dashed line.</p>
+<p><strong>Lead time (τ):</strong> The delay between placing and receiving an order. Demand keeps happening during this time.</p>
+<p><strong>Safety stock (s):</strong> The expected inventory left when the order arrives. s = r - expected demand during lead time.</p>
+<p><strong>n(r):</strong> Expected number of units short per cycle. Higher r = fewer shortages.</p>
+</div>
+
+<div class="card">
+<h3>Why not just use EOQ or Newsvendor?</h3>
+<p>EOQ assumes demand is known and constant. Newsvendor assumes no fixed ordering cost and instant delivery. Real life has both random demand AND a fixed cost to order AND a delivery delay. The (q,r) policy handles all three.</p>
+</div>
+</section>
+
+<!-- SECTION 2 -->
+<section id="s2">
+<h1>2. Demand During Lead Time (DDLT)</h1>
+<div class="tldr">While you wait for your order, customers keep buying. DDLT = total demand during that wait. It's random.</div>
+
+<div class="card">
+<h3>DDLT Calculator</h3>
+<div class="two-col">
+<div>
+<label>Mean demand per period (μ_D):</label><input type="number" id="muD" value="300">
+<label>Std dev of demand (σ_D):</label><input type="number" id="sigD" value="36">
+<label>Mean lead time (μ_τ):</label><input type="number" id="muT" value="2">
+<label>Std dev of lead time (σ_τ):</label><input type="number" id="sigT" value="0">
+<button onclick="calcDDLT()">Calculate</button>
+</div>
+<div>
+<div class="formula" id="ddltFormula">
+μ_L = μ_τ × μ_D<br>
+σ_L² = μ_τ × σ_D² + μ_D² × σ_τ²
+</div>
+<div class="result" id="ddltResult">Enter values and click Calculate</div>
+</div>
+</div>
+</div>
+
+<div class="card">
+<h3>Constant vs Random Lead Time</h3>
+<div class="two-col">
+<div class="side-back" style="padding:12px">
+<h3 style="color:#1a73e8">Constant Lead Time (σ_τ = 0)</h3>
+<div class="formula">σ_L² = μ_τ × σ_D² + <span style="color:#999;text-decoration:line-through">μ_D² × σ_τ²</span></div>
+<p>Second term drops out! Less uncertainty.</p>
+</div>
+<div class="side-lost" style="padding:12px">
+<h3>Random Lead Time (σ_τ > 0)</h3>
+<div class="formula">σ_L² = μ_τ × σ_D² + μ_D² × σ_τ²</div>
+<p>Both terms active. Much more uncertainty!</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- SECTION 3 -->
+<section id="s3">
+<h1>3. The Cost Function</h1>
+<div class="tldr">Total cost = purchasing + ordering + holding + shortage. You're trying to minimize the sum.</div>
+
+<div class="card">
+<h3>The Four Costs</h3>
+<table class="compare-table">
+<tr><th>Cost</th><th>Formula (per year)</th><th>What it means</th></tr>
+<tr><td>Purchase</td><td>cλ</td><td>Buying the units</td></tr>
+<tr><td>Ordering</td><td>Kλ/q</td><td>Fixed cost each time you order</td></tr>
+<tr><td>Holding</td><td>h(q/2 + s)</td><td>Storing inventory in warehouse</td></tr>
+<tr><td>Shortage</td><td>bn(r)λ/q</td><td>Penalty for running out</td></tr>
+</table>
+</div>
+
+<div class="card">
+<h3>Cost Visualizer</h3>
+<div class="two-col">
+<div>
+<div class="slider-group"><label>K (order cost): $<span id="kVal">850</span></label><input type="range" id="kSlide" min="100" max="2000" value="850" oninput="updateCosts()"></div>
+<div class="slider-group"><label>h (holding cost): $<span id="hVal">4</span>/unit/yr</label><input type="range" id="hSlide" min="1" max="20" value="4" oninput="updateCosts()"></div>
+<div class="slider-group"><label>b (shortage cost): $<span id="bVal">5</span>/unit</label><input type="range" id="bSlide" min="1" max="50" value="5" oninput="updateCosts()"></div>
+<div class="slider-group"><label>λ (annual demand): <span id="lamVal">3600</span></label><input type="range" id="lamSlide" min="500" max="10000" value="3600" oninput="updateCosts()"></div>
+</div>
+<div>
+<div class="cost-bar" id="costBar"></div>
+<div id="costBreakdown" class="result"></div>
+</div>
+</div>
+</div>
+
+<div class="card">
+<h3>What is n(r)?</h3>
+<canvas id="nrCanvas" width="500" height="250"></canvas>
+<p>n(r) = expected shortages per cycle. It's the average amount demand overshoots your reorder point during lead time. The shaded orange area above. Higher r = less shaded area = fewer shortages.</p>
+<p>When demand is normal: <strong>n(r) = σ_L × L(z)</strong>, where z = (r - μ_L)/σ_L</p>
+</div>
+</section>
+
+<!-- SECTION 4 -->
+<section id="s4">
+<h1>4. Full Backlogging vs Lost Sales</h1>
+<div class="tldr">Backlogging = customer waits. Lost sales = customer leaves forever. This changes the formulas.</div>
+
+<div class="two-col">
+<div class="card side-back">
+<h3 style="color:#1a73e8">Full Backlogging</h3>
+<p>Customer says "I'll wait." Demand carries over.</p>
+<hr>
+<p><strong>Reorder condition:</strong></p>
+<div class="formula">1 - F(r*) = qh / (bλ)</div>
+<p><strong>Safety stock:</strong></p>
+<div class="formula">s = r - E[X_L]</div>
+<p><strong>Intuition:</strong> Shortages aren't as catastrophic because you'll fill them later. So r can be a bit lower.</p>
+</div>
+<div class="card side-lost">
+<h3>Lost Sales</h3>
+<p>Customer leaves. Sale gone forever.</p>
+<hr>
+<p><strong>Reorder condition:</strong></p>
+<div class="formula highlight">1 - F(r*) = qh / (qh + bλ)</div>
+<p><strong>Safety stock:</strong></p>
+<div class="formula highlight">s = r - E[X_L] + n(r)</div>
+<p><strong>Intuition:</strong> Losing sales is worse, so r is pushed higher. Also inventory never goes negative (unsold demand vanishes), so safety stock includes n(r).</p>
+</div>
+</div>
+
+<div class="card">
+<h3>Key Differences Summary</h3>
+<table class="compare-table">
+<tr><th></th><th style="background:#1a73e8">Full Backlogging</th><th style="background:#ff6d00">Lost Sales</th></tr>
+<tr><td>Excess demand</td><td>Fulfilled later</td><td>Lost forever</td></tr>
+<tr><td>1 - F(r*) =</td><td>qh / (bλ)</td><td>qh / (qh + bλ)</td></tr>
+<tr><td>Safety stock s =</td><td>r - E[X_L]</td><td>r - E[X_L] + n(r)</td></tr>
+<tr><td>Reorder point</td><td>Lower</td><td>Higher</td></tr>
+<tr><td>q* formula</td><td colspan="2">Same: √(2λ[K + bn(r)] / h)</td></tr>
+</table>
+<p><strong>Both use the same iterative approach and the same q* equation.</strong> The only differences are the r equation denominator and the safety stock formula.</p>
+</div>
+</section>
+
+<!-- SECTION 5 -->
+<section id="s5">
+<h1>5. The Iterative Approach</h1>
+<div class="tldr">Guess q, find r, find shortages, update q, repeat until nothing changes.</div>
+
+<div class="card">
+<h3>How it works (the loop)</h3>
+<div class="formula" style="font-size:15px;line-height:2">
+1. Start: q₀ = √(2Kλ/h) &nbsp;&nbsp;← pretend no shortages<br>
+2. Plug q into reorder equation → get F(r) → look up z → round down to 2 decimals<br>
+3. Same z row → read L(z) → calculate n(r) = σ_L × L(z)<br>
+4. Plug n(r) into q equation → get new q<br>
+5. If z changed → go to step 2. If same → DONE.
+</div>
+</div>
+
+<div class="card">
+<h3>Interactive Solver</h3>
+<div class="two-col">
+<div>
+<label>K (fixed order cost):</label><input type="number" id="solK" value="850">
+<label>λ (annual demand):</label><input type="number" id="solLam" value="3600">
+<label>h (holding cost/unit/yr):</label><input type="number" id="solH" value="4">
+<label>b (shortage cost/unit):</label><input type="number" id="solB" value="5">
+<label>μ_L (mean DDLT):</label><input type="number" id="solMuL" value="600">
+<label>σ_L (std dev DDLT):</label><input type="number" id="solSigL" value="50.91">
+<label>Model:</label>
+<select id="solModel"><option value="back">Full Backlogging</option><option value="lost">Lost Sales</option></select>
+</div>
+<div>
+<button class="orange" onclick="startSolve()">Start Solving</button>
+<button onclick="nextSolveStep()">Next Step</button>
+<button onclick="solveAll()">Solve All</button>
+<div id="solveOutput"></div>
+</div>
+</div>
+</div>
+
+<div class="card">
+<h3>Z-Table (F(z) and L(z))</h3>
+<p>This is the table you look up z, F(z), and L(z) values from.</p>
+<div class="z-table-wrap">
+<table class="z-table" id="zTable">
+<thead><tr><th>z</th><th>F(z)</th><th>L(z)</th></tr></thead>
+<tbody id="zTableBody"></tbody>
+</table>
+</div>
+</div>
+</section>
+
+<!-- SECTION 6 -->
+<section id="s6">
+<h1>6. Service Levels</h1>
+<div class="tldr">When you can't estimate shortage cost b, use a service level target instead. Two types exist.</div>
+
+<div class="two-col">
+<div class="card side-back">
+<h3 style="color:#1a73e8">Type I - Cycle Service Level (α)</h3>
+<p>"What's the probability I <em>don't</em> stock out in a cycle?"</p>
+<p>It's pass/fail per cycle. Either you had enough or you didn't.</p>
+<hr>
+<div class="formula">F(r) = α<br>q = √(2Kλ/h)</div>
+<p>q and r are <strong>independent</strong>. No iteration needed!</p>
+<p>99% Type I → very high r because you need to almost never stock out.</p>
+</div>
+<div class="card side-lost">
+<h3>Type II - Fill Rate (β)</h3>
+<p>"What fraction of units demanded do I fill from stock?"</p>
+<p>It's proportional. Even if you stock out, maybe you only missed 3 units out of 2000.</p>
+<hr>
+<div class="formula">n(r) = (1-β) × q<br>q = √(2Kλ/h) &nbsp;(approximate)</div>
+<p>Also <strong>no iteration</strong> for approximate version!</p>
+<p>99% Type II → much lower r because filling 99% of units is easier than never stocking out.</p>
+</div>
+</div>
+
+<div class="card">
+<h3>Service Level Calculator</h3>
+<div class="two-col">
+<div>
+<label>K:</label><input type="number" id="slK" value="750">
+<label>λ (annual demand):</label><input type="number" id="slLam" value="2080">
+<label>h:</label><input type="number" id="slH" value="1.44">
+<label>μ_L:</label><input type="number" id="slMuL" value="480">
+<label>σ_L:</label><input type="number" id="slSigL" value="10.39">
+<label>Service Level (0-1):</label><input type="number" id="slLevel" value="0.99" step="0.01">
+<button onclick="calcSL('type1')">Solve Type I</button>
+<button class="orange" onclick="calcSL('type2')">Solve Type II</button>
+</div>
+<div>
+<div class="result" id="slResult">Enter values and click a button</div>
+</div>
+</div>
+</div>
+
+<div class="card">
+<h3>Why does the same % give different answers?</h3>
+<p>At 99%, Type I says: "In 99 out of 100 cycles, I must have zero stockouts." That's extremely strict.</p>
+<p>Type II says: "Out of every 100 units demanded, I fill 99 from stock." You can have small stockouts and still hit 99%.</p>
+<p>That's why <strong>Type I always gives a higher reorder point</strong> for the same percentage.</p>
+</div>
+</section>
+
+<!-- SECTION 7 -->
+<section id="s7">
+<h1>7. Practice Problems</h1>
+<div class="tldr">Work through these step by step. Click "Show Next Step" to reveal each part.</div>
+
+<!-- Problem 1 -->
+<div class="practice-problem">
+<h3>Problem 1: DDLT Calculation</h3>
+<p>Weekly demand is normally distributed: mean = 500, std dev = 82. Constant lead time = 6 weeks. Find μ_L and σ_L.</p>
+<div id="p1steps">
+<div class="step visible"><span class="step-num">1</span>Identify: μ_D = 500, σ_D = 82, μ_τ = 6, σ_τ = 0 (constant)</div>
+</div>
+<button onclick="showStep('p1steps',1)">Show Next Step</button>
+</div>
+
+<!-- Problem 2 -->
+<div class="practice-problem">
+<h3>Problem 2: Full Backlogging - Iterative Solve</h3>
+<p>Weekly demand: mean=40, std=3. Constant lead time: 12 weeks. c=$7.20/can, K=$750/order, b=$3/unit, i=0.20, 52 weeks/year. Find optimal q and r.</p>
+<div id="p2steps">
+<div class="step visible"><span class="step-num">1</span><strong>Compute DDLT parameters:</strong><br>μ_L = 12 × 40 = 480, σ_D² = 9, σ_L² = 12 × 9 = 108 → σ_L = 10.39</div>
+</div>
+<button onclick="showStep('p2steps',1)">Show Next Step</button>
+</div>
+
+<!-- Problem 3 -->
+<div class="practice-problem">
+<h3>Problem 3: Implied Service Levels</h3>
+<p>Weekly demand: mean=80, std=40. Constant lead time: 12 weeks. Current policy: q=2000, r=1200. Find Type I and Type II service levels.</p>
+<div id="p3steps">
+<div class="step visible"><span class="step-num">1</span><strong>DDLT parameters:</strong><br>μ_L = 12 × 80 = 960, σ_L = √12 × 40 = 138.56</div>
+</div>
+<button onclick="showStep('p3steps',1)">Show Next Step</button>
+</div>
+</section>
+
+<div style="text-align:center;padding:40px;color:#999;font-size:13px">Built for EIN 4343 Exam 2 Prep</div>
+
+<script>
+// === Z-TABLE DATA ===
+const zData=[];
+function normCDF(z){let t=1/(1+0.2316419*Math.abs(z));let d=0.3989422802*Math.exp(-z*z/2);let p=d*t*(0.3193815+t*(-0.3565638+t*(1.781478+t*(-1.8212560+t*1.3302744))));return z>0?1-p:p}
+function normPDF(z){return Math.exp(-z*z/2)/Math.sqrt(2*Math.PI)}
+function lossFunc(z){return normPDF(z)-z*(1-normCDF(z))}
+for(let i=-300;i<=300;i+=4){let z=i/100;let fz=normCDF(z);let lz=lossFunc(z);zData.push({z:z,fz:fz,lz:Math.max(0,lz)})}
+
+// Build z-table HTML
+const tbody=document.getElementById('zTableBody');
+zData.forEach(d=>{let tr=document.createElement('tr');tr.setAttribute('data-z',d.z.toFixed(2));tr.innerHTML=`<td>${d.z.toFixed(2)}</td><td>${d.fz.toFixed(4)}</td><td>${d.lz.toFixed(4)}</td>`;tbody.appendChild(tr)});
+
+function highlightZ(zVal){
+document.querySelectorAll('#zTableBody tr').forEach(r=>r.classList.remove('highlighted'));
+let best=null,bestDiff=999;
+document.querySelectorAll('#zTableBody tr').forEach(r=>{let rz=parseFloat(r.getAttribute('data-z'));if(Math.abs(rz-zVal)<bestDiff){bestDiff=Math.abs(rz-zVal);best=r}});
+if(best){best.classList.add('highlighted');best.scrollIntoView({block:'center',behavior:'smooth'})}
+}
+
+function lookupZ(fTarget){
+let bestZ=-3,bestDiff=999;
+for(let d of zData){if(Math.abs(d.fz-fTarget)<bestDiff){bestDiff=Math.abs(d.fz-fTarget);bestZ=d.z}}
+// Interpolate
+let lo=null,hi=null;
+for(let i=0;i<zData.length-1;i++){if(zData[i].fz<=fTarget&&zData[i+1].fz>=fTarget){lo=zData[i];hi=zData[i+1];break}}
+if(lo&&hi){let frac=(fTarget-lo.fz)/(hi.fz-lo.fz);return lo.z+frac*(hi.z-lo.z)}
+return bestZ;
+}
+
+function lookupL(zVal){
+let lo=null,hi=null;
+for(let i=0;i<zData.length-1;i++){if(zData[i].z<=zVal&&zData[i+1].z>=zVal){lo=zData[i];hi=zData[i+1];break}}
+if(lo&&hi){let frac=(zVal-lo.z)/(hi.z-lo.z);return lo.lz+frac*(hi.lz-lo.lz)}
+return lossFunc(zVal);
+}
+
+function lookupF(zVal){
+let lo=null,hi=null;
+for(let i=0;i<zData.length-1;i++){if(zData[i].z<=zVal&&zData[i+1].z>=zVal){lo=zData[i];hi=zData[i+1];break}}
+if(lo&&hi){let frac=(zVal-lo.z)/(hi.z-lo.z);return lo.fz+frac*(hi.fz-lo.fz)}
+return normCDF(zVal);
+}
+
+// === SECTION 1: INVENTORY SIM ===
+let simR=150;
+const rSlider=document.getElementById('rSlider');
+rSlider.oninput=function(){simR=parseInt(this.value);document.getElementById('rVal').textContent=simR;drawSim()};
+
+let simData=[];
+function genSim(){
+simData=[];let inv=350;let t=0;let q=250;
+while(t<800){
+let demand=Math.random()*8+2;
+inv-=demand;
+simData.push({t:t,inv:inv,event:null});
+if(inv<=simR&&!simData.find(d=>d.event==='order'&&d.t>t-120)){
+simData.push({t:t,inv:inv,event:'order'});
+let arrT=t+80+Math.random()*40;
+simData.push({t:arrT,inv:inv,event:'arrive',q:q});
+}
+t+=2;
+}
+// process arrivals
+let sorted=[...simData].sort((a,b)=>a.t-b.t);
+simData=[];inv=350;
+let pendingArrivals=[];
+for(let i=0;i<400;i++){
+let t=i*2;
+let demand=Math.random()*8+2;
+inv-=demand;
+// check arrivals
+let newArrivals=pendingArrivals.filter(a=>t>=a.t);
+newArrivals.forEach(a=>{inv+=a.q});
+pendingArrivals=pendingArrivals.filter(a=>t<a.t);
+simData.push({t:t,inv:inv});
+if(inv<=simR&&pendingArrivals.length===0){
+pendingArrivals.push({t:t+80+Math.random()*40,q:q});
+}
+}
+}
+genSim();
+
+function drawSim(){
+const c=document.getElementById('invCanvas');const ctx=c.getContext('2d');
+ctx.clearRect(0,0,c.width,c.height);
+let w=c.width,h=c.height;let pad=50;
+let maxInv=500,minInv=-50;
+let scaleX=(w-pad*2)/simData.length;
+let scaleY=(h-pad*2)/(maxInv-minInv);
+function tx(i){return pad+i*scaleX}
+function ty(v){return h-pad-(v-minInv)*scaleY}
+
+// axes
+ctx.strokeStyle='#999';ctx.lineWidth=1;
+ctx.beginPath();ctx.moveTo(pad,pad);ctx.lineTo(pad,h-pad);ctx.lineTo(w-pad,h-pad);ctx.stroke();
+ctx.fillStyle='#666';ctx.font='12px sans-serif';
+ctx.fillText('Time →',w/2,h-10);
+ctx.save();ctx.translate(15,h/2);ctx.rotate(-Math.PI/2);ctx.fillText('Inventory Level',0,0);ctx.restore();
+
+// zero line
+ctx.strokeStyle='#ccc';ctx.setLineDash([4,4]);
+ctx.beginPath();ctx.moveTo(pad,ty(0));ctx.lineTo(w-pad,ty(0));ctx.stroke();
+ctx.fillStyle='#999';ctx.fillText('0',pad-20,ty(0)+4);
+
+// reorder line
+ctx.strokeStyle='#ff6d00';ctx.lineWidth=2;
+ctx.beginPath();ctx.moveTo(pad,ty(simR));ctx.lineTo(w-pad,ty(simR));ctx.stroke();
+ctx.setLineDash([]);
+ctx.fillStyle='#ff6d00';ctx.font='bold 13px sans-serif';ctx.fillText('r = '+simR,w-pad+5,ty(simR)+4);
+
+// inventory line
+ctx.strokeStyle='#1a73e8';ctx.lineWidth=2;ctx.setLineDash([]);
+ctx.beginPath();
+simData.forEach((d,i)=>{
+let x=tx(i),y=ty(Math.max(d.inv,minInv));
+if(i===0)ctx.moveTo(x,y);else ctx.lineTo(x,y);
+});
+ctx.stroke();
+
+// stockout shading
+simData.forEach((d,i)=>{
+if(d.inv<0){ctx.fillStyle='rgba(255,0,0,0.15)';ctx.fillRect(tx(i),ty(0),scaleX,ty(minInv)-ty(0))}
+});
+
+// labels
+ctx.fillStyle='#1a73e8';ctx.font='bold 14px sans-serif';ctx.fillText('Inventory over time',pad+10,pad+20);
+let stockouts=simData.filter(d=>d.inv<0).length;
+ctx.fillStyle=stockouts>0?'#d32f2f':'#4caf50';
+ctx.fillText(stockouts>0?'Stockouts detected!':'No stockouts!',pad+10,pad+40);
+}
+drawSim();
+function rerunSim(){genSim();drawSim()}
+
+// === SECTION 2: DDLT ===
+function calcDDLT(){
+let muD=parseFloat(document.getElementById('muD').value);
+let sigD=parseFloat(document.getElementById('sigD').value);
+let muT=parseFloat(document.getElementById('muT').value);
+let sigT=parseFloat(document.getElementById('sigT').value);
+let muL=muT*muD;
+let sigL2=muT*sigD*sigD+muD*muD*sigT*sigT;
+let sigL=Math.sqrt(sigL2);
+let html=`<strong>μ_L = ${muT} × ${muD} = ${muL.toFixed(2)}</strong><br>`;
+html+=`σ_L² = ${muT}×${sigD}² + ${muD}²×${sigT}²<br>`;
+html+=`σ_L² = ${(muT*sigD*sigD).toFixed(2)} + ${(muD*muD*sigT*sigT).toFixed(2)} = ${sigL2.toFixed(2)}<br>`;
+html+=`<strong>σ_L = √${sigL2.toFixed(2)} = ${sigL.toFixed(2)}</strong>`;
+if(sigT==0)html+=`<br><em style="color:#ff6d00">Lead time is constant → second term is zero!</em>`;
+document.getElementById('ddltResult').innerHTML=html;
+}
+
+// === SECTION 3: COSTS ===
+function updateCosts(){
+let K=parseInt(document.getElementById('kSlide').value);document.getElementById('kVal').textContent=K;
+let h=parseInt(document.getElementById('hSlide').value);document.getElementById('hVal').textContent=h;
+let b=parseInt(document.getElementById('bSlide').value);document.getElementById('bVal').textContent=b;
+let lam=parseInt(document.getElementById('lamSlide').value);document.getElementById('lamVal').textContent=lam;
+let q=Math.sqrt(2*K*lam/h);
+let s=50;let nr=5;
+let ordering=K*lam/q;let holding=h*(q/2+s);let shortage=b*nr*lam/q;
+let total=ordering+holding+shortage;
+let bar=document.getElementById('costBar');
+bar.innerHTML=`<div style="width:${ordering/total*100}%;background:#1a73e8">Order</div><div style="width:${holding/total*100}%;background:#4caf50">Hold</div><div style="width:${shortage/total*100}%;background:#ff6d00">Short</div>`;
+document.getElementById('costBreakdown').innerHTML=`Ordering: $${ordering.toFixed(0)} | Holding: $${holding.toFixed(0)} | Shortage: $${shortage.toFixed(0)} | Total: $${total.toFixed(0)}/yr`;
+}
+updateCosts();
+
+// n(r) visualization
+function drawNR(){
+const c=document.getElementById('nrCanvas');const ctx=c.getContext('2d');
+let w=c.width,h=c.height;ctx.clearRect(0,0,w,h);
+let cx=w/2,cy=h-40,sx=80,sy=200;
+ctx.strokeStyle='#1a73e8';ctx.lineWidth=2;ctx.beginPath();
+for(let x=0;x<w;x++){let z=(x-cx)/sx;let y=cy-normPDF(z)*sy;if(x===0)ctx.moveTo(x,y);else ctx.lineTo(x,y)}
+ctx.stroke();
+// shade beyond r
+let rPx=cx+0.6*sx;
+ctx.fillStyle='rgba(255,109,0,0.3)';ctx.beginPath();ctx.moveTo(rPx,cy);
+for(let x=rPx;x<w;x++){let z=(x-cx)/sx;ctx.lineTo(x,cy-normPDF(z)*sy)}
+ctx.lineTo(w,cy);ctx.closePath();ctx.fill();
+// r line
+ctx.strokeStyle='#ff6d00';ctx.lineWidth=2;ctx.setLineDash([6,4]);
+ctx.beginPath();ctx.moveTo(rPx,cy);ctx.lineTo(rPx,cy-normPDF(0.6)*sy-20);ctx.stroke();ctx.setLineDash([]);
+ctx.fillStyle='#ff6d00';ctx.font='bold 14px sans-serif';ctx.fillText('r',rPx-4,cy+16);
+ctx.fillStyle='#222';ctx.fillText('μ_L',cx-10,cy+16);
+ctx.fillStyle='#ff6d00';ctx.font='13px sans-serif';ctx.fillText('n(r) = this shaded area',rPx+10,cy-80);
+ctx.fillStyle='#1a73e8';ctx.fillText('Demand during lead time distribution',10,20);
+}
+drawNR();
+
+// === SECTION 5: ITERATIVE SOLVER ===
+let solveState={step:0,iterations:[],model:'back'};
+
+function startSolve(){
+let K=parseFloat(document.getElementById('solK').value);
+let lam=parseFloat(document.getElementById('solLam').value);
+let h=parseFloat(document.getElementById('solH').value);
+let b=parseFloat(document.getElementById('solB').value);
+let muL=parseFloat(document.getElementById('solMuL').value);
+let sigL=parseFloat(document.getElementById('solSigL').value);
+let model=document.getElementById('solModel').value;
+solveState={step:0,K,lam,h,b,muL,sigL,model,iterations:[],done:false};
+let q0=Math.sqrt(2*K*lam/h);
+solveState.q=q0;solveState.j=0;
+let out=document.getElementById('solveOutput');
+out.innerHTML=`<div class="iter-box"><strong>Initialization (j=0):</strong><br>q₀ = √(2×${K}×${lam}/${h}) = √${(2*K*lam/h).toFixed(2)} = <strong>${q0.toFixed(2)}</strong><br><em>This assumes n(r)=0 (no shortages yet)</em></div>`;
+solveState.step=1;
+}
+
+function nextSolveStep(){
+if(solveState.step===0){startSolve();return}
+if(solveState.done)return;
+let{K,lam,h,b,muL,sigL,model,q,j}=solveState;
+let out=document.getElementById('solveOutput');
+if(solveState.step===1){
+// Find F(r) from equation 2
+let rhs;
+if(model==='back')rhs=q*h/(b*lam);
+else rhs=q*h/(q*h+b*lam);
+let Fr=1-rhs;
+let zExact=lookupZ(Fr);
+let zRound=Math.floor(zExact*100)/100;
+let Lz=lookupL(zRound);
+let nr=sigL*Lz;
+let eqLabel=model==='back'?`qh/(bλ) = ${q.toFixed(2)}×${h}/(${b}×${lam})`:`qh/(qh+bλ) = ${q.toFixed(2)}×${h}/(${q.toFixed(2)}×${h}+${b}×${lam})`;
+out.innerHTML+=`<div class="iter-box"><strong>Iteration ${j} → Find r:</strong><br>
+1-F(r) = ${eqLabel} = ${rhs.toFixed(4)}<br>
+F(r) = ${Fr.toFixed(4)}<br>
+z (exact) = ${zExact.toFixed(4)} → <strong>z = ${zRound.toFixed(2)}</strong> (rounded down)<br>
+L(${zRound.toFixed(2)}) = ${Lz.toFixed(4)}<br>
+n(r) = σ_L × L(z) = ${sigL} × ${Lz.toFixed(4)} = <strong>${nr.toFixed(4)}</strong></div>`;
+highlightZ(zRound);
+solveState.prevZ=solveState.currentZ;
+solveState.currentZ=zRound;
+solveState.nr=nr;
+solveState.step=2;
+}else if(solveState.step===2){
+// Check convergence or compute new q
+if(solveState.prevZ!==undefined&&solveState.currentZ===solveState.prevZ){
+let r=muL+solveState.currentZ*sigL;
+let s;
+if(model==='back')s=r-muL;
+else s=r-muL+solveState.nr;
+out.innerHTML+=`<div class="iter-box converged"><strong>CONVERGED!</strong><br>
+z* = ${solveState.currentZ.toFixed(2)}<br>
+q* = ${q.toFixed(2)}<br>
+r* = μ_L + z*×σ_L = ${muL} + ${solveState.currentZ.toFixed(2)}×${sigL} = <strong>${r.toFixed(2)}</strong><br>
+s* = <strong>${s.toFixed(2)}</strong></div>`;
+solveState.done=true;return;
+}
+let newQ=Math.sqrt(2*lam*(K+b*solveState.nr)/h);
+solveState.j++;
+out.innerHTML+=`<div class="iter-box"><strong>Iteration ${solveState.j} → Update q:</strong><br>
+q = √(2×${lam}×[${K}+${b}×${solveState.nr.toFixed(4)}]/${h})<br>
+q = √(${(2*lam*(K+b*solveState.nr)/h).toFixed(2)}) = <strong>${newQ.toFixed(2)}</strong></div>`;
+solveState.q=newQ;
+solveState.step=1;
+}
+}
+
+function solveAll(){
+startSolve();
+for(let i=0;i<20&&!solveState.done;i++)nextSolveStep();
+}
+
+// === SECTION 6: SERVICE LEVELS ===
+function calcSL(type){
+let K=parseFloat(document.getElementById('slK').value);
+let lam=parseFloat(document.getElementById('slLam').value);
+let h=parseFloat(document.getElementById('slH').value);
+let muL=parseFloat(document.getElementById('slMuL').value);
+let sigL=parseFloat(document.getElementById('slSigL').value);
+let level=parseFloat(document.getElementById('slLevel').value);
+let q=Math.sqrt(2*K*lam/h);
+let out=document.getElementById('slResult');
+if(type==='type1'){
+let z=lookupZ(level);
+let zRound=Math.floor(z*100)/100;
+let r=muL+zRound*sigL;
+out.innerHTML=`<strong>Type I (α=${level}):</strong><br>q = √(2×${K}×${lam}/${h}) = ${q.toFixed(2)}<br>F(r) = α = ${level} → z = ${zRound.toFixed(2)}<br>r = ${muL} + ${zRound.toFixed(2)}×${sigL} = <strong>${r.toFixed(2)}</strong>`;
+highlightZ(zRound);
+}else{
+let nr=(1-level)*q;
+let Lz=nr/sigL;
+let z=null;
+for(let i=0;i<zData.length-1;i++){if(zData[i].lz>=Lz&&zData[i+1].lz<=Lz){let frac=(Lz-zData[i].lz)/(zData[i+1].lz-zData[i].lz);z=zData[i].z+frac*(zData[i+1].z-zData[i].z);break}}
+if(z===null)z=-3;
+let zRound=Math.floor(z*100)/100;
+let r=muL+zRound*sigL;
+out.innerHTML=`<strong>Type II (β=${level}):</strong><br>q = ${q.toFixed(2)}<br>n(r) = (1-${level})×${q.toFixed(2)} = ${nr.toFixed(2)}<br>L(z) = n(r)/σ_L = ${nr.toFixed(2)}/${sigL} = ${Lz.toFixed(4)}<br>→ z = ${zRound.toFixed(2)}<br>r = ${muL} + ${zRound.toFixed(2)}×${sigL} = <strong>${r.toFixed(2)}</strong>`;
+highlightZ(zRound);
+}
+}
+
+// === SECTION 7: PRACTICE PROBLEMS ===
+const practiceSteps={
+p1steps:[
+{html:'<span class="step-num">2</span><strong>Mean DDLT:</strong><br>μ_L = μ_τ × μ_D = 6 × 500 = <strong>3,000 units</strong>'},
+{html:'<span class="step-num">3</span><strong>Variance DDLT:</strong><br>σ_L² = μ_τ × σ_D² + μ_D² × σ_τ²<br>= 6 × 82² + 500² × 0² = 6 × 6724 = 40,344'},
+{html:'<span class="step-num">4</span><strong>Std Dev DDLT:</strong><br>σ_L = √40,344 = <strong>200.86 units</strong>'}
+],
+p2steps:[
+{html:'<span class="step-num">2</span><strong>Annual demand & holding cost:</strong><br>λ = 52 × 40 = 2,080 units/yr<br>h = i×c = 0.20 × 7.20 = $1.44/unit/yr'},
+{html:'<span class="step-num">3</span><strong>Initialize q₀:</strong><br>q₀ = √(2×750×2080/1.44) = √(2,166,666.67) = <strong>1,471.96</strong>'},
+{html:'<span class="step-num">4</span><strong>Find F(r₀):</strong><br>1-F(r) = q₀h/(bλ) = 1471.96×1.44/(3×2080) = 0.3397<br>F(r₀) = 0.6603'},
+{html:'<span class="step-num">5</span><strong>Look up z₀:</strong><br>F = 0.6603 → z₀ ≈ 0.41<br>L(0.41) ≈ 0.227 (interpolated)'},
+{html:'<span class="step-num">6</span><strong>Calculate n(r₀):</strong><br>n(r₀) = σ_L × L(z₀) = 10.39 × 0.227 = <strong>2.3585</strong>'},
+{html:'<span class="step-num">7</span><strong>Update q₁:</strong><br>q₁ = √(2×2080×[750+3×2.3585]/1.44) = <strong>1,478.89</strong>'},
+{html:'<span class="step-num">8</span><strong>Check convergence:</strong><br>F(r₁) = 1 - 1478.89×1.44/(3×2080) = 0.6588<br>z₁ ≈ 0.41 → same as z₀ → <strong>CONVERGED!</strong>'},
+{html:'<span class="step-num">9</span><strong>Final answer:</strong><br>q* = 1,478.89, z* = 0.41<br>r* = 480 + 0.41×10.39 = <strong>484.26 units</strong><br>s* = 484.26 - 480 = <strong>4.26 units</strong>'}
+],
+p3steps:[
+{html:'<span class="step-num">2</span><strong>Compute z:</strong><br>z = (r - μ_L)/σ_L = (1200 - 960)/138.56 = <strong>1.7321</strong>'},
+{html:'<span class="step-num">3</span><strong>Type I service level:</strong><br>α = F(r) = F(z=1.7321)<br>Interpolate between z=1.72 (F=0.9573) and z=1.76 (F=0.9608)<br>α ≈ <strong>0.9584</strong>'},
+{html:'<span class="step-num">4</span><strong>Type II - find L(z):</strong><br>Interpolate L(1.7321) between z=1.72 (L=0.017) and z=1.76 (L=0.016)<br>L(z) ≈ 0.0167'},
+{html:'<span class="step-num">5</span><strong>Type II service level:</strong><br>n(r) = σ_L × L(z) = 138.56 × 0.0167 = 2.314<br>β = 1 - n(r)/q = 1 - 2.314/2000 = <strong>0.9988</strong>'}
+]};
+
+const stepCounters={p1steps:0,p2steps:0,p3steps:0};
+function showStep(id,dummy){
+let steps=practiceSteps[id];
+if(!stepCounters[id])stepCounters[id]=0;
+if(stepCounters[id]>=steps.length)return;
+let div=document.createElement('div');
+div.className='step visible';
+div.innerHTML=steps[stepCounters[id]].html;
+document.getElementById(id).appendChild(div);
+stepCounters[id]++;
+}
+
+// === PROGRESS BAR & NAV ===
+window.addEventListener('scroll',()=>{
+let scroll=window.scrollY;
+let height=document.documentElement.scrollHeight-window.innerHeight;
+document.getElementById('progressFill').style.width=(scroll/height*100)+'%';
+document.querySelectorAll('nav a').forEach(a=>{
+let target=document.querySelector(a.getAttribute('href'));
+if(target&&target.offsetTop-100<=scroll)document.querySelectorAll('nav a').forEach(x=>x.classList.remove('active'))||a.classList.add('active');
+});
+});
+</script>
+</body>
+</html>

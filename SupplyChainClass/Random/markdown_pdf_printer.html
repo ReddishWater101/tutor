@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Markdown PDF Printer</title>
+  <style>
+    :root {
+      --bg: #eef2f6;
+      --panel: #f8fafc;
+      --panel-border: #d5dde7;
+      --text: #1c2430;
+      --muted: #5e6a79;
+      --accent: #1d4ed8;
+      --accent-dark: #1e3a8a;
+      --paper: #ffffff;
+      --paper-edge: rgba(15, 23, 42, 0.16);
+      --rule: #d6dee8;
+      --table-head: #edf2f7;
+      --code: #f3f5f8;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      min-height: 100%;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(29, 78, 216, 0.09), transparent 32%),
+        linear-gradient(180deg, #f6f8fb 0%, #e8edf3 100%);
+      color: var(--text);
+    }
+
+    .app {
+      display: grid;
+      grid-template-columns: minmax(320px, 420px) minmax(0, 1fr);
+      min-height: 100vh;
+      gap: 24px;
+      padding: 24px;
+    }
+
+    .controls {
+      background: rgba(248, 250, 252, 0.92);
+      border: 1px solid var(--panel-border);
+      border-radius: 18px;
+      padding: 20px;
+      box-shadow: 0 18px 50px rgba(15, 23, 42, 0.10);
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 24px;
+      height: calc(100vh - 48px);
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .controls h1 {
+      margin: 0;
+      font-size: 1.35rem;
+      line-height: 1.2;
+    }
+
+    .controls p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.45;
+      font-size: 0.95rem;
+    }
+
+    .toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    button {
+      appearance: none;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      padding: 10px 14px;
+      font-size: 0.94rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.12s ease;
+    }
+
+    button:hover {
+      transform: translateY(-1px);
+    }
+
+    .primary {
+      background: var(--accent);
+      color: #fff;
+      box-shadow: 0 10px 22px rgba(29, 78, 216, 0.24);
+    }
+
+    .primary:hover {
+      background: var(--accent-dark);
+    }
+
+    .secondary {
+      background: #fff;
+      border-color: var(--panel-border);
+      color: var(--text);
+    }
+
+    .secondary:hover {
+      background: #f1f5f9;
+    }
+
+    .meta {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .pill {
+      border: 1px solid var(--panel-border);
+      border-radius: 999px;
+      padding: 6px 10px;
+      background: #fff;
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 0;
+      flex: 1 1 auto;
+      resize: none;
+      border: 1px solid var(--panel-border);
+      border-radius: 14px;
+      padding: 16px;
+      font: 14px/1.55 Consolas, "Courier New", monospace;
+      color: var(--text);
+      background: #fff;
+      outline: none;
+      box-shadow: inset 0 1px 2px rgba(15, 23, 42, 0.04);
+    }
+
+    textarea:focus {
+      border-color: rgba(29, 78, 216, 0.5);
+      box-shadow: 0 0 0 4px rgba(29, 78, 216, 0.10);
+    }
+
+    .preview-wrap {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-width: 0;
+    }
+
+    .paper {
+      width: min(8.5in, 100%);
+      min-height: 11in;
+      background: var(--paper);
+      box-shadow:
+        0 22px 50px rgba(15, 23, 42, 0.12),
+        0 2px 12px rgba(15, 23, 42, 0.08);
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid rgba(214, 222, 232, 0.65);
+    }
+
+    .page {
+      padding: 0.72in 0.8in;
+      font-family: "Times New Roman", Times, serif;
+      font-size: 12pt;
+      line-height: 1.42;
+      color: #111827;
+    }
+
+    .page h1,
+    .page h2,
+    .page h3 {
+      line-height: 1.2;
+      break-after: avoid-page;
+    }
+
+    .page h1 {
+      font-size: 20pt;
+      margin: 0 0 18pt;
+      padding-bottom: 10pt;
+      border-bottom: 2px solid var(--rule);
+    }
+
+    .page h2 {
+      font-size: 15pt;
+      margin: 24pt 0 10pt;
+      padding-bottom: 4pt;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .page h3 {
+      font-size: 13pt;
+      margin: 16pt 0 8pt;
+    }
+
+    .page p {
+      margin: 0 0 10pt;
+      text-align: left;
+    }
+
+    .page ul,
+    .page ol {
+      margin: 0 0 12pt 20pt;
+      padding: 0;
+    }
+
+    .page li {
+      margin: 0 0 5pt;
+    }
+
+    .page code {
+      background: var(--code);
+      padding: 1px 4px;
+      border-radius: 4px;
+      font-size: 0.92em;
+    }
+
+    .page strong {
+      font-weight: 700;
+    }
+
+    .page em {
+      font-style: italic;
+    }
+
+    .page hr {
+      border: 0;
+      border-top: 1px solid var(--rule);
+      margin: 16pt 0;
+    }
+
+    .page table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 10pt 0 14pt;
+      font-size: 10.5pt;
+      break-inside: avoid;
+    }
+
+    .page th,
+    .page td {
+      border: 1px solid #98a4b4;
+      padding: 6px 8px;
+      vertical-align: top;
+      text-align: left;
+    }
+
+    .page thead th {
+      background: var(--table-head);
+    }
+
+    .topic,
+    .question {
+      break-inside: avoid-page;
+      page-break-inside: avoid;
+    }
+
+    .question {
+      margin-bottom: 12pt;
+    }
+
+    .empty-state {
+      color: var(--muted);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 1100px) {
+      .app {
+        grid-template-columns: 1fr;
+      }
+
+      .controls {
+        position: static;
+        height: auto;
+      }
+
+      .preview-wrap {
+        justify-content: stretch;
+      }
+    }
+
+    @page {
+      size: letter;
+      margin: 0.55in 0.6in;
+    }
+
+    @media print {
+      body {
+        background: #fff;
+      }
+
+      .app {
+        display: block;
+        padding: 0;
+      }
+
+      .controls {
+        display: none;
+      }
+
+      .preview-wrap {
+        display: block;
+      }
+
+      .paper {
+        width: auto;
+        min-height: auto;
+        border: 0;
+        border-radius: 0;
+        box-shadow: none;
+      }
+
+      .page {
+        padding: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <aside class="controls">
+      <div>
+        <h1>Markdown to printable PDF</h1>
+        <p>Paste markdown on the left, render it, then use the browser print dialog to save as a PDF. This file starts with the current <code>Exam2_MadeUpProblems.md</code> text already loaded.</p>
+      </div>
+
+      <div class="toolbar">
+        <button class="primary" id="render-btn" type="button">Render preview</button>
+        <button class="secondary" id="print-btn" type="button">Print / save PDF</button>
+        <button class="secondary" id="reset-btn" type="button">Reset sample</button>
+        <button class="secondary" id="clear-btn" type="button">Clear</button>
+      </div>
+
+      <div class="meta">
+        <span class="pill" id="line-count">0 lines</span>
+        <span class="pill" id="char-count">0 chars</span>
+        <span class="pill" id="status">Ready</span>
+      </div>
+
+      <textarea id="markdown-input" spellcheck="false" aria-label="Markdown input"></textarea>
+    </aside>
+
+    <main class="preview-wrap">
+      <div class="paper">
+        <article class="page" id="preview">
+          <p class="empty-state">Paste markdown into the editor and click Render preview.</p>
+        </article>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    const bundledSample = String.raw`# Exam 2 Practice Questions (Generated)
+
+## Newsvendor
+
+### Question 1 (Lecture 4, p. 19)
+Recall the single period profit maximization newsvendor model. Fill in the blanks.
+
+a. Everything else being equal, if the selling price per unit goes up, the optimal order quantity _____________
+
+b. Everything else being equal, if the unit salvage revenue goes up, the optimal order quantity _____________
+
+c. Everything else being equal, if the unit purchase cost goes up, the optimal order quantity _____________
+
+d. Everything else being equal, if the unit loss of goodwill cost goes down, the optimal order quantity _____________
+
+
+### Question 2 (Lecture 4, pp. 27-28)
+A local bakery prepares specialty cupcakes for a weekly weekend event. Based on the past year of data, the demand for specialty cupcakes is normally distributed with a mean of 4,800 cupcakes and a standard deviation of 1,200 cupcakes. The cost of producing a specialty cupcake is $3.00 per cupcake, and they are sold for $8.50 per cupcake. The manager estimates that the unit loss of goodwill cost for the specialty cupcakes is $2.00 per cupcake. Any unsold specialty cupcakes must be discarded at the end of the event.
+
+a. How many specialty cupcakes should the bakery prepare for the next weekend event?
+
+b. What should the unit loss of goodwill cost be, for the optimal number of cupcakes to be 6,000?
+
+
+### Question 3 (Lecture 4, pp. 65-67, 80-81)
+A distributor sells specialty printer ink cartridges to businesses in its area on a weekly basis. Any cartridges unsold at the end of the week can be stocked and sold during the next week. The weekly demand for the cartridges is approximately normally distributed with a mean of 180 units and a standard deviation of 30 units. It costs the distributor $40 to procure each cartridge, and sells each cartridge for $55 to its customers. The distributor estimates that the unit loss of goodwill per cartridge is $20. The distributor incurs an inventory holding cost of $2 per cartridge per week.
+
+a. Suppose that the business customers who buy from the distributor are patient, and, hence, are willing to wait for a week if the distributor cannot immediately provide the cartridges they need. What is the optimal order quantity for the distributor?
+
+b. Suppose that the business customers who buy from the distributor are impatient, and, hence, find an alternative supplier immediately to obtain the cartridges they need. What is the optimal order quantity for the distributor?
+
+
+## (q,r) Policy
+
+### Question 1 (Lecture 5, p. 38)
+(q,r) policy under full backlogging: GreenLeaf Garden Supplies sells organic fertilizer through their online store. The monthly demand for a particular slow-release fertilizer is approximately normally distributed with a mean of 400 bags and a standard deviation of 48 bags. GreenLeaf operates 12 months throughout the year. The replenishment lead time for this fertilizer is 3 months. For each replenishment, GreenLeaf incurs a fixed ordering cost of $600 per order and an annual inventory holding cost of $3/bag/year. The unit loss-of-goodwill cost associated with this type of fertilizer is $4/bag.
+
+a. What are the parameters of demand during lead time?
+
+b. What are the order quantity and the reorder level at the end of iteration 1? NOTE: You may stop after completing j=1. Once you determine the z_j, round it down to two digits after the decimal point, and use that value to interpolate.
+
+c. What is the expected safety stock level if you operated the system using the policy parameters you determined in part (b)?
+
+d. What is the average annual total cost if the system were operated using the policy parameters you determined in part (b)? NOTE: Please ignore the total annual purchasing component for this calculation, since unit cost per unit, c, is not given in the problem statement.
+
+
+### Question 2 (Lecture 5, pp. 72-73)
+System Design using Service Levels: AutoParts Direct sells a specialized brake sensor. The weekly demand for the sensor is approximately normally distributed with a mean of 250 units and a standard deviation of 45 units. AutoParts Direct operates 52 weeks throughout the year. The replenishment lead time from their supplier is 4 weeks. For each replenishment, AutoParts Direct incurs a fixed ordering cost of $700 per order and an annual inventory holding cost of $2.00/sensor/year.
+
+a. What are the parameters of demand during lead time?
+
+b. The owner of AutoParts Direct is interested in using a (q,r) policy to replenish the inventory for the sensor. If the owner wants to ensure a Type I service level of 98%, what should the order quantity and reorder level be?
+
+c. The owner of AutoParts Direct is interested in using a (q,r) policy to replenish the inventory for the sensor. If the owner wants to ensure a Type II service level of 98%, what should the reorder level be? You may use the order quantity you determined in part (b).
+
+
+### Question 3 (Lecture 5, pp. 77, 81)
+System Assessment using Service Levels: FreshVita Supplements manufactures a popular vitamin blend. Due to the specialized production process, the lead time to replenish stock takes about 4 weeks. The weekly demand for the supplement is approximately normally distributed with a mean of 150 bottles and a standard deviation of 18 bottles. Currently, the owner of the company sets up a production run to produce 1,200 bottles, when the on-hand inventory level for the supplement drops down to 640 bottles.
+
+a. What is the expected Type I service level performance of the current policy? Please report 4 digits after the decimal. Interpolate for the z value with 4 digits after the decimal.
+
+b. What is the expected Type II service level performance of the current policy? Please report 4 digits after the decimal. Interpolate for the z / L(z) value with 4 digits after the decimal.
+`;
+
+    const STORAGE_KEY = "markdown-pdf-printer-source";
+    const input = document.getElementById("markdown-input");
+    const preview = document.getElementById("preview");
+    const lineCount = document.getElementById("line-count");
+    const charCount = document.getElementById("char-count");
+    const statusEl = document.getElementById("status");
+    const renderBtn = document.getElementById("render-btn");
+    const printBtn = document.getElementById("print-btn");
+    const resetBtn = document.getElementById("reset-btn");
+    const clearBtn = document.getElementById("clear-btn");
+
+    const savedSource = localStorage.getItem(STORAGE_KEY);
+    input.value = savedSource && savedSource.trim() ? savedSource : bundledSample;
+    updateCounters();
+    renderMarkdown();
+
+    input.addEventListener("input", () => {
+      localStorage.setItem(STORAGE_KEY, input.value);
+      updateCounters();
+      statusEl.textContent = "Edited";
+    });
+
+    renderBtn.addEventListener("click", () => {
+      renderMarkdown();
+      statusEl.textContent = "Rendered";
+    });
+
+    printBtn.addEventListener("click", () => {
+      renderMarkdown();
+      statusEl.textContent = "Printing";
+      window.print();
+    });
+
+    resetBtn.addEventListener("click", () => {
+      input.value = bundledSample;
+      localStorage.setItem(STORAGE_KEY, bundledSample);
+      updateCounters();
+      renderMarkdown();
+      statusEl.textContent = "Reset";
+    });
+
+    clearBtn.addEventListener("click", () => {
+      input.value = "";
+      localStorage.removeItem(STORAGE_KEY);
+      updateCounters();
+      renderMarkdown();
+      statusEl.textContent = "Cleared";
+    });
+
+    function updateCounters() {
+      const text = input.value;
+      const lines = text.length ? text.split(/\r?\n/).length : 0;
+      lineCount.textContent = lines + " lines";
+      charCount.textContent = text.length + " chars";
+    }
+
+    function renderMarkdown() {
+      const source = input.value.trim();
+      if (!source) {
+        preview.innerHTML = '<p class="empty-state">Paste markdown into the editor and click Render preview.</p>';
+        return;
+      }
+
+      preview.innerHTML = parseMarkdown(source);
+      groupContent(preview);
+    }
+
+    function parseMarkdown(source) {
+      const normalized = source.replace(/\r\n?/g, "\n");
+      const lines = normalized.split("\n");
+      const out = [];
+      let i = 0;
+
+      while (i < lines.length) {
+        const line = lines[i];
+        const trimmed = line.trim();
+
+        if (!trimmed) {
+          i += 1;
+          continue;
+        }
+
+        if (/^#{1,3}\s+/.test(trimmed)) {
+          const level = trimmed.match(/^#+/)[0].length;
+          const text = trimmed.replace(/^#{1,3}\s+/, "");
+          out.push("<h" + level + ">" + parseInline(text) + "</h" + level + ">");
+          i += 1;
+          continue;
+        }
+
+        if (/^---+$/.test(trimmed)) {
+          out.push("<hr>");
+          i += 1;
+          continue;
+        }
+
+        if (isTableStart(lines, i)) {
+          const table = buildTable(lines, i);
+          out.push(table.html);
+          i = table.nextIndex;
+          continue;
+        }
+
+        if (/^\d+\.\s+/.test(trimmed)) {
+          const list = buildList(lines, i, "ol", /^\d+\.\s+/);
+          out.push(list.html);
+          i = list.nextIndex;
+          continue;
+        }
+
+        if (/^[A-Za-z]\.\s+/.test(trimmed)) {
+          const list = buildList(lines, i, "ol", /^[A-Za-z]\.\s+/, ' type="a"');
+          out.push(list.html);
+          i = list.nextIndex;
+          continue;
+        }
+
+        if (/^[-*+]\s+/.test(trimmed)) {
+          const list = buildList(lines, i, "ul", /^[-*+]\s+/);
+          out.push(list.html);
+          i = list.nextIndex;
+          continue;
+        }
+
+        const paragraph = [];
+        while (i < lines.length) {
+          const current = lines[i];
+          const currentTrimmed = current.trim();
+          if (!currentTrimmed) {
+            i += 1;
+            if (paragraph.length) {
+              break;
+            }
+            continue;
+          }
+          if (isBlockStart(lines, i)) {
+            break;
+          }
+          paragraph.push(parseInline(currentTrimmed));
+          i += 1;
+        }
+
+        if (paragraph.length) {
+          out.push("<p>" + paragraph.join(" ") + "</p>");
+        } else {
+          i += 1;
+        }
+      }
+
+      return out.join("\n");
+    }
+
+    function isBlockStart(lines, index) {
+      const trimmed = lines[index].trim();
+      if (!trimmed) {
+        return false;
+      }
+      return (
+        /^#{1,3}\s+/.test(trimmed) ||
+        /^---+$/.test(trimmed) ||
+        /^\d+\.\s+/.test(trimmed) ||
+        /^[A-Za-z]\.\s+/.test(trimmed) ||
+        /^[-*+]\s+/.test(trimmed) ||
+        isTableStart(lines, index)
+      );
+    }
+
+    function isTableStart(lines, index) {
+      if (index + 1 >= lines.length) {
+        return false;
+      }
+
+      const header = lines[index].trim();
+      const divider = lines[index + 1].trim();
+
+      return header.includes("|") && /^[:|\-\s]+$/.test(divider) && divider.includes("-");
+    }
+
+    function buildTable(lines, index) {
+      const rows = [];
+      let i = index;
+      while (i < lines.length && lines[i].trim().includes("|")) {
+        rows.push(splitTableRow(lines[i]));
+        i += 1;
+      }
+
+      const header = rows[0] || [];
+      const bodyRows = rows.slice(2);
+      const thead = "<thead><tr>" + header.map((cell) => "<th>" + parseInline(cell) + "</th>").join("") + "</tr></thead>";
+      const tbody = "<tbody>" + bodyRows.map((row) => "<tr>" + row.map((cell) => "<td>" + parseInline(cell) + "</td>").join("") + "</tr>").join("") + "</tbody>";
+
+      return {
+        html: "<table>" + thead + tbody + "</table>",
+        nextIndex: i
+      };
+    }
+
+    function splitTableRow(line) {
+      return line
+        .trim()
+        .replace(/^\|/, "")
+        .replace(/\|$/, "")
+        .split("|")
+        .map((cell) => cell.trim());
+    }
+
+    function buildList(lines, index, tagName, markerRegex, extraAttributes = "") {
+      const items = [];
+      let i = index;
+
+      while (i < lines.length) {
+        while (i < lines.length && !lines[i].trim()) {
+          i += 1;
+        }
+
+        if (i >= lines.length || !markerRegex.test(lines[i].trim())) {
+          break;
+        }
+
+        const firstLine = lines[i].trim().replace(markerRegex, "");
+        const itemParts = [parseInline(firstLine)];
+        i += 1;
+
+        while (i < lines.length) {
+          const current = lines[i];
+          const trimmed = current.trim();
+          if (!trimmed) {
+            i += 1;
+            break;
+          }
+          if (isBlockStart(lines, i)) {
+            break;
+          }
+          itemParts.push(parseInline(trimmed));
+          i += 1;
+        }
+
+        items.push("<li>" + itemParts.join(" ") + "</li>");
+      }
+
+      return {
+        html: "<" + tagName + extraAttributes + ">" + items.join("") + "</" + tagName + ">",
+        nextIndex: i
+      };
+    }
+
+    function parseInline(text) {
+      let html = escapeHtml(text);
+      html = html.replace(/`([^`]+)`/g, "<code>$1</code>");
+      html = html.replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>");
+      html = html.replace(/\*([^*]+)\*/g, "<em>$1</em>");
+      return html;
+    }
+
+    function escapeHtml(text) {
+      return text
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#39;");
+    }
+
+    function groupContent(container) {
+      const nodes = Array.from(container.childNodes);
+      container.innerHTML = "";
+
+      let currentTopic = null;
+      let currentQuestion = null;
+
+      for (const node of nodes) {
+        const tag = node.nodeType === Node.ELEMENT_NODE ? node.tagName : "";
+
+        if (tag === "H2") {
+          currentTopic = document.createElement("section");
+          currentTopic.className = "topic";
+          currentTopic.appendChild(node);
+          container.appendChild(currentTopic);
+          currentQuestion = null;
+          continue;
+        }
+
+        if (tag === "H3") {
+          currentQuestion = document.createElement("section");
+          currentQuestion.className = "question";
+          currentQuestion.appendChild(node);
+          (currentTopic || container).appendChild(currentQuestion);
+          continue;
+        }
+
+        (currentQuestion || currentTopic || container).appendChild(node);
+      }
+    }
+  </script>
+</body>
+</html>
