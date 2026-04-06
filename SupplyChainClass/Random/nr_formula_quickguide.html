@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>n(r) Quick Guide</title>
+  <style>
+    :root {
+      --bg: #f5f7fb;
+      --panel: #ffffff;
+      --ink: #18212f;
+      --muted: #5b6678;
+      --line: #d8dfeb;
+      --accent: #1f6feb;
+      --accent-soft: #eaf2ff;
+      --warn: #fff7e8;
+      --warn-line: #f0c36d;
+      --good: #eefbf3;
+      --good-line: #6ec58f;
+      --code: #0f172a;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(180deg, #f8fbff 0%, var(--bg) 100%);
+      color: var(--ink);
+      line-height: 1.45;
+    }
+
+    .wrap {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 28px 18px 40px;
+    }
+
+    h1,
+    h2,
+    h3 {
+      margin: 0 0 10px;
+      line-height: 1.15;
+    }
+
+    h1 {
+      font-size: 2rem;
+    }
+
+    h2 {
+      font-size: 1.25rem;
+      margin-top: 22px;
+    }
+
+    p {
+      margin: 0 0 12px;
+    }
+
+    .subtle {
+      color: var(--muted);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 18px;
+      box-shadow: 0 14px 40px rgba(15, 23, 42, 0.06);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      gap: 16px;
+      align-items: stretch;
+    }
+
+    .hero .panel:first-child {
+      background: linear-gradient(180deg, #ffffff 0%, #f6faff 100%);
+    }
+
+    .formula-box {
+      background: #fbfcff;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 12px;
+      margin: 12px 0;
+      overflow-x: auto;
+    }
+
+    .callout {
+      border-left: 4px solid var(--warn-line);
+      background: var(--warn);
+      padding: 12px 14px;
+      border-radius: 10px;
+    }
+
+    .success {
+      border-left: 4px solid var(--good-line);
+      background: var(--good);
+      padding: 12px 14px;
+      border-radius: 10px;
+    }
+
+    .steps {
+      margin: 12px 0 0;
+      padding-left: 20px;
+    }
+
+    .steps li {
+      margin-bottom: 8px;
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 10px 0 14px;
+    }
+
+    button {
+      border: 1px solid #b8caef;
+      background: #f7faff;
+      color: var(--ink);
+      border-radius: 999px;
+      padding: 9px 14px;
+      cursor: pointer;
+      font-size: 0.95rem;
+    }
+
+    button:hover {
+      background: var(--accent-soft);
+      border-color: #8ab0f8;
+    }
+
+    .active {
+      background: var(--accent);
+      color: #fff;
+      border-color: var(--accent);
+    }
+
+    .builder {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 12px;
+      margin-top: 10px;
+    }
+
+    label {
+      display: block;
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+
+    input {
+      width: 100%;
+      border: 1px solid #c7d3e6;
+      border-radius: 10px;
+      padding: 10px 12px;
+      font-size: 0.98rem;
+      color: var(--code);
+      background: #fff;
+    }
+
+    .small {
+      font-size: 0.9rem;
+    }
+
+    .tight p:last-child,
+    .tight ul:last-child,
+    .tight ol:last-child {
+      margin-bottom: 0;
+    }
+
+    code {
+      background: #eff3f9;
+      border-radius: 6px;
+      padding: 1px 6px;
+      font-family: Consolas, "Courier New", monospace;
+      font-size: 0.95em;
+    }
+
+    @media (max-width: 860px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+  <script>
+    const workedExamples = {
+      normal: `
+        <h3>Normal demand: use the shortcut</h3>
+        <div class="formula-box">
+          \\[
+          X_L \\sim N(\\mu_L,\\sigma_L^2), \\quad
+          n(r)=\\int_r^{\\infty}(x-r)f_L(x)\\,dx
+          \\]
+        </div>
+        <ol class="steps">
+          <li>Start with the general definition:
+            <div class="formula-box">\\[
+              n(r)=\\int_r^{\\infty}(x-r)\\frac{1}{\\sigma_L\\sqrt{2\\pi}}
+              e^{-\\frac{(x-\\mu_L)^2}{2\\sigma_L^2}}\\,dx
+            \\]</div>
+          </li>
+          <li>Standardize with \\(t=\\frac{x-\\mu_L}{\\sigma_L}\\), so \\(dx=\\sigma_L\\,dt\\), and let \\(z=\\frac{r-\\mu_L}{\\sigma_L}\\).</li>
+          <li>Then:
+            <div class="formula-box">\\[
+              n(r)=\\sigma_L\\int_z^{\\infty}(t-z)\\phi(t)\\,dt
+              = \\sigma_L L(z)
+            \\]</div>
+          </li>
+          <li>This is why the normal case gets the shortcut \\(n(r)=\\sigma_L L(z)\\).</li>
+        </ol>
+      `,
+      uniform: `
+        <h3>Uniform demand: integrate directly</h3>
+        <div class="formula-box">
+          \\[
+          X_L \\sim U[a,b], \\quad f_L(x)=\\frac{1}{b-a}, \\quad a\\le x\\le b
+          \\]
+        </div>
+        <ol class="steps">
+          <li>Write the general definition:
+            <div class="formula-box">\\[
+              n(r)=\\int_r^{\\infty}(x-r)f_L(x)\\,dx
+            \\]</div>
+          </li>
+          <li>Because the support stops at \\(b\\), replace \\(\\infty\\) with \\(b\\):
+            <div class="formula-box">\\[
+              n(r)=\\int_r^b (x-r)\\frac{1}{b-a}\\,dx
+            \\]</div>
+          </li>
+          <li>Now split by where \\(r\\) sits relative to the support.</li>
+        </ol>
+        <div class="formula-box">
+          \\[
+          n(r)=
+          \\begin{cases}
+            0, & r \\ge b \\\\
+            \\int_r^b \\frac{x-r}{b-a}\\,dx
+            = \\frac{(b-r)^2}{2(b-a)}, & a \\le r \\le b \\\\
+            \\int_a^b \\frac{x-r}{b-a}\\,dx
+            = \\frac{a+b}{2}-r, & r < a
+          \\end{cases}
+          \\]
+        </div>
+        <div class="success small">
+          This is the exact situation where you do <strong>not</strong> use \\(\\sigma_L L(z)\\). That shortcut is only for normal demand.
+        </div>
+      `,
+      exponential: `
+        <h3>Exponential demand: integrate directly</h3>
+        <div class="formula-box">
+          \\[
+          X_L \\sim \\text{Exp}(\\lambda), \\quad f_L(x)=\\lambda e^{-\\lambda x}, \\quad x\\ge 0
+          \\]
+        </div>
+        <ol class="steps">
+          <li>Use the general definition:
+            <div class="formula-box">\\[
+              n(r)=\\int_r^{\\infty}(x-r)\\lambda e^{-\\lambda x}\\,dx
+            \\]</div>
+          </li>
+          <li>If \\(r\\ge 0\\), the result is:
+            <div class="formula-box">\\[
+              n(r)=\\frac{e^{-\\lambda r}}{\\lambda}
+            \\]</div>
+          </li>
+          <li>If \\(r<0\\), then all support is above \\(r\\), so:
+            <div class="formula-box">\\[
+              n(r)=E[X_L]-r = \\frac{1}{\\lambda}-r
+            \\]</div>
+          </li>
+        </ol>
+      `
+    };
+
+    function escapeHtml(text) {
+      return text
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;");
+    }
+
+    function isInfinity(value) {
+      const clean = value.replace(/\s+/g, "").toLowerCase();
+      return ["inf", "infty", "\\infty", "infinity", "∞"].includes(clean);
+    }
+
+    function renderMath(target) {
+      if (window.MathJax && window.MathJax.typesetPromise) {
+        window.MathJax.typesetPromise([target]);
+      }
+    }
+
+    function showWorkedExample(name) {
+      const panel = document.getElementById("workedExample");
+      panel.innerHTML = workedExamples[name];
+
+      document.querySelectorAll(".example-btn").forEach((btn) => {
+        btn.classList.toggle("active", btn.dataset.example === name);
+      });
+
+      renderMath(panel);
+    }
+
+    function buildCustomSteps() {
+      const pdf = escapeHtml(document.getElementById("pdfInput").value.trim() || "f_L(x)");
+      const lower = escapeHtml(document.getElementById("lowerInput").value.trim() || "a");
+      const upperRaw = document.getElementById("upperInput").value.trim() || "b";
+      const mean = escapeHtml(document.getElementById("meanInput").value.trim() || "E[X_L]");
+      const upper = isInfinity(upperRaw) ? "\\infty" : escapeHtml(upperRaw);
+
+      const target = document.getElementById("customOutput");
+      let html = `
+        <h3>Step-by-step setup</h3>
+        <ol class="steps">
+          <li>Start from the definition:
+            <div class="formula-box">\\[
+              n(r)=\\int_r^{\\infty}(x-r)f_L(x)\\,dx
+            \\]</div>
+          </li>
+          <li>Plug in the pdf:
+            <div class="formula-box">\\[
+              n(r)=\\int_r^{\\infty}(x-r)\\left(${pdf}\\right)\\,dx
+            \\]</div>
+          </li>
+      `;
+
+      if (upper === "\\infty") {
+        html += `
+          <li>Use the support lower bound \\(${lower}\\):
+            <div class="formula-box">\\[
+              n(r)=\\int_{\\max(r,${lower})}^{\\infty}(x-r)\\left(${pdf}\\right)\\,dx
+            \\]</div>
+          </li>
+          <li>Case split:
+            <div class="formula-box">\\[
+              n(r)=
+              \\begin{cases}
+                \\int_r^{\\infty}(x-r)\\left(${pdf}\\right)\\,dx, & r\\ge ${lower} \\\\
+                \\int_${lower}^{\\infty}(x-r)\\left(${pdf}\\right)\\,dx = ${mean}-r, & r<${lower}
+              \\end{cases}
+            \\]</div>
+          </li>
+        `;
+      } else {
+        html += `
+          <li>Intersect with the support \\([${lower},${upper}]\\):
+            <div class="formula-box">\\[
+              n(r)=\\int_{\\max(r,${lower})}^{${upper}}(x-r)\\left(${pdf}\\right)\\,dx
+            \\]</div>
+          </li>
+          <li>Case split:
+            <div class="formula-box">\\[
+              n(r)=
+              \\begin{cases}
+                0, & r\\ge ${upper} \\\\
+                \\int_r^{${upper}}(x-r)\\left(${pdf}\\right)\\,dx, & ${lower}\\le r<${upper} \\\\
+                \\int_${lower}^{${upper}}(x-r)\\left(${pdf}\\right)\\,dx = ${mean}-r, & r<${lower}
+              \\end{cases}
+            \\]</div>
+          </li>
+        `;
+      }
+
+      html += `
+          <li>Evaluate that integral. If it is normal, this collapses to \\(\\sigma_L L(z)\\). If it is not normal, keep integrating directly.</li>
+        </ol>
+      `;
+
+      target.innerHTML = html;
+      renderMath(target);
+    }
+
+    window.addEventListener("DOMContentLoaded", () => {
+      showWorkedExample("uniform");
+      buildCustomSteps();
+    });
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div class="wrap">
+    <div class="hero">
+      <section class="panel tight">
+        <h1>n(r) in 2 Minutes</h1>
+        <p class="subtle">Fast exam version: the formula always starts from the same definition. Only the pdf and support change.</p>
+        <div class="formula-box">
+          \[
+          n(r)=E[(X_L-r)^+]=\int_r^{\infty}(x-r)f_L(x)\,dx
+          \]
+        </div>
+        <div class="callout small">
+          If demand is <strong>normal</strong>, use the shortcut
+          <code>n(r) = sigma_L L(z)</code>.
+          If demand is <strong>not normal</strong>, go back to the integral.
+        </div>
+      </section>
+
+      <section class="panel tight">
+        <h2>Exam Shortcuts</h2>
+        <ol class="steps">
+          <li>Write the support of demand during lead time.</li>
+          <li>Start from <code>n(r) = integral of (x-r)f(x)</code>.</li>
+          <li>Trim the limits to the actual support.</li>
+          <li>If <code>r</code> is below the whole support, use <code>n(r)=E[X_L]-r</code>.</li>
+          <li>If the problem gives Type II service level, use <code>n(r)=(1-beta)q</code>.</li>
+        </ol>
+        <p class="small subtle">For a discrete distribution, replace the integral with
+          <code>sum over x&gt;r of (x-r)P(X=x)</code>.
+        </p>
+      </section>
+    </div>
+
+    <div class="grid">
+      <section class="panel tight">
+        <h2>General Recipe</h2>
+        <ol class="steps">
+          <li>Identify the lead-time demand random variable <code>X_L</code>.</li>
+          <li>Write its pdf <code>f_L(x)</code> and support.</li>
+          <li>Start with:
+            <div class="formula-box">
+              \[
+              n(r)=\int_r^{\infty}(x-r)f_L(x)\,dx
+              \]
+            </div>
+          </li>
+          <li>Replace the limits with the actual support.</li>
+          <li>Split into cases if <code>r</code> can be below, inside, or above the support.</li>
+          <li>Integrate and simplify.</li>
+        </ol>
+      </section>
+
+      <section class="panel tight">
+        <h2>Why the Limits Change</h2>
+        <div class="formula-box">
+          \[
+          n(r)=\int_r^{\infty}(x-r)f_L(x)\,dx
+          \]
+        </div>
+        <p>If the support is <code>[a,b]</code>, then <code>f_L(x)=0</code> outside that interval, so:</p>
+        <div class="formula-box">
+          \[
+          n(r)=\int_{\max(r,a)}^b (x-r)f_L(x)\,dx
+          \]
+        </div>
+        <div class="success small">
+          This is the key idea for uniform distributions and any other bounded distribution.
+        </div>
+      </section>
+    </div>
+
+    <section class="panel tight">
+      <h2>Worked Examples</h2>
+      <div class="button-row">
+        <button class="example-btn" data-example="uniform" onclick="showWorkedExample('uniform')">Uniform</button>
+        <button class="example-btn" data-example="normal" onclick="showWorkedExample('normal')">Normal</button>
+        <button class="example-btn" data-example="exponential" onclick="showWorkedExample('exponential')">Exponential</button>
+      </div>
+      <div id="workedExample"></div>
+    </section>
+
+    <section class="panel tight">
+      <h2>Build the Setup for Your Distribution</h2>
+      <p class="subtle">This part writes the correct step-by-step integral setup for any continuous pdf you enter.</p>
+      <div class="builder">
+        <div>
+          <label for="pdfInput">PDF \(f_L(x)\) in LaTeX</label>
+          <input id="pdfInput" value="\frac{1}{b-a}">
+        </div>
+        <div>
+          <label for="lowerInput">Support lower bound</label>
+          <input id="lowerInput" value="a">
+        </div>
+        <div>
+          <label for="upperInput">Support upper bound</label>
+          <input id="upperInput" value="b">
+        </div>
+        <div>
+          <label for="meanInput">Mean \(E[X_L]\) for the shortcut case \(r &lt; \text{lower bound}\)</label>
+          <input id="meanInput" value="\mu_L">
+        </div>
+      </div>
+      <div class="button-row">
+        <button onclick="buildCustomSteps()">Build steps</button>
+      </div>
+      <div id="customOutput"></div>
+    </section>
+  </div>
+</body>
+</html>
