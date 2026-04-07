@@ -1,7 +1,29 @@
 # L10 Schedule Design
 
 
-### Machine Assignment Problem
+## Reject Allowance Problem
+Pick lot size Q to maximize expected profit when good output x is random (one-shot job, no rerun).
+- Q = lot size scheduled (decision)
+- x = good units produced (random)
+- p(x|Q) = prob of x good given Q (column in table)
+- L = min good units customer accepts (else refused)
+- U = max good units customer pays for (extras salvage)
+- c = cost per unit scheduled
+- s = salvage per scrap or excess good unit
+- r = price per good unit sold
+### Step 1: Revenue R(Q,x) piecewise on x
+R = sQ                if x < L   (refused, salvage all Q)
+R = rx + s(Q - x)     if L <= x <= U
+R = rU + s(Q - U)     if x > U
+### Step 2: Expected profit per Q (cost = cQ)
+For each filled cell in column Q, compute (R - cQ) * p.
+Sum the column. Pick the Q with the highest sum.
+### Probability of losing money at Q*
+In the column for Q*, find cells where profit is negative.
+Sum those cells' probabilities. That sum = P(loss).
+
+
+## Machine Assignment Problem
 Identify variables a, b, t for one machine operation cycle:
 - a = coupled time (operator + machine on THE SAME task)
 - b = operator-only time (machine not needed for this task)
