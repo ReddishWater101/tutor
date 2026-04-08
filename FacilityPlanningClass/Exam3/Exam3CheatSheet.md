@@ -46,6 +46,37 @@ Pick m with lowest TC. Units dont matter as long as uniform.
 # L11 Break Even Analysis
 
 
+## Investment Evaluation (ROI / PBP / NPV)
+Evaluate a capital investment over N years vs the existing or alternative cashflow.
+- C = initial cost of investment (paid year 0)
+- S = salvage value at end of year N
+- N = planning horizon (years)
+- i = discount rate (given: bond rate, required return, WACC)
+- CF_old(t) = cashflow without investment, year t
+- CF_new(t) = cashflow with investment, year t
+- G(t) = gain from investment in year t
+### Step 1: Build the gain column G(t)
+G(t) = CF_new(t) - CF_old(t)
+If problem says investment boosts cashflow by r%:
+G(t) = r * CF_old(t)
+This G(t) column feeds Steps 2-4.
+### Step 2: ROI (return on investment)
+TG = sum of G(t) for t = 1..N
+ROI = (TG + S - C) / C
+### Step 3: PBP (payback period)
+Subtract G(t) from C cumulatively until C is recovered.
+Let k = last full year still short, R = leftover unpaid.
+PBP=k+(R/G(k+1))
+Salvage NOT counted unless told otherwise.
+### Step 4: NPV (net present value)
+PV(t) = G(t) / (1 + i)^t       for t = 1..N
+For year N add salvage:
+PV(N) = (G(N) + S) / (1 + i)^N
+TPV = sum of PV(t)
+NPV = TPV - C
+NPV > 0 means it beats the discount rate.
+
+
 # L12-A Minisum
 
 
