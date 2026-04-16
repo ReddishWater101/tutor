@@ -100,10 +100,10 @@ Place new facility to minimize the maximum rectilinear distance to any existing 
 - z* = minimax distance (smallest possible worst case)
 - No weights in this problem
 ### Step 1: Compute four corner constants
-c1 = min(a_i + b_i)    over all facilities i
-c2 = max(a_i + b_i)
-c3 = min(-a_i + b_i)
-c4 = max(-a_i + b_i)
+c1 = min(a_1+b_1, ..., a_i+b_i)
+c2 = max(a_1+b_1, ..., a_i+b_i)
+c3 = min(-a_1+b_1, ..., -a_i+b_i)
+c4 = max(-a_1+b_1, ..., -a_i+b_i)
 ### Step 2: Compute c5
 c5 = max(c2 - c1, c4 - c3)
 ### Step 3: Maximum distance z*
@@ -123,20 +123,23 @@ Find earliest/latest times and the critical path from a precedence table.
 - Predecessors = activities that must finish before this one starts
 - Successors = activities that cannot start until this one finishes
 - T = total project duration
+On your diagram, label each activity with ET(ES, EF) above
+and LT(LS, LF) below as you work through the steps.
 ### Step 1: Forward pass (left to right)
 Process activities so all predecessors are computed first.
 ES = 0                             if no predecessors
 ES = max(EF of all predecessors)   otherwise
 EF = ES + duration
-T = max(EF) across all activities = project duration
+Write ET(ES, EF) on each activity. T = max(EF) = project duration.
 ### Step 2: Backward pass (right to left)
 Process activities so all successors are computed first.
 LF = T                             if no successors
 LF = min(LS of all successors)     otherwise
 LS = LF - duration
+Write LT(LS, LF) on each activity.
 ### Step 3: Slack and critical path
 Slack = LS - ES   (equivalently LF - EF)
-Critical path = all activities with Slack = 0.
+Critical path = all activities with Slack = 0 (i.e., ET = LT).
 It is the longest path through the network; its length = T.
 
 # L14 Ergonomic Considerations
