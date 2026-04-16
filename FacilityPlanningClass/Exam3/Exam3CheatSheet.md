@@ -73,92 +73,85 @@ NPV > 0 means it beats the discount rate.
 # L12-A Minisum
 ## Minisum Facility Location
 Place new facility to minimize total weighted rectilinear distance to existing sites.
-- (x_i, y_i) = location of existing facility i (given)
-- w_i = weight of facility i (given: trips, time, volume)
+- (a_i, b_i) = location of existing facility i (given)
+- w_i = weight of facility i (trips, time, volume)
 - (x*, y*) = new facility location (find this)
 - z* = total weighted distance at optimum
-- Rectilinear dist from new to i: |x* - x_i| + |y* - y_i|
-### Step 1: Find x* (weighted median of x-coords)
-Rectilinear distance lets you solve x and y independently.
-1. Sort all facilities by x-coordinate (ascending)
-2. List each weight w_i in that sorted order
-3. Cumulate weights top to bottom
-4. W = total weight; find first row where cumulative >= W/2
-5. x* = that row's x-coordinate
-If cumulative hits exactly W/2, any x between that row's
-and the next row's x-coordinate is optimal.
-### Step 2: Find y* (weighted median of y-coords)
-Repeat Step 1 sorting by y-coordinate instead.
+- W = sum of all w_i
+### Step 1: Find x* (cumulative weight algorithm)
+Sort facilities by a_i (x-coord) in ascending order.
+List w_i in that sorted order, cumulate top to bottom.
+x* = a_i of the first row where cumulative >= W/2.
+If cumulative hits exactly W/2, any x between that row's a_i
+and the next row's a_i is also optimal.
+### Step 2: Find y* (same algorithm on y)
+Sort facilities by b_i (y-coord) in ascending order.
+List w_i in that order, cumulate, find first row >= W/2.
+y* = b_i of that row.
 ### Step 3: Objective value z*
-z* = sum of w_i * (|x* - x_i| + |y* - y_i|) for all i
+z* = sum of w_i * (|x* - a_i| + |y* - b_i|) for all i
 Compute each facility's weighted distance, then sum.
 
 # L12-B Minimax
 ## Minimax Facility Location
 Place new facility to minimize the maximum rectilinear distance to any existing facility.
-- (x_i, y_i) = location of existing facility i (given)
-- (x*, y*) = new facility location (find this)
-- z* = minimax distance (smallest possible worst-case)
+- (a_i, b_i) = location of existing facility i (given)
+- (x*, y*) = new facility location (often a line segment, not a point)
+- z* = minimax distance (smallest possible worst case)
 - No weights in this problem
-### Step 1: Transform coordinates
-u_i = x_i + y_i,  v_i = x_i - y_i   for each facility
-This converts rectilinear distance into max(|u - u_i|, |v - v_i|).
-### Step 2: Ranges and half-ranges
-u_max, u_min = largest and smallest u_i
-v_max, v_min = largest and smallest v_i
-R_u = (u_max - u_min) / 2
-R_v = (v_max - v_min) / 2
-### Step 3: Minimax distance
-z* = max(R_u, R_v)
-### Step 4: Optimal line segment in (u,v)
-u_mid = (u_max + u_min) / 2
-v_mid = (v_max + v_min) / 2
-If R_u > R_v: u* = u_mid, v* in [v_mid-(R_u-R_v), v_mid+(R_u-R_v)]
-If R_v > R_u: v* = v_mid, u* in [u_mid-(R_v-R_u), u_mid+(R_v-R_u)]
-If R_u = R_v: single optimal point (u_mid, v_mid)
-### Step 5: Convert back to (x,y)
-x = (u + v) / 2,  y = (u - v) / 2
-Plug endpoints of the (u,v) segment to get (x,y) endpoints.
-
+### Step 1: Compute four corner constants
+c1 = min(a_i + b_i)    over all facilities i
+c2 = max(a_i + b_i)
+c3 = min(-a_i + b_i)
+c4 = max(-a_i + b_i)
+### Step 2: Compute c5
+c5 = max(c2 - c1, c4 - c3)
+### Step 3: Maximum distance z*
+z* = c5 / 2
+### Step 4: Optimal line segment endpoints
+A = ((c1 - c3)/2, (c1 + c3 + c5)/2)
+B = ((c2 - c4)/2, (c2 + c4 - c5)/2)
+The optimal new facility is anywhere on the segment from A to B.
+If A = B, the optimum is a single point.
 
 # L13 Project Management
 ## Critical Path Method (CPM)
-Find the critical path and earliest/latest times from a precedence table.
+Find earliest/latest times and the critical path from a precedence table.
 - ES = early start, EF = early finish of an activity
 - LS = late start, LF = late finish of an activity
 - Slack = how much an activity can delay without delaying the project
 - Predecessors = activities that must finish before this one starts
 - Successors = activities that cannot start until this one finishes
+- T = total project duration
 ### Step 1: Forward pass (left to right)
 Process activities so all predecessors are computed first.
 ES = 0                             if no predecessors
-ES = max(EF of all predecessors)   if has predecessors
+ES = max(EF of all predecessors)   otherwise
 EF = ES + duration
-The largest EF across all activities = project duration T.
+T = max(EF) across all activities = project duration
 ### Step 2: Backward pass (right to left)
 Process activities so all successors are computed first.
 LF = T                             if no successors
-LF = min(LS of all successors)     if has successors
+LF = min(LS of all successors)     otherwise
 LS = LF - duration
-### Step 3: Slack
+### Step 3: Slack and critical path
 Slack = LS - ES   (equivalently LF - EF)
-### Step 4: Critical path
-All activities with Slack = 0 form the critical path.
+Critical path = all activities with Slack = 0.
 It is the longest path through the network; its length = T.
 
 # L14 Ergonomic Considerations
 ## Ergonomic Risk Factors
-Identify hazards in a workplace task and propose design fixes.
-Common risk factors (match whichever apply to the scenario):
+Identify hazards in a workplace task, then propose two design fixes per hazard.
+Match whichever risk factors apply to the scenario:
 - Forceful exertion: heavy lifting, pushing, pulling, gripping
-  Fixes: mechanical assists (lifts, dollies, conveyors), reduce load size
+  Fixes: mechanical assists (lifts, dollies, conveyors); reduce load size
 - Awkward posture: bending, twisting, reaching overhead or below knees
-  Fixes: adjustable work height, bring work to waist level
-- Repetitive motion: same movement cycle repeated frequently
-  Fixes: job rotation, automate the repetitive task
+  Fixes: adjustable work height; bring work to waist level
+- Repetitive motion: same cycle repeated frequently
+  Fixes: job rotation; automate the repetitive task
 - Contact stress: body pressing against hard edges or surfaces
-  Fixes: padded handles/edges, anti-fatigue mats
+  Fixes: padded handles/edges; anti-fatigue mats
 - Static posture: holding one position for extended time
-  Fixes: sit-stand workstations, scheduled rest/stretch breaks
+  Fixes: sit-stand workstations; scheduled rest/stretch breaks
 - Vibration: prolonged use of vibrating tools or vehicles
-  Fixes: vibration-dampened tools/seats, limit exposure time
+  Fixes: vibration-dampened tools/seats; limit exposure time
