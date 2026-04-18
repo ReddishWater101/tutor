@@ -1,28 +1,46 @@
 # L10 Schedule Design
 ## Scrap Estimates (Series Yield)
-Scale initial material up so scrap at each machine still leaves O_n good units.
-- Pk = scrap rate at machine k
-- yk = 1 - Pk = yield at machine k
-- O_n = required good output
-- I1 = O_n / (y1 * y2 * ... * yn)
-### Quantity entering machine k
-Qk = O_n / (yk * y(k+1) * ... * yn)
-Use Qk as Q in Machine Fractions below.
-### Fallback path (failures rerouted to a backup)
-If failures at k route to backup b with yield yb:
-y_k_eff = yk + (1 - yk) * yb
-Substitute y_k_eff for yk in the series product.
+Find initial input I1 so that n operations in series still deliver O_n good units after scrap at each step.
+- n = number of operations in series (machine 1 -> 2 -> ... -> n)
+- P_k = scrap rate at machine k (fraction defective)
+- y_k = 1 - P_k = yield at machine k (fraction passing)
+- O_n = required good output (customer demand)
+- I1 = initial input to machine 1 (find this)
+- Q_k = quantity entering machine k (feeds Machine Fractions)
+### Step 1: Get each yield y_k
+If the problem gives scrap rate P_k, set y_k = 1 - P_k.
+If the problem already gives a yield number (e.g., 0.95), use it directly as y_k.
+### Step 2: Handle any fallback path
+If failures at machine k are rerouted to a backup with yield y_b:
+y_k_eff = y_k + (1 - y_k) * y_b
+Replace y_k with y_k_eff for the rest of the problem.
+### Step 3: Compute the initial input I1
+I1 = O_n / (y_1 * y_2 * ... * y_n)
+Round up to the next whole unit. That is the material to start.
+### Step 4: Compute Q_k entering each machine
+Q_k = O_n / (y_k * y_(k+1) * ... * y_n)
+So Q_1 = I1 and Q_n = O_n / y_n. Carry these Q_k into Machine Fractions.
 
 ## Machine Fractions
-Number of machines of each type needed to meet demand.
-- S = standard time per unit on that machine
-- Q = quantity entering that machine (Qk from Scrap)
-- E = historical efficiency (rate vs std, 0-1)
-- R = availability / reliability (fraction uptime, 0-1)
-- H = total hours available per period
-- F = SQ / (E * R * H)
-If multiple % multipliers are given (availability fraction AND efficiency), put all in the denominator. Keep time units consistent.
-Round F up to the next integer. If a part visits the same machine twice, sum its contributions before rounding.
+Compute the number of machines F_k of each type needed to meet demand.
+- k = machine index (A, B, ...)
+- Q_k = quantity entering machine k (from Scrap Step 4)
+- S_k = standard time per unit on machine k
+- H_k = total hours available per period on machine k
+- E_k = historical efficiency (actual rate / std rate)
+- R_k = availability / reliability (fraction of H_k up)
+- F_k = number of machines of type k needed
+### Step 1: Gather inputs and match units
+Pull Q_k from Scrap Step 4; S_k, H_k, E_k, R_k from the problem table.
+Convert every percentage to a decimal (85% -> 0.85).
+Make S_k and H_k share a time unit (both hr or both min).
+### Step 2: Apply the formula
+F_k = (Q_k * S_k) / (H_k * E_k * R_k)
+Put EVERY given % multiplier (availability fraction, efficiency, reliability, ...) into the denominator as a product. If one of them is not given, just drop it.
+### Step 3: Round up to integer machines
+Number of machines of type k = ceil(F_k).
+### Step 4: Multi-visit routes (e.g., A -> B -> A)
+If a part visits machine k more than once, compute (Q * S) / (H_k * E * R) for EACH visit using that visit's own Q, S, E, R. Sum the visits, THEN round up.
 
 ## Reject Allowance Problem
 Pick lot size Q to maximize expected profit when good output x is random (one-shot job, no rerun).

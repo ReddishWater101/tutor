@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Minisum · Minimax</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { height: 100%; }
+  body {
+    font-family: -apple-system, 'Segoe UI', system-ui, Roboto, sans-serif;
+    background: #1a2332;
+    color: #faf7f2;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding: 1.25rem;
+  }
+  header { text-align: center; margin-bottom: 1rem; }
+  header h1 {
+    font-size: 1.25rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #e87722;
+  }
+  header p {
+    font-size: 0.78rem;
+    color: #6b7280;
+    margin-top: 0.25rem;
+    font-family: monospace;
+  }
+  main {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  @media (max-width: 900px) {
+    main { grid-template-columns: 1fr; }
+  }
+  .panel {
+    background: #232e42;
+    border-radius: 12px;
+    padding: 0.75rem;
+    display: flex;
+    flex-direction: column;
+  }
+  .panel h2 {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #9ca8bd;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+  }
+  .panel h2 .formula {
+    font-family: monospace;
+    color: #e87722;
+    text-transform: none;
+    letter-spacing: 0;
+    font-weight: 700;
+    font-size: 0.95rem;
+  }
+  .stage {
+    position: relative;
+    aspect-ratio: 1 / 1;
+    background: #141c2b;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: crosshair;
+    touch-action: none;
+    user-select: none;
+  }
+  .stage.on-dot { cursor: pointer; }
+  canvas { display: block; width: 100%; height: 100%; }
+  .readout {
+    position: absolute;
+    left: 0.75rem;
+    bottom: 0.75rem;
+    background: rgba(20, 28, 43, 0.9);
+    padding: 0.45rem 0.7rem;
+    border-radius: 6px;
+    font-family: monospace;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #e87722;
+    border: 1px solid #3a4560;
+    min-width: 115px;
+  }
+  .readout span.label {
+    font-size: 0.7rem;
+    color: #9ca8bd;
+    display: block;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.1rem;
+    font-weight: 500;
+  }
+  .opt-readout {
+    position: absolute;
+    right: 0.75rem;
+    bottom: 0.75rem;
+    background: rgba(20, 28, 43, 0.9);
+    padding: 0.45rem 0.7rem;
+    border-radius: 6px;
+    font-family: monospace;
+    font-size: 0.85rem;
+    color: #22c55e;
+    border: 1px solid #3a4560;
+    min-width: 115px;
+    text-align: right;
+  }
+  .opt-readout span.label {
+    font-size: 0.65rem;
+    color: #9ca8bd;
+    display: block;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.1rem;
+  }
+  .stage .hint {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    background: rgba(20, 28, 43, 0.85);
+    padding: 0.3rem 0.55rem;
+    border-radius: 5px;
+    font-family: monospace;
+    font-size: 0.7rem;
+    color: #9ca8bd;
+    border: 1px solid #3a4560;
+    letter-spacing: 0.03em;
+    pointer-events: none;
+  }
+  footer {
+    text-align: center;
+    margin-top: 1rem;
+    font-family: monospace;
+    font-size: 0.72rem;
+    color: #6b7280;
+    letter-spacing: 0.08em;
+  }
+  footer .key { color: #e87722; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Facility Location</h1>
+  <p>rectilinear · move cursor · click to add · click dot to remove</p>
+</header>
+
+<main>
+  <div class="panel">
+    <h2>Minisum <span class="formula">Σ wᵢ·dᵢ</span></h2>
+    <div class="stage" id="ms-stage">
+      <canvas id="ms" width="540" height="540"></canvas>
+      <div class="hint">new pts: w = 5</div>
+      <div class="readout"><span class="label">z</span><span id="ms-val">—</span></div>
+      <div class="opt-readout"><span class="label">optimum</span><span id="ms-opt">—</span></div>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h2>Minimax <span class="formula">max dᵢ</span></h2>
+    <div class="stage" id="mx-stage">
+      <canvas id="mx" width="540" height="540"></canvas>
+      <div class="hint">no weights</div>
+      <div class="readout"><span class="label">max d</span><span id="mx-val">—</span></div>
+      <div class="opt-readout"><span class="label">optimum z*</span><span id="mx-opt">—</span></div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <span class="key">blue</span> low · <span class="key">red</span> high · cursor = candidate · green = optimum
+</footer>
+
+<script>
+/* =====================================================================
+   Minisum · Minimax — interactive visualizations
+   Click empty space → add facility (snaps to integer grid)
+   Click an existing facility → remove it
+   ===================================================================== */
+
+const CSIZE = 540;
+const PADDING = 34;
+
+const CLR = {
+  bg: '#141c2b', grid: '#2a3347', axis: '#4b5369',
+  ink: '#e6eaf2', muted: '#9ca8bd',
+  orange: '#e87722', green: '#22c55e', red: '#ef4444',
+  blue: '#3b82f6', amber: '#f59e0b', teal: '#14b8a6'
+};
+
+const COLOR_POOL = [
+  '#22c55e', '#ef4444', '#3b82f6', '#f59e0b',
+  '#14b8a6', '#a855f7', '#ec4899', '#84cc16',
+  '#06b6d4', '#f97316'
+];
+
+function pickColor(list) {
+  const used = new Set(list.map(f => f.color));
+  for (const c of COLOR_POOL) if (!used.has(c)) return c;
+  return COLOR_POOL[list.length % COLOR_POOL.length];
+}
+
+/* ---------- Heatmap palette (low → high) ---------- */
+const HEAT_STOPS = [
+  { t: 0.00, c: [ 38,  52,  86] },
+  { t: 0.30, c: [ 30, 100, 135] },
+  { t: 0.55, c: [145, 160, 105] },
+  { t: 0.80, c: [232, 155,  75] },
+  { t: 1.00, c: [225,  80,  60] }
+];
+function heat(t) {
+  t = Math.max(0, Math.min(1, t));
+  for (let i = 0; i < HEAT_STOPS.length - 1; i++) {
+    const a = HEAT_STOPS[i], b = HEAT_STOPS[i + 1];
+    if (t <= b.t) {
+      const lt = (t - a.t) / (b.t - a.t);
+      return [
+        Math.round(a.c[0] + (b.c[0] - a.c[0]) * lt),
+        Math.round(a.c[1] + (b.c[1] - a.c[1]) * lt),
+        Math.round(a.c[2] + (b.c[2] - a.c[2]) * lt)
+      ];
+    }
+  }
+  return HEAT_STOPS[HEAT_STOPS.length - 1].c;
+}
+
+/* ---------- Coordinate transform ---------- */
+function makeXform(bounds) {
+  const W = CSIZE - PADDING * 2, H = CSIZE - PADDING * 2;
+  const dx = bounds.xMax - bounds.xMin, dy = bounds.yMax - bounds.yMin;
+  return {
+    px: x => PADDING + (x - bounds.xMin) / dx * W,
+    py: y => PADDING + H - (y - bounds.yMin) / dy * H,
+    wx: px => bounds.xMin + (px - PADDING) / W * dx,
+    wy: py => bounds.yMax - (py - PADDING) / H * dy,
+    inPlot: (px, py) => px >= PADDING && px <= CSIZE - PADDING
+                     && py >= PADDING && py <= CSIZE - PADDING
+  };
+}
+
+/* ---------- Heatmap builder ---------- */
+function buildHeatmap(ctx, xform, valueFn) {
+  const img = ctx.createImageData(CSIZE, CSIZE);
+  const d = img.data;
+
+  let vmin = Infinity, vmax = -Infinity;
+  for (let py = PADDING; py < CSIZE - PADDING; py += 4) {
+    for (let px = PADDING; px < CSIZE - PADDING; px += 4) {
+      const v = valueFn(xform.wx(px), xform.wy(py));
+      if (v < vmin) vmin = v;
+      if (v > vmax) vmax = v;
+    }
+  }
+  const span = vmax - vmin || 1;
+
+  for (let py = 0; py < CSIZE; py++) {
+    for (let px = 0; px < CSIZE; px++) {
+      const i = (py * CSIZE + px) * 4;
+      if (px < PADDING || px >= CSIZE - PADDING ||
+          py < PADDING || py >= CSIZE - PADDING) {
+        d[i] = 20; d[i+1] = 28; d[i+2] = 43; d[i+3] = 255;
+        continue;
+      }
+      const v = valueFn(xform.wx(px), xform.wy(py));
+      const t = (v - vmin) / span;
+      const [r, g, b] = heat(t);
+      d[i] = r; d[i+1] = g; d[i+2] = b; d[i+3] = 235;
+    }
+  }
+  return img;
+}
+
+/* ---------- Drawing helpers ---------- */
+function drawGrid(ctx, xform, bounds, stepX, stepY) {
+  ctx.save();
+  ctx.strokeStyle = CLR.grid;
+  ctx.lineWidth = 0.5;
+  ctx.globalAlpha = 0.5;
+  for (let x = Math.ceil(bounds.xMin); x <= bounds.xMax; x++) {
+    ctx.beginPath();
+    ctx.moveTo(xform.px(x), xform.py(bounds.yMin));
+    ctx.lineTo(xform.px(x), xform.py(bounds.yMax));
+    ctx.stroke();
+  }
+  for (let y = Math.ceil(bounds.yMin); y <= bounds.yMax; y++) {
+    ctx.beginPath();
+    ctx.moveTo(xform.px(bounds.xMin), xform.py(y));
+    ctx.lineTo(xform.px(bounds.xMax), xform.py(y));
+    ctx.stroke();
+  }
+  ctx.restore();
+
+  ctx.save();
+  ctx.fillStyle = CLR.muted;
+  ctx.font = '10px ui-monospace, Consolas, monospace';
+  ctx.textAlign = 'center';
+  for (let x = bounds.xMin; x <= bounds.xMax; x += stepX) {
+    ctx.fillText(String(x), xform.px(x), xform.py(bounds.yMin) + 15);
+  }
+  ctx.textAlign = 'right';
+  for (let y = bounds.yMin; y <= bounds.yMax; y += stepY) {
+    ctx.fillText(String(y), xform.px(bounds.xMin) - 6, xform.py(y) + 3);
+  }
+  ctx.restore();
+}
+
+function drawL(ctx, xform, from, toA, toB, color, width, alpha) {
+  const fpx = xform.px(from.x), fpy = xform.py(from.y);
+  const tpx = xform.px(toA), tpy = xform.py(toB);
+  ctx.save();
+  ctx.strokeStyle = color;
+  ctx.lineWidth = width;
+  ctx.globalAlpha = alpha;
+  ctx.lineCap = 'round';
+  ctx.lineJoin = 'round';
+  ctx.beginPath();
+  ctx.moveTo(fpx, fpy);
+  ctx.lineTo(fpx, tpy);
+  ctx.lineTo(tpx, tpy);
+  ctx.stroke();
+  ctx.restore();
+}
+
+function drawCursor(ctx, xform, pos) {
+  const px = xform.px(pos.x), py = xform.py(pos.y);
+  ctx.save();
+  ctx.strokeStyle = CLR.orange;
+  ctx.lineWidth = 1.5;
+  ctx.setLineDash([4, 3]);
+  ctx.beginPath(); ctx.arc(px, py, 18, 0, Math.PI * 2); ctx.stroke();
+  ctx.setLineDash([]);
+  ctx.fillStyle = CLR.orange;
+  ctx.beginPath(); ctx.arc(px, py, 6, 0, Math.PI * 2); ctx.fill();
+  ctx.strokeStyle = '#fff'; ctx.lineWidth = 2; ctx.stroke();
+  ctx.strokeStyle = CLR.orange; ctx.lineWidth = 1;
+  ctx.globalAlpha = 0.4;
+  ctx.beginPath();
+  ctx.moveTo(px - 22, py); ctx.lineTo(px - 12, py);
+  ctx.moveTo(px + 12, py); ctx.lineTo(px + 22, py);
+  ctx.moveTo(px, py - 22); ctx.lineTo(px, py - 12);
+  ctx.moveTo(px, py + 12); ctx.lineTo(px, py + 22);
+  ctx.stroke();
+  ctx.restore();
+}
+
+function drawFacility(ctx, xform, f, showWeight, haloRed) {
+  const px = xform.px(f.a), py = xform.py(f.b);
+  ctx.save();
+  if (haloRed) {
+    ctx.strokeStyle = CLR.red;
+    ctx.lineWidth = 2;
+    ctx.setLineDash([3, 3]);
+    ctx.beginPath(); ctx.arc(px, py, 18, 0, Math.PI * 2); ctx.stroke();
+    ctx.setLineDash([]);
+  }
+  ctx.shadowColor = f.color;
+  ctx.shadowBlur = 12;
+  ctx.fillStyle = f.color;
+  ctx.beginPath(); ctx.arc(px, py, 11, 0, Math.PI * 2); ctx.fill();
+  ctx.restore();
+  ctx.strokeStyle = '#fff';
+  ctx.lineWidth = 2.5;
+  ctx.beginPath(); ctx.arc(px, py, 11, 0, Math.PI * 2); ctx.stroke();
+  if (showWeight) {
+    ctx.fillStyle = '#fff';
+    ctx.font = 'bold 11px ui-monospace, Consolas, monospace';
+    ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+    ctx.fillText(String(f.w), px, py + 0.5);
+  }
+}
+
+/* ---------- Click/hover detection ---------- */
+function findFacilityNear(list, xform, cx, cy, tol) {
+  tol = tol || 16;
+  for (let i = 0; i < list.length; i++) {
+    const f = list[i];
+    const dx = xform.px(f.a) - cx, dy = xform.py(f.b) - cy;
+    if (dx * dx + dy * dy <= tol * tol) return i;
+  }
+  return -1;
+}
+
+function clientToPlotPx(canvas, clientX, clientY) {
+  const rect = canvas.getBoundingClientRect();
+  return {
+    cx: (clientX - rect.left) * (CSIZE / rect.width),
+    cy: (clientY - rect.top) * (CSIZE / rect.height)
+  };
+}
+
+/* =====================================================================
+   MINISUM state
+   ===================================================================== */
+const MS_BOUNDS = { xMin: 0, xMax: 15, yMin: 0, yMax: 10 };
+const MS_FAC = [
+  { a: 8,  b: 5, w: 9,  color: '#22c55e' },
+  { a: 4,  b: 2, w: 6,  color: '#ef4444' },
+  { a: 11, b: 8, w: 4,  color: '#3b82f6' },
+  { a: 13, b: 2, w: 12, color: '#f59e0b' }
+];
+const MS_DEFAULT_W = 5;
+const msF = (x, y) =>
+  MS_FAC.reduce((s, f) => s + f.w * (Math.abs(x - f.a) + Math.abs(y - f.b)), 0);
+
+function msOpt() {
+  if (MS_FAC.length === 0) return null;
+  const W = MS_FAC.reduce((s, f) => s + f.w, 0);
+  const half = W / 2;
+  const byA = [...MS_FAC].sort((p, q) => p.a - q.a);
+  let cum = 0, x = byA[0].a;
+  for (const f of byA) { cum += f.w; if (cum >= half) { x = f.a; break; } }
+  const byB = [...MS_FAC].sort((p, q) => p.b - q.b);
+  cum = 0;
+  let y = byB[0].b;
+  for (const f of byB) { cum += f.w; if (cum >= half) { y = f.b; break; } }
+  const z = MS_FAC.reduce((s, f) =>
+    s + f.w * (Math.abs(x - f.a) + Math.abs(y - f.b)), 0);
+  return { x, y, z };
+}
+
+const msCanvas = document.getElementById('ms');
+const msStage  = document.getElementById('ms-stage');
+const msCtx    = msCanvas.getContext('2d');
+const msXf     = makeXform(MS_BOUNDS);
+let   msHeat   = null;
+let   MS_OPT   = null;
+let   msCursor = { x: 6.5, y: 7 };
+
+function msRebuild() {
+  msHeat = buildHeatmap(msCtx, msXf, msF);
+  MS_OPT = msOpt();
+  updateMsOptReadout();
+}
+
+function updateMsOptReadout() {
+  const el = document.getElementById('ms-opt');
+  if (!MS_OPT) { el.textContent = '—'; return; }
+  el.textContent = `${MS_OPT.z.toFixed(0)} @ (${MS_OPT.x},${MS_OPT.y})`;
+}
+
+function drawMS() {
+  msCtx.putImageData(msHeat, 0, 0);
+  drawGrid(msCtx, msXf, MS_BOUNDS, 3, 2);
+
+  // Reference optimum ★
+  if (MS_OPT) {
+    const ox = msXf.px(MS_OPT.x), oy = msXf.py(MS_OPT.y);
+    msCtx.save();
+    msCtx.strokeStyle = CLR.green;
+    msCtx.lineWidth = 1.5;
+    msCtx.setLineDash([2, 3]);
+    msCtx.beginPath(); msCtx.arc(ox, oy, 14, 0, Math.PI * 2); msCtx.stroke();
+    msCtx.setLineDash([]);
+    msCtx.fillStyle = CLR.green;
+    msCtx.font = 'bold 14px ui-monospace, Consolas, monospace';
+    msCtx.textAlign = 'center'; msCtx.textBaseline = 'middle';
+    msCtx.fillText('★', ox, oy);
+    msCtx.restore();
+  }
+
+  // Live rectilinear paths — width ∝ weight
+  MS_FAC.forEach(f => {
+    const w = 1.25 + f.w * 0.35;
+    drawL(msCtx, msXf, msCursor, f.a, f.b, f.color, w, 0.85);
+  });
+
+  // Facilities
+  const hoverIdx = findFacilityNear(MS_FAC, msXf, msXf.px(msCursor.x), msXf.py(msCursor.y));
+  MS_FAC.forEach((f, i) => drawFacility(msCtx, msXf, f, true, i === hoverIdx));
+
+  drawCursor(msCtx, msXf, msCursor);
+
+  const z = MS_FAC.length ? msF(msCursor.x, msCursor.y) : 0;
+  document.getElementById('ms-val').textContent =
+    MS_FAC.length ? z.toFixed(1) : '—';
+}
+
+/* =====================================================================
+   MINIMAX state
+   ===================================================================== */
+const MX_BOUNDS = { xMin: 0, xMax: 12, yMin: 0, yMax: 12 };
+const MX_FAC = [
+  { a: 5,  b: 9,  color: '#22c55e' },
+  { a: 4,  b: 2,  color: '#ef4444' },
+  { a: 6,  b: 10, color: '#3b82f6' }
+];
+const mxF = (x, y) =>
+  Math.max(...MX_FAC.map(f => Math.abs(x - f.a) + Math.abs(y - f.b)));
+
+function mxOpt() {
+  if (MX_FAC.length === 0) return null;
+  const sums = MX_FAC.map(f => ({ pos: f.a + f.b, neg: -f.a + f.b }));
+  const c1 = Math.min(...sums.map(s => s.pos));
+  const c2 = Math.max(...sums.map(s => s.pos));
+  const c3 = Math.min(...sums.map(s => s.neg));
+  const c4 = Math.max(...sums.map(s => s.neg));
+  const c5 = Math.max(c2 - c1, c4 - c3);
+  const z  = c5 / 2;
+  const A  = { x: (c1 - c3) / 2, y: (c1 + c3 + c5) / 2 };
+  const B  = { x: (c2 - c4) / 2, y: (c2 + c4 - c5) / 2 };
+  return { A, B, z };
+}
+
+const mxCanvas = document.getElementById('mx');
+const mxStage  = document.getElementById('mx-stage');
+const mxCtx    = mxCanvas.getContext('2d');
+const mxXf     = makeXform(MX_BOUNDS);
+let   mxHeat   = null;
+let   MX_OPT   = null;
+let   mxCursor = { x: 9, y: 9 };
+
+function mxRebuild() {
+  mxHeat = buildHeatmap(mxCtx, mxXf, mxF);
+  MX_OPT = mxOpt();
+  updateMxOptReadout();
+}
+
+function updateMxOptReadout() {
+  const el = document.getElementById('mx-opt');
+  if (!MX_OPT) { el.textContent = '—'; return; }
+  const sameAB = MX_OPT.A.x === MX_OPT.B.x && MX_OPT.A.y === MX_OPT.B.y;
+  if (sameAB) {
+    el.textContent = `${MX_OPT.z.toFixed(1)} @ (${MX_OPT.A.x},${MX_OPT.A.y})`;
+  } else {
+    el.textContent = `${MX_OPT.z.toFixed(1)}`;
+  }
+}
+
+function drawMX() {
+  mxCtx.putImageData(mxHeat, 0, 0);
+  drawGrid(mxCtx, mxXf, MX_BOUNDS, 2, 2);
+
+  // Reference optimal segment (or point)
+  if (MX_OPT) {
+    const ax = mxXf.px(MX_OPT.A.x), ay = mxXf.py(MX_OPT.A.y);
+    const bx = mxXf.px(MX_OPT.B.x), by = mxXf.py(MX_OPT.B.y);
+    mxCtx.save();
+    mxCtx.strokeStyle = CLR.green;
+    mxCtx.lineWidth = 3.5;
+    mxCtx.globalAlpha = 0.85;
+    mxCtx.lineCap = 'round';
+    mxCtx.beginPath(); mxCtx.moveTo(ax, ay); mxCtx.lineTo(bx, by); mxCtx.stroke();
+    mxCtx.fillStyle = CLR.green;
+    mxCtx.beginPath(); mxCtx.arc(ax, ay, 4, 0, Math.PI * 2); mxCtx.fill();
+    mxCtx.beginPath(); mxCtx.arc(bx, by, 4, 0, Math.PI * 2); mxCtx.fill();
+    mxCtx.font = 'bold 11px ui-monospace, Consolas, monospace';
+    mxCtx.textAlign = 'center'; mxCtx.textBaseline = 'alphabetic';
+    if (ax !== bx || ay !== by) {
+      mxCtx.fillText('A', ax - 10, ay - 6);
+      mxCtx.fillText('B', bx + 10, by + 14);
+    }
+    mxCtx.restore();
+  }
+
+  if (MX_FAC.length) {
+    const ds = MX_FAC.map(f => ({
+      f, d: Math.abs(mxCursor.x - f.a) + Math.abs(mxCursor.y - f.b)
+    }));
+    const maxD = Math.max(...ds.map(o => o.d));
+    const maxIdx = ds.findIndex(o => o.d === maxD);
+
+    ds.forEach((o, i) => {
+      if (i !== maxIdx) drawL(mxCtx, mxXf, mxCursor, o.f.a, o.f.b, o.f.color, 1.25, 0.55);
+    });
+    drawL(mxCtx, mxXf, mxCursor,
+          ds[maxIdx].f.a, ds[maxIdx].f.b, CLR.orange, 3.5, 0.95);
+
+    if (maxD > 0.01) {
+      const cx = mxXf.px(mxCursor.x), cy = mxXf.py(mxCursor.y);
+      const rx = mxXf.px(mxCursor.x + maxD) - cx;
+      const ry = cy - mxXf.py(mxCursor.y + maxD);
+      mxCtx.save();
+      mxCtx.strokeStyle = CLR.orange;
+      mxCtx.lineWidth = 1.5;
+      mxCtx.setLineDash([5, 4]);
+      mxCtx.globalAlpha = 0.7;
+      mxCtx.beginPath();
+      mxCtx.moveTo(cx,     cy - ry);
+      mxCtx.lineTo(cx + rx, cy);
+      mxCtx.lineTo(cx,     cy + ry);
+      mxCtx.lineTo(cx - rx, cy);
+      mxCtx.closePath();
+      mxCtx.stroke();
+      mxCtx.restore();
+    }
+    document.getElementById('mx-val').textContent = maxD.toFixed(2);
+  } else {
+    document.getElementById('mx-val').textContent = '—';
+  }
+
+  const hoverIdx = findFacilityNear(MX_FAC, mxXf, mxXf.px(mxCursor.x), mxXf.py(mxCursor.y));
+  MX_FAC.forEach((f, i) => drawFacility(mxCtx, mxXf, f, false, i === hoverIdx));
+
+  drawCursor(mxCtx, mxXf, mxCursor);
+}
+
+/* =====================================================================
+   Pointer + click wiring
+   ===================================================================== */
+function updateCursor(list, xform, canvas, stage, setCursor, redraw, clientX, clientY) {
+  const { cx, cy } = clientToPlotPx(canvas, clientX, clientY);
+  const xw = Math.max(xform.wx(PADDING),
+                      Math.min(xform.wx(CSIZE - PADDING), xform.wx(cx)));
+  const yw = Math.max(xform.wy(CSIZE - PADDING),
+                      Math.min(xform.wy(PADDING), xform.wy(cy)));
+  setCursor({ x: xw, y: yw });
+  // toggle cursor style on dot-hover
+  const hoverIdx = findFacilityNear(list, xform, cx, cy);
+  stage.classList.toggle('on-dot', hoverIdx >= 0);
+  redraw();
+}
+
+function handleClick(list, xform, canvas, bounds, newFacTemplate, afterChange, clientX, clientY) {
+  const { cx, cy } = clientToPlotPx(canvas, clientX, clientY);
+  if (!xform.inPlot(cx, cy)) return;
+  const idx = findFacilityNear(list, xform, cx, cy);
+  if (idx >= 0) {
+    if (list.length <= 1) return;   // keep at least one facility
+    list.splice(idx, 1);
+  } else {
+    const a = Math.round(xform.wx(cx));
+    const b = Math.round(xform.wy(cy));
+    const aC = Math.max(bounds.xMin, Math.min(bounds.xMax, a));
+    const bC = Math.max(bounds.yMin, Math.min(bounds.yMax, b));
+    if (list.some(f => f.a === aC && f.b === bC)) return;
+    list.push(newFacTemplate(aC, bC, list));
+  }
+  afterChange();
+}
+
+/* Minisum wiring */
+msCanvas.addEventListener('mousemove', e =>
+  updateCursor(MS_FAC, msXf, msCanvas, msStage,
+               p => (msCursor = p), drawMS, e.clientX, e.clientY));
+msCanvas.addEventListener('click', e => {
+  handleClick(MS_FAC, msXf, msCanvas, MS_BOUNDS,
+    (a, b, list) => ({ a, b, w: MS_DEFAULT_W, color: pickColor(list) }),
+    () => { msRebuild(); drawMS(); },
+    e.clientX, e.clientY);
+});
+msCanvas.addEventListener('touchstart', e => {
+  e.preventDefault();
+  const t = e.touches[0];
+  updateCursor(MS_FAC, msXf, msCanvas, msStage,
+               p => (msCursor = p), drawMS, t.clientX, t.clientY);
+  handleClick(MS_FAC, msXf, msCanvas, MS_BOUNDS,
+    (a, b, list) => ({ a, b, w: MS_DEFAULT_W, color: pickColor(list) }),
+    () => { msRebuild(); drawMS(); },
+    t.clientX, t.clientY);
+}, { passive: false });
+msCanvas.addEventListener('touchmove', e => {
+  e.preventDefault();
+  const t = e.touches[0];
+  updateCursor(MS_FAC, msXf, msCanvas, msStage,
+               p => (msCursor = p), drawMS, t.clientX, t.clientY);
+}, { passive: false });
+
+/* Minimax wiring */
+mxCanvas.addEventListener('mousemove', e =>
+  updateCursor(MX_FAC, mxXf, mxCanvas, mxStage,
+               p => (mxCursor = p), drawMX, e.clientX, e.clientY));
+mxCanvas.addEventListener('click', e => {
+  handleClick(MX_FAC, mxXf, mxCanvas, MX_BOUNDS,
+    (a, b, list) => ({ a, b, color: pickColor(list) }),
+    () => { mxRebuild(); drawMX(); },
+    e.clientX, e.clientY);
+});
+mxCanvas.addEventListener('touchstart', e => {
+  e.preventDefault();
+  const t = e.touches[0];
+  updateCursor(MX_FAC, mxXf, mxCanvas, mxStage,
+               p => (mxCursor = p), drawMX, t.clientX, t.clientY);
+  handleClick(MX_FAC, mxXf, mxCanvas, MX_BOUNDS,
+    (a, b, list) => ({ a, b, color: pickColor(list) }),
+    () => { mxRebuild(); drawMX(); },
+    t.clientX, t.clientY);
+}, { passive: false });
+mxCanvas.addEventListener('touchmove', e => {
+  e.preventDefault();
+  const t = e.touches[0];
+  updateCursor(MX_FAC, mxXf, mxCanvas, mxStage,
+               p => (mxCursor = p), drawMX, t.clientX, t.clientY);
+}, { passive: false });
+
+/* Init */
+msRebuild(); drawMS();
+mxRebuild(); drawMX();
+</script>
+</body>
+</html>
