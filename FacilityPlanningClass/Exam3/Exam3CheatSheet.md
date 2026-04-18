@@ -1,4 +1,29 @@
 # L10 Schedule Design
+## Scrap Estimates (Series Yield)
+Scale initial material up so scrap at each machine still leaves O_n good units.
+- Pk = scrap rate at machine k
+- yk = 1 - Pk = yield at machine k
+- O_n = required good output
+- I1 = O_n / (y1 * y2 * ... * yn)
+### Quantity entering machine k
+Qk = O_n / (yk * y(k+1) * ... * yn)
+Use Qk as Q in Machine Fractions below.
+### Fallback path (failures rerouted to a backup)
+If failures at k route to backup b with yield yb:
+y_k_eff = yk + (1 - yk) * yb
+Substitute y_k_eff for yk in the series product.
+
+## Machine Fractions
+Number of machines of each type needed to meet demand.
+- S = standard time per unit on that machine
+- Q = quantity entering that machine (Qk from Scrap)
+- E = historical efficiency (rate vs std, 0-1)
+- R = availability / reliability (fraction uptime, 0-1)
+- H = total hours available per period
+- F = SQ / (E * R * H)
+If multiple % multipliers are given (availability fraction AND efficiency), put all in the denominator. Keep time units consistent.
+Round F up to the next integer. If a part visits the same machine twice, sum its contributions before rounding.
+
 ## Reject Allowance Problem
 Pick lot size Q to maximize expected profit when good output x is random (one-shot job, no rerun).
 - Q = lot size scheduled (decision)
@@ -38,8 +63,20 @@ n1 = floor(n'), n2 = ceil(n')
 TC(m) = (Co + m*Cm)(a+t)/m   if m <= n'
 TC(m) = (Co + m*Cm)(a+b)     if m > n'
 Pick m with lowest TC. Units dont matter as long as uniform.
+### Idle time rule
+m < n' : machine idle = 0; operator idle = Tc - m(a+b)
+m > n' : operator idle = 0; machine idle = Tc - (a+t)
+m = n' : both zero (perfect balance).
+Operator has no idle whenever m >= n'.
 
 # L11 Break Even Analysis
+## Definitions
+- Fixed cost: unchanged by volume (rent, machine purchase)
+- Variable cost: scales with volume (materials, utilities, shipping)
+- Planning horizon: width of the window for evaluating each investment alternative
+- Discount rate i: interest rate, required rate of return, or WACC
+- Crossover / break-even: volume at which two total-cost curves meet
+
 ## Investment Evaluation (ROI / PBP / NPV)
 Evaluate a capital investment over N years vs the existing or alternative cashflow.
 - C = initial cost of investment (paid year 0)
@@ -71,6 +108,9 @@ NPV = TPV - C
 NPV > 0 means it beats the discount rate.
 
 # L12-A Minisum
+## Definitions
+Minisum = minimize weighted sum of absolute distances. Optimum is the weighted MEDIAN on each axis (minimizing squared distances would give the mean). Use when weights matter: trips, cost, flow, demand probability.
+
 ## Minisum Facility Location
 Place new facility to minimize total weighted rectilinear distance to existing sites.
 - (a_i, b_i) = location of existing facility i (given)
@@ -93,6 +133,9 @@ z* = sum of w_i * (|x* - a_i| + |y* - b_i|) for all i
 Compute each facility's weighted distance, then sum.
 
 # L12-B Minimax
+## Definitions
+Minimax = minimize the worst-case (furthest) distance. No weights. Use when the farthest facility is what matters: emergency services, restrooms, cafeterias. Relaxing z above z* expands the optimum from the A-B segment into a diamond (square) contour; any point inside is optimal at that z.
+
 ## Minimax Facility Location
 Place new facility to minimize the maximum rectilinear distance to any existing facility.
 - (a_i, b_i) = location of existing facility i (given)
@@ -115,6 +158,16 @@ The optimal new facility is anywhere on the segment from A to B.
 If A = B, the optimum is a single point.
 
 # L13 Project Management
+## Definitions
+- Project: temporary endeavor for a unique deliverable
+- 5 sub-processes: Initiate, Plan, Execute, Control, Close (Refining is NOT one)
+- Triple constraint: Time, Budget, Scope
+- WBS: Work Breakdown Structure (deliverable tree)
+- Dummy activity: zero-duration dashed arc used to enforce correct precedence while keeping each activity uniquely named
+- Gantt chart: time bars; simple but hides task dependencies
+- CPM gives the critical path; PERT adds statistical time estimates
+- Critical path: longest path; any delay on it delays the project
+
 ## Critical Path Method (CPM)
 Find earliest/latest times and the critical path from a precedence table.
 - ES = early start, EF = early finish of an activity
@@ -143,6 +196,12 @@ Critical path = all activities with Slack = 0 (i.e., ET = LT).
 It is the longest path through the network; its length = T.
 
 # L14 Ergonomic Considerations
+## Pillars of Health & Safety (AREC)
+- Anticipate: foresee hazards before they arise
+- Recognize: identify hazards present on the job
+- Evaluate: assess risk level and severity
+- Control: eliminate, engineer out, admin, or PPE
+
 ## Ergonomic Risk Factors
 Identify hazards in a workplace task, then propose two design fixes per hazard.
 Match whichever risk factors apply to the scenario:
