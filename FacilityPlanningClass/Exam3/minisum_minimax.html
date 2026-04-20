@@ -137,6 +137,50 @@
     letter-spacing: 0.03em;
     pointer-events: none;
   }
+  .weights {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    margin-top: 0.55rem;
+    padding: 0.4rem 0.5rem;
+    background: #141c2b;
+    border-radius: 6px;
+    align-items: center;
+    border: 1px solid #2a3347;
+  }
+  .weights .wchip {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    background: #232e42;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+  }
+  .weights .dot {
+    width: 10px; height: 10px; border-radius: 50%;
+    box-shadow: 0 0 0 1.5px #fff;
+  }
+  .weights input[type=number] {
+    width: 46px;
+    background: #1a2332;
+    color: #faf7f2;
+    border: 1px solid #3a4560;
+    border-radius: 3px;
+    padding: 0.12rem 0.3rem;
+    font-family: monospace;
+    font-size: 0.78rem;
+    -moz-appearance: textfield;
+  }
+  .weights input[type=number]::-webkit-outer-spin-button,
+  .weights input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none; margin: 0;
+  }
+  .weights .wlabel {
+    color: #9ca8bd;
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
   footer {
     text-align: center;
     margin-top: 1rem;
@@ -163,6 +207,7 @@
       <div class="readout"><span class="label">z</span><span id="ms-val">—</span></div>
       <div class="opt-readout"><span class="label">optimum</span><span id="ms-opt">—</span></div>
     </div>
+    <div class="weights" id="ms-weights"></div>
   </div>
 
   <div class="panel">
@@ -407,7 +452,7 @@ const MS_FAC = [
   { a: 11, b: 8, w: 4,  color: '#3b82f6' },
   { a: 13, b: 2, w: 12, color: '#f59e0b' }
 ];
-const MS_DEFAULT_W = 5;
+let MS_DEFAULT_W = 5;
 const msF = (x, y) =>
   MS_FAC.reduce((s, f) => s + f.w * (Math.abs(x - f.a) + Math.abs(y - f.b)), 0);
 
@@ -439,6 +484,38 @@ function msRebuild() {
   msHeat = buildHeatmap(msCtx, msXf, msF);
   MS_OPT = msOpt();
   updateMsOptReadout();
+}
+
+function buildMsWeights() {
+  const el = document.getElementById('ms-weights');
+  el.innerHTML = '';
+  MS_FAC.forEach(f => {
+    const chip = document.createElement('div');
+    chip.className = 'wchip';
+    const dot = document.createElement('span');
+    dot.className = 'dot';
+    dot.style.background = f.color;
+    const inp = document.createElement('input');
+    inp.type = 'number'; inp.min = '0'; inp.step = '1'; inp.value = f.w;
+    inp.addEventListener('input', () => {
+      const v = parseFloat(inp.value);
+      if (!isNaN(v) && v >= 0) { f.w = v; msRebuild(); drawMS(); }
+    });
+    chip.appendChild(dot); chip.appendChild(inp);
+    el.appendChild(chip);
+  });
+  const def = document.createElement('div');
+  def.className = 'wchip';
+  const lbl = document.createElement('span');
+  lbl.className = 'wlabel'; lbl.textContent = 'new w';
+  const dinp = document.createElement('input');
+  dinp.type = 'number'; dinp.min = '0'; dinp.step = '1'; dinp.value = MS_DEFAULT_W;
+  dinp.addEventListener('input', () => {
+    const v = parseFloat(dinp.value);
+    if (!isNaN(v) && v >= 0) MS_DEFAULT_W = v;
+  });
+  def.appendChild(lbl); def.appendChild(dinp);
+  el.appendChild(def);
 }
 
 function updateMsOptReadout() {
@@ -644,7 +721,7 @@ msCanvas.addEventListener('mousemove', e =>
 msCanvas.addEventListener('click', e => {
   handleClick(MS_FAC, msXf, msCanvas, MS_BOUNDS,
     (a, b, list) => ({ a, b, w: MS_DEFAULT_W, color: pickColor(list) }),
-    () => { msRebuild(); drawMS(); },
+    () => { msRebuild(); drawMS(); buildMsWeights(); },
     e.clientX, e.clientY);
 });
 msCanvas.addEventListener('touchstart', e => {
@@ -654,7 +731,7 @@ msCanvas.addEventListener('touchstart', e => {
                p => (msCursor = p), drawMS, t.clientX, t.clientY);
   handleClick(MS_FAC, msXf, msCanvas, MS_BOUNDS,
     (a, b, list) => ({ a, b, w: MS_DEFAULT_W, color: pickColor(list) }),
-    () => { msRebuild(); drawMS(); },
+    () => { msRebuild(); drawMS(); buildMsWeights(); },
     t.clientX, t.clientY);
 }, { passive: false });
 msCanvas.addEventListener('touchmove', e => {
@@ -692,7 +769,7 @@ mxCanvas.addEventListener('touchmove', e => {
 }, { passive: false });
 
 /* Init */
-msRebuild(); drawMS();
+msRebuild(); drawMS(); buildMsWeights();
 mxRebuild(); drawMX();
 </script>
 </body>
