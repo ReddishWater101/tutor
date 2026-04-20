@@ -2,7 +2,7 @@
 ## Scrap Estimates (Series Yield)
 Find initial input I1 so that n operations in series still deliver O_n good units after scrap at each step.
 - n = number of operations in series (machine 1 -> 2 -> ... -> n)
-- P_k = scrap rate at machine k (fraction defective)
+- P_k = (Scrap estimate) scrap rate at machine k (fraction defective)
 - y_k = 1 - P_k = yield at machine k (fraction passing)
 - O_n = required good output (customer demand)
 - I1 = initial input to machine 1 (find this)
@@ -25,17 +25,17 @@ So Q_1 = I1 and Q_n = O_n / y_n. Carry these Q_k into Machine Fractions.
 Compute the number of machines F_k of each type needed to meet demand.
 - k = machine index (A, B, ...)
 - Q_k = quantity entering machine k (from Scrap Step 4)
-- S_k = standard time per unit on machine k
-- H_k = total hours available per period on machine k
-- E_k = historical efficiency (actual rate / std rate)
-- R_k = availability / reliability (fraction of H_k up)
+- S_k = (Standard time) standard time per unit on machine k
+- H_k = (Total availability) total hours available per period on machine k
+- E_k = (Historical efficiency) historical efficiency (actual rate / std rate)
+- R_k = (Availability fraction) availability / reliability (fraction of H_k up)
 - F_k = number of machines of type k needed
 ### Step 1: Gather inputs and match units
 Pull Q_k from Scrap Step 4; S_k, H_k, E_k, R_k from the problem table.
 Convert every percentage to a decimal (85% -> 0.85).
 Make S_k and H_k share a time unit (both hr or both min).
 ### Step 2: Apply the formula
-F_k = (Q_k * S_k) / (H_k * E_k * R_k)
+F_k = (Q_k * S_k) / (H_k * E_k * R_k)   *use .decimal*
 Put EVERY given % multiplier (availability fraction, efficiency, reliability, ...) into the denominator as a product. If one of them is not given, just drop it.
 ### Step 3: Round up to integer machines
 Number of machines of type k = ceil(F_k).
