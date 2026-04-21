@@ -12,6 +12,7 @@ d. Currently, when the production line is setup 1,000 units are produced per pro
 
 e. Everything else being equal, what should the production rate should be for 1,000 units to be the optimal order quantity for this system?
 
+*I did this problem first try no problems*
 
 
 # deterministic inventory
@@ -26,7 +27,7 @@ b. What are the possible candidate quantities for supplier B's incremental disco
 
 c. Which inventory policy is optimal? Your answer should include the choice of supplier and the optimal quantity to order.
 
-
+*know that the breakpoints always start with b0 = 0 units, while price starts at c0. c0 is the price in the range b0 to b1.   additionally, know that when you are solving for the incremental discount scheme, if you are going through step 3 and dont have a bj+1, you just go with the qj value as the candidate.*
 
 # stochastic inventory
 ## 3. Happy Henry's Car Dealer Multi-Case Newsvendor | Source: Assignments/ProblemSet_2_Newsvendor.pdf, Pages 7-8
