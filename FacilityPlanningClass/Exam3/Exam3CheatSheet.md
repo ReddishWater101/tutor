@@ -1,4 +1,9 @@
 # L10 Schedule Design
+## Quick Definitions
+- Route sheet: ordered list of steps a part follows, including needed equipment/materials.
+- Equipment fraction: decimal number of machines needed before rounding up.
+- MAC / human-machine chart: timeline showing operator work, machine work, and idle time.
+
 ## Scrap Estimates (Series Yield)
 Find initial input I1 so that n operations in series still deliver O_n good units after scrap at each step.
 - n = number of operations in series (machine 1 -> 2 -> ... -> n)
@@ -94,6 +99,35 @@ Operator has no idle whenever m >= n'.
 - Planning horizon: width of the window for evaluating each investment alternative
 - Discount rate i: interest rate, required rate of return, or WACC
 - Crossover / break-even: volume at which two total-cost curves meet
+- Crossover chart: graph comparing alternatives by fixed cost and variable cost.
+- Weighted factor comparison: score alternatives against weighted criteria.
+- AHP: pairwise comparison method for ranking alternatives in a hierarchy.
+- Time value of money: money now is worth more than the same money later.
+- TPV: total present value; sum of discounted future cashflows before subtracting initial cost.
+
+## Break-Even (Crossover) Selection
+Pick volume X where two total-cost alternatives tie, or pick the cheapest of 3+ alts across X.
+- X = volume / usage (units, miles, hours)
+- F_i = fixed cost of alt i (intercept at X=0)
+- V_i = variable cost per unit of alt i
+- TC_i(X) = F_i + V_i * X (total cost at X)
+- X* = crossover volume (two alts' TC tie)
+### Step 1: Build TC_i for each alternative
+TC_i(X) = F_i + V_i * X.
+Fixed = flat/one-time (rent, purchase, base fee).
+Variable = per-unit slope (materials, fuel, miles).
+### Step 2: Two-alternative crossover X*
+Solve F_A + V_A*X = F_B + V_B*X for X.
+X* = (F_B - F_A) / (V_A - V_B)
+Below X*: lower-F alt wins. Above X*: lower-V alt wins.
+### Step 3: Multi-alt selection (3+ alts)
+Start: current = alt with lowest F_i (wins at X=0).
+For each alt with V_i lower than current's V_i,
+solve Step 2 against current to get crossover X.
+Smallest X = next current, taking over at that X.
+Repeat until no alt has lower V_i than current.
+Unused alts are dominated. Report as intervals:
+Alt A if X<=X1; Alt B if X1<X<=X2; Alt C if X>X2.
 
 ## Investment Evaluation (ROI / PBP / NPV)
 Evaluate a capital investment over N years vs the existing or alternative cashflow.
@@ -128,6 +162,9 @@ NPV > 0 means it beats the discount rate.
 # L12-A Minisum
 ## Definitions
 Minisum = minimize weighted sum of absolute distances. Optimum is the weighted MEDIAN on each axis (minimizing squared distances would give the mean). Use when weights matter: trips, cost, flow, demand probability.
+- Location-allocation model: choose facility locations and which demand points each facility serves.
+- LP formulation: solver setup with variables, constraints, and an objective.
+- Resultant force diagram: graphical minisum method treating weights/trips as forces.
 
 ## Minisum Facility Location
 Place new facility to minimize total weighted rectilinear distance to existing sites.
@@ -153,6 +190,7 @@ Compute each facility's weighted distance, then sum.
 # L12-B Minimax
 ## Definitions
 Minimax = minimize the worst-case (furthest) distance. No weights. Use when the farthest facility is what matters: emergency services, restrooms, cafeterias. Relaxing z above z* expands the optimum from the A-B segment into a diamond (square) contour; any point inside is optimal at that z.
+- Rectilinear distance: city-block distance, |x1 - x2| + |y1 - y2|.
 
 ## Minimax Facility Location
 Place new facility to minimize the maximum rectilinear distance to any existing facility.
@@ -183,6 +221,10 @@ If A = B, the optimum is a single point.
 - WBS: Work Breakdown Structure (deliverable tree)
 - Dummy activity: zero-duration dashed arc used to enforce correct precedence while keeping each activity uniquely named
 - Gantt chart: time bars; simple but hides task dependencies
+- DSM: matrix showing dependencies/connections among activities or entities.
+- Activity-on-node diagram: nodes are activities; arrows show precedence.
+- Event slack: latest event time minus earliest event time.
+- Network rule: one start event, one finish event, no cycles.
 - CPM gives the critical path; PERT adds statistical time estimates
 - Critical path: longest path; any delay on it delays the project
 
@@ -214,17 +256,30 @@ Critical path = all activities with Slack = 0 (i.e., ET = LT).
 It is the longest path through the network; its length = T.
 
 # L14 Ergonomic Considerations
+## Quick Definitions
+- MSD: musculoskeletal disorder; injury/pain in muscles, tendons, nerves, or joints.
+- JHA: job hazard analysis; break a job into tasks and identify hazards.
+- Ergonomic process: management support, worker input, training, hazard ID, and progress checks.
+
 ## Pillars of Health & Safety (AREC)
 - Anticipate: foresee hazards before they arise
 - Recognize: identify hazards present on the job
 - Evaluate: assess risk level and severity
 - Control: eliminate, engineer out, admin, or PPE
 
+## Hierarchy of Controls (most -> least effective)
+- Elimination: remove the hazard entirely
+- Substitution: swap for a lower-risk option
+- Engineering: isolate people (guards, ventilation)
+- Administrative: change behavior (rotation, training)
+- PPE: personal protective gear (last resort)
+
 ## Ergonomic Risk Factors
 Identify hazards in a workplace task, then propose two design fixes per hazard.
 Match whichever risk factors apply to the scenario:
 - Forceful exertion: heavy lifting, pushing, pulling, gripping
   Fixes: mechanical assists (lifts, dollies, conveyors); reduce load size
+  NIOSH factors: weight, vertical travel, asymmetry angle, frequency, coupling
 - Awkward posture: bending, twisting, reaching overhead or below knees
   Fixes: adjustable work height; bring work to waist level
 - Repetitive motion: same cycle repeated frequently
