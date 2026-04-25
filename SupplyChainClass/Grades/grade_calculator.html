@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EIN4343 — Final Grade Calculator</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,700;1,9..144,300;1,9..144,400&family=Geist:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --paper:     #f6efe1;
+    --paper-2:   #efe6d3;
+    --ink:       #161310;
+    --ink-mid:   #514738;
+    --ink-soft:  #8a7c66;
+    --rule:      rgba(22, 19, 16, 0.55);
+    --rule-soft: rgba(22, 19, 16, 0.14);
+    --accent:    #b34822;
+    --accent-2:  #6a2a13;
+    --positive:  #2f5733;
+    --danger:    #8b1e1e;
+  }
+
+  html, body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Geist', sans-serif;
+    font-feature-settings: 'ss01', 'cv11';
+    line-height: 1.55;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  body::before {
+    content: '';
+    position: fixed; inset: 0;
+    background:
+      radial-gradient(circle at 12% 8%, rgba(0,0,0,0.025) 0%, transparent 45%),
+      radial-gradient(circle at 88% 92%, rgba(179,72,34,0.04) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 0;
+  }
+  body::after {
+    content: '';
+    position: fixed; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 220 220' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.92' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.07 0 0 0 0 0.06 0 0 0 0 0.05 0 0 0 0.45 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
+    opacity: 0.35;
+    mix-blend-mode: multiply;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .page {
+    position: relative;
+    z-index: 2;
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 88px 56px 120px;
+  }
+
+  /* MASTHEAD */
+  .masthead {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: end;
+    gap: 40px;
+    padding-bottom: 28px;
+    border-bottom: 1.5px solid var(--ink);
+    position: relative;
+  }
+  .masthead::after {
+    content: '';
+    position: absolute;
+    left: 0; right: 0; bottom: -5px;
+    height: 1px;
+    background: var(--ink);
+    opacity: 0.55;
+  }
+  .course-code {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    color: var(--ink-mid);
+    margin-bottom: 22px;
+  }
+  .course-code .dot { color: var(--accent); }
+  .title {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-variation-settings: 'opsz' 144, 'SOFT' 60;
+    font-size: clamp(54px, 8.4vw, 96px);
+    line-height: 0.92;
+    letter-spacing: -0.025em;
+  }
+  .title .it {
+    font-style: italic;
+    font-weight: 300;
+    color: var(--ink-mid);
+  }
+  .title .em {
+    font-weight: 500;
+  }
+  .meta {
+    text-align: right;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    line-height: 1.7;
+    color: var(--ink-mid);
+    letter-spacing: 0.04em;
+  }
+  .meta .strong { color: var(--ink); font-weight: 500; }
+  .meta .accent-tag {
+    display: inline-block;
+    margin-top: 8px;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    padding: 3px 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-size: 9.5px;
+  }
+
+  /* SUBBAR */
+  .subbar {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 14px 0;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--ink-soft);
+    border-bottom: 1px solid var(--rule-soft);
+    margin-bottom: 64px;
+  }
+
+  /* SECTION LABEL */
+  .section-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.24em;
+    color: var(--ink-mid);
+    padding-bottom: 10px;
+    margin-bottom: 0;
+    border-bottom: 1px solid var(--rule);
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  .section-label .num {
+    color: var(--ink-soft);
+  }
+
+  /* LEDGER */
+  .ledger { margin-bottom: 72px; }
+
+  .row {
+    display: grid;
+    grid-template-columns: 32px 1fr 90px 140px;
+    align-items: baseline;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--rule-soft);
+    transition: background 220ms ease;
+  }
+  .row:hover { background: rgba(179, 72, 34, 0.035); }
+  .row.pending .row-name { color: var(--accent); }
+
+  .row-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10.5px;
+    color: var(--ink-soft);
+    letter-spacing: 0.1em;
+  }
+  .row-name {
+    font-family: 'Fraunces', serif;
+    font-size: 21px;
+    font-weight: 400;
+    font-variation-settings: 'opsz' 36;
+    letter-spacing: -0.01em;
+    line-height: 1.15;
+  }
+  .row-name .sub {
+    display: block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10.5px;
+    font-weight: 400;
+    color: var(--ink-soft);
+    margin-top: 5px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .row-weight {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--ink-mid);
+    text-align: right;
+    letter-spacing: 0.04em;
+  }
+  .row-score {
+    font-family: 'Fraunces', serif;
+    font-variation-settings: 'opsz' 30;
+    font-size: 22px;
+    font-weight: 400;
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.01em;
+  }
+  .row-score .pct {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--ink-soft);
+    margin-left: 5px;
+    letter-spacing: 0.06em;
+  }
+  .row-score .pending-tag {
+    color: var(--ink-soft);
+    font-style: italic;
+    font-weight: 300;
+  }
+
+  /* INPUT GRID */
+  .input-group { margin-bottom: 56px; }
+
+  .input-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    border-top: 1px solid var(--rule-soft);
+    border-left: 1px solid var(--rule-soft);
+    margin-top: 4px;
+  }
+  .input-cell {
+    background: transparent;
+    padding: 26px 28px;
+    border-right: 1px solid var(--rule-soft);
+    border-bottom: 1px solid var(--rule-soft);
+    transition: background 220ms;
+  }
+  .input-cell:focus-within {
+    background: rgba(179, 72, 34, 0.04);
+  }
+  .input-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--ink-mid);
+    display: block;
+    margin-bottom: 14px;
+  }
+  .input-label .max {
+    color: var(--ink-soft);
+    margin-left: 6px;
+    opacity: 0.7;
+  }
+  input[type="number"] {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--ink);
+    padding: 4px 0 8px;
+    font-family: 'Fraunces', serif;
+    font-variation-settings: 'opsz' 60;
+    font-size: 36px;
+    font-weight: 400;
+    color: var(--ink);
+    font-variant-numeric: tabular-nums;
+    outline: none;
+    transition: border-color 220ms, color 220ms;
+    letter-spacing: -0.02em;
+  }
+  input[type="number"]:focus { border-bottom-color: var(--accent); }
+  input[type="number"]::placeholder { color: var(--ink-soft); opacity: 0.4; }
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+  input[type="number"] { -moz-appearance: textfield; }
+
+  /* FINAL EXAM BLOCK */
+  .final-block {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 52px 44px;
+    margin-bottom: 72px;
+    position: relative;
+    overflow: hidden;
+  }
+  .final-block::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 90% 10%, rgba(179,72,34,0.32), transparent 55%),
+      radial-gradient(ellipse at 5% 95%, rgba(179,72,34,0.12), transparent 60%);
+    pointer-events: none;
+  }
+  .final-block::after {
+    content: '07';
+    position: absolute;
+    top: 24px; right: 32px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: rgba(246, 239, 225, 0.35);
+    letter-spacing: 0.2em;
+  }
+  .final-content { position: relative; }
+  .final-content .input-label { color: rgba(246, 239, 225, 0.55); }
+  .final-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.24em;
+    color: rgba(246, 239, 225, 0.45);
+    margin-bottom: 18px;
+  }
+  .final-eyebrow .dot { color: var(--accent); }
+  .final-input-wrap {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid rgba(246, 239, 225, 0.25);
+    padding-bottom: 8px;
+  }
+  .final-input-wrap input[type="number"] {
+    width: auto;
+    flex: 0 0 240px;
+    color: var(--paper);
+    border: none;
+    font-family: 'Fraunces', serif;
+    font-variation-settings: 'opsz' 144;
+    font-size: 80px;
+    font-weight: 400;
+    line-height: 1;
+    padding: 0;
+    letter-spacing: -0.04em;
+  }
+  .final-input-wrap .out-of {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 16px;
+    color: rgba(246, 239, 225, 0.5);
+    letter-spacing: 0.06em;
+  }
+  .final-helper {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: rgba(246, 239, 225, 0.45);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    background: transparent;
+    cursor: ew-resize;
+  }
+  input[type="range"]::-webkit-slider-runnable-track {
+    height: 1px;
+    background: rgba(246, 239, 225, 0.4);
+  }
+  input[type="range"]::-moz-range-track {
+    height: 1px;
+    background: rgba(246, 239, 225, 0.4);
+  }
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 18px; width: 18px;
+    background: var(--accent);
+    border-radius: 50%;
+    margin-top: -8.5px;
+    cursor: grab;
+    transition: transform 220ms, box-shadow 220ms;
+    box-shadow: 0 0 0 0 rgba(179, 72, 34, 0.4);
+  }
+  input[type="range"]::-webkit-slider-thumb:hover {
+    transform: scale(1.18);
+    box-shadow: 0 0 0 6px rgba(179, 72, 34, 0.18);
+  }
+  input[type="range"]::-moz-range-thumb {
+    height: 18px; width: 18px;
+    background: var(--accent);
+    border-radius: 50%;
+    border: none;
+    cursor: grab;
+  }
+
+  /* RESULT */
+  .result {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 56px;
+    align-items: center;
+    padding: 48px 0;
+    border-top: 2px solid var(--ink);
+    border-bottom: 1px solid var(--rule-soft);
+    margin-bottom: 72px;
+    position: relative;
+  }
+  .result-side {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .result-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.24em;
+    color: var(--ink-mid);
+    margin-bottom: 6px;
+  }
+  .result-percent {
+    font-family: 'Fraunces', serif;
+    font-variation-settings: 'opsz' 144;
+    font-size: clamp(72px, 11vw, 132px);
+    font-weight: 400;
+    line-height: 0.85;
+    letter-spacing: -0.045em;
+    font-variant-numeric: tabular-nums;
+    transition: color 300ms;
+  }
+  .result-percent .decimal {
+    font-size: 0.6em;
+    color: var(--ink-mid);
+    font-weight: 300;
+  }
+  .result-percent .pctsign {
+    font-size: 0.42em;
+    color: var(--ink-mid);
+    font-weight: 300;
+    margin-left: 4px;
+  }
+  .result-letter {
+    font-family: 'Fraunces', serif;
+    font-variation-settings: 'opsz' 144;
+    font-size: clamp(140px, 22vw, 240px);
+    font-weight: 500;
+    line-height: 0.78;
+    color: var(--accent);
+    letter-spacing: -0.05em;
+    transition: color 400ms, transform 400ms cubic-bezier(0.2,0.8,0.2,1);
+  }
+  .result-letter.failing { color: var(--danger); }
+  .status {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    padding: 8px 12px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid currentColor;
+    align-self: start;
+    transition: color 300ms;
+  }
+  .status::before {
+    content: '';
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: currentColor;
+  }
+  .status.passing { color: var(--positive); }
+  .status.failing { color: var(--danger); }
+  .delta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--ink-mid);
+    letter-spacing: 0.04em;
+  }
+  .delta .figure {
+    color: var(--ink);
+    font-weight: 500;
+  }
+
+  /* THRESHOLDS */
+  .thresholds { margin-bottom: 80px; }
+  .thresh-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin-top: 4px;
+    border-top: 1px solid var(--rule-soft);
+    border-left: 1px solid var(--rule-soft);
+  }
+  .thresh-cell {
+    padding: 28px 24px 26px;
+    border-right: 1px solid var(--rule-soft);
+    border-bottom: 1px solid var(--rule-soft);
+    background: transparent;
+    transition: background 250ms;
+    position: relative;
+  }
+  .thresh-cell.required {
+    background: var(--ink);
+    color: var(--paper);
+  }
+  .thresh-cell.required .thresh-letter { color: var(--accent); }
+  .thresh-cell.required .thresh-meta { color: rgba(246, 239, 225, 0.5); }
+  .thresh-cell.required .thresh-value { color: var(--paper); }
+  .thresh-cell.required::after {
+    content: '★ REQUIRED';
+    position: absolute;
+    top: 14px; right: 18px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    color: var(--accent);
+    letter-spacing: 0.18em;
+  }
+  .thresh-letter {
+    font-family: 'Fraunces', serif;
+    font-variation-settings: 'opsz' 96;
+    font-size: 44px;
+    font-weight: 500;
+    line-height: 1;
+    margin-bottom: 14px;
+    letter-spacing: -0.02em;
+  }
+  .thresh-value {
+    font-family: 'Fraunces', serif;
+    font-variation-settings: 'opsz' 36;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 1.1;
+    margin-bottom: 8px;
+    font-variant-numeric: tabular-nums;
+  }
+  .thresh-value .unit {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--ink-soft);
+    margin-left: 4px;
+    letter-spacing: 0.06em;
+  }
+  .thresh-cell.required .thresh-value .unit { color: rgba(246, 239, 225, 0.5); }
+  .thresh-meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--ink-soft);
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    line-height: 1.5;
+  }
+  .thresh-cell.locked .thresh-value { color: var(--positive); }
+  .thresh-cell.impossible .thresh-value { color: var(--danger); opacity: 0.7; }
+
+  /* FOOTER */
+  footer {
+    border-top: 1px solid var(--rule-soft);
+    padding-top: 24px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--ink-soft);
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  /* REVEAL ANIMATION */
+  .reveal {
+    opacity: 0;
+    transform: translateY(10px);
+    animation: reveal 900ms cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  }
+  @keyframes reveal {
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .reveal.d1 { animation-delay: 60ms; }
+  .reveal.d2 { animation-delay: 140ms; }
+  .reveal.d3 { animation-delay: 220ms; }
+  .reveal.d4 { animation-delay: 320ms; }
+  .reveal.d5 { animation-delay: 420ms; }
+  .reveal.d6 { animation-delay: 520ms; }
+  .reveal.d7 { animation-delay: 620ms; }
+
+  /* RESPONSIVE */
+  @media (max-width: 760px) {
+    .page { padding: 56px 28px 80px; }
+    .masthead { grid-template-columns: 1fr; gap: 16px; }
+    .meta { text-align: left; }
+    .row { grid-template-columns: 28px 1fr auto; gap: 16px; }
+    .row-weight { display: none; }
+    .input-grid { grid-template-columns: 1fr; }
+    .final-block { padding: 36px 28px; }
+    .final-input-wrap input[type="number"] { font-size: 56px; flex-basis: 160px; }
+    .result { grid-template-columns: 1fr; gap: 28px; padding: 32px 0; }
+    .thresh-grid { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <header class="masthead reveal d1">
+    <div>
+      <div class="course-code">EIN 4343 <span class="dot">·</span> Section 6493 <span class="dot">·</span> Spring 2026</div>
+      <h1 class="title"><span class="it">Final</span><br><span class="em">Grade Calculator</span></h1>
+    </div>
+    <div class="meta">
+      <span class="strong">Inventory &amp;</span><br>
+      <span class="strong">Supply Chain Systems</span><br>
+      Dr. Elif Akçalı<br>
+      <br>
+      <span class="strong">Final · 04.29.2026</span><br>
+      WEIM 1084 · 3:00 PM<br>
+      <span class="accent-tag">Target ⟶ C (73)</span>
+    </div>
+  </header>
+
+  <div class="subbar reveal d2">
+    <span>Document · gradesheet.html</span>
+    <span>Generated · 04.25.2026</span>
+    <span>Currency · grant.sherman</span>
+  </div>
+
+  <section class="ledger reveal d3">
+    <div class="section-label"><span>§ I. Grade Components</span><span class="num">100% TOTAL</span></div>
+
+    <div class="row">
+      <div class="row-num">01</div>
+      <div class="row-name">Term Exam 1<span class="sub">Locked · 02.11.2026</span></div>
+      <div class="row-weight">22%</div>
+      <div class="row-score">82.5<span class="pct">/ 100</span></div>
+    </div>
+
+    <div class="row">
+      <div class="row-num">02</div>
+      <div class="row-name">Term Exam 2<span class="sub">Locked · 04.01.2026</span></div>
+      <div class="row-weight">22%</div>
+      <div class="row-score">62.5<span class="pct">/ 100</span></div>
+    </div>
+
+    <div class="row">
+      <div class="row-num">03</div>
+      <div class="row-name">Homework Assignments<span class="sub" id="hw-sub">Top 4 of 6 — currently 4 graded</span></div>
+      <div class="row-weight">8%</div>
+      <div class="row-score" id="hw-score">96.88<span class="pct">%</span></div>
+    </div>
+
+    <div class="row">
+      <div class="row-num">04</div>
+      <div class="row-name">Creative Thinking<span class="sub" id="ct-sub">2 of 3 graded</span></div>
+      <div class="row-weight">8%</div>
+      <div class="row-score" id="ct-score">66.67<span class="pct">%</span></div>
+    </div>
+
+    <div class="row">
+      <div class="row-num">05</div>
+      <div class="row-name">Supply Chain Analysis<span class="sub">SCA 1 · Complete</span></div>
+      <div class="row-weight">6%</div>
+      <div class="row-score">100.00<span class="pct">%</span></div>
+    </div>
+
+    <div class="row">
+      <div class="row-num">06</div>
+      <div class="row-name">In-Class Activities<span class="sub">7 ICAs · Lowest 2 dropped</span></div>
+      <div class="row-weight">8%</div>
+      <div class="row-score">100.00<span class="pct">%</span></div>
+    </div>
+
+    <div class="row pending" id="final-row">
+      <div class="row-num">07</div>
+      <div class="row-name">Final Exam<span class="sub">Pending · 04.29.2026</span></div>
+      <div class="row-weight">26%</div>
+      <div class="row-score" id="final-score-display"><span class="pending-tag">— —</span></div>
+    </div>
+  </section>
+
+  <section class="input-group reveal d4">
+    <div class="section-label"><span>§ II. Pending Items</span><span class="num">blank counts as 0 until entered</span></div>
+    <div class="input-grid">
+      <div class="input-cell">
+        <label class="input-label" for="hw5">Homework 5<span class="max">/ 20</span></label>
+        <input type="number" id="hw5" min="0" max="20" step="0.5" placeholder="—">
+      </div>
+      <div class="input-cell">
+        <label class="input-label" for="hw6">Homework 6 · Pt 1<span class="max">/ 16</span></label>
+        <input type="number" id="hw6" min="0" max="16" step="0.5" placeholder="—">
+      </div>
+      <div class="input-cell">
+        <label class="input-label" for="tp3">Creative Poem 3<span class="max">/ 10</span></label>
+        <input type="number" id="tp3" min="0" max="10" step="0.5" placeholder="—">
+      </div>
+    </div>
+  </section>
+
+  <section class="final-block reveal d5">
+    <div class="final-content">
+      <div class="final-eyebrow">§ III. Final Exam <span class="dot">●</span> The Lever</div>
+      <label class="input-label" for="final">Projected Score</label>
+      <div class="final-input-wrap">
+        <input type="number" id="final" min="0" max="100" step="0.5" value="50">
+        <span class="out-of">/ 100</span>
+      </div>
+      <div class="final-helper">Drag the slider — watch the projection shift</div>
+      <input type="range" id="final-slider" min="0" max="100" step="0.5" value="50">
+    </div>
+  </section>
+
+  <section class="result reveal d6">
+    <div class="result-side">
+      <div class="result-eyebrow">§ IV. Projected Final Grade</div>
+      <div class="result-percent" id="total-pct">
+        <span id="total-int">71</span><span class="decimal">.<span id="total-dec">98</span></span><span class="pctsign">%</span>
+      </div>
+      <div class="delta" id="delta">-0.52 below raw C minimum (72.5)</div>
+    </div>
+    <div class="result-side" style="align-items:flex-end; text-align:right;">
+      <div class="result-letter failing" id="result-letter">C-</div>
+      <div class="status failing" id="status">Below C - Major Req Unmet</div>
+    </div>
+  </section>
+
+  <section class="thresholds reveal d7">
+    <div class="section-label"><span>§ V. Final Exam Targets</span><span class="num">minimum needed for letter</span></div>
+    <div class="thresh-grid" id="thresh-grid"></div>
+  </section>
+
+  <footer>
+    <span>EIN4343 · Spring 2026</span>
+    <span>Weighted per syllabus</span>
+    <span>Rounded to nearest integer</span>
+  </footer>
+
+</div>
+
+<script>
+  const config = {
+    termExam1: { weight: 0.22, score: 82.5 },
+    termExam2: { weight: 0.22, score: 62.5 },
+    finalExam: { weight: 0.26 },
+    homework: {
+      weight: 0.08,
+      fixed: [
+        { name: 'HW1', earned: 17.5, possible: 20 },
+        { name: 'HW2', earned: 30,   possible: 30 },
+        { name: 'HW3', earned: 20,   possible: 20 },
+        { name: 'HW4', earned: 20,   possible: 20 },
+      ],
+      pending: {
+        hw5: { name: 'HW5', possible: 20 },
+        hw6: { name: 'HW6', possible: 16 },
+      },
+      takeBest: 4,
+      totalCount: 6,
+    },
+    creativeThinking: {
+      weight: 0.08,
+      fixed: [
+        { name: 'Creative Thinking Poem 1', earned: 10, possible: 10 },
+        { name: 'Creative Thinking Poem 2', earned: 10, possible: 10 },
+      ],
+      pending: { name: 'Creative Thinking Poem 3', possible: 10 },
+      totalCount: 3,
+    },
+    supplyChain: { weight: 0.06, fixed: [{ name: 'Supply Chain Analysis 1', earned: 20, possible: 20 }] },
+    inClass: {
+      weight: 0.08,
+      fixed: [
+        { name: 'ICA1', earned: 9,  possible: 10 },
+        { name: 'ICA2', earned: 10, possible: 10 },
+        { name: 'ICA3', earned: 10, possible: 10 },
+        { name: 'ICA4', earned: 10, possible: 10 },
+        { name: 'ICA5', earned: 10, possible: 10 },
+        { name: 'ICA6 Apr 15', earned: 10, possible: 10 },
+        { name: 'ICA6 Apr 22', earned: 0,  possible: 10 },
+      ],
+      dropLowest: 2,
+    },
+  };
+
+  const grades = [
+    { letter: 'A',  cutoff: 93 },
+    { letter: 'A-', cutoff: 90 },
+    { letter: 'B+', cutoff: 87 },
+    { letter: 'B',  cutoff: 83 },
+    { letter: 'B-', cutoff: 80 },
+    { letter: 'C+', cutoff: 77 },
+    { letter: 'C',  cutoff: 73 },
+    { letter: 'C-', cutoff: 70 },
+    { letter: 'D+', cutoff: 67 },
+    { letter: 'D',  cutoff: 63 },
+    { letter: 'D-', cutoff: 60 },
+    { letter: 'E',  cutoff: 0  },
+  ];
+
+  function clamp(n, min, max) {
+    if (n === null || isNaN(n)) return null;
+    return Math.max(min, Math.min(max, n));
+  }
+  function parseInput(id, max) {
+    const v = document.getElementById(id).value.trim();
+    if (v === '') return null;
+    const n = parseFloat(v);
+    return clamp(isNaN(n) ? null : n, 0, max);
+  }
+
+  function pct(item) {
+    return (item.earned / item.possible) * 100;
+  }
+
+  function computeHomework(hw5, hw6) {
+    const all = [
+      ...config.homework.fixed,
+      { ...config.homework.pending.hw5, earned: hw5 ?? 0 },
+      { ...config.homework.pending.hw6, earned: hw6 ?? 0 },
+    ];
+    all.sort((a, b) => pct(b) - pct(a));
+    const top = all.slice(0, config.homework.takeBest);
+    return {
+      score: top.reduce((sum, item) => sum + pct(item), 0) / config.homework.takeBest,
+      submitted: config.homework.fixed.length + [hw5, hw6].filter(v => v !== null).length,
+    };
+  }
+
+  function computeCreative(tp3) {
+    const all = [
+      ...config.creativeThinking.fixed,
+      { ...config.creativeThinking.pending, earned: tp3 ?? 0 },
+    ];
+    const earned = all.reduce((s, x) => s + x.earned, 0);
+    const possible = all.reduce((s, x) => s + x.possible, 0);
+    return {
+      score: (earned / possible) * 100,
+      graded: config.creativeThinking.fixed.length + (tp3 !== null ? 1 : 0),
+    };
+  }
+
+  function computeSupplyChain() {
+    const earned = config.supplyChain.fixed.reduce((s, x) => s + x.earned, 0);
+    const possible = config.supplyChain.fixed.reduce((s, x) => s + x.possible, 0);
+    return (earned / possible) * 100;
+  }
+
+  function computeInClass() {
+    const kept = [...config.inClass.fixed]
+      .sort((a, b) => pct(a) - pct(b))
+      .slice(config.inClass.dropLowest);
+    const earned = kept.reduce((s, x) => s + x.earned, 0);
+    const possible = kept.reduce((s, x) => s + x.possible, 0);
+    return (earned / possible) * 100;
+  }
+
+  function computeTotal(final, hwScore, ctScore) {
+    const scaScore = computeSupplyChain();
+    const icaScore = computeInClass();
+    return (
+      config.termExam1.score   * config.termExam1.weight +
+      config.termExam2.score   * config.termExam2.weight +
+      final                    * config.finalExam.weight +
+      hwScore                  * config.homework.weight +
+      ctScore                  * config.creativeThinking.weight +
+      scaScore                 * config.supplyChain.weight +
+      icaScore                 * config.inClass.weight
+    );
+  }
+
+  function letterFor(pct) {
+    const rounded = Math.round(pct);
+    for (const g of grades) if (rounded >= g.cutoff) return g.letter;
+    return 'E';
+  }
+
+  function neededOnFinal(targetCutoff, hwScore, ctScore) {
+    const constants = computeTotal(0, hwScore, ctScore);
+    return (targetCutoff - 0.5 - constants) / config.finalExam.weight;
+  }
+
+  function update() {
+    const hw5   = parseInput('hw5', 20);
+    const hw6   = parseInput('hw6', 16);
+    const tp3   = parseInput('tp3', 10);
+    const final = parseInput('final', 100) ?? 0;
+
+    const hw = computeHomework(hw5, hw6);
+    const ct = computeCreative(tp3);
+
+    // Ledger updates
+    document.getElementById('hw-score').innerHTML  = `${hw.score.toFixed(2)}<span class="pct">%</span>`;
+    document.getElementById('hw-sub').textContent  = `Top 4 of 6 - ${hw.submitted} entered`;
+    document.getElementById('ct-score').innerHTML  = `${ct.score.toFixed(2)}<span class="pct">%</span>`;
+    document.getElementById('ct-sub').textContent  = `${ct.graded} of 3 graded`;
+    document.getElementById('final-score-display').innerHTML =
+      `${final.toFixed(1)}<span class="pct">/ 100</span>`;
+
+    // Total
+    const total = computeTotal(final, hw.score, ct.score);
+    const [intPart, decPart] = total.toFixed(2).split('.');
+    document.getElementById('total-int').textContent = intPart;
+    document.getElementById('total-dec').textContent = decPart;
+
+    const letter = letterFor(total);
+    const letterEl = document.getElementById('result-letter');
+    letterEl.textContent = letter;
+
+    const totalRounded = Math.round(total);
+    const passing = totalRounded >= 73;
+    const statusEl = document.getElementById('status');
+    if (passing) {
+      statusEl.className = 'status passing';
+      statusEl.textContent = 'Passing - Meets C';
+      letterEl.classList.remove('failing');
+    } else {
+      statusEl.className = 'status failing';
+      statusEl.textContent = totalRounded >= 60 ? 'Below C - Major Req Unmet' : 'Failing';
+      letterEl.classList.add('failing');
+    }
+
+    const delta = total - 72.5;
+    const sign = delta >= 0 ? '+' : '-';
+    document.getElementById('delta').innerHTML =
+      `<span class="figure">${sign}${Math.abs(delta).toFixed(2)}</span> ${delta >= 0 ? 'above' : 'below'} raw C minimum (72.5)`;
+
+    // Thresholds
+    const thresholds = [
+      { letter: 'A',  cutoff: 93 },
+      { letter: 'B',  cutoff: 83 },
+      { letter: 'C',  cutoff: 73, required: true },
+      { letter: 'D-', cutoff: 60 },
+    ];
+    const grid = document.getElementById('thresh-grid');
+    grid.innerHTML = '';
+    thresholds.forEach(t => {
+      const need = neededOnFinal(t.cutoff, hw.score, ct.score);
+      const cell = document.createElement('div');
+      let cls = 'thresh-cell';
+      let valueHTML, metaText;
+      if (need < 0) {
+        cls += ' locked';
+        valueHTML = `Locked in`;
+        metaText  = 'Already secured';
+      } else if (need > 100) {
+        cls += ' impossible';
+        valueHTML = `Out of reach`;
+        metaText  = 'Mathematically impossible';
+      } else {
+        valueHTML = `${need.toFixed(1)}<span class="unit">/ 100</span>`;
+        metaText  = 'Min final exam score';
+      }
+      if (t.required) cls += ' required';
+      cell.className = cls;
+      cell.innerHTML = `
+        <div class="thresh-letter">${t.letter}</div>
+        <div class="thresh-value">${valueHTML}</div>
+        <div class="thresh-meta">${metaText}</div>
+      `;
+      grid.appendChild(cell);
+    });
+  }
+
+  // Wire inputs
+  ['hw5','hw6','tp3','final'].forEach(id => {
+    document.getElementById(id).addEventListener('input', update);
+  });
+  const finalInput  = document.getElementById('final');
+  const finalSlider = document.getElementById('final-slider');
+  finalSlider.addEventListener('input', () => { finalInput.value = finalSlider.value; update(); });
+  finalInput.addEventListener('input',  () => {
+    finalSlider.value = clamp(parseFloat(finalInput.value), 0, 100) ?? 0;
+  });
+
+  update();
+</script>
+
+</body>
+</html>

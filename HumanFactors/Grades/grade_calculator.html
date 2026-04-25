@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EIN3241 — Grade Calculator</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Geist:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg:        #f8f6f1;
+    --panel:     #ffffff;
+    --ink:       #15130f;
+    --ink-mid:   #5a5448;
+    --ink-soft:  #918875;
+    --rule:      #d8d3c4;
+    --rule-soft: #ebe6d8;
+    --accent:    #1f4e8c;
+    --accent-2:  #163c6e;
+    --accent-bg: #eaf0f9;
+    --positive:  #1f6233;
+    --positive-bg: #e3eee5;
+    --danger:    #8b1e1e;
+    --danger-bg: #f4e3e3;
+    --warning:   #8a5a00;
+    --best-bg:   #fff7e0;
+    --best-border: #d4ac3e;
+  }
+  html, body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Geist', system-ui, sans-serif;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 48px 32px 96px;
+  }
+
+  /* HEADER */
+  header {
+    border-bottom: 2px solid var(--ink);
+    padding-bottom: 16px;
+    margin-bottom: 32px;
+  }
+  .eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--ink-mid);
+    margin-bottom: 8px;
+  }
+  h1 {
+    font-size: 32px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    margin-bottom: 4px;
+  }
+  .sub {
+    font-size: 13px;
+    color: var(--ink-mid);
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  /* SECTIONS */
+  section { margin-bottom: 36px; }
+  h2 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--ink-mid);
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 6px;
+    margin-bottom: 16px;
+    font-weight: 500;
+  }
+
+  /* TABLE */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-variant-numeric: tabular-nums;
+  }
+  th, td {
+    text-align: left;
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--rule-soft);
+    font-size: 14px;
+  }
+  th {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--ink-mid);
+    border-bottom: 1px solid var(--rule);
+  }
+  td.num, th.num {
+    text-align: right;
+    font-family: 'JetBrains Mono', monospace;
+    font-variant-numeric: tabular-nums;
+  }
+  tr.locked-row td .raw {
+    color: var(--ink-soft);
+    font-size: 12px;
+    margin-left: 6px;
+  }
+  tr.pending td .pending-tag {
+    color: var(--accent);
+    font-size: 11px;
+    font-family: 'JetBrains Mono', monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-left: 8px;
+  }
+
+  /* INPUT GRID */
+  .inputs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  .input-cell {
+    background: var(--panel);
+    border: 1px solid var(--rule);
+    padding: 14px 16px;
+  }
+  .input-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--ink-mid);
+    margin-bottom: 8px;
+    display: block;
+  }
+  .input-label .max {
+    color: var(--ink-soft);
+    margin-left: 6px;
+  }
+  input[type="number"] {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--ink);
+    padding: 4px 0 6px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--ink);
+    font-variant-numeric: tabular-nums;
+    outline: none;
+  }
+  input[type="number"]:focus { border-bottom-color: var(--accent); }
+  input[type="number"]::placeholder { color: var(--ink-soft); }
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+  input[type="number"] { -moz-appearance: textfield; }
+  .locked-score {
+    width: 74px;
+    border: 0;
+    padding: 0;
+    font-size: 14px;
+    text-align: right;
+    color: var(--ink);
+    pointer-events: none;
+  }
+  .locked-score[readonly] { opacity: 1; }
+
+  .slider-row { margin-top: 12px; }
+  input[type="range"] {
+    -webkit-appearance: none;
+    width: 100%;
+    background: transparent;
+    cursor: ew-resize;
+  }
+  input[type="range"]::-webkit-slider-runnable-track { height: 2px; background: var(--rule); }
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 16px; width: 16px;
+    background: var(--accent);
+    border-radius: 50%;
+    margin-top: -7px;
+    cursor: grab;
+  }
+  input[type="range"]::-moz-range-track { height: 2px; background: var(--rule); }
+  input[type="range"]::-moz-range-thumb {
+    height: 16px; width: 16px;
+    background: var(--accent);
+    border-radius: 50%;
+    border: none;
+    cursor: grab;
+  }
+
+  /* RESULT */
+  .result-box {
+    background: var(--panel);
+    border: 2px solid var(--ink);
+    padding: 24px 28px;
+    display: grid;
+    grid-template-columns: 1.3fr 1fr 1fr;
+    gap: 24px;
+    align-items: center;
+  }
+  .result-cell .label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--ink-mid);
+    margin-bottom: 6px;
+  }
+  .result-cell .value {
+    font-family: 'JetBrains Mono', monospace;
+    font-variant-numeric: tabular-nums;
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: -0.01em;
+  }
+  .result-cell .value .pct {
+    color: var(--ink-mid);
+    font-size: 22px;
+    margin-left: 2px;
+  }
+  .result-cell .scheme-name {
+    font-size: 13px;
+    color: var(--ink-mid);
+    margin-top: 4px;
+  }
+  .letter-display {
+    font-size: 64px;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    color: var(--accent);
+  }
+  .letter-display.failing { color: var(--danger); }
+
+  .status-pill {
+    display: inline-block;
+    padding: 5px 10px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border: 1px solid currentColor;
+    margin-top: 8px;
+  }
+  .status-pill.passing { color: var(--positive); background: var(--positive-bg); }
+  .status-pill.failing { color: var(--danger);   background: var(--danger-bg); }
+
+  /* SCHEMES TABLE */
+  .schemes-table tbody tr.best {
+    background: var(--best-bg);
+  }
+  .schemes-table tbody tr.best td:first-child {
+    border-left: 3px solid var(--best-border);
+    padding-left: 11px;
+    font-weight: 600;
+  }
+  .schemes-table .marker {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--ink-soft);
+  }
+  .schemes-table .marker.best-marker { color: var(--accent); font-weight: 600; }
+
+  .scheme-letter {
+    display: inline-block;
+    min-width: 28px;
+    padding: 2px 8px;
+    text-align: center;
+    background: var(--rule-soft);
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 600;
+    font-size: 13px;
+  }
+  .scheme-letter.failing { background: var(--danger-bg); color: var(--danger); }
+  .scheme-letter.passing { background: var(--positive-bg); color: var(--positive); }
+
+  /* TARGETS GRID */
+  .targets {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+  }
+  .target-cell {
+    background: var(--panel);
+    border: 1px solid var(--rule);
+    padding: 18px 16px;
+  }
+  .target-cell.required {
+    background: var(--ink);
+    color: var(--bg);
+    border-color: var(--ink);
+    position: relative;
+  }
+  .target-cell.required::after {
+    content: 'REQUIRED';
+    position: absolute;
+    top: 10px; right: 12px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    color: #d4ac3e;
+    letter-spacing: 0.14em;
+  }
+  .target-cell.locked { background: var(--positive-bg); border-color: var(--positive); }
+  .target-cell.impossible { background: var(--danger-bg); border-color: var(--danger); opacity: 0.85; }
+  .target-letter {
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 1;
+    margin-bottom: 8px;
+    letter-spacing: -0.02em;
+  }
+  .target-cell.required .target-letter { color: #d4ac3e; }
+  .target-value {
+    font-family: 'JetBrains Mono', monospace;
+    font-variant-numeric: tabular-nums;
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 2px;
+  }
+  .target-value .unit { color: var(--ink-soft); font-size: 11px; margin-left: 4px; }
+  .target-cell.required .target-value .unit { color: rgba(248, 246, 241, 0.5); }
+  .target-meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--ink-soft);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    line-height: 1.4;
+  }
+  .target-cell.required .target-meta { color: rgba(248, 246, 241, 0.55); }
+  .target-cell.locked .target-value { color: var(--positive); }
+  .target-cell.impossible .target-value { color: var(--danger); }
+
+  .key-output {
+    background: var(--accent-bg);
+    border-left: 4px solid var(--accent);
+    padding: 14px 18px;
+    margin-bottom: 16px;
+  }
+  .key-output .label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--accent-2);
+    margin-bottom: 4px;
+  }
+  .key-output .value {
+    font-size: 18px;
+    font-weight: 500;
+  }
+  .key-output .value strong { color: var(--accent-2); }
+
+  footer {
+    margin-top: 48px;
+    padding-top: 16px;
+    border-top: 1px solid var(--rule);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--ink-soft);
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+  }
+
+  @media (max-width: 760px) {
+    .page { padding: 32px 18px 64px; }
+    .inputs { grid-template-columns: 1fr; }
+    .result-box { grid-template-columns: 1fr; gap: 18px; padding: 20px; }
+    .targets { grid-template-columns: 1fr 1fr; }
+    .schemes-table th:nth-child(2), .schemes-table td:nth-child(2) { display: none; }
+    h1 { font-size: 26px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <div class="eyebrow">EIN 3241 · Spring 2026 · Dr. Atweh</div>
+    <h1>Human Factors &amp; Ergonomics — Grade Calculator</h1>
+    <div class="sub">Final Exam · Tue, April 28 · 8:00 PM</div>
+  </header>
+
+  <section>
+    <h2>§ Locked Categories — From Canvas Gradebook</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Category</th>
+          <th class="num">Raw</th>
+          <th class="num">Percentage</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="locked-row"><td>In-Class Activities</td><td class="num">Canvas locked</td><td class="num"><input class="locked-score" type="number" value="90.00" readonly aria-label="In-Class Activities locked score">%</td></tr>
+        <tr class="locked-row"><td>Quizzes (6 of 6)</td><td class="num">Canvas locked</td><td class="num"><input class="locked-score" type="number" value="76.04" readonly aria-label="Quizzes locked score">%</td></tr>
+        <tr class="locked-row"><td>Labs (6 of 6)</td><td class="num">Canvas locked</td><td class="num"><input class="locked-score" type="number" value="99.67" readonly aria-label="Labs locked score">%</td></tr>
+        <tr class="locked-row"><td>Midterm Exam</td><td class="num">Canvas locked</td><td class="num"><input class="locked-score" type="number" value="85.50" readonly aria-label="Midterm Exam locked score">%</td></tr>
+        <tr class="pending"><td>Project<span class="pending-tag">depends on Final Report below</span></td><td class="num" id="proj-raw">10.20 / 20.00</td><td class="num" id="proj-pct">51.00%</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>§ Pending Inputs</h2>
+    <div class="inputs">
+      <div class="input-cell">
+        <label class="input-label" for="fr">Final Report<span class="max">/ 9</span></label>
+        <input type="number" id="fr" min="0" max="9" step="0.1" placeholder="0">
+      </div>
+      <div class="input-cell">
+        <label class="input-label" for="final">Final Exam<span class="max">/ 100</span></label>
+        <input type="number" id="final" min="0" max="100" step="0.5" value="70">
+        <div class="slider-row"><input type="range" id="final-slider" min="0" max="100" step="0.5" value="70"></div>
+      </div>
+      <div class="input-cell">
+        <label class="input-label" for="ec">Extra Credit<span class="max">/ 5</span></label>
+        <input type="number" id="ec" min="0" max="5" step="0.5" placeholder="0">
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>§ Projected Final Grade — Best of 4 Schemes</h2>
+    <div class="result-box">
+      <div class="result-cell">
+        <div class="label">Total (best scheme)</div>
+        <div class="value" id="best-total">—<span class="pct">%</span></div>
+        <div class="scheme-name" id="best-scheme-name">—</div>
+      </div>
+      <div class="result-cell">
+        <div class="label">Letter Grade</div>
+        <div class="letter-display" id="best-letter">—</div>
+      </div>
+      <div class="result-cell">
+        <div class="label">Status</div>
+        <div class="status-pill passing" id="status-pill">—</div>
+        <div class="scheme-name" id="status-detail" style="margin-top:8px;">—</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>§ Final Exam Targets — Minimum Score Needed</h2>
+    <div class="key-output" id="key-output">
+      <div class="label">To Pass with a C (≥ 73.4%)</div>
+      <div class="value" id="key-value">—</div>
+    </div>
+    <div class="targets" id="targets-grid"></div>
+  </section>
+
+  <section>
+    <h2>§ All 4 Weighting Schemes — Live</h2>
+    <table class="schemes-table">
+      <thead>
+        <tr>
+          <th>Scheme</th>
+          <th>Weights (ICA / Quiz / Labs / Mid / Proj / Final)</th>
+          <th class="num">Total</th>
+          <th class="num">Letter</th>
+          <th class="num">Min Final for C</th>
+        </tr>
+      </thead>
+      <tbody id="schemes-body"></tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>§ Notes</h2>
+    <div style="font-size: 13px; color: var(--ink-mid); line-height: 1.6;">
+      <p>· Per syllabus, the professor evaluates all four weighting schemes and applies whichever yields the highest grade.</p>
+      <p>· Passing threshold is a <strong>C (≥ 73.4%)</strong>. A C− is explicitly NOT a passing grade per syllabus.</p>
+      <p>- Project category currently shows 10.20 / 20.00 (Progress Report 1.7/2 + Presentation 8.5/9 + ungraded Final Report counted as 0/9 until entered).</p>
+      <p>· Extra Credit (Canvas: /5) added directly to final exam category; can push that category &gt; 100%.</p>
+    </div>
+  </section>
+
+  <footer>
+    <span>EIN3241 · Generated 04.25.2026 · Per syllabus weights and grading scale</span>
+  </footer>
+
+</div>
+
+<script>
+  // Manual check, FR unset = 0 and EC = 0:
+  // Project = (10.20 + 0) / 20 * 100 = 51.00%.
+  // FrozeOnFinal at final = 0:
+  // 0.05*90 + 0.15*76.04 + 0.10*99.67 + 0.35*85.50 + 0.20*51 + 0.15*0 = 65.998%.
+  // Min final for C is best across schemes:
+  // Base 63.8%, DidPoorlyMidterm 70.0%, FrozeOnFinal 49.3%, NailedFinal 72.5%; display should be 49.3%.
+/*
+  Legacy calculator disabled. It used the in-progress project denominator
+  and min-final math incorrectly for the Spring 2026 syllabus rules.
+
+  // === LOCKED DATA (from Canvas gradebook) ===
+  const locked = {
+    ica:     { earned: 900,   possible: 1000 },  // 90.00
+    quizzes: { earned: 91.25, possible: 120 },   // 76.04
+    labs:    { earned: 598,   possible: 600 },   // 99.67
+    midterm: { earned: 85.5,  possible: 100 },   // 85.50
+    project: { earned: 10.2,  possible: 20 },    // Disabled legacy block; correct baseline is 51.00%
+  };
+
+  // === SYLLABUS WEIGHTING SCHEMES ===
+  // [ica, quizzes, labs, midterm, project, final]
+  const schemes = [
+    { name: 'Base',                           w: { ica: 0.05, quizzes: 0.15, labs: 0.10, midterm: 0.25, project: 0.20, final: 0.25 } },
+    { name: 'Did Poorly on Midterm',          w: { ica: 0.05, quizzes: 0.15, labs: 0.10, midterm: 0.15, project: 0.20, final: 0.35 } },
+    { name: 'Froze Up on Final',              w: { ica: 0.05, quizzes: 0.15, labs: 0.10, midterm: 0.35, project: 0.20, final: 0.15 } },
+    { name: 'Struggled but Nailed Final',     w: { ica: 0.05, quizzes: 0.10, labs: 0.05, midterm: 0.20, project: 0.20, final: 0.40 } },
+  ];
+
+  // === GRADING SCALE (per syllabus, NOT integer-rounded) ===
+  const grades = [
+    { letter: 'A',  cutoff: 93.4 },
+    { letter: 'A−', cutoff: 90.0 },
+    { letter: 'B+', cutoff: 86.7 },
+    { letter: 'B',  cutoff: 83.4 },
+    { letter: 'B−', cutoff: 80.0 },
+    { letter: 'C+', cutoff: 76.7 },
+    { letter: 'C',  cutoff: 73.4 },  // PASSING THRESHOLD
+    { letter: 'C−', cutoff: 70.0 },
+    { letter: 'D+', cutoff: 66.7 },
+    { letter: 'D',  cutoff: 63.4 },
+    { letter: 'D−', cutoff: 60.0 },
+    { letter: 'E',  cutoff: 0    },
+  ];
+
+  const PASS_CUTOFF = 73.4;
+
+  function letterFor(pct) {
+    for (const g of grades) if (pct >= g.cutoff) return g.letter;
+    return 'E';
+  }
+  function isPassing(letter) {
+    // Passing is C, C+, B-, B, B+, A-, A — anything >= 73.4
+    const idx = grades.findIndex(g => g.letter === letter);
+    return idx <= grades.findIndex(g => g.letter === 'C');
+  }
+  function clamp(n, min, max) {
+    if (n === null || n === undefined || isNaN(n)) return null;
+    return Math.max(min, Math.min(max, n));
+  }
+  function parseInputVal(id, max) {
+    const v = document.getElementById(id).value.trim();
+    if (v === '') return null;
+    const n = parseFloat(v);
+    return clamp(isNaN(n) ? null : n, 0, max);
+  }
+
+  function categoryScores(frInput, finalInput, ecInput) {
+    // Project: if FR input given, recompute as (10.2 + FR) / 20
+    let projectPct;
+    let projectRaw;
+    if (frInput !== null) {
+      const newEarned   = locked.project.earned   + frInput;
+      const newPossible = locked.project.possible + 9; // Final Report is /9
+      projectPct = (newEarned / newPossible) * 100;
+      projectRaw = `${newEarned.toFixed(2)} / ${newPossible.toFixed(2)}`;
+    } else {
+      projectPct = (locked.project.earned / locked.project.possible) * 100;
+      projectRaw = `${locked.project.earned.toFixed(2)} / ${locked.project.possible.toFixed(2)}`;
+    }
+
+    const finalScore = (finalInput ?? 0) + (ecInput ?? 0); // out of 100, can exceed
+
+    return {
+      ica:     (locked.ica.earned     / locked.ica.possible)     * 100,
+      quizzes: (locked.quizzes.earned / locked.quizzes.possible) * 100,
+      labs:    (locked.labs.earned    / locked.labs.possible)    * 100,
+      midterm: (locked.midterm.earned / locked.midterm.possible) * 100,
+      project: projectPct,
+      final:   finalScore,
+      _projectRaw: projectRaw,
+    };
+  }
+
+  function totalForScheme(scheme, scores) {
+    return (
+      scheme.w.ica     * scores.ica     +
+      scheme.w.quizzes * scores.quizzes +
+      scheme.w.labs    * scores.labs    +
+      scheme.w.midterm * scores.midterm +
+      scheme.w.project * scores.project +
+      scheme.w.final   * scores.final
+    );
+  }
+
+  function lockedPortionForScheme(scheme, scores) {
+    return (
+      scheme.w.ica     * scores.ica     +
+      scheme.w.quizzes * scores.quizzes +
+      scheme.w.labs    * scores.labs    +
+      scheme.w.midterm * scores.midterm +
+      scheme.w.project * scores.project
+    );
+  }
+
+  function minFinalForLetter(targetCutoff, scores) {
+    // Across all schemes, find the one that requires the LOWEST final exam score
+    // to reach targetCutoff. Returns { needed, scheme }.
+    let best = { needed: Infinity, scheme: null };
+    for (const s of schemes) {
+      const lockedPart = lockedPortionForScheme(s, scores);
+      const need = (targetCutoff - lockedPart) / s.w.final;
+      if (need < best.needed) {
+        best = { needed: need, scheme: s.name };
+      }
+    }
+    return best;
+  }
+
+  function fmt(n, dp = 2) {
+    if (!isFinite(n)) return '—';
+    return n.toFixed(dp);
+  }
+
+  function update() {
+    const fr    = parseInputVal('fr',    9);
+    const final = parseInputVal('final', 100);
+    const ec    = parseInputVal('ec',    5);
+
+    const scores = categoryScores(fr, final, ec);
+
+    // Update Project row display
+    document.getElementById('proj-raw').textContent = scores._projectRaw;
+    document.getElementById('proj-pct').textContent = `${fmt(scores.project)}%`;
+
+    // Compute totals across schemes
+    const results = schemes.map(s => {
+      const total = totalForScheme(s, scores);
+      const letter = letterFor(total);
+      const minC = minFinalForLetterSingleScheme(s, scores, PASS_CUTOFF);
+      return { scheme: s, total, letter, minC };
+    });
+
+    // Best scheme (highest total)
+    const best = results.reduce((a, b) => b.total > a.total ? b : a);
+
+    // Render top result
+    document.getElementById('best-total').innerHTML       = `${fmt(best.total)}<span class="pct">%</span>`;
+    document.getElementById('best-scheme-name').textContent = `via "${best.scheme.name}"`;
+    const letterEl = document.getElementById('best-letter');
+    letterEl.textContent = best.letter;
+    letterEl.classList.toggle('failing', !isPassing(best.letter));
+
+    // Status
+    const passing = isPassing(best.letter);
+    const pill = document.getElementById('status-pill');
+    pill.className = 'status-pill ' + (passing ? 'passing' : 'failing');
+    pill.textContent = passing ? 'Passing · ≥ C' : 'NOT Passing · Below C';
+    const delta = best.total - PASS_CUTOFF;
+    document.getElementById('status-detail').innerHTML =
+      `${delta >= 0 ? '+' : '−'}${Math.abs(delta).toFixed(2)} from C cutoff`;
+
+    // Min for C — across all schemes, the minimum final exam needed
+    const minForC = minFinalForLetter(PASS_CUTOFF, scores);
+    const keyEl = document.getElementById('key-value');
+    if (minForC.needed < 0) {
+      keyEl.innerHTML = `<strong>0%</strong> — already locked in via "${minForC.scheme}" scheme. Even a zero on the final keeps you at a C.`;
+    } else if (minForC.needed > 100) {
+      keyEl.innerHTML = `<strong>Mathematically impossible</strong> — cannot reach C with current grades.`;
+    } else {
+      keyEl.innerHTML = `<strong>${fmt(minForC.needed, 1)}%</strong> on the final exam (under "${minForC.scheme}" scheme).`;
+    }
+
+    // Targets grid (A, B, C, A−)
+    renderTargets(scores);
+
+    // Schemes breakdown table
+    renderSchemes(results, best);
+  }
+
+  function minFinalForLetterSingleScheme(scheme, scores, cutoff) {
+    const lockedPart = lockedPortionForScheme(scheme, scores);
+    return (cutoff - lockedPart) / scheme.w.final;
+  }
+
+  function renderTargets(scores) {
+    const targets = [
+      { letter: 'C',  cutoff: 73.4, required: true },
+      { letter: 'B',  cutoff: 83.4 },
+      { letter: 'B+', cutoff: 86.7 },
+      { letter: 'A',  cutoff: 93.4 },
+    ];
+    const grid = document.getElementById('targets-grid');
+    grid.innerHTML = '';
+    targets.forEach(t => {
+      const m = minFinalForLetter(t.cutoff, scores);
+      let cls = 'target-cell';
+      let valueHTML, metaText;
+      if (m.needed < 0) {
+        cls += ' locked';
+        valueHTML = `Locked in ✓`;
+        metaText  = `Already secured via "${m.scheme}"`;
+      } else if (m.needed > 100) {
+        cls += ' impossible';
+        valueHTML = `Out of reach`;
+        metaText  = `Cannot achieve under any scheme`;
+      } else {
+        valueHTML = `${fmt(m.needed, 1)}<span class="unit">/ 100</span>`;
+        metaText  = `Min final exam · "${m.scheme}"`;
+      }
+      if (t.required) cls += ' required';
+      const cell = document.createElement('div');
+      cell.className = cls;
+      cell.innerHTML = `
+        <div class="target-letter">${t.letter}</div>
+        <div class="target-value">${valueHTML}</div>
+        <div class="target-meta">${metaText}</div>
+      `;
+      grid.appendChild(cell);
+    });
+  }
+
+  function renderSchemes(results, best) {
+    const tbody = document.getElementById('schemes-body');
+    tbody.innerHTML = '';
+    results.forEach(r => {
+      const w = r.scheme.w;
+      const isBest = r === best;
+      const passing = isPassing(r.letter);
+      const minCDisplay = r.minC < 0 ? '✓ Locked' : r.minC > 100 ? '— Impossible' : `${fmt(r.minC, 1)}%`;
+      const row = document.createElement('tr');
+      if (isBest) row.className = 'best';
+      row.innerHTML = `
+        <td>${r.scheme.name} ${isBest ? '<span class="marker best-marker">★ BEST</span>' : ''}</td>
+        <td><span class="marker">${(w.ica*100).toFixed(0)} / ${(w.quizzes*100).toFixed(0)} / ${(w.labs*100).toFixed(0)} / ${(w.midterm*100).toFixed(0)} / ${(w.project*100).toFixed(0)} / ${(w.final*100).toFixed(0)}</span></td>
+        <td class="num">${fmt(r.total)}%</td>
+        <td class="num"><span class="scheme-letter ${passing ? 'passing' : 'failing'}">${r.letter}</span></td>
+        <td class="num">${minCDisplay}</td>
+      `;
+      tbody.appendChild(row);
+    });
+  }
+
+  // Wire inputs
+  ['fr','final','ec'].forEach(id => {
+    document.getElementById(id).addEventListener('input', update);
+  });
+  const finalInput  = document.getElementById('final');
+  const finalSlider = document.getElementById('final-slider');
+  finalSlider.addEventListener('input', () => { finalInput.value = finalSlider.value; update(); });
+  finalInput.addEventListener('input',  () => { finalSlider.value = finalInput.value; });
+
+  update();
+*/
+
+  const lockedScores = {
+    ica: 90.00,
+    quizzes: 76.04,
+    labs: 99.67,
+    midterm: 85.50,
+  };
+
+  const projectBaseline = {
+    earned: 10.20,
+    possible: 20.00,
+  };
+
+  const syllabusSchemes = [
+    { name: 'Base', w: { ica: 0.05, quizzes: 0.15, labs: 0.10, midterm: 0.25, project: 0.20, final: 0.25 } },
+    { name: 'Did Poorly on Midterm', w: { ica: 0.05, quizzes: 0.15, labs: 0.10, midterm: 0.15, project: 0.20, final: 0.35 } },
+    { name: 'Froze Up on Final', w: { ica: 0.05, quizzes: 0.15, labs: 0.10, midterm: 0.35, project: 0.20, final: 0.15 } },
+    { name: 'Struggled but Nailed Final', w: { ica: 0.05, quizzes: 0.10, labs: 0.05, midterm: 0.20, project: 0.20, final: 0.40 } },
+  ];
+
+  const gradingScale = [
+    { letter: 'A', cutoff: 93.4 },
+    { letter: 'A-', cutoff: 90.0 },
+    { letter: 'B+', cutoff: 86.7 },
+    { letter: 'B', cutoff: 83.4 },
+    { letter: 'B-', cutoff: 80.0 },
+    { letter: 'C+', cutoff: 76.7 },
+    { letter: 'C', cutoff: 73.4 },
+    { letter: 'C-', cutoff: 70.0 },
+    { letter: 'D+', cutoff: 66.7 },
+    { letter: 'D', cutoff: 63.4 },
+    { letter: 'D-', cutoff: 60.0 },
+    { letter: 'E', cutoff: 0 },
+  ];
+
+  const passingCutoff = 73.4;
+  const epsilon = 0.0000001;
+
+  syllabusSchemes.forEach((scheme) => {
+    const weightSum = Object.values(scheme.w).reduce((sum, weight) => sum + weight, 0);
+    if (Math.abs(weightSum - 1) > epsilon) {
+      throw new Error(`${scheme.name} weights sum to ${(weightSum * 100).toFixed(2)}%, not 100%.`);
+    }
+  });
+
+  function letterForPct(pct) {
+    if (!Number.isFinite(pct)) return 'E';
+    return gradingScale.find((grade) => pct + epsilon >= grade.cutoff)?.letter ?? 'E';
+  }
+
+  function isPassingPct(pct) {
+    return Number.isFinite(pct) && pct + epsilon >= passingCutoff;
+  }
+
+  function clampNumber(value, min, max) {
+    if (!Number.isFinite(value)) return null;
+    return Math.max(min, Math.min(max, value));
+  }
+
+  function parseNumberInput(id, max, fallback = 0) {
+    const rawValue = document.getElementById(id).value.trim();
+    if (rawValue === '') return fallback;
+    return clampNumber(Number.parseFloat(rawValue), 0, max) ?? fallback;
+  }
+
+  function getCategoryScores(finalReportInput, finalExamInput, extraCreditInput) {
+    const finalReport = clampNumber(finalReportInput, 0, 9) ?? 0;
+    const finalExam = clampNumber(finalExamInput, 0, 100) ?? 0;
+    const extraCredit = clampNumber(extraCreditInput, 0, 5) ?? 0;
+    const projectEarned = projectBaseline.earned + finalReport;
+    const projectPct = (projectEarned / projectBaseline.possible) * 100;
+
+    return {
+      ...lockedScores,
+      project: projectPct,
+      final: finalExam + extraCredit,
+      extraCredit,
+      projectRaw: `${projectEarned.toFixed(2)} / ${projectBaseline.possible.toFixed(2)}`,
+    };
+  }
+
+  function totalForSyllabusScheme(scheme, scores) {
+    return (
+      scheme.w.ica * scores.ica +
+      scheme.w.quizzes * scores.quizzes +
+      scheme.w.labs * scores.labs +
+      scheme.w.midterm * scores.midterm +
+      scheme.w.project * scores.project +
+      scheme.w.final * scores.final
+    );
+  }
+
+  function nonFinalPortionForSyllabusScheme(scheme, scores) {
+    return (
+      scheme.w.ica * scores.ica +
+      scheme.w.quizzes * scores.quizzes +
+      scheme.w.labs * scores.labs +
+      scheme.w.midterm * scores.midterm +
+      scheme.w.project * scores.project
+    );
+  }
+
+  function minFinalForSchemeAndCutoff(scheme, cutoff, scores) {
+    const nonFinalPart = nonFinalPortionForSyllabusScheme(scheme, scores);
+    return ((cutoff - nonFinalPart) / scheme.w.final) - scores.extraCredit;
+  }
+
+  function minFinalForCutoff(cutoff, scores) {
+    return syllabusSchemes.reduce((best, scheme) => {
+      const needed = minFinalForSchemeAndCutoff(scheme, cutoff, scores);
+      return needed < best.needed ? { needed, scheme: scheme.name } : best;
+    }, { needed: Infinity, scheme: null });
+  }
+
+  function fmtPct(value, dp = 2) {
+    if (!Number.isFinite(value)) return '-';
+    return value.toFixed(dp);
+  }
+
+  function recalculate() {
+    const finalReport = parseNumberInput('fr', 9, 0);
+    const finalExam = parseNumberInput('final', 100, 0);
+    const extraCredit = parseNumberInput('ec', 5, 0);
+    const scores = getCategoryScores(finalReport, finalExam, extraCredit);
+
+    document.getElementById('proj-raw').textContent = scores.projectRaw;
+    document.getElementById('proj-pct').textContent = `${fmtPct(scores.project)}%`;
+
+    const results = syllabusSchemes.map((scheme) => {
+      const total = totalForSyllabusScheme(scheme, scores);
+      return {
+        scheme,
+        total,
+        letter: letterForPct(total),
+        minC: minFinalForSchemeAndCutoff(scheme, passingCutoff, scores),
+      };
+    });
+    const best = results.reduce((currentBest, result) => result.total > currentBest.total ? result : currentBest);
+
+    document.getElementById('best-total').innerHTML = `${fmtPct(best.total)}<span class="pct">%</span>`;
+    document.getElementById('best-scheme-name').textContent = `via "${best.scheme.name}"`;
+
+    const letterEl = document.getElementById('best-letter');
+    letterEl.textContent = best.letter;
+    letterEl.classList.toggle('failing', !isPassingPct(best.total));
+
+    const passing = isPassingPct(best.total);
+    const pill = document.getElementById('status-pill');
+    pill.className = `status-pill ${passing ? 'passing' : 'failing'}`;
+    pill.textContent = passing ? 'Passing - >= C' : 'Not Passing - Below C';
+
+    const delta = best.total - passingCutoff;
+    document.getElementById('status-detail').textContent =
+      `${delta >= 0 ? '+' : '-'}${Math.abs(delta).toFixed(2)} from C cutoff`;
+
+    const minForC = minFinalForCutoff(passingCutoff, scores);
+    const keyEl = document.getElementById('key-value');
+    if (minForC.needed <= 0) {
+      keyEl.innerHTML = '<strong>Already passing - 0% needed on final.</strong>';
+    } else if (minForC.needed > 100) {
+      keyEl.innerHTML = '<strong>Mathematically impossible</strong> - cannot reach C with current grades and extra credit.';
+    } else {
+      keyEl.innerHTML = `<strong>${fmtPct(minForC.needed, 1)}%</strong> on the final exam (under "${minForC.scheme}" scheme).`;
+    }
+
+    renderTargetCards(scores);
+    renderSchemeRows(results, best);
+  }
+
+  function renderTargetCards(scores) {
+    const targets = [
+      { letter: 'C', cutoff: 73.4, required: true },
+      { letter: 'B', cutoff: 83.4 },
+      { letter: 'B+', cutoff: 86.7 },
+      { letter: 'A', cutoff: 93.4 },
+    ];
+    const grid = document.getElementById('targets-grid');
+    grid.innerHTML = '';
+
+    targets.forEach((target) => {
+      const minimum = minFinalForCutoff(target.cutoff, scores);
+      let cls = 'target-cell';
+      let valueHTML;
+      let metaText;
+
+      if (minimum.needed <= 0) {
+        cls += ' locked';
+        valueHTML = '0<span class="unit">/ 100</span>';
+        metaText = `Already secured via "${minimum.scheme}"`;
+      } else if (minimum.needed > 100) {
+        cls += ' impossible';
+        valueHTML = 'Out of reach';
+        metaText = 'Cannot achieve under any scheme';
+      } else {
+        valueHTML = `${fmtPct(minimum.needed, 1)}<span class="unit">/ 100</span>`;
+        metaText = `Min final exam - "${minimum.scheme}"`;
+      }
+
+      if (target.required) cls += ' required';
+      const cell = document.createElement('div');
+      cell.className = cls;
+      cell.innerHTML = `
+        <div class="target-letter">${target.letter}</div>
+        <div class="target-value">${valueHTML}</div>
+        <div class="target-meta">${metaText}</div>
+      `;
+      grid.appendChild(cell);
+    });
+  }
+
+  function renderSchemeRows(results, best) {
+    const tbody = document.getElementById('schemes-body');
+    tbody.innerHTML = '';
+
+    results.forEach((result) => {
+      const w = result.scheme.w;
+      const isBest = result === best;
+      const passing = isPassingPct(result.total);
+      const minCDisplay = result.minC <= 0 ? '0.0%' : result.minC > 100 ? '- Impossible' : `${fmtPct(result.minC, 1)}%`;
+      const row = document.createElement('tr');
+      if (isBest) row.className = 'best';
+      row.innerHTML = `
+        <td>${result.scheme.name} ${isBest ? '<span class="marker best-marker">BEST</span>' : ''}</td>
+        <td><span class="marker">${(w.ica * 100).toFixed(0)} / ${(w.quizzes * 100).toFixed(0)} / ${(w.labs * 100).toFixed(0)} / ${(w.midterm * 100).toFixed(0)} / ${(w.project * 100).toFixed(0)} / ${(w.final * 100).toFixed(0)}</span></td>
+        <td class="num">${fmtPct(result.total)}%</td>
+        <td class="num"><span class="scheme-letter ${passing ? 'passing' : 'failing'}">${result.letter}</span></td>
+        <td class="num">${minCDisplay}</td>
+      `;
+      tbody.appendChild(row);
+    });
+  }
+
+  const correctedFinalInput = document.getElementById('final');
+  const correctedFinalSlider = document.getElementById('final-slider');
+
+  ['fr', 'final', 'ec'].forEach((id) => {
+    const input = document.getElementById(id);
+    input.addEventListener('input', recalculate);
+    input.addEventListener('change', recalculate);
+  });
+
+  correctedFinalSlider.addEventListener('input', () => {
+    correctedFinalInput.value = correctedFinalSlider.value;
+    recalculate();
+  });
+  correctedFinalSlider.addEventListener('change', recalculate);
+  correctedFinalInput.addEventListener('input', () => {
+    correctedFinalSlider.value = parseNumberInput('final', 100, 0);
+  });
+  correctedFinalInput.addEventListener('change', () => {
+    const value = parseNumberInput('final', 100, 0);
+    correctedFinalInput.value = value;
+    correctedFinalSlider.value = value;
+    recalculate();
+  });
+
+  recalculate();
+</script>
+
+</body>
+</html>
