@@ -657,7 +657,7 @@
 
   <div class="subbar reveal d2">
     <span>Document · gradesheet.html</span>
-    <span>Generated · 04.25.2026</span>
+    <span>Generated · 04.26.2026</span>
     <span>Currency · grant.sherman</span>
   </div>
 
@@ -682,7 +682,7 @@
       <div class="row-num">03</div>
       <div class="row-name">Homework Assignments<span class="sub" id="hw-sub">Top 4 of 6 — currently 4 graded</span></div>
       <div class="row-weight">8%</div>
-      <div class="row-score" id="hw-score">96.88<span class="pct">%</span></div>
+      <div class="row-score" id="hw-score">97.22<span class="pct">%</span></div>
     </div>
 
     <div class="row">
@@ -701,7 +701,7 @@
 
     <div class="row">
       <div class="row-num">06</div>
-      <div class="row-name">In-Class Activities<span class="sub">7 ICAs · Lowest 2 dropped</span></div>
+      <div class="row-name">In-Class Activities<span class="sub">6 ICAs · Lowest 2 dropped</span></div>
       <div class="row-weight">8%</div>
       <div class="row-score">100.00<span class="pct">%</span></div>
     </div>
@@ -842,7 +842,6 @@
         { name: 'ICA4', earned: 10, possible: 10 },
         { name: 'ICA5', earned: 10, possible: 10 },
         { name: 'ICA6 Apr 15', earned: 10, possible: 10 },
-        { name: 'ICA6 Apr 22', earned: 0,  possible: 10 },
       ],
       dropLowest: 2,
     },
@@ -886,8 +885,10 @@
     ];
     all.sort((a, b) => pct(b) - pct(a));
     const top = all.slice(0, config.homework.takeBest);
+    const earned = top.reduce((sum, item) => sum + item.earned, 0);
+    const possible = top.reduce((sum, item) => sum + item.possible, 0);
     return {
-      score: top.reduce((sum, item) => sum + pct(item), 0) / config.homework.takeBest,
+      score: (earned / possible) * 100,
       submitted: config.homework.fixed.length + [hw5, hw6].filter(v => v !== null).length,
     };
   }

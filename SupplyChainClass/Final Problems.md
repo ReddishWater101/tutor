@@ -75,33 +75,3 @@ a. What are the parameters of demand during lead time?
 b. What is the total annual logistics cost (including on-site inventory, ordering, transportation and in-transit inventory holding) associated with the current system?
 
 c. Another company Fast Horses, Inc. has made an offer to BWAH so that the guaranteed transportation lead time with a mean of 4 days and a standard deviation of 1 day, the distribution for which can assumed to be approximately normally distributed. Fast Horses would charge BWAH $1.00/unit for shipping costs. Should BWAH accept this new offer?
-
-
-
-# logistics or supply chain design
-## 6. MedEq Inventory Consolidation | Source: Lectures/Lecture_8_Logistics-B.pdf, Pages 8-20
-MedEq, located in Elmira, New York is a manufacturer of supply kits that are used by doctors in cosmetic procedures. The kits weigh 0.5 lbs and cost $200 each. MedEq currently has 24 sales territories (i.e., regions) throughout the U.S. such that the demand in each area is distributed identically and independently. Each sales territory has its own sales force and a local distribution center where all MedEq supply kit inventory is stored. MedEq uses an annual inventory carrying rate of 40 percent at the local distribution centers and you may assume that there are 48 weeks in a year.
-
-Currently, the 24 local distribution centers are replenished from Elmira every four weeks using Yellow Transportation. MedEq outsources the shipment of supply kits to Yellow Transportation. Yellow Transportation charges MedEq a transportation rate of $40 + 1.1w, where w is the weight of the shipment in pounds. The average lead time from Elmira to any of the local distribution centers is about one week. Weekly demand for MedEq supply kits at each territory follows a normal distribution approximately with a mean of 40 units and a standard deviation of 10 units. MedEq targets a Type I service level of 95% in each sales territory.
-
-a. What is the total annual logistics cost associated with the current operating policy? You may ignore in-transit inventory holding costs.
-
-b. MedEq considers eliminating the local distribution centers and consolidating all its inventories at the local distribution centers at a finished goods warehouse in Louisville, Kentucky. This central warehouse is to be replenished from the manufacturing facility each week, and customer orders are to be shipped directly from the central warehouse to the customers via FedEx. FedEx has made an offer to charge MedEq $17 + 2.50w per shipment, where w is the quantity shipped in pounds. The average customer order size is 8 units. The lead time to replenish this central warehouse from MedEq's manufacturing facility would be one week, and each replenishment trip would cost the company $500. MedEq would still target a Type I service level of 95 percent. Due to the incentives given to medical businesses in Kentucky, MedEq will incur an annual inventory carrying charge of 15 percent per year at this warehouse. What is the total annual logistics cost associated with this proposed operating policy?
-
-
-
-# logistics or supply chain design
-## 7. AW Inc. Multi-Component Milk-Run (2016 Final Exam Question) | Source: Assignments/Homework_6_questions.md, Question 2
-AW Inc. produces two variants of a particular product, P1 and P2, using two types of components, C1 and C2. P1 requires 1 unit of C1 and 2 units of C2, and is assembled in Seattle at a rate of 60 units/day. P2 requires 3 units of C1 and 1 unit of C2, and is assembled in Redding at a rate of 80 units/day. C1 and C2 are manufactured by suppliers in Chicago and Atlanta, respectively. The assembly facilities operate 360 days/year. AW Inc. outsources transportation operations to a third-party logistics (TPL) provider. The TPL provider offers trucks that can carry 3,000 units of either C1 or C2 at a cost of $3,200 per trip. The delivery lead-time from Atlanta to either Seattle or Redding is 5 days, whereas the delivery lead time from Chicago to either Seattle or Redding is 4 days. AW Inc. incurs an inventory holding cost of $0.35/unit/day for components that are stocked at the assembly plants and $0.25/unit/day for components that are in-transit from the supplier locations to the assembly plants.
-
-a. What are the total annual logistics costs if full truckload direct deliveries are made from the supplier plants to the assembly plants?
-
-b. Suppose that the TPL provider agrees to make milk-run pick-ups and deliveries and carry less than full truckloads if necessary. AW Inc. considers a milk-run pickup scheme using optimal shipment sizes as follows: A truck would go to Chicago first to pick up C1, to Atlanta next to pick up C2, and deliver C1 and C2 to Redding. Similarly, another truck would go to Atlanta first to pick up C2, to Chicago next to pick up C1, and deliver C1 and C2 to Seattle. What would the average annual total logistics (including on-site and in-transit inventory holding along with transportation) cost incurred by AW Inc.? Suppose that the lead-time between Atlanta and Chicago is 1 day in either direction.
-
-
-
-# forecasting
-## 8. Single Exponential Smoothing and MSE | Source: Lectures/Lecture_10_Forecasting_a.pdf, Pages 36-41
-Weekly data for pounds of coffee used at a local coffee shop during the last two months are 27, 21, 27, 30, 24, 24, 27, and 21.
-
-Assume that the forecast made for the first week at the end of week zero was 22 pounds. Determine one-step-ahead forecasts for weeks 2 through 9 using single exponential smoothing with (a) a smoothing constant of 0.1 and (b) with a smoothing constant of 0.25. Which of the forecasting approaches should be used? Please justify your answer.
