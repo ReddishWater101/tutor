@@ -313,6 +313,12 @@
   }
   .final-content { position: relative; }
   .final-content .input-label { color: rgba(246, 239, 225, 0.55); }
+  .final-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 34px;
+    margin-bottom: 30px;
+  }
   .final-eyebrow {
     font-family: 'JetBrains Mono', monospace;
     font-size: 10px;
@@ -326,18 +332,19 @@
     display: flex;
     align-items: baseline;
     gap: 14px;
-    margin-bottom: 30px;
+    margin-bottom: 14px;
     border-bottom: 1px solid rgba(246, 239, 225, 0.25);
     padding-bottom: 8px;
   }
   .final-input-wrap input[type="number"] {
     width: auto;
-    flex: 0 0 240px;
+    flex: 1 1 150px;
+    min-width: 0;
     color: var(--paper);
     border: none;
     font-family: 'Fraunces', serif;
     font-variation-settings: 'opsz' 144;
-    font-size: 80px;
+    font-size: 64px;
     font-weight: 400;
     line-height: 1;
     padding: 0;
@@ -356,6 +363,32 @@
     letter-spacing: 0.18em;
     text-transform: uppercase;
     margin-bottom: 12px;
+  }
+  .final-breakdown {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    border-top: 1px solid rgba(246, 239, 225, 0.18);
+    border-left: 1px solid rgba(246, 239, 225, 0.18);
+    margin-top: 28px;
+  }
+  .breakdown-cell {
+    padding: 18px 18px 16px;
+    border-right: 1px solid rgba(246, 239, 225, 0.18);
+    border-bottom: 1px solid rgba(246, 239, 225, 0.18);
+  }
+  .breakdown-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    color: rgba(246, 239, 225, 0.45);
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    margin-bottom: 7px;
+  }
+  .breakdown-value {
+    font-family: 'Fraunces', serif;
+    font-size: 24px;
+    font-variant-numeric: tabular-nums;
   }
   input[type="range"] {
     -webkit-appearance: none;
@@ -594,6 +627,8 @@
     .row-weight { display: none; }
     .input-grid { grid-template-columns: 1fr; }
     .final-block { padding: 36px 28px; }
+    .final-grid { grid-template-columns: 1fr; }
+    .final-breakdown { grid-template-columns: 1fr; }
     .final-input-wrap input[type="number"] { font-size: 56px; flex-basis: 160px; }
     .result { grid-template-columns: 1fr; gap: 28px; padding: 32px 0; }
     .thresh-grid { grid-template-columns: 1fr 1fr; }
@@ -673,7 +708,7 @@
 
     <div class="row pending" id="final-row">
       <div class="row-num">07</div>
-      <div class="row-name">Final Exam<span class="sub">Pending · 04.29.2026</span></div>
+      <div class="row-name">Final Exam<span class="sub" id="final-sub">Take-home 16.5 pts + in-class 83.5 pts</span></div>
       <div class="row-weight">26%</div>
       <div class="row-score" id="final-score-display"><span class="pending-tag">— —</span></div>
     </div>
@@ -699,14 +734,41 @@
 
   <section class="final-block reveal d5">
     <div class="final-content">
-      <div class="final-eyebrow">§ III. Final Exam <span class="dot">●</span> The Lever</div>
-      <label class="input-label" for="final">Projected Score</label>
-      <div class="final-input-wrap">
-        <input type="number" id="final" min="0" max="100" step="0.5" value="50">
-        <span class="out-of">/ 100</span>
+      <div class="final-eyebrow">§ III. Final Exam <span class="dot">●</span> Two-Part Score</div>
+      <div class="final-grid">
+        <div class="final-part">
+          <label class="input-label" for="takehome">Take-Home Raw Score</label>
+          <div class="final-input-wrap">
+            <input type="number" id="takehome" min="0" max="33" step="0.5" placeholder="—">
+            <span class="out-of">/ 33</span>
+          </div>
+          <div class="final-helper">Canvas may show /50.5; real max is 33. Counts as 16.5 final-exam points.</div>
+          <input type="range" id="takehome-slider" min="0" max="33" step="0.5" value="0">
+        </div>
+        <div class="final-part">
+          <label class="input-label" for="inclass">In-Class Exam Score</label>
+          <div class="final-input-wrap">
+            <input type="number" id="inclass" min="0" max="83.5" step="0.5" placeholder="—">
+            <span class="out-of">/ 83.5</span>
+          </div>
+          <div class="final-helper">Traditional comprehensive exam on Apr 29. Counts as 83.5 final-exam points.</div>
+          <input type="range" id="inclass-slider" min="0" max="83.5" step="0.5" value="0">
+        </div>
       </div>
-      <div class="final-helper">Drag the slider — watch the projection shift</div>
-      <input type="range" id="final-slider" min="0" max="100" step="0.5" value="50">
+      <div class="final-breakdown">
+        <div class="breakdown-cell">
+          <div class="breakdown-label">Take-home final pts</div>
+          <div class="breakdown-value" id="takehome-final-points">0.0 / 16.5</div>
+        </div>
+        <div class="breakdown-cell">
+          <div class="breakdown-label">In-class final pts</div>
+          <div class="breakdown-value" id="inclass-final-points">0.0 / 83.5</div>
+        </div>
+        <div class="breakdown-cell">
+          <div class="breakdown-label">Combined final exam</div>
+          <div class="breakdown-value" id="combined-final-points">0.0 / 100</div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -725,14 +787,14 @@
   </section>
 
   <section class="thresholds reveal d7">
-    <div class="section-label"><span>§ V. Final Exam Targets</span><span class="num">minimum needed for letter</span></div>
+    <div class="section-label"><span>§ V. In-Class Exam Targets</span><span class="num">based on take-home score entered</span></div>
     <div class="thresh-grid" id="thresh-grid"></div>
   </section>
 
   <footer>
     <span>EIN4343 · Spring 2026</span>
     <span>Weighted per syllabus</span>
-    <span>Rounded to nearest integer</span>
+    <span>Final split: 16.5 + 83.5; rounded to nearest integer</span>
   </footer>
 
 </div>
@@ -741,7 +803,11 @@
   const config = {
     termExam1: { weight: 0.22, score: 82.5 },
     termExam2: { weight: 0.22, score: 62.5 },
-    finalExam: { weight: 0.26 },
+    finalExam: {
+      weight: 0.26,
+      takeHome: { rawMax: 33, finalPoints: 16.5 },
+      inClass: { finalPoints: 83.5 },
+    },
     homework: {
       weight: 0.08,
       fixed: [
@@ -854,13 +920,24 @@
     return (earned / possible) * 100;
   }
 
-  function computeTotal(final, hwScore, ctScore) {
+  function computeFinalExam(takeHomeRaw, inClassRaw) {
+    const takeHomePoints =
+      ((takeHomeRaw ?? 0) / config.finalExam.takeHome.rawMax) * config.finalExam.takeHome.finalPoints;
+    const inClassPoints = inClassRaw ?? 0;
+    return {
+      takeHomePoints,
+      inClassPoints,
+      score: takeHomePoints + inClassPoints,
+    };
+  }
+
+  function computeTotal(finalExamScore, hwScore, ctScore) {
     const scaScore = computeSupplyChain();
     const icaScore = computeInClass();
     return (
       config.termExam1.score   * config.termExam1.weight +
       config.termExam2.score   * config.termExam2.weight +
-      final                    * config.finalExam.weight +
+      finalExamScore           * config.finalExam.weight +
       hwScore                  * config.homework.weight +
       ctScore                  * config.creativeThinking.weight +
       scaScore                 * config.supplyChain.weight +
@@ -874,30 +951,42 @@
     return 'E';
   }
 
-  function neededOnFinal(targetCutoff, hwScore, ctScore) {
+  function neededOnInClass(targetCutoff, hwScore, ctScore, takeHomeRaw) {
     const constants = computeTotal(0, hwScore, ctScore);
-    return (targetCutoff - 0.5 - constants) / config.finalExam.weight;
+    const neededFinalExamScore = (targetCutoff - 0.5 - constants) / config.finalExam.weight;
+    const takeHomePoints = computeFinalExam(takeHomeRaw, 0).takeHomePoints;
+    return neededFinalExamScore - takeHomePoints;
   }
 
   function update() {
-    const hw5   = parseInput('hw5', 20);
-    const hw6   = parseInput('hw6', 16);
-    const tp3   = parseInput('tp3', 10);
-    const final = parseInput('final', 100) ?? 0;
+    const hw5       = parseInput('hw5', 20);
+    const hw6       = parseInput('hw6', 16);
+    const tp3       = parseInput('tp3', 10);
+    const takeHome  = parseInput('takehome', config.finalExam.takeHome.rawMax);
+    const inClass   = parseInput('inclass', config.finalExam.inClass.finalPoints);
 
     const hw = computeHomework(hw5, hw6);
     const ct = computeCreative(tp3);
+    const finalExam = computeFinalExam(takeHome, inClass);
 
     // Ledger updates
     document.getElementById('hw-score').innerHTML  = `${hw.score.toFixed(2)}<span class="pct">%</span>`;
     document.getElementById('hw-sub').textContent  = `Top 4 of 6 - ${hw.submitted} entered`;
     document.getElementById('ct-score').innerHTML  = `${ct.score.toFixed(2)}<span class="pct">%</span>`;
     document.getElementById('ct-sub').textContent  = `${ct.graded} of 3 graded`;
+    document.getElementById('final-sub').textContent =
+      `Take-home ${finalExam.takeHomePoints.toFixed(1)}/16.5 + in-class ${finalExam.inClassPoints.toFixed(1)}/83.5`;
     document.getElementById('final-score-display').innerHTML =
-      `${final.toFixed(1)}<span class="pct">/ 100</span>`;
+      `${finalExam.score.toFixed(1)}<span class="pct">/ 100</span>`;
+    document.getElementById('takehome-final-points').textContent =
+      `${finalExam.takeHomePoints.toFixed(1)} / 16.5`;
+    document.getElementById('inclass-final-points').textContent =
+      `${finalExam.inClassPoints.toFixed(1)} / 83.5`;
+    document.getElementById('combined-final-points').textContent =
+      `${finalExam.score.toFixed(1)} / 100`;
 
     // Total
-    const total = computeTotal(final, hw.score, ct.score);
+    const total = computeTotal(finalExam.score, hw.score, ct.score);
     const [intPart, decPart] = total.toFixed(2).split('.');
     document.getElementById('total-int').textContent = intPart;
     document.getElementById('total-dec').textContent = decPart;
@@ -934,7 +1023,7 @@
     const grid = document.getElementById('thresh-grid');
     grid.innerHTML = '';
     thresholds.forEach(t => {
-      const need = neededOnFinal(t.cutoff, hw.score, ct.score);
+      const need = neededOnInClass(t.cutoff, hw.score, ct.score, takeHome);
       const cell = document.createElement('div');
       let cls = 'thresh-cell';
       let valueHTML, metaText;
@@ -942,13 +1031,13 @@
         cls += ' locked';
         valueHTML = `Locked in`;
         metaText  = 'Already secured';
-      } else if (need > 100) {
+      } else if (need > config.finalExam.inClass.finalPoints) {
         cls += ' impossible';
         valueHTML = `Out of reach`;
         metaText  = 'Mathematically impossible';
       } else {
-        valueHTML = `${need.toFixed(1)}<span class="unit">/ 100</span>`;
-        metaText  = 'Min final exam score';
+        valueHTML = `${need.toFixed(1)}<span class="unit">/ 83.5</span>`;
+        metaText  = 'Min in-class score';
       }
       if (t.required) cls += ' required';
       cell.className = cls;
@@ -962,14 +1051,22 @@
   }
 
   // Wire inputs
-  ['hw5','hw6','tp3','final'].forEach(id => {
+  ['hw5','hw6','tp3','takehome','inclass'].forEach(id => {
     document.getElementById(id).addEventListener('input', update);
   });
-  const finalInput  = document.getElementById('final');
-  const finalSlider = document.getElementById('final-slider');
-  finalSlider.addEventListener('input', () => { finalInput.value = finalSlider.value; update(); });
-  finalInput.addEventListener('input',  () => {
-    finalSlider.value = clamp(parseFloat(finalInput.value), 0, 100) ?? 0;
+
+  const takeHomeInput = document.getElementById('takehome');
+  const takeHomeSlider = document.getElementById('takehome-slider');
+  takeHomeSlider.addEventListener('input', () => { takeHomeInput.value = takeHomeSlider.value; update(); });
+  takeHomeInput.addEventListener('input', () => {
+    takeHomeSlider.value = clamp(parseFloat(takeHomeInput.value), 0, config.finalExam.takeHome.rawMax) ?? 0;
+  });
+
+  const inClassInput = document.getElementById('inclass');
+  const inClassSlider = document.getElementById('inclass-slider');
+  inClassSlider.addEventListener('input', () => { inClassInput.value = inClassSlider.value; update(); });
+  inClassInput.addEventListener('input', () => {
+    inClassSlider.value = clamp(parseFloat(inClassInput.value), 0, config.finalExam.inClass.finalPoints) ?? 0;
   });
 
   update();
