@@ -39,3 +39,18 @@ If you have any questions about this assignment, please contact me (akcali@ise.u
 Warm regards,
 
 Dr. A.
+
+
+# Posted Apr 27 10:25am
+
+Dear All,
+
+The formula sheet for the Final Exam (i.e., Exam 3) is posted. It is exactly the same as before. The only addition is one formula from logistics.
+
+The study guide is basically a merged version of Study Guides 1 and 2 to which I added some details about Transportation, Logistics, and Supply Chain. Since there will be no T/F or essay questions, those parts are relatively sparse and what you need to review relates to problem solving.
+
+Please let me know if you have any questions.
+
+Warm regards,
+
+Dr. A.
