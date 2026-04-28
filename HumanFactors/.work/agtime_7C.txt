@@ -1,0 +1,390 @@
+Lecture 7C ­Work Sampling
+
+              EIN 3241 : Human Factors and Ergonomics
+                                   Spring 2026
+                                  April 3, 2026
+
+                                Dr. Jad A. Atweh
+ Admin Issues
+
+ Lab 6 due TONIGHT
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  2
+Introduction
+
+ Work sampling: technique used to determine the amount of time devoted to the various activities
+  that constitute a job
+
+ Developed by LHC Tippett in 1934 in order to study the operations in the textile industry
+
+ Work sampling: take a large number of observations at random intervals and use that to
+  approximate the desired time
+
+       What people are doing
+       What machines and equipment are being used
+
+ Work sampling: measurements are made over a long period of time, from days to weeks and
+  months
+
+                                                               Time                               Time
+                                                                 1                                  4
+
+                                                               Time                         Time
+                                                                 2                            5
+
+                                                               Time                         Time
+                                                                 3                            6
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                                     3
+Examples
+
+                                                               Idle versus working time of the operator
+
+Percentage of time a certain
+        machine is used
+
+                              What percentage of time facilities are used
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING              4
+Pros and Cons
+
+                          Advantages                                                    Disadvantages
+Can determine personnel and machine utilization                Not well suited for short -cycle jobs or short elements
+Worker not subjected to long periods of stopwatch              Cannot really determine speed of worker or efficiency
+
+                          observation                                                         of work
+Crew operations can be studied by a single analyst                               Sampling could be biased
+
+   Do not need to identify "near -perfect" worker
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  5
+Biasing
+
+ Taking observations at times that are synchronous with the operation
+ or that do not give a full picture
+
+     Always sampling in the morning/evening
+     Always sampling on certain days or at certain times
+
+                     If you always go                           If you always
+                         early in the                          go at the end of
+
+                     morning, a baker                            a cycle, the
+                       will always be                           worker might
+                         very busy.                            always be idle.
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                                                             6
+Work sampling steps
+
+1. Plan the study
+2. Determine the number of observations needed
+3. Determine the frequency of observations
+4. Conduct the study
+5. Calculate standard time (and/or other desired times)
+
+                                                               Remember that
+                                                                  you always
+
+                                                                document the
+                                                                    job first
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  7
+Work sampling steps
+
+1. Plan the study
+2. Determine the number of observations needed
+3. Determine the frequency of observations
+4. Conduct the study
+5. Calculate standard time (and/or other desired times)
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  8
+Plan the study
+
+1. Determine the problem: why do you want to conduct this study? To
+    calculate standard time or other times?
+
+2. Determine how data will be collected
+
+    i. Observation: go and come in person
+    ii. Video: record a video and analyze later
+    iii. Instrumentation: some machines/tools can record what a person is doing
+    iv. Self -reports: ask a person to record their actions (could be biased)
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                    9
+Work sampling steps
+
+1. Plan the study
+2. Determine the number of observations needed
+3. Determine the frequency of observations
+4. Conduct the study
+5. Calculate standard time (and/or other desired times)
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  10
+Work sampling theory
+
+ What we are trying to find: percentage of time that a certain task, situation,
+  event occurred
+
+ At any time, this task could be present or absent
+ How can one find the probability of this event happening x times out of n
+
+  samples?
+
+1  2  3                                                        4  5  6
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                    11
+Work sampling theory
+
+ What we are trying to find: percentage of time that a certain task, situation,
+  event occurred
+
+ At any time, this task could be present or absent
+ How can one find the probability of this event happening x times out of n
+
+  samples?
+
+1  2        3                                                  4  5  6
+
+      Idle
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                    12
+Work sampling theory
+
+ If you checked on a worker 5 times during the day, what is the probability that 3
+  times out of these 5 checks, that worker will be idle (as opposed to busy)?
+
+   = !  !      -
+
+         -  !                                                           5! 32
+                                                                      3! 2 !
+ =                                                              3  =
+ =      = 1 - 
+ =   
+
+ Work sampling is about trying to determine 
+ How many times do I need to sample in order to determine ?
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                       13
+Work sampling theory                                                                         So how many samples
+
+ Want to estimate p from a certain population                                                do you need?
+
+                                                                                 Sampl es
+
+                                                                        
+
+ For a given number of samples N and number of positive observations                          for
+  observations
+                                                                                                            14
+                                                                 =  1 
+                                                                      
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING
+Work sampling theory
+
+ As the sample size increases, can use the normal distribution to approximate the original
+  distribution
+
+ When you sample,  will not necessarily be the same as 
+
+       Ideally, want  to be as close as possible
+       Can determine the confidence interval and margin of error for  to indicate how close you are to 
+
+ How to find the desired sample size:
+
+ You have alpha (or can calculate from 1 ­ confidence level)
+
+ You have , based on estimates or pilot study data
+
+ Calculate the critical probability   = 1 - 
+
+                                                     2
+
+ Find the z score in the table with a cumulative probability of  
+
+ Margin of error =  =  ×             (1-)
+                                         
+                       2
+
+    =  2     ((1-2 ))
+
+          2
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                                            15
+Example 1
+
+ An analyst wishes to determine the amount of downtime due to tool problems in
+  an area involving a machine where very fine drilling is taking place. A study
+  indicated that out of 50 observations, only 2 showed the machine down.
+
+ What would be the number of samples needed for a more accurate study within
+  +/ - 1% of the true value and a 99% CL?
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                    16
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  17
+Work sampling steps
+
+1. Plan the study
+2. Determine the number of observations needed
+3. Determine the frequency of observations
+4. Conduct the study
+5. Calculate standard time (and/or other desired times)
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  18
+Determine observation frequency
+
+ When should the observations be taken?
+ Try to spread out your observations
+
+      Assume your desired n = 500 samples
+      Assume your available time is 20 days
+      Target (around) 25 observations per day
+
+ What factors affect the observation frequency?
+
+      Number of analysts available
+      Location of the work
+      Difficulty of access
+      Method of measurement
+
+ Want to avoid biasing: observations synchronous with the process
+
+      Do not always go at the same times
+      Do not go at fixed intervals for cyclical work
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING      19
+Determine observation frequency
+
+ How to take observations
+
+      Want to take observations randomly at different times of day
+      Need to include normal fluctuations in production
+
+              Usually over two to four weeks, if possible
+
+ Identify random times (e.g., using Excel)
+
+      RAND()
+      RAND()*number of hours
+      Convert to time
+      Eliminate times outside of work hours
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING       20
+Work sampling steps
+
+1. Plan the study
+2. Determine the number of observations needed
+3. Determine the frequency of observations
+4. Conduct the study
+5. Calculate standard time (and/or other desired times)
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  21
+Conduct the study
+
+ Create the work sampling form
+
+Observations  Time      Using M/C 1                            Using M/C 2  Tra ns po r ting  Idle
+                                                                              materials
+
+1             8:30 am                                          X
+
+2             9:40 am           X
+
+3             11:10 am                                                      X
+
+4             2:15 pm                                                       X
+
+5             3:00 pm                                                                         X
+
+6             3:15 pm                                          X
+
+7             4:25 pm                                          X
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                                       22
+Conduct the study
+
+ Create the work sampling form
+
+ Tips for good recording:
+
+      Do not anticipate the recording:
+        do not go so that you see what
+        you want to see! You have to be
+        unbiased
+
+      Go to a fixed point, make the
+        recording
+
+      Note that arrival of analyst can
+        influence the participant
+
+              Recall Hawthorne effect: people
+                 work better when they are observed
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  23
+Work sampling steps
+
+1. Plan the study
+2. Determine the number of observations needed
+3. Determine the frequency of observations
+4. Conduct the study
+5. Calculate standard time (and/or other desired times)
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  24
+Work sampling theory
+
+ For a given number of samples N and number of positive observations                    (with  from 1 to k)
+
+                                                               =  1 
+                                                                    
+
+                                             
+                   =  × 
+T=Total time and P=Production units (if applicable)
+
+ If a rating is applied to each element:
+
+                                                                          =    ×  
+                                                                                  100
+
+                                                                          
+
+                                                  =  
+
+                                                                              =1
+
+ If a rating is applied to the job as a whole:
+
+                                                                             
+
+                                            =   × 100
+                                                                      =1
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                                                25
+Work sampling theory
+
+ Calculation of standard time depends on allowances
+
+                                                                               
+                                              =  (1 + 100 )
+
+ Can calculate many other times that do not involve ratings and allowances
+
+      Machine working time
+      Room utilization time
+      Workstation utilization time
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                    26
+Example 2
+
+ Consider the following results of a pilot work sampling study. With an operator
+  rating of 110% and an allowance of 15%, what is the standard time per unit?
+
+                  Information                                    Data
+              Total working day                                480 min
+           Number of units drilled
+               Working fraction                                  420
+                                                                 85%
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                     27
+

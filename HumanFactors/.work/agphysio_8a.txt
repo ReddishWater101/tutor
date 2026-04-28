@@ -1,0 +1,233 @@
+Lecture 8A - Work Area Design
+
+                    EIN 3241: Human Factors and Ergonomics
+                                         Spring 2026
+                                       April 10, 2026
+
+                                       Dr. Jad Atweh
+ Admin Issues
+
+ Last Module!
+ Peer Evaluations
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  2
+Introduction
+
+ Workstation is where one operator works with one or more pieces of equipment.
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                   3
+Postures at Work                                               STANDING WORKSTATIONS
+
+ Workstations are generally either:
+
+            SEATED WORKSTATIONS
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                         4
+Seated Work Areas
+
+ A seated posture:
+
+      Improves feeling of balance
+      Allows for reduced static load to maintain body postures
+      Improves blood circulation
+      Less fatigue development
+
+ However, long periods of sitting on a poorly designed chair may lead to:
+
+      Slackening of abdominal muscles
+      Back and neck aches
+      Curvature of the spine
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING              5
+Standing Work Areas
+
+ A standing posture:
+
+      Greater physiological load, maintaining balance and posture
+      May lead to blood and body fluid accumulation in legs (if not moving).
+
+ So, which design is better standing or seated work areas?
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                 6
+SEATED vs STANDING
+
+ Exercise: In each of the below cases, which type of workstation is more suitable:
+
+1. Precise foot control actions are required.
+2. Fine assembly or writing tasks are predominant.
+3. There are frequent demands for downward force application (wrapping, packing).
+4. Heavy objects are being handled [more than 4.5 kg (10 lb.) in weight].
+5. No leg and knee clearance is available.
+6. No large forces are required.
+7. A high degree of body stability or equilibrium is required.
+8. Mobility is a must.
+9. Long work periods are expected.
+10. All items needed within the task cycle can easily be supplied within the seated workspace.
+11. High, low, or extended reaches are frequently required.
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                                   7
+SEATED Work Areas
+
+ Design considerations for seated work areas:
+
+     Correct eye position relative to viewing tasks
+     Adjustability of seat height.
+     Adjustable of back rest (if small).
+     Backrest width.
+     Lumbar support provided.
+     Seat surface depth and width.
+     Seat surface sloped backward with a slight dip in
+
+      the middle for extra body stability.
+     Front edge of seat should be curving downwards.
+     Cushioned seat.
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  8
+SEATED Work Areas (Cont'd)
+
+ Design considerations for seated work areas:
+
+     Clearance for the thighs and the knees
+
+     Foot rests provided.
+
+     Arm support for reducing intervertebral disk
+      pressure. If trunk mobility is desired, armrests
+      are not recommended; pads on work surface may
+      be considered instead.
+
+     Place larger and heavier objects closer to the
+      operator.
+
+     Work surface height depends on elbow height
+      and the nature of the task.
+
+     Multiple legs on seat for stability.
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  9
+STANDING Work Areas
+
+ Design considerations for standing work areas:
+
+     Proper monitor position with respect to NLS
+     Reach distances
+     Knee and foot clearance
+     A smooth and level standing surface must be provided.
+     There should be room for occasional moving around.
+     A nonslip and padded standing surface (floor mat) is
+
+       recommended.
+     If two hand reaches are required, design for shorter
+
+       reach distances.
+     Work surface height depends on the task being
+
+       performed.
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  10
+Guiding principles of arrangement
+
+ Importance principle . Components that are most important in the functioning of
+  the system are located in the optimal locations. Rate each component's
+  criticality in meeting system's objectives and assign locations accordingly.
+
+ Sequence of use principle . Review sequential relationships between components
+  under different tasks. Those always used one after the other would be located
+  next to each other.
+
+ Functional principle . Components that are functionally related to each other are
+  grouped together. Then groups and components within groups can be arranged
+  following other principles.
+
+ Frequency of use principle . Components that are used most frequently are
+  located in the most accessible/optimal areas.
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                       11
+Work Area Arrangements: Link Analysis
+
+ Link analysis: an objective method of developing data for component arrangement.
+
+      A sequential link of 5 for A B means that component B has been used five times right after
+        component A.
+
+      A functional link reports the number of times a component is used per unit of time or a task
+        cycle.
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                                       12
+Example 1
+
+ Determine the sequential links between components.
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  13
+Example 1
+
+Step -by-step breakdown:
+
+ Process 1 (30 times/day): A  C  B  D  E                           Process 3 (14 times/day): A  C  D  B  E
+       A  C: +30                                                         A  C: +14
+       C  B: +30                                                         C  D: +14
+       B  D: +30                                                         D  B: +14
+       D  E: +30                                                         B  E: +14
+
+ Process 2 (12 times/day): A  B  D  E                             1. Understand Workflow Relationships
+       A  B: +12                                                  2. Guide Facility Layout / Workstation Arrangement
+       B  D: +12                                                  3. Improve Task Design & Efficiency
+       D  E: +12                                                  4. Basis for System Optimization
+
+From \ To  A              C                                       B   D   E
+
+A                         44                                      12
+
+C                                                                 30  14
+
+B                                                                     42  14
+
+D                                                                 14      42
+
+E
+
+   UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING              14
+Example 2
+
+ Determine the functional links between components.
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  15
+Example 2
+
+ Step 1: List All Component Pairs per Process (unordered)             Process 3 (14 times/day): {A, C, B}   All combinations:
+                                                                      A­C
+          Process 1 (12 times/day): {C, B, D, E}  All combinations:   A­B
+          C­B                                                         B­C
+          C­D                                                          Add 14 to each
+          C­E
+          B­D                                                         Step 2: Sum the Frequencies for Each Pair
+          B­E
+          D­E
+           Add 12 to each
+
+ Process 2 (30 times/day): {A, B, D, E}   All combinations:
+ A­B
+ A­D
+ A­E
+ B­D
+ B­E
+ D­E
+  Add 30 to each
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                                                                  16
+Example 2 (cont'd)                                                   Total Functional Link
+                                                                          30 + 14 = 44
+                Component Pair                                                   30
+                         A­B                                                     30
+                        A­D                                                      14
+                         A­E                                              12 + 14 = 26
+                         A­C                                              12 + 30 = 42
+                         B­C                                              12 + 30 = 42
+                        B­D                                                      12
+                         B­E                                                     12
+                         C­D                                              12 + 30 = 42
+                         C­E
+                         D­E                                                                                                                    17
+
+      UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING
+

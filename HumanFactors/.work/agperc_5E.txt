@@ -1,0 +1,276 @@
+Lecture 5E - Cognition and Human Information Processing II
+
+                                 EIN 3241: Human Factors and Ergonomics
+                                                     Spring 2026
+
+                                                    March 4, 2026
+
+                                                  Dr. Jad A. Atweh
+ Admin Issues
+
+ Midterm on Monday
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  2
+Divided Attention and Time Sharing
+
+ Process: Multiple Resources
+(Wicken's Multiple Resource Theory)
+
+      Input modality (auditory, visual, tactile, olfactory)
+      Code (spatial, symbolic, linguistic)
+      Stages (perceptual, cognitive, response)
+
+ Each resource can be tapped for an information processing task
+ Conflicts when same resource is demanded in parallel
+
+Wickens , C. D. (2008). Multiple resources and mental workload. Human Factors , 50 (3), 449 -455.
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                                      3
+Multiple attentional resources
+
+                                                               one cognitive resource
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  Limited boxes: supply and demand of
+                                                               resources
+
+                                                                                                                                           4
+Attention
+
+ Cognitive capacity = resources
+
+      Auditory
+      Visual
+      Spatial
+
+ Selective attention
+ Focused attention
+ Divide our attention to complete several tasks at once
+ Attend to both or switch rapidly between two or more tasks
+
+      While driving?
+      When does the ability to time -share deteriorate?
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  5
+Stimuli response
+
+ Ergonomists use reaction speed to measure the ability of a person to perform
+  psychomotor tasks.
+
+ Reaction time (cognitive response): time that elapses from the appearance of a
+  stimulus to the initiation of movement.
+
+ Motion time (physical response): time that elapses during the actual movement.
+ Response time (psychomotor response): reaction time + motion time
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  6
+Mental Workload
+
+ Mental workload is one of the most studied constructs from human factors
+  engineering
+
+ Mental workload: perception of effort or demands experienced in the
+  performance of a cognitive task.
+
+ Stress: condition or feeling that demands exceed resources to cope with those
+  demands.
+
+ Stress takes up working memory capacity thereby leaving fewer resources for
+  processing, making it part of the total mental workload.
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                   7
+Mental Workload Measurement
+
+ Mental workload can be determined using three different
+ approaches or their combination:
+
+1. Measures of primary and secondary task performance
+2. Physiological measures
+3. Subjective workload assessment
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  8
+1. Measures of primary and secondary task performance
+
+ Primary task performance used as a measure to assess mental
+ workload.
+
+     Measures may include error rate, speed, reaction times, performance score
+      etc.
+
+ Secondary task performance is assumed to access the spare mental
+ capacity that remains while focusing on the primary task. Poorer
+ performance on secondary tasks implies a more mentally demanding
+ primary task.
+
+     Measures may include visual detection task, mental arithmetic, recalling
+      information, etc.
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                   9
+2. Physiological measures
+
+ Physiological measures include:
+
+     Cardiac functions
+     Eye movement (Eye tracking)
+     Electromyography (EMG), i.e. muscle tension
+     Electroencephalogram (EEG), i.e. brain activity
+     Respiration
+     Blood pressure
+     Critical flicker fusion (CFF); 35 40 Hz at resting state; CFF drops 0.5 7 Hz under
+
+       cognitive load.
+
+ Generally, these measures are more difficult to collect and interpret
+  because the results may not be exclusively affected by mental workload.
+
+ These measures can supplement other workload assessment methods.
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                            10
+2. Physiological measures
+
+ Air traffic controllers:
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  11
+2. Physiological measures
+
+                 Critical Flicker Fusion (CFF)                 EEG
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                                       12
+3. Subjective workload assessment
+
+ The subject's direct estimate or comparative judgement of the mental or
+  cognitive workload experienced at a given moment.
+
+ Subjective assessments rely on questionnaires and feedback from employees to
+  determine perceived workload.
+
+ Three commonly used subjective workload assessment measurement
+  approaches in human factors include:
+
+     1. NASA Task Load Index (NASA TLX)
+     2. Modified Cooper and Harper Scale (MCH)
+     3. Overall Workload Scale (OW)
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                  13
+3. Subjective workload assessment: NASA                        - TLX
+
+ NASA TLX: a subjective, multidimensional assessment tool for rating perceived workload.
+
+ "Workload" is divided into six dimensions or
+     1. Mental demand
+     2. Physical demand
+     3. Temporal demand
+     4. Performance
+     5. Effort
+     6. Frustration
+
+ Each scale consists of twenty steps ranging from 0 to 100 (ratings are assigned to
+  the nearest 5).
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                             14
+3. Subjective workload assessment: NASA                        - TLX
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  15
+3. Subjective workload assessment: NASA                        - TLX
+
+ The task load index (TLX) is an overall workload score derived from the weighted
+  average of the scale ratings.
+
+ TLX score computation:
+
+      1. Determine the individual weighting of each scale by asking participants to compare them pairwise in
+          terms of their perceived importance/relevance to the task (a total of 15 pairwise comparisons).
+
+      2. The total number of times each scale is chosen is the weighted score.
+      3. Divide the weighted scores by 15 to get the relative importance of each scale.
+      4. Multiply the weight of each scale to its corresponding score and add them together.
+
+ Many researchers use the "Raw TLX" scores, without considering the overall TLX.
+
+       i.e., individual scales may be dropped if less relevant to the task.
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                                                 16
+NASA - TLX Example
+
+ Implement the NASA TLX scale to measure the overall workload of a task
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING            17
+NASA - TLX Example
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  18
+3. Subjective workload
+assessment: Modified
+Cooper and Harper
+Scale (MCH)
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  19
+3. Subjective workload assessment: Overall Workload scale (OW)
+
+ Overall workload: is a rating of the subject's overall workload on a
+  unidimensional scale of 0 to 100 (assigned to the nearest 5).
+
+      0 = very low workload
+      100 = very high workload
+
+ A single, 20 step bipolar scale is used to obtain this global rating.
+ "The total workload associated with the task considering all sources and
+
+  components."
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING              20
+Comparing the Three Techniques
+
+ MCH and OW are unidimensional workload scales, which take less time to collect
+  and analyze the data.
+
+ TLX is a multidimensional scale, which entail special sorting procedures that
+  take more time, but are justified by the detailed, diagnostic information that they
+  provide.
+
+ TLX and OW are consistently superior in terms of sensitivity and have the
+  strongest operator acceptance.
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                          21
+Other Psychophysical Tools
+
+ Borg scale
+ Likert scale
+ Questionnaire design
+ Visual Analog scale (VAS)
+...
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  22
+Borg RPE Scale
+
+ The Borg Rating of Perceived Exertion
+  (RPE) is a way to subjectively measure
+  the physical activity intensity level.
+
+ Perceived exertion is how hard you
+  feel like your body is working.
+
+      Increase in heart rate
+      Increase in breathing rate
+      Increase sweating;
+      Muscle fatigue
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  23
+Visual Analogue Scale
+
+ The visual analogue scale (VAS) is a subjective scale to measure the level of pain
+  and to evaluate the mood of the patient.
+
+ Is often used in clinical research.
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                        24
+Likert Scale
+
+ Likert scale is a rating scale used to measure a person's level of
+ agreements.
+
+     Ease of use of a product
+     Usefulness of a product
+     Ease of maintenance
+     Ease of learning
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING        25
+

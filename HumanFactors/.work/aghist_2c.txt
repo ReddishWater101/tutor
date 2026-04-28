@@ -1,0 +1,379 @@
+Lecture 2C : Research Methods
+
+                      EIN 3241: Human Factors and Ergonomics
+                                          Spring 2026
+
+                                       January 26, 2026
+
+                                         Dr. Jad Atweh
+Other ways to describe Research Methods
+
+ Basic vs. Applied
+ Quantitative vs. Qualitative
+ Descriptive vs. Explanatory
+ Field vs. Laboratory
+
+                                                               (After Karwowski, 2005)
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                           2
+Categories of Research Methods
+
+ Experimental : controlled testing to examine cause -effect
+ Observational : watching real -world behavior
+ Survey -based : collecting subjective data
+ Mixed Methods : combining qualitative and quantitative approaches
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING       3
+Stages of research                                             (Williges , 1995 )
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                      4
+Step 1: Define problem and hypotheses
+
+ What is your research question ?
+
+       e.g., "The purpose ... was to investigate the effect of [touch screen] button and gap size on performance
+         by individuals with varied motor abilities." (Chen et al., 2013)
+
+ What cause/effect relationships you expect to observe?
+
+      (Research hypotheses)
+       e.g., Larger button size will increase accuracy and reduce task time
+       e.g., Greater gaps will increase accuracy and task time
+
+ What are potential variables in the study?
+
+       e.g., Button size (measured in mm)
+       e.g., Gap size (between buttons; measured in mm)
+       e.g., Participant state: healthy and with disability (nominal classification)
+       e.g., Task time (duration; measured in sec.)
+       e.g., Percent error (select wrong button)
+       e.g., Percent miss (miss intended button target)
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                                                     5
+Hypothesis Generation
+
+  A good hypothesis clearly defines what variables are involved and what
+   relationship you expect between them
+
+  Define the variables involved and the relationship between them
+
+ Precise: Clearly defines variables and expected effect
+ Meaningful: Tied to a real -world problem or theoretical construct
+ Testable: Can be studied using empirical methods
+ Falsifiable: It's possible for the data to disprove it
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING             6
+Statistical hypothesis testing
+
+ Null hypothesis ( H0): There is no effect of button size on touch screen user
+  accuracy
+
+ Alternative hypothesis ( HA): Button size affects accuracy
+
+                                                                      If H0 is...
+
+                                                               true.                  false.
+
+ What you        reject                                        Type I error,          Correct (sensitivity)
+  end up     fail to reject                                    (1 ­ specificity)
+
+deciding to                                                    Correct (specificity)  Type II error, 
+do with H0                                                                            (1 ­ sensitivity)
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                                                7
+Step 2: Experiment planning
+
+ What are variables you want to manipulate?                     Independent variables (IV) ­ Controlled
+                                                                 manipulations of task, system or environment
+ What are observations you want to make?
+                                                                      Also called "Condition", "Factor",
+      How do we "operationalize" or find a way to                       "predictor ", "Indicator" or "Treatment"
+      measure the thing we are interested in?
+                                                                      Levels - Different settings of manipulation or
+ How many participants do you need?                                     condition
+
+ How will data be collected?                                    Dependent variable (DV) ­ Response
+                                                                 measures you intend to observe for effects of
+       e.g., Do you want to take multiple measures               condition
+         on single subject at different points in time?
+                                                                      Also called " Construct " or "Outcome measure"
+                                                                      Response to treatment (i.e. independent variable)
+
+                                                                How many people ( sample size ) do you want to
+                                                                 recruit for study?
+
+                                                                      Depends on: desired effect size ; significance
+                                                                        criterion setting (tolerable ); and statistical power
+                                                                        (desired beta)
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  8
+What are the hypotheses, IVs, DMs...
+
+1. The relationship between the amount of time couples spend together and their
+     relationship satisfaction.
+
+2. The relationship between number of hours studying and test performance.
+
+3. The relationship between the physical attractiveness of a political candidate and
+     voters' opinions of him/her.
+
+4. The relationship between time spent listening to Heavy Metal music and
+     aggression.
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                         9
+Levels of Measurement
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  10
+Levels of Measurement
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  11
+Example
+
+         Fill-in "yes" or "no" for identified response characteristics:
+
+             Level of         Characteristics
+         Measurement
+                       Order   Equal     True Zero                               Example
+            Nominal           Intervals    Point
+             Ordinal                                                Gender (0-female; 1-male)
+             Interval  NO     NO                               NO         Rank in class
+              Ratio
+                       YES    NO                               NO   Relative temperature (°F/°C)
+                                                                        Speed, # of errors
+                       YES YES                                 NO
+
+                       YES    YES                              YES
+
+         Match example items below to classes of measurement:
+
+         Gender (0-female; 1-male)                                  Rank in class
+         Speed, # of errors                                         Relative temperature (°F/°C)
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                                     12
+One IV vs. Multiple IVs                                        -world complexity
+
+ One IV Example:
+
+      IV: Display brightness (low vs. high)
+      DV: Task completion time
+
+ Multiple IVs Example:
+
+      IV1: Display brightness (low vs. high)
+      IV2: Font size (small vs. large)
+      DV: Task completion time
+
+ Why multiple IVs? To explore interactions and real
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                     13
+Main Effects vs. Interactions
+
+ Main Effect: Effect of one IV on the DM, averaging across other IVs
+
+      Think of it as asking: "If we only look at this one factor, does it make a difference?"
+
+ Interaction Effect: Effect of one IV depends on the level of another IV
+
+      It answers: "Does the impact of one factor change depending on the other factor?"
+
+ Suppose you run an experiment on font size (small vs. large) and screen
+  brightness (dim vs. bright) to see how they affect reaction time .
+
+      A main effect of font size means that, on average, students read faster with large fonts
+        compared to small fonts, regardless of screen brightness.
+
+      A main effect of brightness means that, on average, students read faster on bright screens
+        compared to dim ones, regardless of font size.
+
+      Maybe large fonts only improve reaction time when the screen is dim but make no difference
+        when the screen is bright.
+
+      That means the effect of font size depends on brightness  that's an interaction.
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                                     14
+Step 3: Conduct study
+
+ Conduct pilot study to verify procedures and sample size
+
+     Follow experiment plan (design of experiment) for 2 -3 subjects
+     Modify procedures to prevent errors and systematic variance
+
+       (uncontrolled factor exposure)
+     Use pilot data (condition means and variances) to calculate sample
+
+       size, given significance criterion and desired statistical power
+
+ Conduct full experiment using refined procedure and verified
+  sample size
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING            15
+Step 4: Analyze the data
+
+ Before doing any analyses, look at descriptive statistics :
+
+ Total number of participants (n); any missing data?
+
+       May dictate appropriate
+
+ Means, SD, histograms on DVs, trends of responses across levels of factors
+
+ Visualize the data (boxplots, stem -and -leaf plots, etc.)
+
+ Why do this work?
+
+ Can develop idea of what data is telling you before conducting
+   inferential statistics (look at trends).
+
+ Apply appropriate inferential statistics
+
+ t-test ­ simple single factor with two levels
+
+ Simple linear regression ­ single factor data model with continuous predictor
+
+ Multiple regression ­ multi -factor data model with continuous predictors
+
+ Analysis of variance (ANOVA) ­ single and multi -factor data models including interaction
+  effects
+
+ Multivariate analyses ­ Analysis of effects on multiple responses accounting for potential correlations
+   among responses
+
+ Repeated measures analysis ­ Multiple observations on same experimental unit accounting for potential
+   dependence of observations, use linear mixed models
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                                             16
+Step 5: Draw conclusions
+
+ Are your results generalizable?
+
+      Can they be extended to broader user population?
+      What type of validity is this?
+
+             External validity
+
+ Always keep in mind statistical significance criterion ( p<0.05)...
+
+      An arbitrary number
+      Any design recommendations come with possibility of failure in application
+      Would you consider values other than 0.05?
+
+        If so, why?
+
+             Could consider p<0.01
+             Provide designers with greater assurance of
+
+               effectiveness of design recommendation.
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                     17
+Limitations in research
+
+ Want "true" behavior of subjects we study:
+
+ Observation necessarily leads to changes in behavior
+
+ Persons under time study perform manual work ~12% faster (    Frievalds , 2013)
+
+ Access to subjects may be limited in field research due to normal production operations
+
+ Use of sample population:
+
+       Want to make inferences on population behavior but don't have resources to collect data on every person
+       Select individuals at random from population  sampling
+       Each sample yields different group of individuals and variance in observed mean response
+
+                Referred to as sampling error
+                Smaller sample size ­ greater sampling error
+                May need to conduct multiple experiments to estimate confidence interval on "true" mean
+
+ Use of subjective response measures (e.g., surveys, ratings, interviews)
+
+       Influenced by recall of events
+       Influenced by performance bias (i.e., "workload" is often rated as low if task performance was "good")
+       Can have limited face validity due to contamination ­ subjects may consider task demands other than those
+
+         of interest to analyst
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                                                     18
+Challenges to HF/E research
+
+ Limited funding
+
+       May dictate sample size and sensitivity of analysis
+
+ Limited time
+
+       May dictate number of factor levels that can be tested and understanding of relationship
+        between predictors and response (actual trend)
+
+ Safety issues (in testing)
+
+       Can lead to systematic error in responses (e.g., subject simulator sickness; subject
+        perception of condition threat to well -being)
+
+ What are some possible alternatives to circumvent ?
+
+       Need to consider design options (within - vs. between -subjects).
+       Need to consider experimental procedure options (necessary duration of test trials to
+
+        observe effect)
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                                    19
+What did we learn today?                                                         Basic vs. Applied
+                                                                                 Quantitative vs. Qualitative
+ Other ways to describe research methods                                         Descriptive vs. Explanatory
+                                                                                 Field vs. Laboratory
+ Categories of research methods
+                                                               Experimental
+                                                               Observational
+                                                               Survey-based
+                                                               Mixed Methods
+
+ Stages of research
+
+                 Define (RQs, hypotheses, potential variables...)
+                 Plan (IVs, DMs, sample size, experimental design, experimental procedure...)
+                 Conduct (pilot study first...)
+                 Analyze (t -test? ANOVA? ...)
+                 Interpret (validity... conclusions...)
+
+ Challenges and limitations in HFE research
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                                                  20
+Next Time!                                                           Popliteal Height
+
+ New module: Engineering Anthropometry !                                                                     21
+ Application of anthropometric data
+ Importance in Engineering Design
+ Measurement Devices and Techniques
+ Factors that affect anthropometric data
+ Categories of Anthropometric Data
+
+      Dive into Static Anthropometry (Structural Dimensions)
+
+      UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING
+Appendix Slide - Hypothesis Generation Exercise
+
+                    Question                                                            Hypothesis
+
+Does a training program in driver safety                       People who take a driver safety course will have
+   result in a decline in accident rate?                       a lower accident rate than those who do not take
+
+                                                                                        the course.
+
+   Who are better in math, men or                                     Women are better at math than men.
+                   women?
+                                                               Cell phone use is higher for younger adults than
+What is the relationship between age                                                for older adults.
+           and cell phone use?
+
+Is there a relationship between                                Income increases with years of education.
+     education and income?
+
+Can public education reduce the                                The number of AIDS cases is inversely related to
+        occurrence of AIDS?                                        the amount of public education about the
+                                                                                          disease.
+
+Source: http://psychology.ucdavis.edu/faculty_sites/sommerb/sommerdemo/stat_inf/null.htm
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                                                    23
+

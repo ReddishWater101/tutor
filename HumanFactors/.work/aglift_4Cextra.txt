@@ -1,0 +1,27 @@
+                         EIN3241 ­ Human Factors & Ergonomics
+
+    In class, we solved this example using the segment-to-segment approach through the elbow joint.
+Using that method, we determined that the reaction force and reaction moment at the shoulder were:
+
+                                         Fshoulder = 85.4 N; Mshoulder = 44.15 Nm
+
+    For this question, please redo the analysis using the one-segment approach to verify these results.
+                                                                 Fy = 0
+
+                                           Fshoulder - WUA - WFA+H - Wload = 0
+                                           Fshoulder = 20.6 + 15.8 + 49 = 85.4N.
+
+                                                  Fshoulder  85.4N (upward)
+                                                             Mshoulder = 0
+
+All weights create a clockwise (negative) moment about the shoulder, so the shoulder reaction moment
+must balance them:
+
+                               Mshoulder - WUAdUA + WFA+HdFA+H + Wloaddload = 0
+                                Mshoulder = (20.6)(0.132) + (15.8)(0.501) + (49)(0.684)
+
+                                  Mshoulder = 2.7192 + 7.9158 + 33.516 = 44.151N.m
+                                                Mshoulder  44.15N m (CCW)
+
+                                                                  1
+

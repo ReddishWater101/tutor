@@ -1,0 +1,373 @@
+Lecture 5A - Visual Sensory System I
+
+                EIN3241: Human Factors and Ergonomics
+                                    Spring 2026
+
+                               February 20, 2026
+
+                                 Dr. Jad A. Atweh
+ Admin Issues
+
+ Homework 3 due Friday.
+ Lab 3 (Strength) due Wednesday.
+ Last Quiz before the Midterm
+
+     Quiz 4: Friday, February 27
+ Midterm in 17 days!
+
+      Monday, March 9
+      8:20 ­ 10:10 PM in FLG270
+      Up until HIP
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  2
+Why are we talking about this?
+
+ Sensation and perception are the first
+  stages of the
+  human cognitive process
+
+ Human perception is often non-linear
+
+ The systems view of human-
+  interactive systems.
+
+ About 95-99% of information is
+  channeled through the eyes or ears...
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  3
+The information process model of human cognition
+
+ We will dive deeper into each box throughout the class...
+
+Sensation and Perception
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  4
+Sense, Sensation, and Perception
+
+ Sense ­ physical system that receives physical
+  stimulation from surrounding environment and
+  translates that stimulation into an electrochemical
+  message
+
+ Sensation ­ detecting physical energy in the
+
+environment and encoding it as neural signals.
+
+Neurons  transmit  (and                                        processes)
+
+the information from the sense organ to the brain.
+
+ Perception ­ processing of information done by
+  the brain ­ mental processes that organize and
+  interpret sensory information that has been
+  transmitted to the brain.
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING              5
+Sensory Systems
+
+ What are the properties of the stimuli (light, acoustic waves, pressure,
+  vibrations, etc.) and how do we measure it?
+
+ What are the sensory organs (eyes, ears, skin)?
+
+     What are the properties of the receptors and how does it affect our perception?
+
+            Adaptation (Dark adaptation, temporary threshold shift, touch adaptation, etc.)
+            Depth perception
+            Haptic perception
+
+ What are the important measures of our perception?
+
+     Acuity, contrasts, loudness
+
+ What are important HF implications?
+
+     Design (improve perception, detection, and recognition)
+     Safety (protect our sensory systems, or protect the human)
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                                6
+Visual sensory system
+
+ Demand vs. capacity:
+
+     Information reaching human from environment = more than 100,000 bits/s
+     Information processing capacity of human operator = less than 20 bits/s
+
+           Bit = Logarithmic transformation of number of states of sensory signal (e.g., signal with 2
+             states = 2(2) = 1 )
+
+           20 bits is ~1.05M signals states/s.
+
+ Creates high potential for translational errors and misunderstanding
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  7
+Visual sensory system
+
+ System functions based on detection of light
+ Functions of system answer two questions:
+
+      What is it? (perception/recognition)
+      Where is it? (location)
+
+ Optical illusions/paradoxes can occur:
+
+      Components of object can distort perceptual processing of overall form (feature extraction).
+
+                                                                                   Enclosed line lengths are same.
+
+                                                                                     Many competing theories why
+                                                                                            this illusion occurs.
+
+ Visual perception cannot always be trusted!
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  8
+Anatomy of the Eye                                                   Visual images are inverted as
+                                                                        they pass through lens.
+ Visual sensory organ
+                                                                                                                                     9
+ Structures:
+
+     Cornea: Protective outer surface
+       over lens.
+
+     Pupil: Aperture of which size is
+       controlled by iris:
+
+            Dilates or constricts
+              ("adaptation" to dark and bright
+              conditions)
+
+            Also changes in response to other
+              physiological changes
+
+            Can change 2-8 mm in diameter
+
+     Lens: Changes in shape through
+       ciliary muscle action to focus
+       objects (or "accommodate")
+
+      UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING
+Anatomy of the Eye
+
+ Retina converts electromagnetic waves to
+  electrochemical signals
+
+ Three types of photoreceptor cells
+1. Photosensitive retinal ganglion cells:
+
+     Discovered in the 1990s
+     Control pupil dilation, circadian rhythms
+
+2. Rod cells:
+
+     Adapt to lower light levels (e.g., nighttime (scotopic)
+       vision)
+
+     High sensitivity but poor acuity
+
+            Difficult to discriminate colors at night ­ vision is limited
+              to light vs. dark
+
+            Difficult to discriminate fine detail at night ­ vision is
+              limited to peripheral (motion) vs. foveal (reading)
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING              10
+Anatomy of the Eye
+
+3. Cone cells:
+
+     Three types of cone cells:
+      Short, Medium, Long
+
+     Active at higher light levels
+      (e.g., daytime (photopic)
+      and color vision)
+
+     High acuity but low
+      sensitivity
+
+           Concentrated ONLY in fovea
+
+           Discriminate color and
+             support fine detail
+
+           Less sensitive to changes in
+             illuminance
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  11
+Visual spectrum                                                      Wavelength (perceived as hue or
+                                                                            specific tone of color)
+                         Blue color:
+                   Higher in energy and                                         Amplitude (perceived as
+                   shorter wavelength                                                    brightness)
+
+      UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING         Human eye is most sensitive to
+                                                                             green wavelength. Important
+
+                                                                                 display information (like
+                                                                             numbers on instruments) are
+                                                                            generally green (or sometimes
+
+                                                                                yellowish green) in color.
+
+                                                                                          Red color:
+                                                                      Lower in energy and longer wavelength
+
+                                                                                                                                       12
+Physical measures of light                                               Reflectance  (%)  =    ()
+                                                                                               ()
+ Luminous flux (actual light energy of source)
+                                                                                              13
+         Power radiated over wavelengths sensitive to human eye
+         Unit: lumen (lm)
+
+ Illuminance (amount of light hitting object you see)
+
+         Depends on distance between object and light source
+         Declines with square distance
+         Unit: lux (lx), foot candles (fc)
+
+ Luminance (perceived brightness of given object)
+
+         Amount of light leaving surface in particular direction
+         Depends on space in which object is perceived
+         Unit: candela per square meter (candela/m2), foot lambert (fl)
+
+      UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING
+Lighting Standards
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  14
+Factors Affecting Vision
+
+ Vision is affected by:
+
+    Internal factors (or personal factors)
+    External factors (the design of the
+
+     surrounding environment)
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  http://usd-apps.usd.edu/coglab/IntroPeripheral.html
+
+                                                                                                                                            15
+Internal Factors Affecting Vision
+
+ Internal factors relate to human physiological characteristics
+
+    1. Dark adaptation
+    2. Phorias
+    3. Age
+    4. Visual acuity
+    5. Near point accommodation
+    6. Peripheral vision
+    7. Normal line of sight (NLS)
+    8. Color discrimination
+    9. Depth perception
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING    16
+1. Vision adaptation (dark and light)
+
+ Adaptation - Ability to see under
+  different lighting conditions
+
+ Going from light to dark
+
+     Body suppresses cone threshold for
+       active night vision
+
+     Rods threshold also decreases ­
+       Allows detection of small changes in
+       illuminance and motion
+
+     Takes about 30 min to dark adapt,
+       (but just a few minutes to light adapt)
+
+     Sensitivity to contrast among surfaces
+       increases with dark adaptation
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  17
+1. Vision adaptation (dark and light)
+
+ 0-10 min in dark - Cones require less
+  light to reach threshold response
+  (perception of stimulus) than rods
+
+ 10+ min in dark - rods require less light
+  for perception of stimulus.
+
+ Point at which rods become more
+  sensitive is called "rod-cone break".
+
+ Glare can temporarily destroy rod cell
+  sensitivity to low spatial frequencies
+  (e.g., fail to detect dim road hazards due
+  to water reflectance from headlights)
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  18
+Human Factors Application
+
+ Why are red lights used in cockpits?
+
+      Rods and cones are NOT equally
+        sensitive to all wavelengths
+
+      Rods are insensitive to longer 
+        (wavelength)
+
+ Red light (low energy, long ) least
+  detrimental to pilot night vision
+
+      Rod cells are relatively insensitive to red
+        light (receptors do not fatigue under red
+        light); as if pilot had already spent time
+        in dark
+
+      Red light minimally triggers pupil
+        constriction so pilot can continue to see
+        dim lights outside of cockpit (e.g., other
+        planes)
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  19
+Human Factors Application
+
+ Two problems with red light in
+  cockpit:
+
+    1. Human eye is less sensitive to
+         appearance of red light than
+         any other color of spectrum =
+         poor reaction times
+
+    2. Pilots cannot see red print
+         (used on navigation charts)
+         under red light:
+
+            Cockpits have small, narrow-
+              beam white light, used sparingly
+
+            Pilots are instructed to close one
+              eye when using white light
+              sources to preserve night
+              adaptation of eye.
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  20
+2. Phorias
+
+ Some people eyes converge too much, while others tend not to converge enough.
+    Such conditions are called phorias.
+
+ People with phorias also see one image but experience notable stress to the eye
+    muscles, making them more vulnerable to rapidly developing visual fatigue.
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  21
+3. Age
+
+ With age, ciliary muscles weaken and visual performance declines.
+ A young adult normally reads from a distance of about 30 cm (1 ft ). At 60, the
+
+  near point of accommodation is around 83cm (2.75 ft).
+ In industry, reading requirements, including character size, may be based on the
+
+  limiting age of the expected user population.
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  22
+

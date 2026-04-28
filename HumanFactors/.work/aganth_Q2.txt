@@ -1,0 +1,69 @@
+                         EIN3241 ­ Human Factors & Ergonomics
+                                        Quiz 2 - Dr. Jad Atweh
+
+Part A: Multiple Choice Questions (TWO points each; 10 points)
+
+   1. Independent variables (IVs) are BEST defined as:
+       a) Outcome measures
+       b) Responses to treatment
+       c) Controlled manipulations of a task or system
+       d) Sources of measurement error
+       e) Alternative hypotheses
+
+   2. Dependent variables (DVs) represent:
+       a) Experimental conditions
+       b) Manipulated factors
+       c) Observed responses to an independent variable
+       d) Participant characteristics
+       e) Predictors
+
+   3. An interaction effect occurs when:
+       a) One IV affects the DV regardless of other IVs
+       b) The effect of one IV depends on the level of another IV
+       c) No IV has an effect
+       d) Only one IV is tested
+       e) Effect of one IV on the DM, averaging across other IVs
+
+   4. Popliteal height is BEST described as:
+       a) Distance from the floor to underside of thigh behind the knee
+       b) Distance from floor to top of knee while standing
+       c) Distance from floor to hip joint
+       d) Horizontal distance across the hips
+       e) Distance between the seat surface and the top of the head with the subject sitting erect
+
+   5. The below anthropometric ANSUR dimension is referred to as:
+       a) Bizygomatic Breadth
+       b) Head Circumference
+       c) Tragion
+       d) Head Breadth
+       e) Head Length
+
+                                                                  1
+Part B: Short Answer Questions (10 points)
+
+1. Applying the anthropometric design principles, find out the dimensions of headband length of the
+   earmuff hearing protection. Data is normal. Think about what design principle to use, what
+   percentile(s) to use, and then calculate the appropriate dimension(s) of the headband length. (6
+   points)
+
+Headband arc length Mean (cm) SD (cm)
+
+Female  35     5
+Male
+        45     3
+
+Design principle: Design for the adjustability (5th percentile female ­ 95th percentile male)
+
+        5th percentile female = µ - Z0.05  = 35 - (1.645 × 5) = 26.78 cm
+
+                         95th percentile male = µ + Z0.95  = 45 + (1.645 × 3) = 49.94 cm
+
+                                            Dimension range = (26.78, 49.94) cm
+   Thus, the headband should be 49.94 cm long with an adjustable range of 23.16 cm.
+2. What is the name of the structural anthropometric dimension below? Define it. (4 points)
+
+Thigh clearance (sitting). This the vertical distance between the seat surface and the point of
+intersection of the thigh with the abdomen
+
+            2
+

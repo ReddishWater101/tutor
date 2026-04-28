@@ -1,0 +1,258 @@
+Lecture 3B ­ Engineering Anthropometry II
+
+                                   EIN 3241: Human Factors and Ergonomics
+                                                        Spring 2026
+
+                                                    January 30, 2026
+
+                                                      Dr. Jad Atweh
+ Admin Issues
+
+ Quiz 2
+
+      Wednesday, February 4
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  2
+Recap                                                                POP QUIZ! WHAT IS THIS CALLED?
+
+ What is anthropometry                                                                                                               3
+ Design applications
+ Measurement devices and techniques
+
+      Anthropometer
+      Spread Caliper
+     ...
+
+ Factors that affect anthropometric data
+ Structural dimensions...
+
+      Stature
+      Acromial Height
+      Eye Height
+      Chest Depth
+      ....
+
+      UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING
+Human Variability
+
+ It is variability within and between groups that forces designers to consider
+  adjustability.
+
+ Is there an overall average human?
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                   4
+Correlations of Body Measurements
+
+ Some body dimensions are significantly correlated with each other, while some
+  others are not.
+
+ The higher the correlation coefficient between two body dimensions, the more
+  closely related they are.
+
+ Such data can be used to estimate one dimension from another.
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                   5
+Example
+
+ If a guy's stature is 177 cm, estimate his:
+
+      Wrist height
+      Arm reach
+      Hip height
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  6
+Anthropometry Percentile
+
+Percentiles correspond to the values of a variable below which a specific percentage
+of the group fall.
+
+   POP   5th percentile stature for this class is 162 cm , meaning that only 5% of class
+  QUIZ!  population is smaller than 162 cm .
+WHAT IS
+  THIS   50 th percentile stature for this class is 173 cm , meaning that 50 % of class
+CALLED?  population is smaller than 173 cm .
+
+         95 th percentile stature for this class is 185 cm , meaning that 95 % of class
+         population is smaller than 185 cm .
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                         7
+Calculating Percentiles
+
+ Normal Distribution : The mean and the standard deviation are two key
+
+parameters of normal distribution. The mean (m) is a measure of central tendency
+
+that tells us about the concentration of a group of scores on a scale of
+
+measurement.
+
+                                                                 =  
+                                                                     
+
+ The Standard Deviation (SD) is a measure of the degree of dispersion or scatter in
+  a group of measured scores.
+
+                                                                       1
+                                                                      -  2 2
+               =                                                        - 1
+
+                                                                               Always
+                                                                              normal?!
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                           8
+Calculating  Percentiles
+
+             Normal distribution with the quartile distribution
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING    9
+Calculating Percentiles
+
+ Given a set of raw data, the percentile(s)
+ may be found by the following procedure:
+
+     Find the mean
+     Find the standard deviation (SD).
+     Find the factor F1 (Z) corresponding to a
+
+      specific percentile point. Multiply this factor
+      by SD and add to (if above 50th percentile) or
+      subtract from (if below 50th percentile) the
+      mean.
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  10
+Calculating Percentiles
+
+     Normal Distribution Z-table
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  11
+Calculating Percentiles
+
+     Normal Distribution Z-table
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  12
+Another Example
+
+ Calculate the 25 th & 75th percentile of the Popliteal Height using the data shown
+
+in the following table:                                        Percentile      z
+                                                                    1 St   - 2.326
+                                       POP QUIZ!                    5 th   - 1.645
+                                                                   10 th   - 1.282
+                                      WHAT DOES                    25 th   - 0.674
+                                                                   50 th
+ Sub jec t no Pop liteal Height THIS MEAN?                         75 th      0
+                                                                   90 th   0.674
+1     41                                                                   1.282
+
+2     45
+
+3     40
+
+4     45.5
+
+5     42
+
+6     47
+
+7     44
+
+8     44.5
+
+9     43
+
+10    46
+
+Mean  43.8                                                     95 th       1.645
+
+SD    2.3                                                      99 th       2.326
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                        13
+More examples...
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  14
+Anthropometric Design Principles                                      - sensitive.
+
+1. Design for the Mean
+ Design for the mean (50th percentile) user.
+ Useful when adjustability is not critical and the task isn't safety
+ Risk: Doesn't accommodate users at the extremes.
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                       15
+Anthropometric Design Principles
+
+2. Design for one extreme of spectrum (short or small user)
+
+      Workplace design ­ reach is primary concern
+
+3. Design for other extreme of spectrum (tall or large user)
+
+      Workplace design ­ ingress and egress is primary concern
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING   16
+Anthropometric Design Principles
+
+4. Design for adjustability
+Provision for using mechanical solution to accommodate a range of users
+
+ (the range from the 5th percentile female to the 95th percentile male)
+
+ Design for adjustability:
+     Consumer product ­ very common
+     Workplaces ­ not that common
+
+ Not practical or desirable in many design situations:
+
+      Economically infeasible
+      Design constraints
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING            17
+Anthropometric Design Principles
+
+5. Design for more types/sizes for consumer
+    products to accommodate a wide range of
+    population groups
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  18
+Using Anthropometry in Design
+
+ Determine the applicable body parts
+ Determine the user population
+
+      M, F, children, disabled, pregnant women, etc.
+
+ Determine the percentile to accommodate
+ Calculate the appropriate dimension(s)Determine the range of adjustability
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                19
+Anthropometry Analysis General Approach
+
+ Step 1: Determine the user population (e.g., children, women, U.S. civilians, age
+  groups, world populations, and races)
+
+ Step 2: Determine relevant body dimensions (e.g., the design of a chair seat
+  must consider waist breadth)
+
+ Step 3: Select the design principles (what percentage of the population is to be
+  accommodated)
+
+ Step 4: Locate the anthropometric tables of the appropriate population.
+ Step 5: Determine the percentage of population to be accommodated.
+ Step 6: Make appropriate allowances for clothing (not an essential step)
+ Step 7: Compute the specific dimension.
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                       20
+What did we learn today?
+
+ Human Variability..
+ Anthropometry Percentiles
+ Anthropometric Design Principles
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  21
+Next time...
+
+ Functional Anthropometry
+ Examples of Advanced Anthropometry Measures (e.g., ANSUR)
+ 3D Anthropometry
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  22
+

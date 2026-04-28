@@ -1,0 +1,234 @@
+                  EIN3241 ­ Human Factors & Ergonomics
+
+                           Homework 6: Work Measurement
+
+                                       Dr. Jad Atweh
+                                         Spring 2026
+
+Please answer the following questions in a separate document and submit it to Canvas.
+
+Part A: Multiple Choice Questions
+
+   1. Standard time is best defined as:
+       a) The fastest possible time to complete a job
+       b) The average time across all workers observed
+       c) The time required for a qualified worker performing a standard method under normal
+       conditions
+       d) The time including all breaks and idle periods
+       e) The theoretical minimum time as calculated by simulation
+
+   2. A regular element in a time study is one that:
+       a) Takes the same amount of time every cycle
+       b) Occurs in every cycle
+       c) Is performed only by experienced operators
+       d) Does not require a stopwatch
+       e) Occurs at random intervals
+
+   3. What is the minimum recommended duration for a work element in a time study?
+       a) 0.4 minutes
+       b) 3 minutes
+       c) 0.04 minutes (approximately 3 seconds)
+       d) 1 second
+       e) 10 seconds
+
+   4. Modern time study equipment differs from historical equipment primarily by:
+       a) Using larger clipboards and faster stopwatches
+       b) Replacing video cameras with paper forms
+       c) Incorporating video cameras and time study software or apps
+       d) Eliminating the need for an analyst altogether
+       e) Using physiological sensors only
+
+   5. In the IQR outlier test, a value is removed if it is:
+       a) Less than Q1 or greater than Q3
+       b) Greater than Q3 + 1.5 × IQR or less than Q1 - 1.5 × IQR
+       c) More than two standard deviations from the mean
+       d) Below the 10th percentile or above the 90th percentile
+       e) Greater than twice the median value
+
+                                                          1
+ 6. A performance rating of 115% for an operator means:
+     a) The operator is 15% slower than standard
+     b) The operator is working at exactly the standard rate
+     c) The operator is performing 15% faster than the standard pace
+     d) The operator needs 15% more training
+     e) The observed time must be divided by 1.15
+
+ 7. Which of the following is an example of a constant allowance?
+     a) Extra time for high noise levels
+     b) Extra time for awkward posture
+     c) Personal needs (5%) + basic fatigue (4%) = 9%
+     d) A policy allowance for new employees
+     e) Variable heat stress allowance
+
+ 8. Allowances are not given for which of the following?
+     a) Personal needs
+     b) Unavoidable delays
+     c) Rest and fatigue
+     d) Idleness and talking to other workers
+     e) Setup and preparation time
+
+ 9. An example of biased work sampling would be:
+     a) Taking observations at truly random intervals
+     b) Always sampling at the same time of day or end of each production cycle
+     c) Using video instead of in-person observation
+     d) Including machine utilization along with worker utilization
+     e) Using instrumentation to record activity automatically
+
+10. A Predetermined Motion Time System (PMTS) is best described as:
+     a) A method that uses a stopwatch on a selected operator
+     b) A database of standard times for basic human motions used to build up job time
+     without direct observation
+     c) A random sampling technique to estimate worker idle time
+     d) A rating scale for evaluating operator performance
+     e) A simulation tool for estimating machine cycle times
+
+11. A key assumption of PMTS is that motions are independent and additive, meaning:
+     a) Each motion's time depends on what happened before it
+     b) Longer motions always replace shorter simultaneous motions
+     c) Each motion's time is fixed and unaffected by preceding or following motions
+     d) Motions can only be summed if they are performed by the same hand
+     e) PMTS can only be applied to circular or repetitive operations
+
+12. The unit of time measurement in MTM-1 is the TMU. One TMU equals:
+     a) 0.1 second
+     b) 0.036 second
+     c) 0.006 minute
+
+                                                        2
+     d) 0.0001 hour
+     e) 1 millisecond
+13. In MTM-1 analysis, eye motions and body motions are always placed in the:
+     a) Left-hand column
+     b) Center column
+     c) Right-hand column
+     d) Footnote section
+     e) Either column depending on the analyst's preference
+14. When two simultaneous motions can be performed at the same time, the analyst should:
+     a) Add both motion times together
+     b) Circle the shorter motion and use only its time
+     c) Circle the longer (limiting) motion and use only its time
+     d) Discard both motions
+     e) Average the two motion times
+15. Which of the following is a benefit of a seated work posture?
+     a) Greater mobility and range of motion
+     b) Higher physiological load to maintain balance
+     c) Reduced static load and improved feeling of balance
+     d) Prevention of all musculoskeletal disorders
+     e) Elimination of the need for lumbar support
+
+                                                        3
+Part B: Exercises
+
+Exercise 1: Washing Machine Operation (all RH unless otherwise
+specified)
+
+You are standing with the laundry basket in both hands next to the machine (assume the
+door closes automatically). The laundry basket has a lot of clothes.
+
+    We broke down the operation into the following steps:
+   1. Bend down and then put the 6-pound laundry basket on the floor 24 inches away with
+
+       both hands.
+   2. Open the tight washing machine door from the handle at the side of the machine 22
+
+       inches away.
+   3. Get one shirt from the basket on the floor 24 inches away.
+   4. Check the shirt tag.
+   5. Put the shirt in the washing machine opening 24 inches away.
+   6. Repeat for the remaining 11 laundry items, then get back up (door closes automati-
+
+       cally).
+   7. Turn the small dial that is 20 inches away 30 degrees to cold wash.
+   8. Push the start button at the top of the machine 10 inches away.
+   9. The machine cycles for 45 minutes.
+    We then broke the steps of the washing machine operation into their basic motions.
+Complete the following table by filling in the motion classifications and TMU values as
+appropriate.
+
+                                                          4
+LH description F LH motion       TMU            TMU       RH motion  F RH description
+                                                  29      B                Bend down
+Move basket 24"  M24B3      20.6x1.06+2.2                 M24B3            Move basket 24"
+Release basket   RL1                2      20.6x1.06+2.2  RL1              Release basket
+                                                   2      R22A             Reach for machine door
+                                                  14                       22"
+                                                                           Grasp machine door
+                                              2           G1A              Disengage machine door
+                                                                           Release machine door
+                                              22.9        D3E
+                                                                     12 Reach for shirt 24"
+                                              2           RL1        12 Grasp shirt
+                                                                     12 Focus eye on shirt tag
+                                              21.2        R24C       12 Move shirt to machine
+
+                                              7.3         G4A              24"
+                                                                     12 Release shirt
+                                              7.3         EF
+                                                                           Arise from bend
+                                              20.6        M24B             Reach to dial 20"
+                                                                           Grasp dial
+                                                 2        RL1              Turn dial 30°
+                                               31.9       AB               Release the dial
+                                               13.1       R20A             Reach to button 10"
+                                                          G1A              Grasp button
+                                                 2        T30S             Apply pressure to button
+                                               2.8        RL1              Release button
+                                                 2        R10A             Machine cycles
+                                               8.7        G5
+                                                 0        APA
+                                               10.6       RL2
+                                                 0
+                                              75000
+
+                                           5
+Exercise 2
+
+A manufacturing facility wants to know how many hours during an 8-hr day a machine is
+being serviced by an operator. You conducted a pilot work sampling study over one day and
+obtained the following data:
+
+Operator puts in raw material  45
+
+Operator adjusts the settings  25
+
+Operator removes finished product 12
+
+Machine runs automatically     145
+
+Machine idle                   75
+
+    Provide management with a 99% confidence interval on the machine servicing time.
+    There is a total of 302 observations. Out of those, 45 + 25 + 12 = 82 observations are
+related to machine servicing.
+
+ p(servicing) = 82/302 = 0.272 and with z(/2) = 2.576
+ l(servicing) = z(/2) × [p(1 - p)/n] = 0.066
+ p(servicing) = 0.272 ± 0.066
+ Servicing time = (0.272 ± 0.066) × 8 = 2.176 ± 0.528 hours
+(We multiplied by 8 because the problem asks for the number of hours not just the percentage
+of time the machine is being serviced)
+
+              6
+Exercise 3
+
+    How would you classify these? Write the code for each motion and its respective time in
+TMU.
+
+Description                                              Classification  Time (TMU)
+Reach for a piece of glass 14 inches away                      R14D             15.6
+Reach for a screw among a pile of screws, nuts, and            R20C             19.8
+bolts 20 inches away
+Reach 10 inches with your left hand to balance your            R10E             10.5
+body when carrying a bucket
+Reach for large red button 12 inches away                      R12A              9.6
+Reach for a pair of pliers lying somewhere on the table        R24B             21.5
+around 24 inches away
+Move a 0.06 pound pencil to another side of the table         M10B              12.2
+10 inches away using the RH
+Move the 4-pound object to the edge of the table              M14A4      14.4(1.06) + 2.2
+against the wall 14 inches away using the LH
+Move screw to target location on the wall 12 inches           M12C              15.2
+away using the RH
+
+            7
+

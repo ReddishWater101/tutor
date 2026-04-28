@@ -1,0 +1,84 @@
+                         EIN3241 ­ Human Factors & Ergonomics
+                                        Quiz 6 - Dr. Jad Atweh
+
+Exercise 1: Multiple Choice Questions (6 points)
+
+1. In MTM-1, one TMU equals:                                       4. A "regular element" in time studies is:
+   a) 0.036 seconds                                                   a) An element that is easy to perform
+   b) 0.36 seconds                                                    b) An element that takes exactly 1 minute
+   c) 0.0036 seconds                                                  c) An element that happens every cycle
+   d) 3.6 seconds                                                     d) An element that requires no skill
+
+2.  The Hawthorne effect refers to:                                5.  What is the minimum duration       for an element  in
+    a) Temperature affecting worker productivity                       time studies?
+    b) Machines breaking during measurements                           a) 0.01 minutes
+    c) Analysts becoming biased over time                              b) 0.02 minutes
+    d) Workers improving when observed                                 c) 0.04 minutes
+                                                                       d) 0.10 minutes
+
+3. When calculating degrees of freedom, use:                       6. What are the constant allowances in time studies?
+   a) n (sample size)                                                 a) Mental strain and physical fatigue
+   b) n - 1                                                           b) Setup time and delays
+   c) n + 1                                                           c) Rest periods and tool changes
+   d) 2n                                                              d) Personal needs and basic fatigue
+
+Exercise 2: Time Study (4 points)
+
+An analyst conducted a time study on a packaging operation and collected the following element times:
+
+                                            Cycle       Element Time (sec)
+                                               1                    12.3
+                                               2                    11.8
+                                               3                    12.5
+                                               4                    12.1
+                                               5                    11.9
+                                               6                    12.4
+                                               7                    12.0
+                                               8                    11.7
+
+The operator was rated at 105% and the allowance is 12%. Calculate the standard time for this
+
+element.
+
+Solution:
+
+Step 1: Calculate average element time (ET)
+
+ET  =     12.3+11.8+12.5+12.1+11.9+12.4+12.0+11.7   =   96.7  =    12.09  seconds
+                                        8                 8
+
+Step 2: Calculate normal time (NT)
+
+NT  =     ET  ×  Rating  =  12.09   ×  105  =  12.09    ×  1.05    =   12.69  seconds
+                   100                 100
+
+Step 3: Calculate standard time (ST)
+
+ST  =     NT  ×  (1  +  Allowance%  )  =  12.69  ×  (1  +  12   )  =   12.69  ×  1.12  =  14.21  seconds
+                              100                          100
+
+Answer: Standard Time = 14.21 seconds
+
+                                                                   1
+Exercise 3: Capping a Marker (10 points)
+
+An operator needs to pick up a marker cap from a desk 12" away (the cap is by itself) and place it onto
+a marker being held in the other hand. Break down this task into its basic motions and calculate the
+total time in TMU.
+
+    My main assumption is that the hands are at the same place originally (no distance between them).
+If there were distance, it would be give to us...
+
+Motion Description                               MTM-1 Code      Time (TMU)
+Reach to marker cap 12" (fixed location)               R12B             12.9
+Grasp cap (small, by itself)                            G1A             2.0
+Move cap 12" to marker                                 M12B             13.4
+Position cap on marker (close fit, symmetrical)        P2SE             16.2
+Release cap                                             RL1             2.0
+
+                                                    Total Time:    46.5 TMU
+
+Answer: Total time = 46.5 TMU (or 1.674 seconds, or 0.0279 minutes)
+
+2
+

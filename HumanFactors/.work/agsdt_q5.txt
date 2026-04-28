@@ -1,0 +1,98 @@
+                         EIN3241 ­ Human Factors & Ergonomics
+                                        Quiz 5 - Dr. Jad Atweh
+
+Part A: Multiple Choice Questions (10 points)
+
+   1. The "law of diminishing returns" in unstructured visual search implies that:
+       a) Longer search time never improves detection
+       b) Detection probability grows exponentially with time
+       c) Detection probability decreases as search time increases
+       d) Each additional second of search yields smaller gains in detection probability
+
+   2. In SDT, which of the following is classified as a "Hit"?
+       a) Saying "signal present" when only noise is present
+       b) Saying "signal absent" when signal+noise is present
+       c) Saying "signal present" when signal+noise is present
+       d) Saying "signal absent" when only noise is present
+
+   3. High sensitivity (high d) in SDT is associated with:
+       a) High rates of false alarms and misses
+       b) Overlap of noise and signal+noise distributions
+       c) High likelihood of hits and correct rejections
+       d) Criterion shifts only, not distribution separation
+
+   4. If the cost of a false alarm is very high, the decision criterion tends to:
+       a) Shift to the left; more risky responding
+       b) Shift to the right; more conservative responding
+       c) Stay at  = 1
+       d) Eliminate all false alarms and misses simultaneously
+
+   5. A ROC curve that lies close to the diagonal line from (0,0) to (1,1) indicates:
+       a) Very low sensitivity, near chance performance
+       b) Very high sensitivity
+       c) Perfect detection with no errors
+       d) A neutral response criterion with high d
+
+   6. The Hick­Hyman Law relates choice reaction time to:
+       a) Distance to the target and its width
+       b) The level of conspicuity in the display
+       c) Physical size of the control
+       d) Number of choices in bits of information
+
+   7. Fitts's Law states that movement time to a control depends primarily on:
+       a) Number of choices and uncertainty
+       b) Target amplitude and width (distance and size)
+       c) Color and luminance of the control
+       d) User's experience only
+
+   8. According to the Principle of Pictorial Realism, a display should:
+       a) Use abstract symbols to avoid clutter
+       b) Look like the system variable it represents
+       c) Include redundant color coding for safety
+       d) Use 3D representations for all data
+
+                                                                  1
+ 9. The Principle of Moving Parts suggests that:
+     a) Moving elements should be consistent with the user's mental model of system movement
+     b) Display motion should be opposite to physical system motion
+     c) Static displays should always be preferred
+     d) Motion should be random to maintain attention
+
+10. Two ROC curves have identical hit rates but differing false alarm rates. The curve with the lower
+     P(FA) indicates:
+     a) Higher sensitivity (d')
+     b) Lower sensitivity but higher 
+     c) Equal d' but different noise distributions
+     d) Unreliable response criteria
+
+Part B: Short Answer Question (4 points)
+
+NAME four out of the five properties that affect discriminability.
+Color, Size, Shape, Brightness, Motion
+
+Part B: Exercise (6 points)
+
+A researcher is studying auditory detection. Participants listen to a series of trials and must say "Yes"
+(signal present) or "No" (signal absent). On half the trials a faint tone is actually played; on the other
+half there is only background noise. The results for one participant are shown below.
+
+    Trial Type "Yes" "No" Total
+
+    Faint Tone                  36 14 50
+
+    Background Noise 12 38 50
+
+                         d = Z(H) - Z(F A); Z(0.28)  -0.58; Z(0.76)  0.71.
+Using signal detection theory, get the participant's sensitivity d. SHOW YOUR WORK.
+
+36                                                                  12
+Hit rate H = = 0.72 (1.5pts), False alarm rate F = = 0.24 (1.5pts).
+50                                                                  50
+
+z(H) = -z(1 - 0.72) = -z(0.28)  0.58, z(F ) = -z(1 - 0.24) = -z(0.76)  -0.71.
+
+                             d = z(H) - z(F )  0.58 - (-0.71) = 1.29 (3pts).
+1 point for each correct Z score and 1 point for the answer
+
+                             2
+

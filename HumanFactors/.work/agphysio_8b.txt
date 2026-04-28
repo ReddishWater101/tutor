@@ -1,0 +1,241 @@
+Lecture 8B - Job Design I
+
+          EIN3241 : Human Factors and Ergonomics
+                               Spring 2026
+                             April 15, 2026
+
+                           Dr. Jad A. Atweh
+ Admin Issues                                                       BEFORE class to Canvas.
+
+ Project Presentations Day 1
+
+      Friday
+      On all days, teams should have submitted their presentations
+      Attendance is mandatory for all presentation dates.
+      Presentation Grade: 9%
+
+             Criteria
+          Timing (2%)
+Clarity and coherence (2%)
+Addressing questions (2%)
+  Presentation skills (3%)
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                                2
+Manual Material Handling (MMH)
+
+ Manual material handling (MMH) refers to a variety of techniques related to
+  manually moving objects ( e.g. lift, lower, push, pull, carry, etc.).
+
+ MMH is virtually everywhere, and associated injuries are high:
+
+      25% of accidents in industry are related to MMH.
+      60% of overexertion injuries are due to lifting/lowering.
+      60% of low back pain (LBP) is primarily due to overexertion.
+      LBP related to occupational factors costs $4.6 billion/yr.
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                 3
+Control of Manual Handling Incidents
+
+ Requires a comprehensive program, considering the following factors:
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING          4
+MMH Research Approaches
+
+ Evaluation of injury potential due to MMH follows four major avenues
+ of research:
+
+    1. Epidemiological approach : characterizes the job, workplace, and other
+         factors to derive trends leading to injuries; main input: historical records.
+
+    2. Biomechanical approach : characterizes forces/moments on the body to
+         estimate task and load characteristics that may lead to injuries. Applicable
+         for tasks where the frequency is less than 4 lifts per min.
+
+    3. Psychophysical approach : participants adjust the load/task characteristics
+         to arrive at an "acceptable " setup.
+
+    4. Physiological approach : Evaluates MMH task in terms of cardiovascular
+         stress, e.g. O2 consumption, HR, blood pressure, energy expenditure.
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                           5
+Job Analysis Methods
+
+ Different methods for assessing physical stress in a job that could be
+ harmful to the musculoskeletal system.
+
+     NIOSH Lifting Equation
+     Biomechanics Software (e.g., 3DSSPP)
+     RULA/RUBA
+     LMD
+     Goniometer
+     Motion Capture Analysis Systems
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING            6
+NIOSH Lifting Equation (1991 Revised)
+
+ The NIOSH lifting equation was developed to help industry combat back injuries
+  that result from lifting tasks.
+
+      Identifies lifting tasks that may lead to back injuries
+      Shows areas where task can be improved
+
+ Originally developed in 1981 but revised in 1991.
+ Equation computes a recommended weight limit (RWL) and compares it to
+
+  actual weight used.
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                    7
+NIOSH Lifting Equation
+
+ Lifting index (LI) is a ratio of RWL and weight actually lifted (L):
+                                                          
+
+                                                  = 
+ Maximum weight of lift under ideal conditions (load constant): 23 kg/ 51 lbs.
+ An LI that is:
+
+       1 is good; action limit (AL)
+      Between 1 and 3 shows potential problems
+       3 Eliminate or revise task immediately; maximum permissible limit (MPL)
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                   8
+NIOSH Lifting Equation
+
+ RWL = (LC)(HM)(VM)(DM)(AM)(FM)(CM)
+
+ Where:                                                              This is the Revised NIOSH LE:
+                                                                      The original 1981 NIOSH equation
+    1. LC = load constant
+    2. HM = horizontal multiplier                                       only used three multipliers
+    3. VM = vertical multiplier                                         (horizontal, vertical, and distance).
+    4. DM = distance multiplier                                       The 1991 Revised Equation
+    5. AM = asymmetric multiplier                                       expanded it to six multipliers + the
+    6. FM = frequency multiplier                                        load constant.
+    7. CM = coupling multiplier                                       All multipliers in the NIOSH
+                                                                        equation range from 0 to 1
+      UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING
+                                                                                                                                                                9
+NIOSH Lifting Equation
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  10
+1. Load Constant (LC)
+
+ Load constant (LC) = 23 kg / 51 lbs
+ Again, the multipliers in the equation range between 0 and 1.
+ Therefore, the RWL can take a maximum value of 23 kg if all multipliers
+
+ are 1 (ideal lift).
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING             11
+2. Horizontal Multiplier (HM)
+
+ Horizontal (H): distance between center of load and midpoint between ankles.
+ 0  HM  1.0
+ If H < 25 cm, then HM = 1 (ideal)
+ If H > 63 cm, then HM = 0 (unacceptable)
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                  12
+3. Vertical Multiplier (VM)
+
+ Vertical (V): vertical distance of first knuckle of middle finger
+ from the floor.
+ 0  VM  1.0
+ If V > 175cm, then VM = 0 (unacceptable)
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING       13
+4. Distance Multiplier
+
+ Distance (D): vertical travel distance of the load
+ 0  DM  1.0
+ If D < 25 cm, then DM = 1 (ideal)
+ If D > 175 cm, then DM = 0 (unacceptable)
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  14
+5. Asymmetric Multiplier (AM)
+
+ Asymmetry (A): angle between the location of the load and the mid sagittal
+  plane.
+
+ 0  AM  1.0
+ If A = 0 °, then AM = 1 (ideal)
+ If A > 135 °, then AM = 0 (unacceptable)
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                15
+6. Frequency Multiplier (FM)
+
+ Frequency (F): average number of lifts per minute, as measured over
+ a 15 -minute period.
+
+ 0  FM  1.0
+ If F > 15 lifts/minute, then FM = 0 (unacceptable)
+ FM is a function of F, duration, and V (Table 3.15)
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING         16
+6. Frequency Multiplier (FM)
+
+        30 inches = 30 inches × 2.54 = 76.2 cm
+
+ A worker lifts a box 6 times per minute, for 2.5
+    hours, and the vertical height  = 65 .
+                          = 0.27
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  17
+7. Coupling Multiplier (CM)
+
+ Coupling (C): is the effectiveness of the hand container (or grip)
+ interface, described as good, fair, or poor.
+
+     `Good' if object allows hands to wrap around it (i.e. box with handles or hand
+      hold cutouts).
+
+     `Fair' if object has less than optimal handles or no handles but allows lifter to
+      bend fingers at 90 o during lift.
+
+     `Poor' if object is difficult to be grasped, with no handles or cutouts.
+
+ 0  CM  1.0
+
+ CM is a function of C and V (Table 3.16 and 3.17)
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                           18
+7. Coupling Multiplier (CM)
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  19
+NIOSH Lifting Equation
+
+ Must perform the analysis at the origin and destination of the lift.
+ Frequency is  0.2 / in 30 mins.
+ Average load is 10 lbs
+ Which RWL will represent the lift?
+ What is Lifting Index?
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING          20
+Example: Loading
+
+ Example: Loading Punch Press Stock (Note measurements are in inches)
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING          21
+Example: Loading
+
+ Example: Example: Loading Supply Rolls ( Note measurements are in inches
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING              22
+General Design/Redesign Suggestions
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  23
+Conditions of Use: NIOSH Lifting Equation
+
+ There are situations where NIOSH lifting equation does NOT apply,
+ such as:
+
+     One handed -lift
+     Duration > 8 hours
+     Lifting while seated or in restricted workspace
+     Lifting unstable objects
+     Lifting while carrying, pushing, or pulling
+     High speed motion (> 76 cm/s)
+     Unreasonable floor/ foot coupling (< 0.4 coefficient of friction)
+     Unfavorable environment (humidity and temperature)
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING           24
+

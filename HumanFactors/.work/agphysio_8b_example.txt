@@ -1,0 +1,113 @@
+         EIN3241: Human Factors and Ergonomics
+                    Lecture 8B - Job Design Example
+                                Dr. Jad Atweh
+
+    The figure shows a lifting task with two positions: the origin (left photo) and the destination
+(right photo). The lifting frequency is  0.2 lifts/min over a 30-minute period, and the average
+load being lifted is 10 lbs. Perform the NIOSH lifting equation analysis. What RWL will represent
+the lift? What is the Lifting Index?
+
+Origin (Left Photo)                        Destination (Right Photo)
+
+    · H0 (horizontal distance) = 15 in         · Hd = 12 in
+    · V0 (vertical height) = 11 in             · Vd = 40 in
+    · A0 (asymmetry angle) = 10°               · Ad = 0°
+
+Additional Parameters
+
+    · Load Constant (LC) = 51 lbs
+    · Frequency Multiplier (FM) = 1.0
+    · Coupling Multiplier (CM) = 1.0
+    · Average load = 10 lbs
+
+                                        1
+1. Vertical Travel Distance
+
+                                          D = |Vd - V0| = |40 - 11| = 29 in
+
+2. Horizontal Multiplier (HM)
+
+Formula:  HM  =  10
+                 H
+
+Origin:
+
+Destination:                              10
+                               HM0 = 15 = 0.67
+
+                                          10
+                               HMd = 12  0.83
+
+3. Vertical Multiplier (VM)
+
+Formula: V M = 1 - 0.0075|V - 30|
+    Origin:
+
+                                               V M0 = 1 - 0.0075|11 - 30|
+                                                      = 1 - 0.0075 × 19
+                                                      = 1 - 0.1425
+                                                      = 0.8575
+
+    Destination:
+
+                                               V Md = 1 - 0.0075|40 - 30|
+                                                      = 1 - 0.0075 × 10
+                                                      = 1 - 0.075
+                                                      = 0.925
+
+4. Distance Multiplier (DM)
+
+Formula:  DM  =  0.82 +  1.8
+                         D
+
+With D = 29 in:                       1.8
+
+                              DM = 0.82 +  0.82 + 0.0621  0.8821
+                                      29
+
+(Same DM for origin and destination)
+
+5. Asymmetric Multiplier (AM)
+
+Formula: AM = 1 - 0.0032A
+    Origin (A0 = 10):
+                                   AM0 = 1 - 0.0032 × 10 = 1 - 0.032 = 0.968
+
+Destination (Ad = 0):
+
+                              AMd = 1 - 0.0032 × 0 = 1.0
+
+6. Compute RWL at Origin
+
+                          RW L0 = LC × HM0 × V M0 × DM × AM0 × F M × CM
+
+              RW L0 = 51 × 0.67 × 0.8575 × 0.8821 × 0.968 × 1.0 × 1.0  25 lb
+                                                         2
+7. Compute RWL at Destination
+
+                          RW Ld = LC × HMd × V Md × DM × AMd × F M × CM
+
+                 RW Ld = 51 × 0.83 × 0.925 × 0.8821 × 1.0 × 1.0 × 1.0  34.7 lb
+
+8. Final RWL for the Lift
+
+We take the more conservative (smaller) of the two RWLs:
+    · Origin:  25.0 lb
+    · Destination:  34.7 lb
+    The lift is governed by the origin, so:
+                                                RWL for this lift = 25 lb
+
+9. Lifting Index (LI)
+
+Formula:  LI  =  Load Weight
+                     RW L
+
+Origin:
+
+                                       10
+                              LI0 = 25 = 0.4 (< 1, acceptable)
+
+Since LI value is less than 1, the lift is acceptable.
+
+                              3
+

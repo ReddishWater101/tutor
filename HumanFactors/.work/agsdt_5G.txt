@@ -1,0 +1,357 @@
+Lecture 5 G - Visual Search & Signal Detection Theory II
+
+                                EIN 3241 : Human Factors and Ergonomics
+                                                     Spring 2026
+
+                                                  March 13 , 2026
+
+                                                  Dr. Jad A. Atweh
+ Admin Issues
+
+ Research Study Last Reminder!
+ Group project assignment (by Sunday night)
+ Progress Report ( 2%): Monday, March 30
+ Final Report ( 9%): April 25
+ Presentations ( 9%): April 17 , 20 , and 22 (slots will be determined later ).
+ Previous Projects
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                    2
+Decision pattern & sensitivity
+
+Probabilities based on observations. Need to ensure                 Use z score and normal curve
+   sample sizes are consistent across event types                       ordinate tables to solve
+
+                                                               Z(H) = Z( 0.3 )
+
+                                                               Ordinate(Z(H)) =
+
+                                                               Z(FA) = Z( 0.05 )
+
+                                                               Ordinate(Z(FA)) =
+
+                                                                = O(H) / O(FA)
+                                                                 =
+
+                                                               d' = Z(H) - Z(FA)
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  =                                  3
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  4
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  5
+Decision pattern & sensitivity
+
+Probabilities based on observations. Need to ensure                 Use z score and normal curve
+   sample sizes are consistent across event types                       ordinate tables to solve
+
+                                                               Z(H) = Z(-00.5.234 )
+
+                                                               Ordinate(Z(H)) = 0.3485
+
+                                                               Z(FA) = Z(-10.6.4045 )
+
+                                                               Ordinate(Z(FA)) = .1040
+
+                                                                = O(H) / O(FA)
+                                                                 = 0.3485 / .1040 = 3.35
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  d' = Z(H) - Z(FA)
+                                                                 = -0.524 ­ (-1.644 ) = 1.12 SD
+
+                                                                                                                                                  6
+Standard Normal Scores
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  7
+Decision pattern & sensitivity
+
+                                                                                      Type of responder?
+
+                                                                       Z(H) =
+                                                                       Ordinate(H) =
+                                                                       Z(FA) =
+                                                                       Ordinate(FA) =
+                                                                       =
+                                                                       d' =
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                                             8
+Decision pattern & sensitivity
+
+                                                                                 Type of responder and level of sensitivity?
+
+                                                                       Z(H) =
+                                                                       Ordinate(H) =
+                                                                       Z(FA) =
+                                                                       Ordinate(FA) =
+                                                                       =
+                                                                       d' =
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                                                                 9
+Decision pattern & sensitivity
+
+                                                                                 Type of responder and level of sensitivity?
+
+                                                                       Z(H) =
+                                                                       Ordinate(H) =
+                                                                       Z(FA) =
+                                                                       Ordinate(FA) =
+                                                                       =
+                                                                       d' =
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                                                                 10
+Decision pattern & sensitivity
+
+                                                                                         Type of responder?
+
+                                                                       Z(H) = 1.644
+                                                                       Ordinate(H) = 0.103
+                                                                       Z(FA) = 0.524
+                                                                       Ordinate(FA) = 0.348
+                                                                        = 0.103 / 0.348 = 0.297
+                                                                       d' = 1.644 ­ 0.524 = 1.12
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                                                11
+Decision pattern & sensitivity
+
+                                                                                 Type of responder and level of sensitivity?
+
+                                                                         Z(H) = 0.524
+                                                                         Ordinate(H) = 0.348
+                                                                         Z(FA) = -0.524
+                                                                         Ordinate(FA) = 0.348
+                                                                         =1
+                                                                         d' = 1.049
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                                                                 12
+Decision pattern & sensitivity
+
+                                                                                 Type of responder and level of sensitivity?
+
+                                                                       Z(H) = 1.282
+                                                                       Ordinate(H) = 0.175
+                                                                       Z(FA) = -1.282
+                                                                       Ordinate(FA) = 0.175
+                                                                       =1
+                                                                       d' = 2.563
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                                                                 13
+Applications of SDT
+
+ Medical diagnosis
+ Police identification line -ups
+ Objects on a radar screen
+ Discriminating smells [gas leak detection]
+ Drug testing in personnel selection (fluctuations in sensitivity levels)
+ Military detection (camouflaged objects)
+ Use of night vision devices for object detection
+ Emergency / fire alarm detection ­ perception of ambulances on roadway
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING              14
+More on response criterion                                         ...
+
+  can be manipulated by...
+
+      Probabilities of noise and signals
+
+             Many stimuli present in trials, you lower criterion.
+             Few stimuli present in trials, you raise criterion.
+
+      Payoffs associated with the SDT outcomes
+
+ Optimal  can be defined based on probabilities alone, as:
+
+                                                                 ()
+                                                         = ()
+
+      If () = (), then optimal Beta = 1.
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING           15
+Response criterion and payoffs
+
+ Payoffs can also be considered in model of optimal :
+
+      If subject receives $ 100 for hit, but is only penalized $ 1 for a FA, will produce low/risky
+        criterion.
+
+      If operator saves company $ 100 with correct rejection, but penalizes company $ 1 for miss,
+        will produce high/conservative criterion.
+
+ Optimal  can be defined based outcome payoffs (alone), as:
+
+                                     + ()     
+                           =   + () =     
+
+                                                            V(CR) = Value of correct rejection
+                                                            C(FA) = Cost of false alarm
+                                                            V(H) = Value of hit
+                                                            C(M) = Cost of miss
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  16
+Combining equations
+
+()   +          
+ = ()    +                                                     =  
+                                                                         
+
+ If you know probabilities and payoffs for SDT task, you can calculate optimal                 .
+
+ You can also compare actual operator performance (observed         ) with optimal .
+
+ People don 't update or optimize , based on changes in event probabilities, as often as they
+  should.
+
+ Called this "sluggish "!
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                                  17
+Sluggish beta
+
+ Optimal  values for task on X -axis.
+ Actual  values on Y -axis.
+ Optimal performance occurs when
+
+  obtained  = optimal .
+
+     (Positive diagonal )
+
+ If manipulate probabilities (x) and payoffs
+  (o) independently, change in  is slower
+  for probabilities.
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  18
+Receiver Operating Characteristic (ROC) Curve
+
+ Multiple outcomes of signal detection analysis represented in same plot to
+  characterize receiver behavior ­ ROC curve
+
+      Plot of P(H) against P(FA)
+      Recall that ...
+
+            P(M) = 1-P(H)
+            P(CR) = 1-P(FA)
+
+ Shows how observer adjusts response criterion () under different task
+  circumstances (e.g., event probabilities ):
+
+      Assumes signal strength and sensitivity (d ') are constant .
+      Observations fall along bowed curve in plot.
+
+ Also known as an iso -sensitivity curve.
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                19
+                                                               No better than "blind " guessing
+                                                               d` = 0
+
+Increasing d '
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  20
+                                                                    Increasing   Small 
+
+                                     Large                                                                                       21
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING
+ROC curves from SDT outcomes                                                                                      H FA
+                                                                                                                  M CR
+                = . 
+                                                                   0.95   = . 
+                                                                   0.90
+                                    Probability of 0.70                                                                        22
+                                           Hit
+
+                = . 
+
+                                                                   0.30
+
+       0.05 0.10 0.30                                          0.70
+
+ = .   Probability of False Alarm
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING
+Calculate SDT outcomes
+
+ Calculate () and () with these data.
+
+          Response                                             "Signal"  "Noise"
+"Yes"
+"No"                                                            14 (H)   6 (FA)
+Total observations (T)                                          6 (M)    14 (CR)
+                                                                20 (S)   20 (N)
+
+ () = ____14_/_20__0_.7_
+ () = ____6 /_2_0 _ 0_.3__
+ () = ___6_/ 2_0__0._3 _
+ () = ___14_/_20__0_.7_
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                     23
+Plot ROC curve
+
+ Plot () and () values with single dot.
+
+ Connect dots to create ROC curve for user.
+
+ Always represent  = 1 line for reference.
+
+ Positive diagonal used as reference for judging level of
+  sensitivity ( ').
+
+       Graphically represented as distance between "chance " line and
+          ROC curve at point of intersection with "unbias " response line.
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING               24
+Review of features and meaning
+
+                                                                      =1  =low
+
+      "YES"
+
+                                                               =high
+
+"NO"
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                   25
+Human factors implications
+
+ Why do we use ROC curve?
+
+      Provides representation of how observer changes decision criterion under different task
+        circumstances.
+
+      What task factors may have influenced  shifts in our example data.
+
+             __p_r_o_b_a_b_i_li_ti_e_s__
+
+                 payoffs
+             _________
+
+ For system and task designers, ROC gives us insight into:
+
+ how to ___d_e_f_in_e_p_a_y_o_ff_s_a_n_d_p_e_n_a_lt_ie_s_f_o_r_o_p_ti_m_a_l_p_e_rf_o_rm__a_n_ce_;
+
+ how to manipulate ___s_ig_n_a_l _fr_e_q_u_e_n_cy(if possible) for best possible                    (relative to optimum).
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                                      26
+Human factors implications
+
+ Sensitivity loss:
+
+     1. Refresh with examples of the target (pictures)
+
+             Reduces memory load by providing an aid
+
+     2. Training to improve sensitivity
+
+             Automaticity can reduce workload and make it easier to distinguish between targets and
+               distractors
+
+ Response bias shift:
+
+     1. Feedback on success / failure
+
+             Helps people get a better estimate of the probability of noise and signals
+
+     2. Introduce false signals
+
+             Also works as a memory aid
+
+     3. Allow use of confidence levels in decision
+
+             Provide ratings of confidence rather than yes/no
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                                        27
+

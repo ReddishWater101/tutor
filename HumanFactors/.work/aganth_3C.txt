@@ -1,0 +1,281 @@
+Lecture 3 C ­ Engineering Anthropometry III
+
+                                   EIN 3241 : Human Factors and Ergonomics
+                                                        Spring 2026
+
+                                                    February 2, 2026
+
+                                                       Dr. Jad Atweh
+ Admin Issues
+
+ Quiz 2
+
+     Next Class!
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  2
+Recap ...
+
+ What is anthropometry
+ Design applications
+ Measurement devices and techniques
+ Factors that affect anthropometric data
+ Structural dimensions ...
+ Human Variability..
+ Anthropometry Percentiles
+ Anthropometric Design Principles
+ ....
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  3
+Anthropometry Problem                                          1
+
+ As a Human Factors Specialist, your job is to determine the popliteal height, H of
+  the sitting surface of a chair so that all the operators using this chair could sit on
+  it comfortably. Comfortable posture is defined as lower leg perpendicular to the
+  ground and upper leg parallel to the ground.
+
+                                                                          Popliteal Height , H (cm)
+
+                                                                   Male   44.2 (2.8 )
+                                                                  Female  39.8 (2.7 )
+
+H
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                                        4
+Anthropometry Problem                                          2
+
+ Calculate the 95 th percentile shoulder -to-fingertip length . Given that the mean
+  length of the lower arm (LA) link length (with the hand) is 442 .9 mm with a
+  standard deviation of 23 .4 mm . The mean upper arm (UA) link length is 335 .8 mm,
+  and its standard deviation is 17 .4 mm . The correlation between UA and LA is 0.4
+
+                                                                        What if you had
+                                                                  distributions of A and UA
+
+                                                                    and want LA instead?
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                                5
+Anthropometry ANSUR Measures
+
+ So far, we 've focused on structural static anthropometry, measures like stature,
+  eye height, and popliteal height, all taken in standardized, fixed postures.
+
+ ANSUR (Anthropometric Survey of U.S. Army Personnel) is a comprehensive
+  anthropometric survey originally conducted on U.S. military personnel.
+
+      It gives us over 90 standardized measurements per person, from the familiar (like stature
+        and hip breadth) to more specialized ones (like bitragion chin arc or thigh circumference).
+
+      Static too!
+
+ https://www.openlab.psu.edu/ansur 2/
+
+Tragion ­ Top of Head
+
+The vertical distance between the right tragion landmark and
+the horizontal plane tangent to the top of the head . For female
+participants with braids or cornrows, the measurement includes
+the styled hair .
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                                        6
+Anthropometry ANSUR Measures
+
+ Bitragion Chin Arc
+ The surface distance between the right and left tragion landmarks
+ across the chin landmark
+
+ Bitragion Submandibular Chin Arc
+ The surface distance between the right and left tragion landmarks
+ across the submandibular landmark
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING       7
+Anthropometry ANSUR Measures
+
+  Bizygomatic Breadth
+  The maximum horizontal breadth of the face (between the zygomatic
+  arches) at the left and right zygion landmarks.
+
+Head Breadth
+
+The maximum horizontal breadth of the head above the plane of
+attachment of the ears. For female participants with braids or
+cornrows, the measurement includes the styled hair.
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING        8
+Anthropometry ANSUR Measures
+
+Head Circumference
+The maximum circumference of the head above the attachment of the ears
+is measured with a tape passing just above the ridges of the eyebrows and
+around the back of the head . For female participants with braids or
+cornrows, the measurement includes the styled hair .
+
+Head Length
+
+The distance from the glabella landmark to the opisthocranion landmark .
+For female participants with braids or cornrows, the measurement includes
+the styled hair .
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING              9
+Functional Data (Dynamic Anthropometry)
+
+ Ergonomics isn't just about static dimensions (e.g., arm length), but about how far
+  someone can comfortably and safely move their limbs or body.
+
+      For example: Can a worker reach a control without twisting awkwardly? Can they bend or rotate
+        to see a monitor?
+
+ Enter Functional Anthropometric Data
+
+      These are obtained with the body in various work postures.
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  10
+Functional Data (Dynamic Anthropometry)
+
+Joint Range of Motion (ROM)
+
+ Why measure joint ROM data?
+
+      Define norms for population in extreme postures (reach
+        limits)
+
+      Define extent of physical impairment after injury or disease
+      Workplace & tool design
+      Prevent awkward (extreme) postures
+
+ What limits ROM?
+
+      For Active ROM
+      For Assisted Passive (or Volitional) ROM
+
+              Articular geometry (bone & cartilage)
+              Passive elasticity of connective tissues
+              Muscle shortening capacity
+
+      Normally: active ROM < passive ROM
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING       11
+Functional Anthropometers
+
+                    Tool                                Measures                                      Usage Context
+ Goniometers (manual or digital)                      Joint angles                    Clinical ROM assessment, ergonomics
+                                                      Joint angles                   Movement studies, occupational health
+         Protractors / ELGON              Joint displacement and angle               High -precision joint movement analysis
+        Slide Wire Goniometer          Joint angle via electrical resistance        Wearables, high -resolution biomechanics
+Strain Gauges (e.g., Penny & Giles)           Finger/hand joint motion                Wearable tech, VR, glove design, rehab
+     Optic Fibers / Data Gloves      Angular orientation of a body segment             Postural assessments, lifting studies
+                                              Spinal and torso flexion
+             Inclinometers               Acceleration of body segments                      Back movement assessments
+               Flexometer                 Joint positions and movement        Dynamic motion capture, ergonomics of movement
+                                              Full -body motion in time
+            Accelerometers                                                              Motion analysis, posture evaluation
+     Photogrammetry (2D, 3D)                                                                Sports, work task analysis, VR
+  Video Motion Capture (2D, 3D)
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                                                                 12
+Refresh Your Memory: Center of Mass (                                                             CoM )
+
+ The COM of an object is the average position of all small parts of that object weighted
+  according to its total mass.
+
+ Consider the COM to be located a distance x from the left edge of the segment:
+
+                                                                                                
+
+                                                              =  
+
+                                                                                              =1
+
+      1                                                        Assumptions: Segments
+ =                                                              are considered as Rigid
+                                                               Bodies and Joint Centers
+            =1
+                                                                 as Pin -Joint Centers.
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                                     13
+Refresh Your Memory: Mass, Moment of Inertia and
+Radius of Gyration
+
+ Mass and Inertia : Mass is a measure of an object 's resistance to changes in its motion. Inertia
+  refers to an object 's tendency to maintain its state of motion. The greater the mass, the greater
+  the inertia.
+
+ Force : A force is a push or pull that can cause an object to accelerate or decelerate.
+
+ Newton 's Laws of Motion : An object will remain at rest or move with a constant velocity unless
+  acted upon by an external force. This equation also describes how forces cause changes in an
+  object 's motion
+
+ Newton 's Laws of Equilibrium : An object is in equilibrium when the sum of all forces acting on it
+  is zero, and the sum of all moments acting on it is zero.
+
+ Moments of Inertia (MOI) : MOI is an object 's resistance to changes in its rotation.
+
+ Radius of Gyration : It is the measurement (radial distance) of the distribution of atoms in a
+  molecular structure with respect to either its center of mass or a given axis of rotation. Depends
+  on size and shape, not on mass.
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                                         14
+Mass, Moment of Inertia and Radius of Gyration
+
+Parallel Axis Theorem
+
+0  =     2  +     2  = 2
+      2        2
+
+ The point  at which the point masses are equal distance from the center of mass is called
+    the Radius of Gyration
+
+ Since body segments rotate about joint centers rather than the  CoM, we can now determine the
+    MoI about the end of the segment
+
+            -     2       +  2 = 2 + 2                            = 2 + 0
+ = 2                 +2
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                               15
+ Winter ( 1990 )
+
+ Dempster 's Body Segment
+  Parameters
+
+ This is a gold -standard source in
+  biomechanics and ergonomics for
+  estimating:
+
+       Segment mass as a % of total body mass (P)
+            E.g.,
+
+       Center of mass (COM) location from the
+         proximal end ( R_proximal )
+
+       Radius of gyration ( K_proximal ) to calculate
+         moment of inertia
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  16
+Mass, Moment of Inertia and Radius of Gyration
+
+ Moment of Inertia (MOI) (Using the Table)
+
+0 = 2     MOI with respect to the Center of Gravity/Mass (K cg)
+
+ = 2      MOI with respect to the proximal end ( K proximal )
+
+ = 2      MOI with respect to the distal end ( K distal )
+
+ Moment of Inertia (MOI) (Using the parallel axis theorem and Table)
+
+ = 2 + 0  x = distance between CoM and proximal end, (R proximal )
+ = 2 + 0  x = distance between CoM and distal end, ( R distal )
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING         17
+MOI Example
+
+ Calculate the center of
+ mass of the leg and the
+ moment of inertia about
+ its proximal end. The
+ body weight is 80 Kg. The
+ actual leg (shank) length
+ is 0.435 m.
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  18
+

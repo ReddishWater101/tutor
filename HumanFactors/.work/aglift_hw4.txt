@@ -1,0 +1,183 @@
+                  EIN3241 ­ Human Factors & Ergonomics
+
+                 Homework 4: Human Sensory Systems (Solution)
+
+                                       Dr. Jad Atweh
+                                         Spring 2026
+
+Part A: Multiple Choice Questions (24 pts)
+
+   1. The photoreceptors primarily responsible for night (scotopic) vision are:
+       a) Cone cells
+       b) Rod cells
+       c) Retinal ganglion cells
+       d) Bipolar cells
+
+   2. The "rod­cone break" in dark adaptation occurs because:
+       a) Cones gradually become more sensitive than rods in the dark
+       b) Rods eventually surpass cones in sensitivity after several minutes
+       c) Both rods and cones remain equally sensitive across time
+       d) Pupil dilation directly causes rods to become inactive
+
+   3. The main reason red light is used in cockpits at night is:
+       a) It increases reaction time
+       b) Rods are insensitive to red, preserving dark adaptation
+       c) It makes red ink easier to read
+       d) It improves contrast of cockpit displays
+
+   4. Human contrast sensitivity peaks at spatial frequencies of:
+       a) 0.5­1 cycles/degree
+       b) 2­4 cycles/degree
+       c) 8­12 cycles/degree
+       d) 20+ cycles/degree
+
+   5. Which statement about cones is true?
+       a) They are concentrated in the fovea and support high acuity and color vision.
+       b) They are most sensitive at low light levels and have high sensitivity but poor acuity.
+       c) They mediate circadian rhythms and pupil dilation.
+       d) They are insensitive to short wavelengths.
+
+   6. A person with Snellen acuity of 20/30 can typically resolve approximately:
+       a) 0.5 arcmin
+       b) 1.0 arcmin
+       c) 1.5 arcmin
+       d) 2.5 arcmin
+
+   7. Per NIOSH guidance, an 85 dBA noise level corresponds to:
+       a) 4 hours
+
+                                                          1
+       b) 6 hours
+       c) 8 hours
+       d) 12 hours
+
+   8. Perceived loudness is affected by both intensity and pitch.
+       a) True
+       b) False
+
+   9. The eye's photopic sensitivity peaks at approximately:
+       a) Blue (450 nm)
+       b) Green (555 nm)
+       c) Red (650 nm)
+       d) Near-UV (< 400 nm)
+
+  10. The physical measure describing the amount of light hitting a surface is:
+       a) Luminous flux
+       b) Illuminance
+       c) Luminance
+       d) Reflectance
+
+  11. In equal-loudness terms, a 10 phon increase is perceived approximately as:
+       a) A doubling of loudness (in sones)
+       b) A halving of loudness
+       c) No change in loudness
+       d) A quadrupling of intensity and loudness
+
+  12. Two simultaneous sounds at 90 dB and 95 dB combine to approximately:
+       a) 90.4 dB
+       b) 95.7 dB
+       c) 96.2 dB
+       d) 185 dB
+
+Part B: Exercises (76 pts)
+
+   1. Define luminance, illuminance, and luminous flux. Provide the SI unit for each and
+       one example relevant to human factors design (15 points).
+            Luminous flux: total perceived power of light (unit: lumen, lm). Example: output
+       of a light bulb.
+            Illuminance: amount of light falling on a surface (unit: lux, lx). Example: office
+       lighting levels.
+            Luminance: light emitted/reflected from a surface in a given direction (unit: cd/m²).
+       Example: screen brightness.
+
+   2. Why do older people need to hold a book farther away from them to read it if they do
+       not use reading glasses? Explain in terms of age-related changes to the topics of the
+       eye (10 points).
+
+                                                          2
+   As individuals age, the accommodation ability of their lens decreases. Accommodation
+   is when the lens changes its shape to change the point of focus of the eye using the
+   contraction and relaxation of the ciliary muscles. The goal of accommodation is the
+   focus the image onto the back of the eye (i.e., the retina). If the image is not correctly
+   focused on the retina then images would be blurry.
+
+   Age related accommodation issues are due to decreased elasticity and increased hard-
+   ness of the eye and changes in the strength of the ciliary muscles attached to the lens.
+   These issues, also know as Presbyopia, cause the eye to focus light behind the retina
+   for objects that are close. This causes objects that are close to appear blurry. The
+   eyes do not need to accommodate as much for objects that are further away, so older
+   people will hold objects further away to avoid the issues with accommodating close
+   objects.
+
+3. A symbol viewed at 50 cm must subtend 5 degrees of visual angle. Using the small-angle
+   approximation, calculate the required symbol height in cm. Show steps (15 points).
+
+                           3438 × H
+Formula: VA[min] 
+
+                                D
+   5 = 5 × 60 = 300 arcmin
+
+        3438 × H
+300 
+
+             50
+
+H  300 × 50               4.4 cm
+
+   3438
+
+4. Calculate the visual angle subtended by a 2 foot high letter on a high letter on a
+   highway sign that is 100 feet away. (10 points)
+
+                                        H
+Visual Angle: V A = 2 arctan
+
+                                       2D
+        H = 2 ft, D = 100 ft
+
+                      2  = 2 × 0.573 = 1.15
+V A = 2 arctan
+   200
+
+Approximation: V A [arcmin]  3438 × H = 3438 × 2 = 68.76 arcmin = 1.15
+   D                     100
+
+   3
+5. A technician spends 1 hour working on a design in the office (70 dBA), 4 hours at a
+   milling machine (85 dBA), 2 hours with a CNC machine (93 dBA), and 2 hours at a
+   finishing booth (95 dBA).
+   (a) Calculate the time weighted average. (8 points)
+
+                                                                         8
+                                     T hours for 85 dBA =
+
+                                                                     2(Li-90)/5
+
+D=  1    +  4      +  2     +  2  = 1.137
+
+    128     16        5.27     4
+
+                                   TWA = 16.61 log10(D) + 90 = 90.9
+
+   (b) Is this a permissible amount of noise? (2 point)
+   No, the dosage is above 1 (and the TWA upper limit for 8 hours is 90 dB).
+   (c) Provide two possible ways of protecting the technician's hearing. (6 points)
+   Multiple answers possible including: Reduce task length, provide hearing protection,
+   put shielding between the user and the tools, break into multiple days.
+
+6. Describe three strategies you might use to address the problem of noise in a machine
+   shop. Which one would you recommend for implementation over the other two and
+   why? (10 points)
+   Engineering controls (e.g., shielding, reducing noise intensity at source, adding panel-
+   ing), Administrative controls (e.g., distance worker from source, reduce noise exposure
+   duration), Personal protection (e.g., use aural and semi-aural inserts and circum-aural
+   devices and thus hearing protection).
+
+   Engineering controls would result in the best protection for workers since it will re-
+   duce the intensity of the noise that the workers experience. Both personal protective
+   equipment and administrative controls require worker compliance to be completely
+   effective.
+
+                4
+

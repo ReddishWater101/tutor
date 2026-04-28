@@ -1,0 +1,477 @@
+Lecture 1C: History of Human Factors
+    and Ergonomics & Justifying an
+             Ergonomics Program
+
+                           EIN 3241: Human Factors and Ergonomics
+                                                Spring 2026
+
+                                            January 16, 2026
+
+                                              Dr. Jad Atweh
+ Admin Issues
+
+ Drop/Add period ends today.
+ No Class on Monday (MLK Day)
+ Research Study!
+ Midterm and Final Exam Rooms:
+
+      Midterm: Monday, March 9, 8:20 -10:10 PM in FLG270
+      Final: Tuesday, April 28, 8 -10 PM in FLG260
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  2
+ Recap
+
+ HFE Definition
+ Basic Ergonomic Model
+ Applications of HFE
+ Classification of Ergonomic Problems
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  3
+ History of the Field: First Appearances
+
+ The foundations of the science of ergonomics appear to go back
+  as far as humans do.
+
+ Ancient tools (e.g., bows, levers) showed basic ergonomic
+  principles.
+
+ Hippocrates used ergonomic principles in his description of how
+  a surgeon's workspace should be designed and how the tools
+  should be arranged during surgery to maximize safety and
+  efficiency (~400 BC).
+
+ Over the centuries that followed, the effectiveness of tools such
+  as hammers, axes and plows improved through changes in
+  design and usage protocols, thereby increasing productivity.
+
+                                                                    Hippocrates, Greek Physician
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                                     4
+ History of the Field: First Appearances
+
+ A major push for worker safety and health came during and
+  after the industrial revolution (1760 ­ 1830 ) primarily in
+  Europe .
+
+ Earliest known indications of ergonomics are attributed to
+  the Italian physician and philosopher Bernardino Ramazzini .
+
+      Founder of occupational medicine, and his findings made an
+        early case for ergonomics .
+
+      In the 1700 s, he published "De Morbis Artificum Diatriba " (or
+        "Diseases of Workers") ­ the first comprehensive work on
+        occupational diseases and their associated causes .
+
+ The term "ergonomics" was first coined in 1857 by
+  Wojciech Jastrzebowski , an author and Polish scientist .
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING          5
+History of the Field: First Applications
+
+ A few years later in 1883 , engineer Frederick Taylor applied                Frederick Winslow Taylor
+  ergonomic principles to improve factory productivity .
+
+       Often referred to as the "father of industrial engineering"
+
+       He held the interests of the worker as highly as the interests of the
+         owners .
+
+       Focused on training workers to their maximum potential to increase
+         overall system output .
+
+       Employers were able to pay higher wages while still experiencing
+         increased profit .
+
+ Also, in the early 1900 s, Frank and Lillian Gilbreth conducted
+  motion analysis studies that gave insight into the required
+  movements and their associated times for a variety of
+  common occupational actions .
+
+       These became known as "therbligs"
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                 6
+World War I & II ­ Birth of Human Factors
+
+ As early as WWI (1914 -1918 ), US and Great Britain,
+  exercised selection and training, i.e., fitting the
+  worker to the task .
+
+ Soldiers struggled with poor equipment design . It
+  was observed that complex military equipment
+  could not be operated effectively or safely .
+
+       About 400 aircrafts and many lives were lost in US due to
+         use problems .
+
+ Military scientists and psychologists began
+  conducting research on humans in occupational
+  settings .
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING     7
+World War I & II ­ Birth of Human Factors
+
+ It was not until WWII (1939 -1945 ) that ergonomics
+  made its impact on design .
+
+ During and right after WWII ("the knob and dial
+  era"), much research was conducted to develop
+  optimal design parameters for displays and controls .
+
+ WWII triggered massive growth in HF/E :
+
+       Aircraft accidents due to control/display confusion
+       Birth of cockpit ergonomics and training design
+
+ First time psychology and engineering were formally
+  integrated .
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  8
+Post - War Expansion (1950s                                              ­1970s)
+
+ Cold War era : HF/E used in aviation, nuclear power,
+  and spaceflight (NASA) ...
+
+ Birth of HFE societies :
+
+       In 1949 , the Ergonomics Society was formed in Britain, and
+         the first book on ergonomics was published .
+
+       In the 1950 s, more people got involved, including
+         academics, leading to research in non -military applications .
+
+       In 1957 , the Human Factors and Ergonomics Society (HFES)
+         was formed in the US .
+
+ From 1960 and onwards, there was a rapid growth
+  and expansion of ergonomics in the US .
+
+ In 1970 , OSHA and NIOSH were both created by the
+  US congress .
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                     9
+In the US, two governmental agencies were established by the
+Occupational Safety and Health Act of 1970 to create and enforce
+safer and healthier working conditions
+
+                                                                                           Enforcement & Regulation
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  Research & Recommendations
+
+                                                                                                                             10
+The Computer Age (1980s                                        ­1990s)
+
+ Rise of personal computing and software usability .
+
+ Focus shifts towards user interfaces (UI) and
+  human -computer interaction (HCI) .
+
+ Highlighted the need for well -designed
+  workstations and healthy work habits to prevent
+  repetitive strain injuries, eye strain, and
+  musculoskeletal disorders caused by prolonged
+  computer use .
+
+ Development of usability testing methods and
+  cognitive ergonomics .
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING           11
+Modern HF/E (2000s ­Today)
+
+ Expansion into :
+
+       Healthcare
+       Autonomous systems
+       Consumer product design
+       AI and human -autonomy teaming
+
+ In 2001 , OSHA issued an ergonomic standard,
+  which requires companies to address hazards likely
+  to cause sprains, strains, and repetitive motion
+  injuries .
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  12
+Modern HF/E (2000s ­Today)
+
+ Ergonomic societies :
+
+       Provide a forum for the exchange of ideas and continuing education on new developments .
+       Permits networking with industry and funding agencies .
+       Develops certifications and standards to maintain a level of excellence for its members .
+
+ To be recognized as legitimate ergonomics associations, societies become members of
+  the International Ergonomics Association (IEA) .
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  13
+Modern HF/E (2000s ­Today)
+
+ Societies and Professional Organizations :
+
+       International Ergonomics Association
+       Human Factors and Ergonomics Society (largest in the US)
+       Institute of Ergonomics and Human Factors (formerly known as "Ergonomics Society")
+       American Industrial Hygiene Association
+       American Society of Safety Engineers
+       Association of Canadian Ergonomists
+       Ergonomics Society of Australia
+       Indian Society of Ergonomics
+       Institute of Industrial and Systems Engineers
+       International Society for Occupational Ergonomics
+       Safety Institution of Occupational Safety and Health
+       International Society of Biomechanics
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                              14
+Occupational Safety and Health Administration
+(OSHA)
+
+ Since OSHA's establishment in 1971 ,
+  occupational deaths have dropped by
+  62 % and injuries by 42 % (OSHA
+  website, 2009 ).
+
+ OSHA currently provides ergonomic
+  guidelines .
+
+ OSHA can issue citations for ergonomic
+  hazards under the General Duty Clause :
+
+      Requires that each employer keep their
+        workplaces free from recognized hazards
+        that could likely cause death or serious
+        physical harm .
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  15
+National Institute of Occupational                             Safety
+and Health (NIOSH)
+
+ Undertakes health studies of alleged
+  hazardous conditions, revising existing OSHA
+  standards or recommending new standards .
+
+      Recommended noise levels ...
+      Recommended weight limit ...
+
+ Mission : to generate new knowledge in the
+  field of occupational safety and health and to
+  transfer the knowledge into practice for the
+  betterment of workers .
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING          16
+Department of Defense Military Standard
+
+ The series of MIL -STDs -1472, promulgated in 1989,           Latest Version
+  refers to the standards in ergonomic design and
+  usability issues for the US Department of Defense.             Latest Version
+
+      Human Engineering Design Criteria for Military Systems,
+        Equipment, and Facilities
+
+ Provides design criteria to ensure systems are usable,
+  safe, effective, and efficient for the people operating
+  and maintaining them
+
+ Integrate human capabilities and limitations into
+  system design
+
+ Acknowledged worldwide as an authoritative source
+  for human factors requirements and design criteria
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                    17
+Key ISO Standards in Human Factors & Ergonomics
+
+ International Organization for Standardization (ISO): leader in developing and
+  determining quality systems for various industries.
+
+ ISO has developed a series of guidelines for promoting standards that enhance
+  ergonomics, safety, quality, and technical compatibility.
+
+      ISO 6385: Ergonomic principles in the design of work systems
+      ISO 9241 Series: Ergonomics of human -system interaction
+      ISO 11226: Evaluation of static working postures
+      ISO 26800: Ergonomics ­ General approach, principles and concepts
+      ISO 45001: Occupational health and safety management systems
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                    18
+Future?
+
+ As Industrial & Systems Engineers, you might be in a position where you must justify an
+  ergonomics program to your company, clients,...
+
+ Excuses for not implementing ergonomics:
+
+       It costs too much or not in this year's budget
+       Don't have time
+       Plan to change these jobs next year
+       Not convinced we have a problem
+       Plan to automate these jobs
+       We've always done it this way
+       Never had these problems before
+       Tried it -- it didn't work
+       It will slow us down
+       Problem due to worker attitude
+       Workers should be grateful for jobs
+       No pain, no gain
+       That's what insurance is for
+       ....
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                             19
+Justifying an Ergonomics Program
+
+ Injury Statistics/Costs!!!
+
+ Provide them with recent statistics within their own
+  company or similar companies in the same industry
+
+ In 2015, in the US:
+
+      A total of 1,153,490 "days -away -from -work" cases of
+        occupational injuries and illnesses
+
+      The median days away from work to recuperate was 8 days
+
+ Musculoskeletal disorders (MSDs; 2015):
+
+      31% (356,910 cases) of the total cases for all workers.
+      In direct costs for MSD -related workers' compensation,
+
+        employers spend as much as $20 billion a year
+      In indirect costs, employers spend up to five times that much
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING        20
+In - Class Activity: What Does an Injury                         Really Cost?
+
+ Form small groups identify at least 3 direct costs and 3 indirect costs related to
+  injuries in the workplace.
+
+ Share with the class after!
+
+ But First! What is the difference between direct costs and indirect costs??!!!
+
+ Discussion:
+
+      What example costs did you come up with in each category?
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                        21
+Example
+
+ Consider the case of a broken leg due to poor workplace design. The
+ direct costs were about $15,000 and the indirect costs was almost
+ four times as much. The company's profit margin is 5%. What is the
+ revenue necessary to offset these costs?
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING         22
+Justifying an Ergonomics Program
+
+1. Clearly define the problems
+
+       Frequent accidents or near misses
+       High medical and compensation costs
+       Poor quality
+       Low Productivity
+       Frequent mistakes/errors
+       High material waste
+       Low job satisfaction
+       High absenteeism
+       Excessive labor turnover
+
+2. Estimate the cost of the intervention
+
+       Initial investment, including the labor to install the intervention.
+       Maintenance and operation cost (if any)
+       Time that workers will spend learning the system and/or training
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                23
+Justifying an Ergonomics Program
+
+3. Use a validated ergonomic cost benefit analysis tool:
+
+      Refer to OSHA website, society websites, Washing State
+        Ergonomics
+
+      Cost Benefit Analysis tool, ergonomic justification worksheets
+        (Hedge, 2001).
+
+4. Analyze the financial implications of the intervention
+
+      Increase in productivity
+      Reduction in workers' compensation costs
+      Improvement in quality
+      Consider results of interventions in other facilities (Case studies)
+      Present results of pilot studies
+
+5. Note the intangibles benefits:
+
+ Compatibility of ergonomics with organizational goals
+
+ Employee morale and job satisfaction
+
+ Organization image
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING               24
+Sustaining the Effort
+
+ For the ergonomic effort to turn into a long -term program:
+
+      Develop directions for growth
+      Develop a way for employees/managers to report accidents, near misses, concerns, and
+
+        any other relevant data
+      Adopt more of a proactive role
+      Educate about ergonomics and safety
+      Encourage everyone to be involved till ergonomics diffuses into the culture
+      Keep track of cost savings
+      Document success stories
+      Surveys about job satisfaction
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                               25
+Success Stories!
+
+ Nintendo Corporation estimates a saving of $1M annually on an ergonomic
+  investment of $400,000.
+
+ Worker's compensation costs fell by 16%                       -20% and lifting -related injuries declined
+  by 80%.
+
+ The Red Wing Shoe Company implemented their ergonomics program in 1985.
+  By 1989, their workers' compensation insurance premiums were reduced by
+  70%. Their lost work -days went down by 79%.
+
+ 3M's ergonomic program nets an annual return of $250,000 from increased
+  productivity.
+
+ Success stories on OSHA website:
+  https://www.osha.gov/SLTC/ergonomics/success_stories.html
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING              26
+What Did We Learn Today?
+
+ The foundations of the science of ergonomics appear to go back as far as
+  humans do...
+
+ WWI&II: It was observed that complex military equipment could not be
+  operated effectively or safely
+
+ Post -War Expansion:
+
+      Birth of HF societies
+      Founding of OSHA & NIOSH
+
+ Modern HFE:
+
+      Expansion into other domains
+      Department of Defense Military Standard
+      International Organization for Standardization
+
+ Justifying an Ergonomic Program....
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING              27
+Next Time...
+
+ Task Analysis
+ Design Methods
+ Personas
+ Prototyping
+...
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  28
+

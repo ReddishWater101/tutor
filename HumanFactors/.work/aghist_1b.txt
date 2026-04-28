@@ -1,0 +1,374 @@
+Lecture 1B: Applications of Human Factors
+and Classification of Ergonomic Problems
+
+                                   EIN 3241: Human Factors and Ergonomics
+                                                       Spring 2026
+
+                                                   January 14, 2026
+
+                                                      Dr. Jad Atweh
+Admin Issues                                                   - 10:00 PM
+
+ Drop/Add: January 12 ­ 16
+ Final Exam Rescheduled: Tuesday 04/28/2026 @ 8:00 PM
+ DRC Quizzes
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING              2
+What is "Human Factors and Ergonomics"?
+
+From the Human Factors and Ergonomics Society (HFES):
+
+ Ergonomics (or human factors) is the scientific discipline concerned with the            , and
+  understanding of interactions among humans and other elements of a system
+  the profession that applies theory, principles, data and methods to design in order
+  to optimize human well -being and overall system performance . 
+
+ Ergonomists contribute to the design and evaluation of tasks, jobs, products,
+  environments and systems to make them compatible with the needs, abilities and
+  limitations of people.
+
+https://www.hfes.org/about -hfes/what -is -human -factorsergonomics
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                          3
+ Human Factors VS Ergonomics
+
+ Terms are synonymous.
+
+      "Human factors" typically used in U.S.
+      "Ergonomics" typically used in elsewhere.
+
+ Some have attempted to differentiate
+  terminology:
+
+      Human factors ­ Focused on human
+        cognition, decision making, and mental
+        demands.
+
+      Ergonomics ­ Focused on physical
+        demands and physical workload
+        responses.
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  4
+Why HF/E is unlike other disciplines?
+
+ The objects of analysis (humans) exhibit immense variability
+ Design decisions are often based on scientific principles as opposed
+
+ to scientific laws
+ HF is an inter -disciplinary field
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING          5
+"From the Neck Up" or "From the Neck Down"
+
+                                     Huma n-machine            Brain or Central
+                                           sy stem             Nervous System
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING       or Mind
+
+                                                                 Musculoskeletal,
+                                                                  Cardiovasular ,
+                                                                 Respiratory, and
+
+                                                                Nervous systems
+
+                                                                                                                      6
+ Why Should We Care... AGAIN?!
+
+ Human behavior is major contributor to failures in safety critical systems
+
+ 44,000 to 98,000 deaths annually     From 2012 ­2021, pilot error  95% of all roadway crashes
+   due to preventable medical errors   contributed to 56% of fatal
+                                                                                                                       7
+ At least 1.5M injuries a year                     accidents
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING
+Isn't this just intuitive, why study it?
+
+ We designed it for the average...
+ People are too variable...
+ "Can't people read the instructions?"
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  8
+Motivations for studying HF/E
+
+ Human error  cause of system failure
+
+ Complex system designs may not be compatible with humans (Wickens, 1993)
+
+ Example of a complex system: Boeing 737 Max 8 (2018            - 2019)
+
+ Changes in aircraft design and underlying systems led to two major aviation accidents:
+  Ethiopian Airlines Flight 302 (157 fatalities), Lion Air Flight 610 (189 fatalities)
+
+ Flight dynamics changed, Automation (MCAS) used to compensate
+
+ Training issues
+
+ Data overload
+
+ Need for safety in complex sociotechnical systems
+ Usability in simple technologies
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                            9
+Basic Ergonomic model
+
+ The Ergonomic model is also known as the human -in-the -loop model.
+
+ The human -machine system includes one or more humans and machines (or tools)
+  in a given environment performing one or more tasks to achieve one or more goals.
+
+ The human -computer interaction includes interfaces between human and
+  computers.
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  10
+Goals & Standards
+
+ Goals should describe:
+
+     The reason(s) that the system exist
+     Why the task is performed -- not how.
+     The expected work/task performance
+
+            There may be multiple goals
+            There may be short -term and long -term goals
+            Workers, employers, and consumers all may have different goals
+            Goals may be explicitly stated or implied
+
+ Work standards describe:
+
+     Quantity, quality, and time for achieving the goals
+     Standard is set by an employer, equipment manufacturer, and worker/user
+
+            Methods, equipment/tools, workspace, environment, Materials
+            Worker/user qualifications, training, special needs
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                 11
+Basic Ergonomic model
+
+ The human part of the system gathers and processes information and acts to
+  maintain control of the system and achieve the desired system goals.
+
+ The gathering, processing of information and resulting actions can be characterized
+  as serial and parallel tasks.
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                         12
+Basic Ergonomic model
+
+ Physical environmental factors can interfere with gathering information, control
+  actions and physical capacities.
+
+ Psycho/social factors affect processing information and decision making
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                      13
+Basic Ergonomic model
+
+"Machine " broadly refers to objects that human interact with to achieve a desired goal
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  14
+Applications of Human Factors and Ergonomics
+
+HF/E continues to be successfully applied in various areas:
+
+ Aerospace
+ Aging
+ Healthcare
+ Usability
+ Product design
+ Surface transportation
+ Office design
+ etc ...
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  15
+In - Class Activity!
+
+ In small groups, choose a couple domains and come up with real    - world
+  examples of how HF/E principles might be applied in such areas.
+
+ Think about:
+
+      A product, interface, or system
+      A safety or efficiency challenge
+      How HF/E could help solve it
+
+ You'll have 5 minutes. Then we'll share examples with the class!
+
+ HF/E continues to be successfully applied in various areas: Aerospace, Aging,
+  Healthcare, Usability, Product design, Surface transportation, Office design...
+
+ You are welcome to also think about other unmentioned application domains!
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                      16
+Applications of Human Factors : Aerospace
+
+ Cockpit design
+ Workload Management
+ Training Design
+ Space Missions
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  17
+Applications of Human Factors : Aging
+
+ E.g., designing phones for different age groups
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  18
+Applications of Human Factors : Healthcare
+
+ Medical Device Design
+ Medication Safety
+ Operating Room Ergonomics
+ Electronic Health Records (EHRs; MyChart)
+ Emergency Department Flow
+ Patient Handling and Lifting
+ ....
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  19
+Applications of Human Factors : Usability
+
+ Website Design
+ App Design
+ Phone Interface
+ Voice Assistants
+ ....
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  20
+Applications of Human Factors : Product Design
+
+Example: Conventional vs. Ergonomic Valve Wrench               (Al -Qaisi & Aghazadeh, 2018)
+
+ Conventional:                                                  Re -Designed:
+
+      Straight handle with uniform grip                              Adjustable between 0 and 180 degrees
+                                                                     Reduces muscle strain and risk of injury
+      Often requires awkward wrist angles
+        and high force
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                                 21
+Applications of Human Factors : Surface Transportation
+
+ Dashboard...
+ Traffic Signal Timing
+ Road Signs
+ Highway Signage Design
+...
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  22
+Applications of Human Factors : Office Design
+
+ Ergonomic Workstations
+ Lighting
+ Layout
+...
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  23
+Classification of Ergonomic Problems
+
+ Ergonomic problems can be classified into the following broad (and sometimes
+    overlapping) categories:
+
+1. Anthropometric
+2. Musculoskeletal
+3. Cardiovascular
+4. Cognitive
+5. Psychomotor
+6. Organizational
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  24
+Classification of Ergonomic Problems
+
+1. Anthropometric
+
+       Study of human body dimensions and body proportions. Joints' range of
+            motion and strength norms are also considered in anthropometrics
+
+       E.g., reach distances, sitting eye height, also includes weight and volume
+       Application can reduce the dimensional conflict between functional space
+
+            geometry and the human body
+
+2. Musculoskeletal
+
+       Tasks that strain the muscular and skeletal systems are in this category
+       E.g., overexertion injuries, posture analysis, repetitive tasks
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                      25
+Classification of Ergonomic Problems
+
+3. Cardiovascular
+
+       Tasks that stress the heart and circulatory system
+
+       E.g., heart rate, blood pressure, oxygen consumption, energy expenditure
+
+       When a demand is placed on the cardiovascular system, the heart pumps
+            more blood to the muscles to meet the elevated oxygen requirements.
+
+       If the activity is excessive, it can lead to fatigue, exhaustion, dehydration,
+            and produce both short - and long -term negative effects
+
+4. Cognitive
+
+ Related to either information -processing overload or underload.
+
+ These functions should be sufficiently utilized for the maintenance of an
+      optimum state of awareness
+
+ Tasks should be designed to be compatible with cognitive capabilities
+      and to complement human functions with machine functions for
+      enhanced performance
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                          26
+Classification of Ergonomic Problems
+
+5. Psychomotor
+
+       Problems that strain the systems that respond to visual or
+            auditory stimuli with movement or muscular activity.
+
+       E.g., paced manipulative work with significant visual demands,
+            surgical procedure, sewing task
+
+6. Organizational
+
+       Problems dealing with the organizational structures, policies,
+            and processes in the work environment.
+
+       E.g., design of shift hours, communication, job satisfaction,
+            motivation, supervision, teamwork, ethics, and culture
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING          27
+Human Factors & Ergonomics                                     is an Interdisciplinary  Field
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                           28
+What Did We Learn Today?                                                 Aerospace    And More...
+                                                                            Aging
+ Defined HFE AGAIN!                                                                            29
+ Basic Ergonomics Model                                                 Healthcare
+                                                                          Usability
+ Human Factors Applications
+                                                                      Product Design
+ Classification of Ergonomic Problems                                 Transportation
+                                                                       Office Design
+      UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING
+                                                                     Anthropometric
+                                                                     Musculoskeletal
+                                                                     Cardiovascular
+
+                                                                         Cognitive
+                                                                       Psychomotor
+                                                                      Organizational
+Next Time...
+
+ History of the field!
+ Organizations/Societies
+ Legislative and Regulatory Issues Impacting Ergonomics
+
+     OSHA
+     NIOSH
+     DoD
+     ISO
+    ...
+
+ Justifying an Ergonomic Program!!!!
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  30
+

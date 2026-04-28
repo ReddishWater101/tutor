@@ -1,0 +1,321 @@
+Lecture 7E - Predetermined Motion Time Systems II
+
+                                   EIN3241: Human Factors and Ergonomics
+                                                       Spring 2026
+                                                       April 8, 2026
+
+                                                    Dr. Jad A. Atweh
+ Admin Issues
+
+ Final Exam ­ Extra Credit Assignment
+
+      5 points
+      Due Monday April 27 11:59 PM
+
+ Quiz 6: Monday or Wednesday?
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  2
+MTM-1
+
+ Steps for determining standard time using MTM-1
+
+    1. Break down the left- and right-hand motions into steps
+    2. Break down the steps into sequences of the basic motions
+    3. Assign the appropriate symbol for each basic motion
+    4. Find the equivalent TMUs from the MTM-1 tables
+
+                 Reach
+                 Move
+                 Turn
+                 Apply pressure
+                 Grasp
+                 Position
+                 Disengage
+                 Release
+                 Eye travel time and focus
+                 Body, leg, and foot motions
+
+    5. Remove the non-limiting values
+    6. Calculate standard time
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING    3
+Turn
+
+ Turn is a movement that rotates the hand and wrist. It depends on
+
+      The number of degrees turned
+      The weight of the object or the resistance against which the turn is made
+
+             Small (S)
+             Medium (M)
+             Large (L)
+
+                              T30S
+
+       T45M
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                    4
+Apply pressure
+
+ Apply pressure is the application of force without resultant movement
+
+      Case A: application of pressure
+      Case B: application of pressure with higher precision
+
+              Use when you need to hold something carefully in place
+              Use when there is a position before applying pressure
+
+AP                                                             APB
+
+A
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING           5
+Grasp
+
+ Gain control of an object; often followed by Move.
+
+     1. Pick up grasp: grasp an individual object
+
+             A. By itself (most common)
+             B. Small object lying against the surface (like a small paper)
+             C. Cylindrical objects (like pens or markers next to each other)
+
+     2. Regrasp: change grasp without relinquishing control; object stays in your hand
+     3. Transfer: control transferred from one hand to the other
+     4. Select: objects jumbled with each other such that search and select often occur
+
+             A. Large
+             B. Medium
+             C. Small
+
+     5. Contact: contact or sliding grasp (like pressing a button); your fingers to do not really hold
+          on to anything
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  6
+Grasp
+
+              G1C2
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  7
+Position
+
+ Align, orient, and engage one object with another object. Depends on:
+
+       Class of fit (loose, close, exact):
+
+               · Loose: like a cup to its saucer
+               · Close: like a marker cap to a marker
+               · Exact: like a key to its keyhole
+
+       Symmetry (symmetrical, semi-symmetrical, non- symmetrical)
+
+               · Symmetrical: infinity of ways to insert the object (like a pen inside a cup)
+               · Semi-symmetrical: finite ways to insert the object (like a paper into a rectangular cardboard box)
+               · Non-symmetrical: one and only one way to insert the object (like a key inside a keyhole)
+
+       Ease of handling: how easy the object is to hold (slippery, dangerous, sharp...)
+
+                         P1SE
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                                                        8
+Disengage
+
+ Break contact between one object and another
+
+      Case 1: Loose
+      Case 2: Close
+      Case 3: Tight
+
+D1E
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  9
+Release
+
+ The relinquishing of control of an object by the hand or finger
+
+     Case 1: normal release by opening of fingers
+     Case 2: contact release (always for a contact grasp)
+
+                          RL1
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING     10
+Eye travel time and focus
+
+ Eye travel time = time to move the eyes = 15.2 (T/D) TMU
+
+     Where T is the distance traveled by the eye and D is the perpendicular
+      distance from the eye to the line of travel
+
+ Maximum of 20 TMU
+ Only use when explicitly stated
+ Always place in right hand column
+ Symbol: ET(T/D)
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                11
+Eye travel time and focus
+
+ Eye focus time: eye activity that takes place in order to determine easily
+  noticeable characteristics of an object within the normal field of vision
+
+      Constant: 7.3 TMU
+      Often comes up in inspections or reading a word
+      Always place in right hand column
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                12
+Body, leg, and foot motions
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  13
+Body, leg, and foot motions
+
+ Foot motion: like pressing the brakes
+ Leg or foreleg motion: like swinging your legs while on a swing
+ Sidestep:
+
+     Case 1: move one leg to the side
+     Case 2: move one leg to the side, then bring the other leg to it
+
+ Bend: bow down without bending the knees
+ Stoop: bend your knees so you can touch the floor
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING          14
+Body, leg, and foot motions                                          One leg changes position
+
+      UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  Two legs change position
+                                                                     Arise from bend, stoop,
+                                                                     kneel
+
+                                                                                                           15
+Example
+
+ Put bolt in hole
+
+Left-hand description           F LH motion                    TMU  RH motion  F Right-hand description
+
+Reach for bolt 32 inches away
+that is jumbled up with others
+
+Grasp bolt whose largest
+dimension is 0.3 inches
+
+Move the bolt to the apparatus
+hole 20 inches away
+
+Position the bolt in the hole
+Release bolt
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                                            16
+Tables Add 0.8 TMU per inch for each additional inch
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  17
+Example - Answers
+
+ Put bolt in hole                    F LH motion               TMU   RH motion  F Right-hand description
+
+              Left-hand description  R32C                      28.3
+
+   Reach for bolt 32 inches away
+   that is jumbled up with others
+
+Grasp bolt whose largest             G4B                       9.1
+dimension is 0.3 inches
+                                     M20C                      22.1
+Move the holt to the apparatus
+hole 20 inches away                   P2SE                     16.2
+                                       RL1                       2
+Position the bolt in the hole
+
+Release bolt
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                                             18
+MTM-1
+
+ Steps for determining standard time using MTM-1
+
+    1. Break down the left- and right-hand motions into steps
+    2. Break down the steps into sequences of the basic motions
+    3. Assign the appropriate symbol for each basic motion
+    4. Find the equivalent TMUs from the MTM-1 tables
+    5. Remove the non-limiting values
+    6. Calculate standard time
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING    19
+Remove non-limiting values
+
+ Analyze the fundamental motions
+
+    1. Align the LH and RH motions in terms of time
+
+           Keep the order and alignment, regardless of the time
+
+    2. If there are no simultaneous motions, move to step 6 (standard time)
+    3. If there are simultaneous motions: check if they can be done at the same time
+
+           If yes, circle the longer motion (limiting) and consider that time only
+           If no, circle both motions and consider both times
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  20
+     Assumed to be                                              For body motions, always
+     easy unless                                                  put in right hand and analyze
+     novice specified                                             on a case-by- case basis
+
+        If there are                                            Same for eye motions;
+        two options                                               need to consider where
+        (w/o), assume                                             person is looking
+        worse option
+                                                                                                            21
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING
+Remove non-limiting values
+
+ Consider the following example:
+
+Left-hand description  F LH        TMU     TMU                 RH      F Right-hand description
+                           motion                              motion
+Reach hand to bin            R10C    12.9  1.0                             Release assembly
+Grasp washer                          8.7  8.4                    R1L      Reach to bin
+Move to fixture              G4A    11.8   8.4                             Grasp pin
+Position washer              M8C      5.6  7.3                    R4C      Move to fixture
+                             P1SE                                G4B
+                                                                 M4C
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                                    22
+MTM-1
+
+ Steps for determining standard time using MTM-1
+
+    1. Break down the left- and right-hand motions into steps
+    2. Break down the steps into sequences of the basic motions
+    3. Assign the appropriate symbol for each basic motion
+    4. Find the equivalent TMUs from the MTM-1 tables
+    5. Remove the non-limiting values
+    6. Calculate standard time
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING    23
+Calculate standard time
+
+ Sum all the individual (non-simultaneous) motions and all the circled
+ simultaneous motions
+
+ Final result is in TMU
+ Can convert to
+
+     Seconds: x0.036
+     Minutes: x0.0006
+     Hours: x0.00001
+
+ Apply the appropriate allowance to obtain the standard time
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  24
+PTS
+
+ MTM-1: first PTS system
+
+     Very detailed and specific
+     Includes all kinds of motions
+     Can help design work that is not set up
+
+ Problems with MTM-1
+
+     Very time consuming and tedious
+     Very generic
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  25
+

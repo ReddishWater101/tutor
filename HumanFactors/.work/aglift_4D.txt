@@ -1,0 +1,162 @@
+Lecture 4D ­ Physical Ergonomics: Occupational Biomechanics II
+
+                                   EIN3241: Human Factors and Ergonomics
+                                                       Spring 2026
+
+                                                   February 16, 2026
+
+                                                    Dr. Jad A. Atweh
+ Admin Issues
+
+ Quiz Wednesday
+
+      Lectures 4A, 4B, 4C, and "4D"
+
+ Midterm March 9, 8:20-10:10 in FLG 270
+
+ Extra Session for Biomechanics?
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  2
+What did we talk so far?
+
+ Biomechanical approach
+ Two major branches of biomechanics
+ Biomechanics model
+ Body Planes (Sagittal, Frontal, Transverse)
+ Anatomical Directions
+
+      Inferior/Superior
+      Anterior/Posterior
+      Medial/Lateral
+      Proximal/Distal
+
+ Single Segment Model
+ Segment-to-Segment Model
+ Axis and/or force at angles...
+ And more...
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  3
+Biomechanics: Useful Tables
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  4
+Example                                                                    Solve in two approaches:
+
+      UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  1) One Segment Approach
+                                                                           · Which means the arm as one
+                                                                               segment
+
+                                                                     2) Segment-to-Segment Approach
+                                                                           · Which means you have to break
+                                                                               the arm into segments by joints
+                                                                               (wrist, elbow, and shoulder)
+                                                                           · Along the way, prove that:
+                                                                                 ·  = 90.405  
+                                                                                 ·  = 27.78  
+
+                                                                                                                                             5
+Back Models
+
+ The Vertebral Column has five major regions:
+
+       Cervical vertebrae
+       Thoracic vertebrae
+       Lumbar vertebrae
+       Sacrum
+       Coccyx
+
+ The back typically experiences the most notable forces and moments.
+
+       Why?
+       Especially which region of the back?
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING         6
+Back Models
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  7
+From Biomechanics to Task Evaluation
+
+ Compare job demands to human capacity.
+
+      Compare external moments to joint strength (maximum internal moment).
+      Use appropriate strength data (i.e. in same posture).
+
+ Two types of evaluations:
+
+      Compare external moments with an individual's joint strength (e.g. screening).
+      Determine what percentage of the population is capable of performing the job.
+
+ Ultimate question: Is the task or load acceptable?
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                         8
+Unacceptable conditions lead to:
+
+ Work-Related Musculoskeletal Disorders (WMSD or MSD) are pain or injuries
+  in muscles, joints, ligaments, tendons, and/or nerves.
+
+      Most affected body parts are the back (46.5%) and shoulder (13.3%)
+
+ Physical factors are the leading cause of WMSDs.
+
+ What are other factors that lead to WMSDs?
+
+      Psychosocial
+      Personal
+      Environmental
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  9
+Symptoms increase over time
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  10
+Preventing WMSDs
+
+ Institute Controls
+     Engineering Controls: changes made to the work environment, layout, tools,
+      or equipment or changing the way a job is performed to avoid injuries.
+
+     Administrative Controls: Work practices and policies by the administration to
+      reduce risk of injury.
+
+     Personal Protective Equipment (PPE): Equipment worn by the worker to
+      reduce risk of injury.
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  11
+Preventing WMSDs: Engineering Controls
+
+ Examples:                                                      Round surfaces edges to avoid
+                                                                 sharp protrusions
+      Redesign the job to
+        eliminate awkward                                       Design jobs to reduce hand
+        postures                                                 forces and repetition
+
+      Allow for adjustability in                                Utilize power grips whenever
+        the workstation and the                                  possible, use pinch grips only
+        worker (seating)                                         for precision tasks
+
+      Locate tools within easy                                  Avoid over the shoulder and
+        reach                                                    below knuckle height reaches
+
+      Automation
+
+      Use fixtures and jigs to
+        support work pieces
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                                    12
+Preventing WMSDs: Administrative Controls
+
+ Examples:
+
+      Job rotation
+      Warm-up/stretching programs
+      Alternate hands or balance the work across both hands
+      Control preexisting conditions
+      Work/rest cycle control
+      Avoid incentive pay scales
+      Train workers in correct postures and work methods and in
+
+        early detection
+      Train management for early detection and control of new
+
+        cases
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING    13
+

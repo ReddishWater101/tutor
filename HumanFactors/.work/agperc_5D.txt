@@ -1,0 +1,433 @@
+Lecture 5D - Cognition and Human Information Processing I
+
+                    EIN 3241: Human Factors and Ergonomics
+                                         Spring 2026
+
+                                       March 2, 2026
+
+                                      Dr. Jad A. Atweh
+ Admin Issues
+
+ Lab 4 due Friday
+ Midterm in a week!
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  2
+Cognitive System Triad (Woods & Roth, 1988)
+
+       Agents                                                   Human information processing
+                                                                    Perceptual characteristics
+(humans and machines ­                                              Sources of error
+ joint cognitive system)
+
+        World             Representation                           Visual form
+                                                                   Directability
+    (to be acted upon;    (through which agents                    Observability
+ often characterized by   experience, and act on,
+
+     risk, dynamism,              the world)
+complexity, uncertainty)
+
+                                                               3
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                                   3
+Cognitive Ergonomics
+
+ Cognitive ergonomics: concerned with the mental processes of information in
+  occupational settings, in order to optimize the interactions among humans and
+  other elements of a system.
+
+ Growing need for cognitive ergonomics due to the increase in automation and
+  service jobs.
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  4
+Applications of Cognitive Ergonomics:
+
+Designing a
+  cockpit
+
+                                                               Designing
+                                                               Electronic
+                                                                Medical
+                                                                Records
+
+Designing Phone
+    Interfaces
+
+                                                                Designing a
+                                                               nuclear power
+                                                                plant control
+
+                                                                   system
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                  5
+Information
+
+ Information: interpreted data acquired through any of the five senses.
+ The more sense modalities used in presenting one piece of information, the
+
+  more likely the stimuli will be recognized and remembered.
+ Most information is acquired from sight and hearing (95% 99%).
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                6
+Cognition and decision making
+
+ Three stages of human information processing:                                    Cognition
+
+      Perception of information (also see previous lectures on signal detection)
+      Central processing of information
+      Responding to information Decision making
+
+ Cognition is "top-down" process:
+
+      Uses existing knowledge (stores) to interpret current experiences (of environment)
+      Goals and mental models apply
+
+ Decision making is based on cognition and is also "top down" process
+  with biases based on experience and prior task performance
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                                7
+Wickens et al.'s Model of Human Information Processing
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  8
+Simple "pipeline" model of HIP and memory
+
+                                                                       Retrieval
+
+Stimulus  Sensory Attention Working Encoding Long-term
+
+          memory                                               memory             memory
+
+          Forgetting                                           Forgetting         Forgetting
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                                 9
+Information processing and Memory
+
+ Basic assumptions of any model:                                                      Encoding process dictates
+                                                                                         whether something is
+       Information is transformed (altered in code) from one stage (or "construct")      remembered or forgotten.
+         to another
+                                                                                      Interruptions in encoding
+       Each stage takes some time for processing                                         and similarity of stimuli
+                                                                                         compromise encoding.
+ Processes related to memory:
+       Encoding ­ Acquiring and transforming information (process)
+       Storage ­ Retention of information in brain (process and construct (WM,
+         LTM))
+       Retrieval ­ Recall of information from memory at later time (process)
+       Forgetting ­ Failure to recall material that was remembered (due to lack of
+         attention; process)
+
+ Three aspects of memory:
+
+       Function ­ What is done with stored info.
+       Capacity ­ How much info can be stored.
+       Duration ­ How long can info be retained.
+      (To be discussed for each type...)
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                        10
+Sensory memory
+
+ Stores stimuli detected by sensory receptors:
+
+       Sensory memory forms automatically, without attention or interpretation
+       However, attention is needed to transfer information to working memory to support perceptual process
+
+ Large capacity - Can hold many items at once, but information is "unprocessed" (no
+  encoding) based on recognition through use of LTM.
+
+ Short-duration buffer with rapid decay
+
+ Three types (with varying duration):
+
+       Iconic memory:
+
+                Visual stimuli
+                Usually lasts about 0.3 seconds (Efron, 1970)
+
+       Echoic memory
+
+                Sensory memory for auditory input
+                Lasts only 2 to 3 seconds
+
+       Kinesthetic
+
+                Tactile stimuli
+                Lasts for several seconds after contact
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                                                11
+Perception
+
+ Recognition:
+      Assign meaning to stimuli captured by senses
+      Compare incoming stimulus with stored patterns in LTM for recognition
+
+ Attention to stimulus leads to feature identification via LTM
+ Features then temporarily stored in WM/STM
+ Once feature set is complete, WM content can be encoded for LTM
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                12
+Perception
+
+ Three processes can be identified here...
+
+      Bottom-up feature analysis
+      "Unitization"
+      Top-down processing
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  13
+Bottom-up processing
+
+ Do you see a letter imbedded in the lines?
+
+ Recognition of patterns in stimuli based on low-level features:
+
+      Attempt to combine component features
+      Match observed patterns to stored patterns in LTM
+      Decide which stored pattern is best match
+
+ Requires use of LTM for prior knowledge and WM/STM for temporary storage of
+  perceived patterns.
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  14
+Unitization
+
+ When stimulus is perceived as "whole" (vs. sum of parts)
+
+      As familiarity with perceptual pattern increases, stimulus processing transform from feature
+        analysis to global or holistic processing (Gestalt of image)
+
+      Allows humans to read familiar words and phrases rapidly and overlook typographical errors
+      Gestalt is a theory of visual perception with principles identifying specific forms of perceptual
+
+        processing
+
+             Similarity occurs when there are similar features of co-located but different stimuli
+             Continuation occurs when the eye moves through one object to complete another
+             Closure occurs when objects are incomplete or space is not enclosed
+             Anomaly detection occurs when one part is dissimilar from others comprising the "whole"
+
+Similarity  Continuation                                       Closure  Anomaly
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                                                          15
+Top-down processing
+
+ Prior experiences and expectations determine what you see
+
+      e.g., strong familiarity with image of Lincoln leads to identification of face; absence of
+        familiarity lead to identification of figure of woman at center of image
+
+      e.g., individual preference for verbal encoding leads to identification of letter "B"; preference
+        for numerical encoding leads to identification of number "13"
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  16
+Top-down and bottom-up processing implications for interface
+design
+
+ Maximize bottom-up processing
+
+      Make features easy to identify using size and contrast
+      Highlight patterns or feature cueing pattern (e.g.,
+
+        compass pointer)
+
+ Maximize top-down processing
+
+      Use words, as goals are typically verbally encoded in WM
+      Minimize number of words that need to be recognized
+      Provide contextual information
+
+              e.g., grouping of icons according to function
+
+ Maximize automaticity and unitization:
+
+      Use familiar perceptual representations (those
+        encountered frequently and stored in LTM)
+
+      e.g., meaningful icons (clock face, calculator functions),
+        familiar fonts and mixed text, and words rather than
+        abbreviations
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  17
+Working memory (WM)
+
+ Role: Keeps information active while in use
+
+ Not a synonym for short term memory!
+
+      Refers to short term store needed for certain mental tasks
+      Defined not in terms of duration, but rather in terms of purpose
+
+ Short-term memory (STM) usually refers to the temporary storage of a small amount of
+  information for a brief period (seconds to minutes) without active manipulation.
+
+      Example: remembering a phone number just long enough to dial it.
+      It's more about holding information.
+
+ Working memory (WM) includes short-term storage plus the active processing and
+  manipulation of that information to achieve a goal
+
+      Example: remembering a number while also calculating its sum with another number. It's more
+        about holding and working with information.
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  18
+Working memory: Design implications
+
+ Minimize WM load (time x chunks)
+ Use redundant sources (text + speech)
+ Reminders for sequential tasks (e.g., checklists)
+ Exploit chunking
+
+       Size of item clusters 2376100 OR 237-6100?
+       Use meaningful sequences
+       Letters rather than numbers (1-800-GET-HELP)
+       Separate numbers and letters
+
+ Minimize confusion
+ Use different memory codes (spatial and verbal)
+ Order text/instructions carefully
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  19
+Working memory (WM)
+
+ Miller's chunking theory: 7±2 "chunks" of information is the limit of the working memory.
+
+ A chunk is a meaningful unit of information created by grouping smaller bits together using prior knowledge.
+
+        Example: Remembering 1 9 4 5 as "1945" (a year) instead of four separate digits.
+        Example: In language, the word "dog" is a single chunk rather than three separate letters.
+
+ Chunking works because WM leverages LTM to combine related elements into a single, meaningful unit,
+   effectively expanding what you can store.
+
+ Experts in a domain can remember more complex patterns because they have richer, more meaningful chunks
+   in long-term memory (e.g., a chess master seeing whole board configurations rather than isolated pieces).
+
+ WM is often described as a bottleneck for cognition
+
+        Only a few chunks can be actively maintained and manipulated at once.
+
+ If information in WM (or STM) is not actively rehearsed, it fades within about 15­30 seconds.
+
+ If you have more chunks to hold, each chunk gets less rehearsal time, making decay more likely.
+
+        The total time before an item is lost depends on how quickly you cycle through the items during rehearsal.
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  20
+Long-term memory (LTM)
+
+ Role: Keeps event information available for recall over long periods of time
+
+ Key characteristics:
+
+      A storage of information in the brain for a long or an indefinite period.
+      Simplifies working memory processing
+      Establishes expectations about the world
+      Capacity and duration are unlimited.
+
+ Process:
+
+      Item strength = f { frequency, recency, importance }
+      Forgetting (weak strength, few associations, interfering associations)
+
+ Short term memories can become long term memories through rehearsal and/or
+  encoding information semantically (i.e. based on meaningful association
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  21
+Long-term memory
+
+ Semantic or declarative memory: memory of things (general knowledge) ­ "knowing that"
+ Procedural memory: memory of how to do things ­ "knowing how"
+ Episodic memory: memory for specific events
+
+Why might our memories of past events be biased?
+
+       Encoding
+       Storage
+       Retrieval
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  22
+ Long-term memory
+
+Guidelines:
+ Don't violate people's mental framework, i.e., design according to human expectations.
+ Place most important information at the beginning or end.
+ Relate new information to previous information (to integrate into existing frameworks).
+ Appeal to the emotional component of memory by using humor and emotion.
+ Storytelling: helps provide a framework and also appeals to emotion.
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  23
+LTM: Design implications
+
+ Encourage regular use (frequency, recency)
+ Standardize (frequency, recency)
+ Memory aids (supplement LTM)
+ Carefully designed information (limit LTM dependence, support associations)
+ Reminders can be used to avoid failures of prospective memory
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  24
+Organization of Information in LTM
+
+ Semantic network: Connected pieces of semantic information (e.g., concept
+  maps)
+
+ Schema and scripts: Knowledge structure about a particular topic. (Scripts ­
+  schema that is a sequence of activities)
+
+ Mental models: Schemas of dynamic systems (e.g., equipment, technologies, or
+  tools)
+
+ Cognitive maps: Mental representations of spatial information (e.g., layout of a
+  room)
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  25
+ Attention
+
+Attention as a selected
+information process. "Filter"
+Attention as a limited resource.
+"Fuel"
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  26
+  Attention
+
+ Attention is the process of selecting which information to process.
+
+      Attention as selective information processing - Analogies include:
+
+             Channel switching
+             Shining a flashlight in a dark attic
+
+ Attention is required to support most cognitive activities (not LTM or sensory registers)
+
+      Attention as a limited resource.
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  27
+Types of Attention
+
+ Selective/Focused Attention
+
+      Maintain attention on one or a few sources of information and not be distracted by other
+        sources
+
+ Divided Attention
+
+      Required to do more than one task at the same time (e.g., cocktail party effect)
+
+ Sustained Attention
+
+      The ability of observers to maintain attention and remain alert to stimuli over prolonged
+        periods of time (i.e., vigilance)
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  28
+Selective Attention: Design Implications
+
+ Role: Ability to focus on a specific set of stimuli.
+
+      Selective attention does not guarantee perception but is a necessary condition.
+
+ High value information sources should require minimal effort to attend
+
+ Important, unexpected or rare events should be conveyed in a salient manner
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  29
+

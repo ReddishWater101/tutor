@@ -1,0 +1,353 @@
+                 EEIN3241 ­ Human Factors & Ergonomics
+
+    Homework 5: Visual Search, SDT, Displays, and Controls (Solution)
+
+                                       Dr. Jad Atweh
+                                         Spring 2026
+
+Please answer the following questions in a separate document and submit it to Canvas.
+
+Part A: Multiple Choice Questions (20 pts)
+
+   1. According to signal detection theory, which of these is NOT a factor in detecting a
+       stimulus?
+       a) The strength of the stimulus
+       b) The standard threshold for detection
+       c) The individual's skill and expertise
+       d) All of these are part of detecting a stimulus, according to signal detection theory
+
+   2. Saccadic eye movements are:
+       a) Eye movements with constant velocity used for following a moving object
+       b) Abrupt, discrete movements related to visual search and scanning
+       c) Relatively stationary eye movements that are used to maintain visual gaze on a
+       single location
+       d) Not a type of eye movement
+
+   3. The Useful Field of View (UFOV) is:
+       a) The diameter of the region within which a target might be detected if it is present
+       b) Another name for the fovea
+       c) The amount of space covered by a saccadic eye movement
+       d) A type of response criterion
+
+   4. What is the average time to find Waldo (in a "Search for Waldo" game) if there are
+       also 14 Waldo look-alike in the search field that all look very similar (on average it
+       takes 10 seconds to inspect each potential Waldo to make sure that they have the right
+       hat, clothing, and other characteristics that define the "true" Waldo).
+       a) No time is required (this is a parallel search process)
+       b) 70 seconds
+       c) 75 seconds
+       d) 140 seconds
+       e) Not enough information
+
+   5. Which of the following constitutes a correct rejection in signal detection theory?
+       a) You hear your teakettle whistling, and you turn off the stove.
+       b) You are focused on studying, and you do not notice your roommate leaving for
+       dinner.
+       c) You ignore an incoming call from a tele-marketer.
+       d) You turn off the radio to answer your phone, but the phone is not ringing.
+
+                                                          1
+ 6. In the context of visual search, conspicuity refers to:
+     a) The efficiency of a top-down search strategy
+     b) How well a target stands out from distractors
+     c) The size of the useful field of view
+     d) The average inspection time per item in a search
+
+ 7. Which of the following is an example of a "false alarm" in signal detection theory?
+     a) Failing to detect a tumor on a radiograph that is present
+     b) Correctly identifying that a tumor is absent
+     c) Reporting a tumor when none is present
+     d) Detecting a tumor that is actually there
+
+ 8. According to the principle of salience compatibility, designers should:
+     a) Make all information appear equally urgent
+     b) Use visual or auditory cues that imply urgency for important information
+     c) Present information randomly to prevent habituation
+     d) Reduce the amount of information displayed to the user
+
+ 9. The proximity compatibility principle suggests that:
+     a) Information sources used together should be displayed close together
+     b) Similar information sources should always be separated
+     c) Redundant cues increase the likelihood of confusion
+     d) Displays should never overlap related information
+
+10. Which of the following best describes redundancy gain?
+     a) Presenting a signal using more than one coding dimension (e.g., color and shape)
+     b) Repeating the same information across all sensory channels
+     c) Using identical symbols to reduce confusion
+     d) Displaying multiple unrelated signals for safety
+
+11. The principle of pictorial realism states that:
+     a) Displays should always be three-dimensional
+     b) Displays should resemble the system variables they represent
+     c) Displays should move in the same direction as user inputs
+     d) Displays should rely solely on symbolic representations
+
+12. The principle of moving parts states that:
+     a) Display elements should move randomly to capture attention
+     b) Moving display elements should move consistently with the user's mental model of
+     system movement
+     c) Movement on the display should always be minimized
+     d) Displays should always follow the direction of gravity
+
+13. According to the principle of predictive aiding, the goal of a display is to:
+     a) Reduce the user's need to anticipate future events
+     b) Replace visual cues with auditory alarms
+     c) Provide information about upcoming events to minimize prospective memory load
+     d) Display information only after an event has occurred
+
+                                                        2
+14. The knowledge in the world principle emphasizes that:
+     a) Users should memorize all critical steps to reduce display clutter
+     b) Information should be stored in the user's working memory
+     c) Important information should be externalized on the display to reduce memory load
+     d) Displays should rely only on long-term memory associations
+
+15. Hick-Hyman Law relates to:
+     a) The tradeoff between speed and accuracy in manual control
+     b) The relationship between number of choices and response time
+     c) The relationship between control gain and bandwidth
+     d) The effect of control order on system stability
+
+16. According to Fitts's Law, movement time is primarily influenced by:
+     a) The amplitude of movement and the width of the target
+     b) The delay between feedback and system response
+     c) The frequency of display updates
+     d) The visual complexity of the interface
+
+17. A zero-order control device (e.g., joystick for cursor control) is characterized by:
+     a) The control directly determines the position of the output
+     b) The control determines the rate of change of the output
+     c) The control determines the acceleration of the output
+     d) The control determines the jerk (rate of acceleration change)
+
+18. The principle of multiple resources suggests that:
+     a) Visual and auditory information should be presented simultaneously to reduce in-
+     terference
+     b) Information should always be presented through one sensory channel
+     c) Users can process unlimited visual stimuli without interference
+     d) Haptic feedback should be avoided in multitasking environments
+
+19. Which of the following best reflects avoid absolute judgment tasks?
+     a) Use displays that require users to compare one color with another
+     b) Require users to interpret a single sensory variable with many possible levels
+     c) Use multiple sensory dimensions to convey critical information
+     d) Present information qualitatively rather than quantitatively
+
+20. According to Fitts's Law, reducing the width of a button on a touchscreen while keeping
+     its amplitude constant will:
+     a) Decrease the index of difficulty and movement time
+     b) Increase the index of difficulty and movement time
+     c) Have no effect on movement time
+     d) Reduce the throughput of the control system
+
+                                                        3
+Part B: Exercise (16 pts)
+
+Imagine an experiment where participants are shown a series of faces and are told to remem-
+ber them. After a period of time, the same participants are presented a second series that
+includes some of the same pictures, shuffled to a new random order, along with a number
+of new faces that were not in the original set. Memory is good if the person doing the
+remembering properly remembers the Old faces but not the New ones. The results of this
+experiment are shown in the table below. The table shows the frequency of each type of
+response for a participant.
+
+Type of Face "Yes" "No" Total
+
+                        Old     20  5     25
+
+                        New     10  15    25
+
+a. What are the number of hits, false alarms, misses, and correct rejections? (4 pts)
+
+   A "YES" response means that the individual responding thinks that they have seen it
+   previously (e.g, they think it is an "Old" face).
+   This provides the following:
+   i. Hits: 20
+   ii. False Alarms: 10
+   iii. Misses: 5
+   iv. Correct Rejections: 15
+
+b. Calculate d. (3 pts)
+   d' = Z(p(H)) ­ Z(p(FA))
+   d' = Z(0.8) ­ Z(0.4)
+   d' = 0.8417 ­ (-0.2533)
+   d' = 0.8417 + 0.2533
+   d' = 1.095
+
+c. Calculate . (4 pts)
+
+                        O(Z(H)) O(0.8417) 0.2803     = 0.725
+=                            =         =
+                        O(Z(F A)) O(-0.2533) 0.3867
+
+                 = e0.5[Z(H)2-Z(F A)2] = e-0.5[0.84172-(-0.2533)2] = e-0.32 = 0.725
+Either equation would work.
+
+d. Based on the decision criterion and sensitivity you calculated, how would you describe
+
+   this participant's ability to remember faces that they have seen before compared to
+   a participant with d = 0.78 and  = 1.11? (5 pts)
+
+                                4
+       The current participant has a higher d better ability to differentiate old faces from new
+       faces than the other participant. Our current participant also has a lower , indicating
+       that they are riskier (more likely to say "old") than the other participant.
+
+Part C: Signal Detection Lab (64 pts)
+
+We will use the following website, created by Krantz and Schwartz, to conduct a signal
+detection experiment so that you can see an example of a signal detection task, how different
+task factors impact your accuracy, sensitivity, and criterion, and practice the calculation of
+these measures.
+
+       https://isle.hanover.edu/Ch02Methods/Ch02SigDet_Experiment_evt.html
+
+Please read through the Background and Instructions tabs. You will conduct the signal
+detection task 3 times, each with different parameters (information about the parameters
+is provided under the instructions tab).
+
+    In each of these experiments you will change some of the settings under the Stimulus
+Settings and Method Settings tabs. The stimulus settings allow you to change the
+characteristics of the signal detection task to make it more or less difficult. The method
+settings allow you to change how the SDT experiment is carried out by varying the number
+of trials, and the number of "signal" trials vs. "noise" trials.
+
+    You will then be able to conduct the experiment under the Experiment tab. Once the
+experiment is done you will be able to see your results under the Results tab.
+
+Experiment 1 (15 pts)
+
+In the first experiment we will use the default settings in Stimulus Settings and Method
+Settings. These settings are:
+
+Stimulus Settings                          Method Settings
+Number of Background Dots: 25              Number of Trials: 40
+Relative Speed of Stimulus (pixels): 1     Percentage of Trials with a Signal: 50
+Stimulus Color: 100
+Duration of Stimulus (sec): 2
+
+A. Complete the experiment and enter your results into the table below (4 pts):
+
+  Judgment                                    The Signal is:
+   Happened                             Present Non Present
+Did not happen
+
+                                        5
+B. Calculate the d and  for your given values. Show your work. (6 pts)
+
+                                           d = Z(p(H)) - Z(p(F A))
+
+                                                         O(Z (H ))
+                                                 =
+
+                                                        O(Z(F A))
+C. Based on your , would you say you had risky beta or a conservative beta? Does this
+
+    match what you experienced during the experiment, why or why not? (5 pts)
+    If you beta > 1 then you are more conservative, if beta < 1 then you are more risky.
+
+Experiment 2 (19 pts)
+
+In the second experiment we will change the stimulus settings. You can hit "Reset" to set
+the values back to default before you make the following changes that are highlighted in
+red/bold. These settings are:
+
+Stimulus Settings                          Method Settings
+Number of Background Dots: 25              Number of Trials: 40
+Relative Speed of Stimulus (pixels): 1     Percentage of Trials with a Signal: 50
+Stimulus Color: 100
+Duration of Stimulus (sec): 1
+
+A. Before starting the experiment, what do you think will happen to your d and  because
+    of this change? Why? (4 pts)
+
+    The duration of the stimulus has decreased, this gives you less time for you to spot
+    any differences in the velocity of the dots which should make the task more difficult.
+    This should have the effect of reducing your d'.
+    While the task is more difficult, you do not need to modify your beta (i.e., your
+    optimal beta doesn't change), but you may have provided some reasoning why you
+    were changing your strategy.
+
+B. Complete the experiment and enter your results into the table below (4 pts):
+
+  Judgment                                    The Signal is:
+   Happened                             Present Non Present
+Did not happen
+
+                                        6
+C. Calculate the d and  for your given values. Show your work (6 pts).
+                                           d = Z(p(H)) - Z(p(F A))
+
+                                                         O(Z (H ))
+                                                  =
+
+                                                        O(Z(F A))
+
+D. Compare your d and  for this experiment with your results from the first experiment.
+    How would you rate your performance? Did this match your expectations? (5 pts)
+
+    You should have gotten a lower d' in this experiment.
+    However, with the small sample size (and depending on how well you did the first time)
+    you may have also gotten a higher d'. This could have been due to becoming more
+    familiar with the task.
+
+Experiment 3 (30 pts)
+
+In the third experiment we will change the method settings. You can hit "Reset" to set
+the values back to default before you make the following changes that are highlighted in
+red/bold. These settings are:
+
+Stimulus Settings                          Method Settings
+Number of Background Dots: 25              Number of Trials: 40
+Relative Speed of Stimulus (pixels): 1     Percentage of Trials with a Signal: 10
+Stimulus Color: 100
+Duration of Stimulus (sec): 2
+
+A. Before starting the experiment, what do you think will happen to your d and  because
+    of this change? Why? (4 pts)
+
+    The task should be similar in difficulty as the first experiment, so we do not expect a
+    change in d'. However, with the smaller % of trials with a signal we do expect to see
+    a change in the optimal beta that you will calculate in the next part. Since there are
+    so many fewer target trials, you should be more conservative with your beta, causing
+    it to increase.
+
+B. Calculate the optimal  for this experiment given the method parameters shown above
+    (10% trials with signal). (5 pts)
+
+   P (N ) 0.9
+=                                          = =9
+   P (S) 0.1
+
+C. Complete the experiment and enter your results into the table below (4 pts):
+
+                                        7
+  Judgment            The Signal is:
+   Happened     Present Non Present
+Did not happen
+
+D. Calculate the d and  for your given values. Show your work. (6 pts)
+
+d = Z(p(H)) - Z(p(F A))
+
+                                                        O(Z (H ))
+                                                 =
+
+                                                       O(Z(F A))
+
+E. Compare your d and  for this experiment with your results from the first experiment.
+    How would you rate your performance? (5 pts)
+    You should have had a larger beta in this case due to the lower number of signal trials.
+
+F. How does your  compare with the optimal  you calculated before? What is this
+    phenomenon called? (6 pts)
+    Sluggish beta
+
+One of the reasons why your results may have differed from what was expected was
+the low sample size and learning effects. With small sample size, we have less reliable
+estimates of your true d' and beta. Your results are likely to be closer to what is
+expected if we increased the number of trials from 40 to 400.
+
+                8
+

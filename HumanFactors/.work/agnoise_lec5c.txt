@@ -1,0 +1,408 @@
+Lecture 5C - Auditory & Somatosensory Systems
+
+                                EIN 3241 : Human Factors and Ergonomics
+                                                     Spring 2026
+
+                                                February 25 , 2026
+
+                                                  Dr. Jad A. Atweh
+Admin Issues
+
+ Quiz on Friday
+ Midterm
+
+     Monday, March 9
+     8:20 PM ­ 10:10 PM in FLG270
+     Up until Cognition and Human Information Processing
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  2
+Again... Why are we talking about this
+
+ Sensation and perception are the first
+  stages of the human cognitive process
+
+ Human perception is often non -linear
+ The systems view of human -interactive
+
+  systems.
+ About 95 -99 % of information is channeled
+
+  through the eyes or ears ...
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  3
+Auditory stimulus
+
+ Sound created by vibrations (compressions and refractions) from some source:
+
+                                      Air molecules
+
+1) An object makes    2) The vibrations pass through air by    3) These vibrations are picked up by
+a sound by vibrating  making air molecules vibrate             the ear
+
+ Sound pressure - amount of pressure variation relative to atmospheric pressure caused
+  by sound
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                           4
+Physical properties of sound
+
+ Sound waves have two primary attributes ...
+
+     Amplitude (in dB)
+
+           Amount of energy in sound wave
+           Humans perceive amplitude as loudness
+
+ Frequency (in Hz)
+
+      Humans hear frequencies of sound as different pitches
+
+             Low frequency sound has low pitch (e.g., foghorn on ship).
+             High -frequency sound has high pitch (e.g., whistle or siren).
+
+                                                               500 Hz
+                                                               1000 Hz
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                5
+Anatomy of the ear
+
+ Outer ear:
+
+       Pinna/Auricle (fleshy portion) and ear canal
+       Modification of incoming pressure wave for localization
+       Modification of pressure wave/acoustic wave
+
+ Middle ear:
+
+       Eardrum and ossicles (malleus, incus, and stapes)
+       Conversion from airborne vibration to structural vibration
+       Impedance matching of air vibration to fluid motion (in inner ear)
+
+ Inner ear:
+
+ Semi -circular canals, cochlear duct and organ of corti
+
+ Transforms mechanical vibration to nerve impulse.
+
+ Hair cells ( cilia ) move with fluid motion and generate neural signals
+
+ Nerves at beginning of channel (base) respond to short wavelengths; high
+   pitch sounds
+
+ Nerves at end of channel (apex) respond to long wavelengths; low pitch
+   sounds
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING              6
+How does the ear work?                                         5) The electrical signals
+                                                               are then sent to the brain
+                 1) Sound waves are
+                 "funnelled" into the ear by
+                 the pinna
+
+2) These vibrations                                            4) These vibrations
+make the ear drum                                              are turned into
+vibrate                                                        electrical signals in
+                                                               the cochlea
+
+                     3) These vibrations make the ear bones
+                     vibrate
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                              7
+Frequency
+Ranges of
+Voicing and
+Hearing
+
+ Humans:
+      20 to 20,000 Hz
+        [cycles/second]
+      1000 to 4000 Hz most
+        sensitive
+      Average person can
+        distinguish 2000 pitches
+        (musicians many more)
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  8
+Amplitude and Frequency
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  9
+Hearing Loss
+
+ Masking:
+
+       Perception of one sound affected by presence of another
+         sound
+
+       Alarms should be designed 15 dB above ambient noise
+         levels (general "rule of thumb ") to ensure perception
+
+ Temporary Threshold Shift (TTS):
+
+       Temporary loss of sensitivity due to acute exposure to high
+         amplitude signals
+
+       e.g., "carryover " effect from using loud machines when
+         trying to do something quieter
+
+       e.g., leaving a loud concert and trying to have conversation
+
+ Permanent Threshold Shift (PTS):
+
+       Presbycusis ­ age -related hearing loss (primarily in high
+         frequency)
+
+       Sensorial -neural loss ­ hearing loss in high frequency range
+         (damage to hair cells)
+
+       Conductive loss ­ hearing loss due to earwax, ossification of
+         bones of middle ear, or trauma (i.e., ruptured eardrum)
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING         10
+Nature of auditory impairment (PTS)
+
+ Hair cell damage when exposed to loud music or noise
+ Loud sounds = high amplitude pressure waves (e.g., standing next to
+
+  subwoofer and "feeling" bass response)
+ High pressure waves bend cilia too far; sometimes to point of damage.
+ Hair cells do NOT grow back and leads to permanent loss
+
+Normal, healthy outer hair cells (L) vs. damaged outer hair cells (R)
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING           11
+Combining sources and decibel calculation
+
+ How do you calculate combined noise exposure when a person is
+ exposed to more than one source simultaneously?
+
+                           SPL Tot = 10 log 10 (= ())
+
+ Formula requires division of dB measures by 10 before calculating
+ power. Necessary for unit conversion.
+
+ E.g., What is the combined (noise) level of two sounds of 86 and 96
+
+decibels?
+
+           = 10 log 10 (10 86 /10 + 10 96 /10 )
+
+           = 96.4 dB
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING         12
+Psychophysical scaling of sound
+
+ Perceived loudness is correlated with sound intensity:
+
+ Perception is affected by both intensity and pitch
+
+ Two sounds of equal intensity (e.g., 50 dB) but different in pitch (e.g., 500 Hz
+  vs. 1000 Hz) are not of equal "loudness"
+
+ Sone:
+
+ Scale relating perceived / psychological experience of loudness to  physical
+  intensity
+
+ 1 sone = loudness of sound at 40 dB and 1000 Hz (arbitrarily selected)
+
+ Perceived loudness (sone) doubles with ~10 dB increase in intensity (holding
+  pitch fixed)
+
+ A phon is a unit of perceived loudness , tied to the decibel scale at 1000 Hz
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                      13
+Equal loudness contours
+
+ Human hearing sensitivity varies with frequency:
+
+      Most sensitive to 2-4 kHz range of stimuli.
+      Equal Loudness Curves (ELCs) have been constructed to show variation in perceived intensity with
+
+        frequency for human ear.
+      Sound perceived as loud as 40 dB sound at 1,000 Hz is said to have loudness = 1 sone = 40 phons
+
+                                                                                                                                    The scale on the right
+                                                                                                                                    labeled "Sones ­ Phons" just
+                                                                                                                                    gives a cross -reference to
+                                                                                                                                    perceived loudness in sones .
+                                                                                                                                    E.g., 40 phons = 1 sone
+
+Intensity                                                      Perceived
+                                                               loudness
+
+                                                               Frequency
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING             14
+Phon calculations
+
+ At 1000 Hz phons are approx. equal to sound intensity
+ If the sound of a dog barking at 80 dB SPL is judged to be as loud as a 1,000 Hz
+
+  tone at 90 dB SPL, the perceived loudness of the dog 's barking is _______?
+
+a) 80 phons
+b) 80 dB
+c) 80 sones
+d) 90 phons
+e) 90 dB
+f) 170 phons
+g) 1,000 Hz
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  15
+Human factors application
+
+ Intense sound and noise exposure must be controlled to prevent loss
+
+       Normal conversation = 40 -60 dB
+       Acute damage occurs at 140 dB (jet engine)
+       e.g., operating jackhammer = 100 dB
+
+ Many measures of protection exist:
+
+       Engineering controls - Reduce noise intensity at source; interrupt noise in path
+         (shielding); reduce reverberation/echo (paneling)
+
+       Administrative controls ­ Distance worker from source; reduce noise exposure
+         duration
+
+       Personal protection ­ Use aural and semi -aural inserts and circum -aural devices
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                             16
+Recommended permissible exposure
+
+ Noise/sound exposure limits have
+ been determined to prevent
+ cumulative hearing loss:
+
+     NIOSH says 85 dB exposure should be
+      limited to 8 hrs.
+
+     Recall sound energy/intensity doubles
+      with every 3 dB
+
+     i.e., exposure at 88 dB limited to 4 hrs.
+     For every 3 dB increase in exposure,
+
+      time is cut in half.
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  17
+Noise dosage and exposure limits
+
+ OSHA sets regulations ­ Limits are riskier than NIOSH permissible exposure levels
+  (e.g., 16 hrs. at 85 dB).
+
+Duration per day [hours]  Sound level [dBA]                     Permissible exposure duration
+               16                   85
+                8                   90                         can be calculated as:
+                6                   92
+                4                   95                         Noise exposure limit:
+                3                   97
+                2                  100                          [hours] =        8    Li is the sound level, dBA
+               1.5                 102                                     2(-90)/5
+                1                  105
+               0.5                 110                         Noise dosage = D =      
+              0.25                 115
+                                                                                         
+
+                                                               Ti is actual exposure duration
+                                                               LT is recommended exposure
+                                                               limit (allowable exposure time)
+
+                                                               D > 1 is hazardous exposure level
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING   Time weighted average ( 8 hr.)
+                                                                  exposure is calculated as:
+
+                                                                    TWA = 16.61 Log 10 (D) + 90
+
+                                                                                                                                                                        18
+Example of noise exposure
+
+ A study found that a worker was exposed to noise at the following
+ levels and times. What is the noise dosage? What is the TWA?
+
+Level [dBA]  Time [hours]                                            Noise dosage = D =  
+     85             3
+     90             2                                                                                          
+     92             1
+     95             2                                           D = [(3/16)+(2/8)+(1/6)+(2/4)]
+                                                                D = 1.104 (not permissible)
+
+                                                                   Time weighted average (TWA):
+                                                                     TWA = 16.61 Log 10 (D) + 90
+
+                                                               TWA = 16.61 Log 10 (1.104) + 90
+                                                               TWA = 90.715 (@ 8 hrs.)
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                                                    19
+Somatosensory System
+
+ Sensory system that respond to changes at the surface (i.e., skin) or inside of the
+  body
+
+ Can detect: touch, pressure, vibration, temperature, and pain
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                         20
+Human Factors Application: Vibrotactile Displays
+
+ Vision and hearing are often
+  overloaded
+
+ An alternative "channel" for
+  information presentation
+
+ Since hands are often used
+  for controlling devices,
+  displays need to be applied
+  to other, less sensitive, body
+  regions such as the torso
+
+                                                               Ouyang, Q., Wu, J., & Wu, M. (2017). Vibrotactile Display of Flight Attitude with Combination of
+                                                                                      Multiple Coding Parameters. Applied Sciences , 7(12), 1291.
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                                                                                                    21
+GM Active Safety Seat
+
+  https://gm -techlink.com/?p=8091
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  22
+Active Touch (Haptics)
+
+ Perceiver controls the interaction
+
+      We explore and interact with the world with
+        our hands and fingers
+
+ Our sense of touch allows us to use the
+  various receptors we have in our
+  somatosensory system to understand the
+  world
+
+ Touch acuity is best when fingers move
+  over the object of regard
+
+ Example: landing gear and flaps controls
+  in airplanes (from the first chapter)
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  23
+Human Factors Application: Haptic Feedback
+
+ Haptic/force feedback is important in
+  contexts like surgery
+
+     Interactions between the instruments and
+       the patient provides strong haptic cues
+
+ Lack of observable benefits in robot -
+  assisted minimally invasive surgery
+  may be due to lack of haptic feedback
+
+ Challenges exist in terms of:
+
+     Recording force information at the robot -
+       patient end
+
+     Presenting force information at the
+       human -interface end
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  24
+

@@ -1,0 +1,401 @@
+Lecture 5 B - Visual Sensory System II
+
+                               EIN 3241 : Human Factors and Ergonomics
+                                                   Spring 2026
+
+                                               February 23 , 2026
+
+                                                  Dr. Jad Atweh
+ Admin Issues
+
+ Extra Session
+
+       Tomorrow!
+       5:10 PM - 7:00 PM in Williamson 100
+
+ Quiz 4
+
+       Friday
+       Lectures 5A, 5B, and 5C
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  2
+Internal Factors Affecting Vision
+
+ Internal factors relate to human physiological characteristics
+
+    1. Dark adaptation
+    2. Phorias
+    3. Age
+    4. Visual acuity
+    5. Near point accommodation
+    6. Peripheral vision
+    7. Normal line of sight (NLS)
+    8. Color discrimination
+    9. Depth perception
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING    3
+2 . Phorias
+
+ Some people eyes converge too much, while others tend not to converge enough        .
+
+ Such conditions are called phorias .
+
+ People with phorias also see one image but experience notable stress to the eye
+
+muscles, making them more vulnerable to rapidly developing visual fatigue.
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                     4
+3 . Age
+
+ With age, ciliary muscles weaken and visual performance declines.
+ A young adult normally reads from a distance of about 30 cm ( 1 ft ). At 60 , the
+
+  near point of accommodation is around 83 cm ( 2.75 ft).
+ In industry, reading requirements, including character size, may be based on the
+
+  limiting age of the expected user population.
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  5
+4 . Visual Acuity                                               Acuity changes with luminance and
+                                                                 contrast
+ Acuity is ...
+                                                                How does visual acuity impact display
+      Ability to detect and discriminate fine details of         size?
+        objects at distance
+                                                                      Degraded acuity requires larger
+      The sharpness or clarity of vision.                               characters for readability
+      Humans can discern 1 min. of visual arc
+
+60 minutes = 1 degree
+
+1 minute =   1
+            60°
+
+ A degree ( ° ) is divided into 60 minutes of arc ( )
+
+ That means the smallest detail we can distinguish
+  subtends an angle of 1/60 of a degree on the retina.
+
+ That 's where the "20 /20 " standard comes from,
+  being able to resolve 1.
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  6
+4 . Visual Acuity
+
+ Snellen acuity is ratio of what you can see relative to what other
+  humans can see (Common way to express visual acuity) :
+
+       20 /20 vision:
+
+              Numerator is your distance from chart ­ typically held fixed at 20 ft
+
+              Denominator is distance at which person with normal eyesight could read
+                 smallest row in chart that you can read
+
+ What does visual acuity 20 /40 mean?
+
+ Line that you can correctly read at 20 ft can be read by "20 /20 " person at 40 ft
+
+ 20 /40 = 0.5 ("half " of normal vision)
+
+ Equivalent to saying person possesses    half spatial resolution capability as
+   person with normal vision
+
+ Needs twice character size to discern type.
+
+                                                                                       Snellen chart
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                                         7
+Human Factors Application
+
+ Highway signs are required to have certain font sizes
+ DMV requires drivers to have acuity of 1.5 min. visual
+
+   arc ( "minimum separable acuity ") or 20 /30 vision
+ Signs should have a legibility index of 30 ft/in
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  8
+Visual angle
+
+ Visual angle ...
+
+ Angle that viewed object subtends at retina
+
+ Min discriminable visual angle =           1
+                                     
+
+ Unit of measure:
+
+ Minutes of arc (due to shape of retina)
+
+             60 minutes = 1 degree
+
+                   1 minute =   1
+                               60°
+
+ Visual angle [degrees] =  2        
+                                    2
+
+ For angles less than 10 degrees, an approximation is:
+
+  VA[min] =  3438×
+                 
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  9
+Visual angle (cont.)
+
+ Suppose we want an object to create a visual angle of                          5 degrees on the
+  retina, and the viewing distance is 20 inches.
+
+1. Convert 5 degrees into minutes of arc: 5 × 60 = 300 minutes
+
+2. Plug values into the equation:    300                       =  3438×
+3. Solve for H (the object height):                                   20
+
+                                       =                       300×20     1.75  inches
+                                                                3438
+
+                                                                                        60 minutes = 1 degree
+
+                                                                                        VA[min]=  3438×
+                                                                                                      
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                                     10
+Visual acuity example
+
+ A worker's job is to detect a 0.01 -inch space between two wires on an electronic
+
+component. One day the worker forgets his glasses (he has      20 /50 uncorrected
+
+Snellen acuity). What is the farthest distance away the worker can be and still
+
+see the space between the wires?
+
+ Worker visual acuity is 20 /50 = 0.4 (below normal vision).
+ Recall visual angle is reciprocal of acuity : Smallest visual angle he can
+
+   resolve is 1/0.4 = 2.5 min. of arc .
+ Visual Angle (min.) = ( 3438 * H) / D
+
+ H = 0.01 "
+
+ Solve for D = 13.75 "
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                    11
+Visual angle example                                           20 /30 Snellen Acuity resolve?
+
+ What minimum visual angle can a person with
+a) 0.5 minute of arc
+b) 1.0 minute of arc
+c) 1.5 minute of arc
+d) 2.0 minute of arc
+
+Acuity = 20 /30 = 0.667
+Angle = 1 / acuity = 1 / 0.6 67 = 1.5 arc min.
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                                  12
+5 . Near point of Accommodation
+
+ Accommodation is the eye 's ability to change the lens shape to focus on objects
+  at different distances.
+
+ Near point accommodation : The closest point an object can be brought in front
+  of the eyes without losing details of the object (e.g., seeing it as two objects).
+
+ Has been used as a measure of visual fatigue.
+
+ Typical values                                                                           glasses)
+
+      For a young adult , the near point is about 10 cm ( 4 inches) from the eyes .
+      With age , the near point gets farther away (this is why older people need reading
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                             13
+Accommodation
+
+                                                               Ciliary muscle contracted
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  14
+6 . Peripheral Vision
+
+ With no eye or head movements, humans have a wider peripheral vision in the
+  horizontal ( 208 °) than in the vertical ( 160 °).
+
+ Assuming daylight conditions, acuity is sharpest at center.
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                 15
+7. Normal Line of Sight (NLS)
+
+ When standing, NLS is 10 °-15 ° below the horizontal.
+ When seated, NLS is 20 °-25 ° below the horizontal.
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  16
+8 . Color discrimination
+
+ Cones in retina allow for perception of color
+
+       Three types of cones
+       Each type is sensitive to range of : (R (long), G (medium), B (short))
+
+ People with normal color vision are trichromats
+
+ People with color deficiency:
+
+       Dichromats (i.e., color blindness in one cone type)
+       Monochromat (i.e., color blindness in two cone types)
+       Males are more apt to color blindness ( 8% of the males vs 0.5 % of the
+
+         females!)
+
+ If color blind, other visual cues may include shapes, letters         ...
+
+https://www.color -blindness.com/coblis -color -blindness -simulator/
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                   17
+ Perceptual processing: Bottom up / Top down
+
+ Bottom up: Interpretation of stimulus driven by data in the world
+ Top down: Interpretation of stimulus driven by knowledge in the head
+ Bottom up: Yellow "slime " firetrucks can be easier to detect across multiple lighting conditions
+ Top down: We expect firetrucks to be red which can speed detection and recognition of red firetrucks
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                                          18
+9 . Depth Perception: Accommodation
+
+ Ability to focus objects at different distances
+  through involuntary contraction/relaxation of
+  ciliary muscles (reshaping lens)
+
+ To focus on far objects, lens flattens, and
+  muscles relaxes (light rays are nearly parallel;
+  limited refraction for focus)
+
+ To focus on near objects, lens become
+  rounded and muscle contract (light rays
+  diverge; greater refraction is needed for
+  focus)
+
+      Can be fatiguing !
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  19
+External Factors Affecting Vision
+
+ External factors (we have more control of these factors):
+
+    1. Position of target in the visual field
+    2. Glare
+    3. Color
+    4. Color contrast
+    5. Size of target
+    6. Stability of target
+    7. Amount of light
+    8. Shift duration
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  20
+Glare
+
+ Proper workplace lighting reduces visual fatigue and errors.
+ Glare can reduce contrast sensitivity, increase eye strain, and lower
+
+   productivity.
+ Glare can slow reaction times, obscure critical information (e.g., on
+
+   screens or control panels).
+ Older adults and individuals with visual impairments are more
+
+   sensitive to glare. Addressing glare supports universal design
+   principles and inclusivity in the workplace.
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING           21
+Contrast
+
+ Contrast is perception of light and dark areas in image (luminance/color)
+ Contrast is ratio between luminance (perception) of light (L) to dark (D) surfaces
+
+      Differences in luminance of perceived brightness of given object vs. background
+
+          Lower contrast                                       Higher contrast
+
+ Depends on spatial frequency ­ rate at which areas of stimuli alternate between
+  light (white) and dark (black) per degree of visual angle [ cycles per degree (CPD)].
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                          22
+Spatial frequency in contrast
+
+ Spatial frequency describes how often light and dark (or color) patterns repeat across
+  space.
+
+ High Spatial Frequency = many cycles / degree of visual angle (many changes across
+  space ­ detailed info)
+
+ Low Spatial Frequency = few cycles / degree of visual angle (few changes across space
+  ­ gross info)
+
+ Spatial frequency grating  is used to measure contrast sensitivity of humans (see below)
+
+                 0.5 %                                                       Our eyes are most sensitive to an
+                                                                       intermediate range of spatial frequencies
+            Contrast                                                    (around 2-4 CPDs) and less sensitive to
+                                                                       spatial frequencies both lower and higher.
+
+100 %
+
+       Low                  High
+
+            Spatial Frequency
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                            23
+Contrast (cont.)
+
+ Contrast sensitivity = reciprocal of minimum contrast (C M) between lighter and darker area
+
+       CM is contrast threshold = minimum amount of contrast detectable by observer
+       Critical in ability to detect target among background
+
+       Lower contrast threshold = higher sensitivity
+
+       Interacts with object focus in detection tasks
+
+                                                     1         2-4 CPDs
+                       = 
+
+ Eyes are most sensitive to contrast at spatial freq. =
+
+ Eyes easily adapt (perceive differences in lightness) for frequencies in  2-6 CPDs (pupil adjusts to
+  contrast)
+
+ Problem: Frequency patterns (in sensitivity range) on surface of objects are primary stimulus for
+  accommodation.
+
+ Adaptation to spatial frequency gradient at surface of object leads to degraded accommodation
+  for focus.
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                                       24
+Color Contrast
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  25
+HF/E in screens and graphics
+
+ Maximize color contrast
+ Avoid saturated RGB stimuli on dark background
+ Example of poor screen design ...
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  26
+Factors affecting contrast sensitivity and acuity
+
+ Display features:
+
+     Luminance level (brightness)
+     Degree of contrast
+
+ Task features:
+
+     Target object motion (dynamic visual acuity)
+     Exposure time
+
+ Individual factors:
+
+     Age
+     Task training
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  27
+

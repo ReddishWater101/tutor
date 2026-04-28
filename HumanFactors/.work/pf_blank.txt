@@ -1,0 +1,615 @@
+          EIN3241: Human Factors and Ergonomics
+
+                                          Spring 2026
+
+                    Practice Final Exam
+
+                                Instructor: Dr. Jad Atweh
+
+ Part I -- Multiple Choice and Fill in the Blank (20
+ points)
+
+1. What key factor during WWII triggered the scientific expansion of HF/E?
+    a. Emergence of labor unions demanding safer work
+    b. Evidence that better tools increased productivity
+    c. Frequent human errors due to poorly designed military equipment
+    d. Advances in aerospace dominance requiring automation
+    e. Rise of repetitive strain injuries in factories
+
+2. The below term describes the time required for a qualified worker to perform a job using
+    a standard method under normal conditions:
+    a. Working time
+    b. Normal time
+    c. Standard time
+    d. Performance time
+    e. Elemental time
+
+3. A job best suited for a time study usually:
+    a. Requires group collaboration
+    b. Involves manual labor and repetitive cycles
+    c. Is done only once per week
+    d. Must use advanced technology
+    e. Must be unpredictable in duration
+
+4. In rating performance using the Westinghouse system, which of the following is not a
+    factor?
+    a. Skill
+    b. Effort
+    c. Consistency
+    d. Posture
+    e. Conditions
+
+5. Allowances account for all the following except:
+    a. Fatigue
+    b. Personal needs
+     c. Unavoidable delays
+     d. Normal time
+     e. Setup and preparation
+
+ 6. 1 TMU equals:
+     a. 1 minute
+     b. 0.6 minutes
+     c. 0.036 seconds
+     d. 1.67 seconds
+     e. 0.1 seconds
+
+ 7. The MTM motion element describing rotating the hand is:
+     a. Reach
+     b. Move
+     c. Grasp
+     d. Turn
+     e. Release
+
+ 8. The principle that important displays should attract attention is:
+     a. Proximity compatibility
+     b. Redundancy gain
+     c. Salience compatibility
+     d. Visual momentum
+     e. Avoid resource competition
+
+ 9. When designing safety alarms in a factory, a 15 dB increase above ambient noise is recom-
+     mended to overcome:
+     a. Pitch masking
+     b. Temporary threshold shift
+     c. Loudness scaling
+     d. Sensorial-neural loss
+     e. Conductive impairment
+
+10. Redundancy gain suggests:
+     a. Use only one signal dimension
+     b. Duplicate controls to reduce cost
+     c. Present information using multiple cues
+     d. Avoid discriminable features
+     e. Remove colors from displays
+
+11. Minimizing information access cost means:
+     a. Fewer controls must be used
+     b. Frequently used items should be easy to reach
+     c. Displays should follow user expectations
+
+                                                                                                                     Page 2 of 12
+     d. Remove rarely used controls
+     e. Place all items close together
+
+12. Avoiding absolute judgment tasks means:
+     a. Using more color levels
+     b. Requiring users to interpret one sensory dimension
+     c. Limiting the number of coded levels
+     d. Eliminating labels from displays
+     e. Using only auditory alarms
+
+13. Peripheral vision is wider in the:
+     a. Vertical plane
+     b. Horizontal plane
+     c. Central field
+     d. Fovea only
+
+14. A "Poor" coupling in lifting tasks refers to:
+     a. An object that allows hands to wrap around it
+     b. An object that is difficult to be grasped, with no handles or cutouts.
+     c. An object that has perfect load symmetry
+     d. An object that allows for horizontal lifting only
+     e. An object that is lifting below knuckle height only
+
+15. A fatigued radiologist examining X-rays is MOST likely to experience:
+     a. Increased hits with decreased correct rejections
+     b. Lower sensitivity, causing increased misses
+     c. Increased  due to conservative bias
+     d. Better detectability due to expectancy effects
+     e. Faster bottom-up detection due to reduced scanning time
+
+16. According to Fitts' Law, movement time will be longest when control targets are:
+     a. Large and far
+     b. Small and far
+     c. Small and near
+     d. Uniformly spaced but similar in color
+     e. Coded using redundant cues
+
+17. A major limitation of A/B testing when used for HF/E evaluation is that:
+     a. It does not measure user performance quantitatively
+     b. It only works in laboratory settings
+     c. It identifies which design performs better but not why
+     d. It requires subjective workload data
+     e. It cannot be used on software or web interfaces
+
+                                                                                                                     Page 3 of 12
+18. Ergonomic problems related to reach distances and body dimensions are classified as:
+     a. Musculoskeletal
+     b. Psychomotor
+     c. Anthropometric
+     d. Organizational
+
+19. Two ROC curves have identical hit rates but differing false alarm rates. The curve with
+     the lower P(FA) indicates:
+     a. Higher sensitivity (d')
+     b. Lower sensitivity but higher 
+     c. Equal d' but different noise distributions
+     d. Unreliable response criteria
+
+20. Which of the following is an advantage of a seated work posture?
+     a. Greater physiological load
+     b. Improved blood circulation and less fatigue development
+     c. Better mobility for extended reaches
+     d. Enhanced ability to apply downward force
+
+                                                                                                                     Page 4 of 12
+ Part II -- Short-Answer Questions (15 points)
+
+1. Drinking water fountains can be more ergonomically designed. Consider designing a NON-
+    ADJUSTABLE drinking water fountain specifically for an adult population.
+      a) (2 points) What percentile and anthropometric measure would you use to determine
+          an appropriate height for the control (e.g. button) used to regulate water flow?
+      b) (2 points) What percentile and anthropometric measure would you use to determine
+          an appropriate height for the actual water fountain from which water flows?
+
+2. (4 points) One of the features to consider in designing an ergonomic valve wrench is the
+    length of the handle (shown in the image below). Determine what the appropriate length
+    of the handle should be, given that the average and standard deviation of the population's
+    hand breadth is 10 cm and 1.8 cm, respectively.
+
+3. (1.5 points) What is the rule of thumb for determining work surface height during standing?
+4. (2 points) One of the research approaches used for addressing manual material handling
+
+    (MMH) injuries is the "psychophysical approach." Explain what this approach entails.
+5. (3.5 points) Take a look at the picture below. It is supposedly an "ergonomic" workstation
+
+    for kids. The fact that it is smaller does make it more ergonomic. However, we have learned
+    in class the different ergonomic design considerations for seated workstations. With these
+    design considerations in mind, identify 7 ergonomic problems in this workstation.
+
+                                                                                                                   Page 5 of 12
+Page 6 of 12
+Part III -- Exercises (65 points)
+
+Problem 1 (10 points)
+
+Assume that a worker is standing in front of a table with nothing in his hands. On the table,
+there is a stack of papers on one side and a stapler on another side that is mixed together
+with other office items in a basket.
+
+Using the breakdown shown in the table below, fill in the MTM-1 basic motions, their
+symbols, their times in TMU, and finally find the standard time of this job in seconds. Use
+your best estimates for all the distances and weights. State any assumptions below your
+table.
+
+     Left hand description            Right hand description
+Put the papers in the stapler  Get the stapler
+                               Align the stapler exactly to the top left
+                               of the papers
+                               Staple the papers
+                               Open the drawer under the table
+                               Put the stapler anywhere in the drawer
+                               and close the drawer
+
+                                   Page 7 of 12
+Problem 2 (10 points)
+You performed a time study for a factory operation and obtained the following table
+
+Element 1 (min)  Element 2 (min)  Element 3 (min)
+          22               15                -
+          23               20                4
+          21               21                -
+          20               18                -
+          21               19                3
+
+Assume that you gave the participant a rating of 100% and used a 9% total allowance only.
+Assume that one operator produced 14 pieces in one day. Also assume that a standard hour
+plan is adopted for this operation and that the wage rate is $10/hr.
+
+a) What are the operator earned hours for this operation?
+
+b) What is the operator efficiency if it really takes 8 hours to produce 14 pieces?
+
+c) What is the direct labor cost for this operation for this day? Assume that this worker
+    is the only one working on this operation.
+
+                                                   Page 8 of 12
+Problem 3 (7 points)
+
+During the course of a workday, a machine operator is simultaneously exposed to sound from
+three metal presses in his work cell. The measured levels of noise exposure in dB for each
+press are listed in the table below.
+
+Machine    dB Level
+Machine A       88
+Machine B       87
+Machine C       86
+
+a) Considering the dB levels, calculate the permissible noise exposure limit for each ma-
+    chine.
+
+b) Assume that exposure to each machine are as follows: Machine A = 5 hrs; Machine B
+    = 2 hrs; Machine C = 1 hr. What is the accumulated noise dose for the worker?
+
+c) Given the calculated dosage, what is the 8-hr. time-weighted average (TWA) exposure
+    for the worker?
+
+d) Does the calculated TWA exceed the OSHA maximum permissible limit for an 8-hour
+    workday?
+
+                     Page 9 of 12
+Problem 4 (13 points)
+
+Below is a data set of observations on human performance in a Fitts' task. It includes the
+amplitude of motion, the target size and motion times.
+
+MT (sec.)   A (in.)  W (in.)
+     1.5        8        4
+     2.5       15        4
+     3.0       18        2
+     3.5       20       1.5
+     4.5       30        1
+
+a) Calculate the Index of Difficulty (ID), rounded to the nearest integer, for each task
+    condition.
+
+b) The linear two-parameter motor performance model for this operator is given by:
+
+                                        M T  0.2 + 0.7 ID (seconds) .
+
+    Below are the linear two-parameter models for Operators 2 and 3. Who is the most
+    productive operator among the three operators and how do you know this? Which
+    operator will produce the shortest MTs and why? (Be specific about the reason.)
+
+Operator Two-parameter model
+
+Operator 2  MT = 1 + 2*ID
+
+Operator 3  MT = 2 + 3*ID
+
+c) What two (2) suggestions would you make if you wanted to reduce total movement
+   time?
+
+                              Page 10 of 12
+Problem 5 (12 points)
+A barista was trying to see whether a customer could distinguish between regular iced coffee
+and the fancier "cold-brew" coffee (the target in this example). There were 20 trials, divided
+evenly between the iced-coffee and the cold-brew coffee (10 each). The customer indicated
+that he drank cold-brew coffee in 11 of the trials. However, only 9 of these trials were actually
+cold-brew coffee.
+
+  (a) (5 pts) Calculate the hit, miss, false alarm, and correct rejection rates.
+ (b) (7 pts) What are the d and  of the customer?
+
+                                                                                                                Page 11 of 12
+Problem 6 (13 points)
+A worker is required to move tote boxes from an incoming flat conveyor to an outgoing
+J-hook at a rate of approximately three boxes per minute. Each box weighs 15 lbs, and this
+task is performed continuously for 8 hours per day. The worker can comfortably grasp the
+box, and it is assumed that the horizontal distance between the ankles and the hands is 16
+in and remains relatively constant during the lift. During the transfer to the conveyor, it is
+estimated that the worker must twist their torso approximately 80.
+Compute the Lifting Index (LI) for this task. What conclusions can you make about the job
+design?
+
+                                                                                                                Page 12 of 12
+                        Formula Sheet
+
+Descriptive Statistics
+
+                            M ean =          n    xi
+                                             i=1
+
+                                             n
+
+                        SD =         ni=1(xi - m)2
+                                       n-1
+
+Percentile:
+
+                            xp = m + zp SD
+
+Combining Distributions (e.g., X+Y)
+
+                               µA = µX + µY
+
+                                         A = X2 + Y2 + 2 X Y
+Moment About the Origin
+
+                                             n
+
+                               Mx = mixi
+
+                                           i=1
+
+Center of Mass
+
+                               1n            mixi
+                            x=
+                                 M      i=1
+
+Parallel Axis Theorem
+
+                        I0  =  m 2   +  m 2     =                m2
+                               2        2
+
+MoI about point P
+
+                                                  Ip = mx2 + I0
+Basal Metabolism (BM) in SI Units
+
+BMmen(kcal) = 10 · Weight (kg) + 6.25 · Height (cm) - 5 · Age (years) + 5
+
+BMwomen(kcal) = 10 · Weight (kg) + 6.25 · Height (cm) - 5 · Age (years) - 161
+Basal Metabolism in US Units
+         BMmen(kcal) = 4.536 · Weight (lb) + 15.88 · Height (in) - 5 · Age (years) + 5
+
+       BMwomen(kcal) = 4.536 · Weight (lb) + 15.88 · Height (in) - 5 · Age (years) - 161
+
+Activity Metabolism (AM) Formula
+AM for Men (kcal)
+
+        AMmen(kcal) =  T (0.6309 HR - 0.1988 W + 0.2017 A - 55.0969)
+
+                                                  4.184
+
+AM for Women (kcal)
+
+        AMwomen(kcal) =   T (0.4472 HR - 0.1263 W + 0.074 A - 20.4022)
+
+                                                  4.184
+
+Where:
+
+                                    T = Duration of exercise (minutes)
+                                      HR = Average heart rate (bpm)
+                                               W = Weight (kg)
+                                                A = Age (years)
+
+Estimated Maximum Heart Rate
+
+                                         HRmax = 220 - Age (years)
+VO2 Max Prediction (Based on Resting HR)
+
+                          V  O2  max  =  15.3  ×   H Rmax
+                                                  H Rresting
+
+Heart Rate Reserve (bpm)
+
+                                       HRreserve = HRmax - HRresting
+Percent of Heart Rate Reserve
+
+        %            H Rreserve  =  H Ractivity - H Rresting          ×  100
+                                     HRmax - HRresting
+Work­Rest Cycles
+Case 1: K < S
+
+                               RT = 0
+
+Case 2: S  K < 2S     RT =  K  -  1  ×    100  +  T (K-S)
+Case 3: K  2S               S                     K -B M
+Where:
+                                          2
+
+                              T (K - S)
+                      RT = K - BM × 1.11
+
+                     K = Energy cost of work (kcal/min)
+S = Accepted standard (4 kcal/min for females, 5 kcal/min for males)
+
+                          RT = Allowed rest time (min)
+                   T = Total expected task duration (min)
+
+                     BM = Basal metabolism (kcal/min)
+
+                                               Luminance (fl)
+                      Reflectance (%) =
+
+                                              Illuminance (fc)
+
+                                     Visual Angle [] = 2 arctan H
+                                                                          2D
+
+Small-Angle Approximation (for angles < 10)
+
+                                       3438 H
+                      V A (min) =
+
+                                          D
+
+Contrast Sensitivity
+
+                                                                         1
+                                         Contrast Sensitivity =
+
+                                                                        CM
+Combined Noise Exposure
+
+                      SP LTot = 10 log10      n
+
+                                                 10 SP Li
+                                                               10
+
+                                             i=1
+Noise Exposure Limit   LT  (hours)  =      8
+Noise Dose
+Time-Weighted Average                  2 Li-90
+                                               5
+
+                           D=          Ti
+
+                                    LT
+
+                                         T W A = 16.61 log10(D) + 90
+Serial Search Model (Conjunction Search)
+
+                                 N ×I
+                           T=
+
+                                    2
+
+Where:
+
+· T = average time to find target
+· N = total number of items in search field
+· I = average inspection time for each item (assume constant)
+
+d':                       d = Z(H) - Z(F A)
+Response Bias:                Ordinate(Z (p(H )))
+Or alternatively:
+Hick-Hyman Law         =
+                             Ordinate(Z(p(F A)))
+
+                        = e0.5[Z(p(F A))2-Z(p(H))2]
+
+Fitts' Law                RT = a + b log2 N
+                                               2A
+
+                       M T = a + b log2 W
+Throughput
+
+                                                             ID
+                                                    TP =
+
+                                                            MT
+Time Studies
+The acceptable number of cycles n is:
+
+                                          tS 2
+                                  n=
+
+                                          kx¯
+
+If you rate each element
+
+                          N Tn        =  ETn  ×                  Rn
+                                                                 100
+
+                    N T = N T1 +  f2     N T2 + · · · +               fn  N Tn
+                                  f1                                  f1
+
+If you rate the operation as a whole
+
+                    ET = ET1 +    f2     ET2 + · · · +                fn  ETn
+                                  f1                                  f1
+
+                                                                  R
+                                                NT = ET ×
+
+                                                                 100
+f1 should have the highest frequency
+Standard Time
+
+                                                                          Allowance%
+                         Standard Time = Normal Time 1 +
+
+                                                                                100
+Work Sampling
+
+                          n = Z2/2       p^(1 - p^)
+                                             l2
+
+                                                      T
+                          Element time(ET ) = × p
+
+                                                      P
+
+Lifting Index (LI)
+
+                                            L
+                                  LI =
+
+                                         RW L
+Normal & Ordinates Tables
+PMTS Tables
+NIOSH LE Tables
+
+Table 1: NIOSH Equation Multipliers (U.S. Customary and Metric Units)
+
+              Multiplier             Metric         U.S. Customary
+      Load Constant (LC)
+ Horizontal Multiplier (HM)          23                     51
+   Vertical Multiplier (VM)
+  Distance Multiplier (DM)           25                     10
+Asymmetric Multiplier (AM)
+ Frequency Multiplier (FM)           H                      H
+  Coupling Multiplier (CM)
+                             1 - (0.003 |V - 75|) 1 - (0.0075 |V - 30|)
+
+                             0.82 +      4.5               0.82 +  1.8
+                                         D                         D
+
+                             1 - (0.0032 A)                1 - (0.0032 A)
+
+                                              From Table 2
+
+                                              From Table 3
+
+                 Table 2: Frequency Multiplier Table (FM)
+
+Frequency (Lifts/min)                Work Duration
+
+              0.2           1 Hour   > 1 but  2 Hours      > 2 but  8 Hours
+             0.50      V < 30 V  30
+                                     V < 30 V  30          V < 30 V  30
+               1         1.00 1.00
+               2         0.97 0.97   0.95     0.95          0.85               0.85
+               3         0.94 0.94
+               4         0.91 0.91   0.92     0.92          0.81               0.81
+               5         0.88 0.88
+               6         0.84 0.84   0.88     0.88          0.75               0.75
+               7         0.80 0.80
+               8         0.75 0.75   0.84     0.84          0.65               0.65
+               9         0.70 0.70
+               10        0.60 0.60   0.79     0.79          0.55               0.55
+               11        0.52 0.52
+               12        0.45 0.45   0.72     0.72          0.45               0.45
+               13        0.41 0.41
+               14        0.37 0.37   0.60     0.60          0.35               0.35
+               15        0.34 0.34
+             >15         0.00 0.28   0.50     0.50          0.27               0.27
+                         0.00 0.28
+                         0.00 0.00   0.42     0.42          0.22               0.22
+
+                                     0.35     0.35          0.18               0.18
+
+                                     0.30     0.30          0.15               0.15
+
+                                     0.26     0.26          0.13               0.13
+
+                                     0.20     0.23          0.00               0.00
+
+                                     0.00     0.21          0.00               0.00
+
+                                     0.00     0.00          0.00               0.00
+
+                                     0.00     0.00          0.00               0.00
+
+                                     0.00     0.00          0.00               0.00
+
+                                     0.00     0.00          0.00               0.00
+
+1 Values of V are in inches.
+2 For lifting less frequently than once per 5 minutes, set F = 0.2 lifts/min.
+Table 3: Coupling Multiplier (CM)
+
+Coupling Type  Coupling Multiplier
+
+       Good    V < 30 in (75 cm) V  30 in (75 cm)
+        Fair
+       Poor    1.00                1.00
+
+               0.95                1.00
+
+               0.90                0.90
+

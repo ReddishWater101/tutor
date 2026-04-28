@@ -1,0 +1,107 @@
+                         EIN3241 ­ Human Factors & Ergonomics
+                                        Quiz 4 - Dr. Jad Atweh
+
+Part A: Multiple Choice Questions (8 points)
+
+   1. Humans can consciously process approximately:
+       a) 100,000 bits/s
+       b) 1,000 bits/s
+       c) 20 bits/s
+       d) 1 bit/s
+
+   2. Accommodation refers to:
+       a) Pupil dilation
+       b) Retinal transduction
+       c) Lens shape change for focus
+       d) Color discrimination
+
+   3. Normal visual acuity corresponds to:
+       a) 1 degree
+       b) 1 minute of arc
+       c) 5 degrees
+       d) 10 minutes of arc
+
+   4. S-cones are most sensitive to wavelengths near:
+       a) 420 nm
+       b) 498 nm
+       c) 534 nm
+       d) 600 nm
+
+   5. Peripheral vision is wider in the:
+       a) Vertical plane
+       b) Horizontal plane
+       c) Central field
+       d) Fovea only
+
+   6. When seated, normal line of sight is approximately:
+       a) 5° below horizontal
+       b) 10­15° below horizontal
+       c) 20­25° below horizontal
+       d) 45° below horizontal
+
+   7. Direct glare occurs when:
+       a) Light reflects off surfaces
+       b) A bright source is in line of sight
+       c) Contrast is low
+       d) Spatial frequency is high
+
+   8. Alarms should generally be:
+       a) Equal to ambient noise
+       b) 5 dB below ambient
+       c) 15 dB above ambient noise
+       d) 50 dB above ambient
+
+                                                                  1
+Part B: Short Answer Questions (12 points)
+
+   1. What is the difference between Sense, Sensation, and Perception? (3 points)
+
+   Sense: physical system that receives physical stimulation from surrounding environment and trans-
+   lates that stimulation into an electrochemical message
+   Sensation: detecting physical energy in the environment and encoding it as neural signals. Neurons
+   transmit (and processes) the information from the sense organ to the brain.
+   Perception: processing of information done by the brain ­ mental processes that organize and
+   interpret sensory information that has been transmitted to the brain.
+
+2. A symbol viewed at 35 cm subtends 4 degrees of visual angle. Calculate the required symbol height
+   in cm. Show steps. (5 points)
+
+                                      3438 × H
+           Formula: VA[min] 
+
+                                           D
+              5 = 4 × 60 = 240 arcmin
+
+                   3438 × H
+           240 
+
+                        35
+
+           H  240 × 35          2.44 cm
+
+              3438
+
+3. Four simultaneous sounds at 90 dB, 120 dB, 70 dB and 95 dB combine to approximately to what
+   sound level? Show steps. (4 points)
+
+                     SPLTot = 10 log10 10(90/10) + 10(120/10) + 10(70/10) + 10(95/10)  120 dB
+
+Formulas:                       H
+           VA = 2 arctan
+
+                               2D
+
+                      3438 H
+              VA=
+
+                          D
+
+           SP LTot = 10 log10   n
+
+                                   10 SP Li
+                                                 10
+
+                               i=1
+
+              2
+

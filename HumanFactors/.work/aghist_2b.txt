@@ -1,0 +1,399 @@
+Lecture 2B: Evaluation Methods
+
+                       EIN 3241: Human Factors and Ergonomics
+                                            Spring 2026
+
+                                        January 23, 2026
+
+                                          Dr. Jad Atweh
+Admin Issues
+
+ Quiz 1 Monday
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  2
+Recap
+
+ Task Analysis: What and Why..                                 Hierarchical Task Analysis (HTA)
+ Types of Task Analysis                                        Cognitive Task Analysis (CTA)
+ Dived into HTA, CTA:                                          Contextual Task Analysis
+                                                                Sequential Task Analysis
+      Plans...                                                 Physical Task Analysis
+      GOMS...
+
+ How to Perform a Task Analysis:
+
+ Define the purpose and identify the data required
+
+ Collect task data                                             Personas
+ Interpret task data                                           Scenarios
+ Innovate from task data                                       User Journeys
+                                                               Use Cases
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                                    3
+Learning Objectives
+
+By the end of this set of lectures, you should be able to:
+ Understand the purpose of evaluation in HF/E
+ Recognize differences between evaluation methods and how they support the
+
+  human design cycle
+ Understand the role of formative and summative human factors evaluations
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING               4
+Human Factors Design Cycle
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  5
+Design and Prototyping (Create step)
+
+ Depends on two types of understanding:
+
+      Understanding tasks (front -end analysis/understand step)
+      Knowledge of general human capabilities
+
+ Design is iterative
+
+      Prototype fidelity (low, medium, high)
+      Evaluation at each stage
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING    6
+Prototyping
+
+ Paper prototypes
+ Wireframes
+ High -fidelity prototypes
+
+                                                               https://www.uxmatters.com/mt/archives/2010/05/sketches-and-wireframes-and-prototypes-oh-my-creating-your-own-magical-wizard-experience.php
+
+                                                               https://www.uxmatters.com/mt/archives/2010/05/sketches                                                                                      -and -wireframes -and -
+
+                                                               prototypes -oh-my -creating -your -own -magical -wizard -experience.php
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                                                                                                                                              7
+What is Evidence?
+
+ Now that we looked at design methods.. We need to support it.
+ Evidence = Data that supports design decisions
+ Can be qualitative (observations, interviews) or quantitative (task time, error rates)
+ Helps answer:
+
+      Does the design meet user needs?
+      Is it usable, safe, and efficient?
+      What should be improved?
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                            8
+Purpose of Evaluation
+
+ To ensure systems are usable, safe, and effective
+ To identify and fix design flaws before deployment
+ To understand user needs, behavior, and context
+ Design evaluation
+
+      Testing specific prototypes, design solutions, or systems
+      e.g., apple watch vs. in -vehicle infotainment systems
+
+ Concept evaluation
+     Basic science that supports the design principles and heuristics
+     e.g., visual distraction, cognitive distractions, manual distractions
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING               9
+Evaluation in the Human Factors Design Cycle
+
+ Evaluation is iterative and ongoing
+ Used to:
+
+      Discover user needs (early)
+      Test design concepts (mid -stage)
+      Validate final product (late stage)
+
+ Embedded in all phases: research,
+  prototyping, development,
+  deployment
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  10
+Types of Evaluation: Formative VS Summative
+
+Formative Evaluation:
+ Conducted during design
+ Helps improve the design
+ Involves early feedback
+ Diagnose problems with prototypes
+ Qualitative measures
+ Less formal than summative evaluations
+ FDA:
+
+      "Formative evaluations are used to inform device user interface
+      design while it is in development. It should focus on the issues
+      that the preliminary analyses indicated were most likely to
+      involve use safety (e.g., aspects of user interaction with the
+      device that are complicated and need to be explored). It should
+      also focus on those areas where design options for the user
+      interface are not yet final."
+
+FDA Guidelines: "Applying Human Factors and Usability Engineering to Medical Devices"
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                          11
+Types of Evaluation: Formative VS Summative
+
+Summative Evaluation:
+ Assess whether a design meets benchmarks or design goals
+ Conducted after development
+ Verify and validate
+ Quantitative measures (measure an underlying variable ­
+
+   Annett's Evaluative Methods)
+ Measures usability, performance, satisfaction
+ Supports decision -making (e.g., go/no -go)
+
+ FDA: Human factors validation testing
+
+       "Human factors validation testing is conducted to demonstrate that the
+       device can be used by the intended users without serious use errors or
+       problems , for the intended uses and under the expected use
+       conditions . The testing should be comprehensive in scope, adequately
+       sensitive to capture use errors caused by the design of the user
+       interface and should be performed such that the results can be
+       generalized to actual use."
+
+FDA Guidelines: "Applying Human Factors and Usability Engineering to Medical Devices"
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                          12
+Evaluative Methods
+
+ Literature Reviews
+ Heuristic Evaluations
+ Cognitive Walkthroughs
+ Usability Testing
+ In -service evaluation
+ A-B Testing
+ Surveys & Questionnaires
+ Field Studies / Observational Methods
+ Controlled Experiments
+...
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  13
+Literature Reviews                                                                       ?
+
+ What is the current state of the art ?                                Lay of the Land
+ What is the scholarly debate?
+ Where are the gaps?                                                                                                     14
+ How do my results compare?
+
+        UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING
+Heuristic Evaluations                                                https://www.interaction -design.org/literature/article/heuristic -
+                                                                             evaluation -how -to-conduct -a-heuristic -evaluation
+ HF/usability expert evaluates a design based on
+  heuristics (guidelines, principles, rules of thumb)                                                                                   15
+
+ No additional data collection from users
+ Cost effective and fast process
+ Best suited for interface design
+ 3-5 evaluators typically
+ Fast, cost -effective
+ Often used early in design
+ Limitations: subjective, depends on evaluator
+
+  expertise
+
+      UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING
+Heuristic Evaluation Process
+
+1. Identify and select human factors principles that are particularly applicable.
+2. Carefully inspect the design and identify where it violates the design
+
+     principles.
+3. Aggregate findings for each evaluator and communicate to design team.
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                      16
+Nielsen User Interface Design Heuristics
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  17
+Cognitive Walkthrough
+
+ Similar to heuristic evaluation
+
+      Expert evaluation
+      Highlight potential problems with the design
+
+ Take on perspective of user
+
+      Step -by-step analysis of how users solve tasks
+
+ Requires a specific set of tasks/use cases
+ Best suited for interaction design
+ Focus on learnability for new or infrequent users
+ Ask: "Will the user know what to do next?"
+ Useful for interfaces with complex workflows
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  18
+Cognitive Walkthrough
+
+ Is it likely that the person will perform
+  the right action?
+
+ Does the person understand what task
+  needs to be performed?
+
+ Will the person notice that the next
+  task can be performed?
+
+ Will the person understand how to
+  perform the task?
+
+ Does the person get feedback after
+  performing the task indicating
+  successful completion?
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  19
+Evaluative Methods
+
+ Literature Reviews
+
+ Heuristic Evaluations     What's common between them?
+
+ Cognitive Walkthroughs
+
+ Usability Testing
+
+ In -service evaluation
+
+ A-B Testing
+
+ Surveys & Questionnaires
+
+ Field Studies / Observational Methods
+
+ Controlled Experiments
+
+...
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  20
+Usability Testing
+
+ Testing a design with representative users
+
+ Focuses on the usability (ease of use) of a design
+
+      Learnability
+      Efficiency
+      Memorability
+      Errors
+      Satisfaction
+
+ Can be lab -based, remote, or in -field
+
+ Can differ in scope
+
+      Small , descriptive statistics, qualitative analysis
+      Large , inferential statistics, quantitative analysis
+
+ Example: Testing a mobile app prototype
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  21
+Usability Testing
+
+https://www.nngroup.com/articles/parallel-and-iterative-design/
+
+                                                                 https://www.nngroup.com/articles/parallel -and -iterative -design/
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                                                                        22
+In - Service Evaluation
+
+ In -service evaluation refers to the ongoing assessment of a system, product, or
+  process after it has been deployed and is in actual use -- i.e., it's already in service.
+
+ Summative system assessment
+
+ Ideally done within real -world contexts
+
+ Controlled experiments
+
+     Compare new system versus status quo (e.g., clinical trial)
+     Compare measures of interest against benchmarks
+
+ Examples:
+
+     Monitoring nurse interaction with electronic health records months after implementation
+     Gathering feedback from pilots on a new interface after flight hours accumulate
+     Evaluating the maintenance logs and downtime of a newly installed machine in a factory
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  23
+A/B Testing
+
+ Also known as split -testing
+
+ Two systems (or more; e.g., webpages) evaluated
+  against each other
+
+ Small change (e.g., the headline) and test conversion
+  rate (people who sign up or click through).
+
+ Very large number of participants typically
+
+       Facebook / Google
+
+ Can be used to test very small differences (slightly
+  different shades of blue)
+
+ Best for minor design variations, not big conceptual
+  differences
+
+ Doesn't explain why one version worked better                 -- just
+  which one did
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING           24
+Timing and Types of Evaluation
+
+ Conceptual Design:
+
+     Literature Review
+     Heuristic evaluation
+
+ Prototyping & Iteration:
+
+     Cognitive walkthrough
+     Heuristic evaluation
+     Usability test
+
+ Pre -production model:
+
+     User study
+     A-B Testing
+
+ Post -Deployment:
+
+     In -service monitoring
+     A-B Testing
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  25
+What did we learn today?
+
+ Evaluation is a core part of human -centered
+  design
+
+ Evaluation types: formative and summative.
+  Difference?
+
+ Different Evaluation Methods
+
+ Choose methods that align with your goals
+  and design stage
+
+ Mix qualitative and quantitative data for
+  robust insights
+
+ Evidence from evaluation guides better
+  design decisions
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  26
+Next time...
+
+ HFE Research Methods
+ Stages of Research
+ Brush up on Hypothesis testing
+ Experimental Design
+ Limitations in Research
+ Challenges in HFE Research
+...
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  27
+

@@ -1,0 +1,423 @@
+Lecture 5F - Visual Search & Signal Detection Theory I
+
+                 EIN3241: Human Factors and Ergonomics
+                                      Spring 2026
+
+                                   March 11, 2026
+
+                                    Dr. Jad Atweh
+ Admin Issues
+
+ Lab 5 due on March 23
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  2
+Learning objectives
+
+ Understand human visual search and scanning
+
+      Serial search model
+      Conspicuity and expectancy
+
+ Explain the core components of Signal Detection Theory and how they
+  relate to decision-making under uncertainty.
+
+ Apply Signal Detection Theory to analyze human performance in real-
+  world tasks (e.g., medical diagnosis, security screening, or interface
+  design).
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING             3
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  4
+Visual Search
+
+ Goal of visual search / scanning is to detect a target
+
+     e.g., "Where's Waldo" (image search game)
+
+ Object of interest = target = signal
+
+ Things you do not care about = non-target = distractor = visual noise
+
+ From an HFE perspective, noise impacts where and how objects
+ should be presented.
+
+     Location of targets
+      relative to "distracters"
+
+     Formatting of signal /
+      stimulus for detection
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  5
+Visual search examples                                          Search for specific departure and
+                                                                 arrival times on bus schedule
+ Searching vehicle control
+ panel for specific controls                                        Similar distracters make target
+                                                                      identification slow
+     Position is difficult to
+      memorize due to:                                              Bold and highlighting can
+                                                                      accelerate search
+           Number of controls
+           Limited forms of tactile
+
+             coding of controls
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  6
+Serial search model (Conjunction search)
+
+ Search for target, inspect an object and make a decision, and then move on
+ The idea is simple: You look at one object, decide if it's the target or not, and
+
+  then move on to the next object
+ When searching for target...
+
+      T = average time to find target
+      N = total number of items in search field
+      I = average inspection time for each item (assume constant)
+      On average you go through at least half items in visual field to find target (divide total field
+
+        search time by 2)
+
+                                          × 
+                                    = 2
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  7
+Matsuda, S., Matsumoto, H., Furubayashi, T., Fukuda, H., Emoto, M., Hanajima, R., ... & Terao, Y. (2014). Top-down
+    but not bottom-up visual scanning is affected in hereditary pure cerebellar ataxia. PloS one, 9(12), e116181.
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                                                       8
+Serial search model
+
+  Systematic search in an organized environment
+   (promotes efficiency):
+
+        From top to bottom
+        From left to right
+        Time has been found to follow linear model based
+
+           on where you start and target location
+
+  Unstructured search in a disorganized
+   environment...
+
+        "Random" sampling of visual field
+        More time consuming
+
+Law of "diminishing returns"
+   applies in unstructured,
+
+random search process. Any
+   increase in likelihood of
+  target detection requires
+ more and more task time.
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  9
+Conspicuity
+
+ Conspicuity is how well targets
+ stand out
+
+ Promotes bottom-up processing
+ (grabbing attention)
+
+ Allows targets to be scanned in
+ parallel (as opposed to in series;
+ e.g., common coloring)
+
+ Compromised when all targets are
+ made to stand out!
+
+ "Feature Search", "Disjunctive
+ Search", "Efficient Search"
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  10
+Matsuda, S., Matsumoto, H., Furubayashi, T., Fukuda, H., Emoto, M., Hanajima, R., ... & Terao, Y. (2014). Top-down but not bottom-up visual scanning is affected in hereditary pure cerebellar ataxia. PloS one, 9(12), e116181.
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  11
+Properties affecting conspicuity
+
+ Discriminability from background elements:
+
+     Coloring ­ Non-target (i.e., noise) items are uniformly colored
+     Size ­ Target is larger
+     Shape ­ Target is different
+     Brightness ­ Target is brighter
+     Motion ­ Background (i.e., noise) is stationary
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING         12
+Properties affecting conspicuity
+
+ Simplicity ­ Defining targets in terms of one feature (e.g., color=red) vs.
+ multiple features (e.g., color=red and size=small)
+
+ Automaticity - Target is highly familiar (e.g., your name) and stands out
+
+Team logos with simple shapes and
+consistent colors draw saccadic
+response compared to very complex
+multi-feature coded logos
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  13
+Human factors considerations
+
+ Use knowledge of top-down
+  processing to design interfaces that
+  match user expectation / intuition
+
+ Use knowledge of conspicuity to
+  enhance visibility of targets in
+  interface
+
+ Use knowledge of serial search model
+  (cost of information density and law of
+  diminishing returns) to training users
+  on strategy.
+
+     How to effectively search displays for
+       targets (in absence of expectancy and
+       conspicuity)
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  14
+Signal detection theory
+
+ Formal model of information and decision-making criteria
+ Allows for optimal decision-making under certain conditions
+ Provides a model of factors affecting human decision-making
+
+ behavior
+
+ History:
+
+     Original developed in late 1940s for radar detection problems
+     Extended to human perception and decision-making in 1960s
+     Used for complex human/automation alerting problems in the 1990s
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING          15
+Signal detection theory
+
+ Used to quantify ability to discern
+ target/signal from noise:
+
+     e.g., medical lab technician scanning
+      radiographs for tumor detection
+      (present/absent)
+
+ Concept of noise:
+
+     Varies with time and can be internal or
+      external.
+
+           Internal ­ Misc. brain activity
+           External ­ Any stimulus other than target
+
+             to be detected
+
+     Intensity assumed to follow normal
+      distribution.
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  16
+Signal added to noise
+
+ Signal intensity may vary over time;
+ also assumed to follow normal
+ distribution.
+
+ Possible that some noise may be
+
+more intense than signal + noise
+
+condition.                                                     High            N          S+N
+
+ e.g., ATC operator using radar scope:
+
+ Moisture in air may mask signals from                         Probability of         N                          S+N
+  planes                                                        Occurrence
+
+                                                                               Noise     Signal
+
+                                                                                         +
+
+ Confusion of signal and noise is possible                                               Noise
+
+                                                               Low              - Intensity of Sensory Activity          High
+                                                                                                                      17
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING
+Observer's Response
+
+ Based on the stimuli the observer
+ will have some level of "sensory
+ activity" or "evidence"
+
+ The observer doesn't know the                                                High  N          S+N
+ true state of the world, but they
+ need to make a choice, is this a                              Probability of       Noise  N  Signal                  S+N
+ signal?                                                        Occurrence
+
+     Yes (it is signal + noise)                                                               +
+
+     No (it is just noise)
+
+                                                                                              Noise
+
+                                                               Low                   - Intensity of Sensory Activity          High
+                                                                                                                           18
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING
+Signal detection theory
+
+ States of reality ­ Noise or Signal + Noise
+
+     Categories of response ­ "Yes" or "No"
+
+ Four possible outcomes in SD task:
+
+     Hit (H)
+     False alarm (FA)
+     Miss (M)
+     Correct rejection (CR)
+
+ High sensitivity = high likelihood of H + CR
+ Low sensitivity = high likelihood of FA + Miss
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  19
+Signal detection theory                                                    P(Noise) = P(FA) + P(CR) = 1
+                                                                     P(Signal+Noise) = P(H) + P(M) = 1
+ Outcomes can be represented on
+  overlapping PDFs of "noise" and                                                                                                                   20
+  "signal+noise".
+
+ Response criterion (X) defines
+  likelihood of outcomes:
+
+     Level of stimulus intensity at which
+       operator sets threshold for
+       determining signal is present or not
+
+ When reality=noise, only
+  outcomes are FA & CR
+
+ When reality=signal+noise, only
+  outcomes are M + H
+
+      UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING
+Sensitivity (discriminability)
+
+ How hard / easy it is for observer to discriminate
+  signal from noise
+
+ Not influenced by response criterion; influenced
+  by degree of separation between two
+  distributions (noise and signal+noise)
+
+      Statistical distance between means of two distributions
+
+ Greater separation = greater sensitivity
+
+ Affects bottom-up processing ­ ability to detect
+  signal based on features (e.g., brightness,
+  loudness)
+
+ Compromised by operator state - A fatigued
+  operator is less sensitive; less capable of
+  distinguishing signal from noise
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  21
+Sensitivity - discriminability ()
+
+ Can be measured as the proportion of correct
+  responses:
+
+  ()  =    #hits +   #correct rejections
+         total # of  all possible outcomes
+
+ Can also be statistically determined:
+
+      z-score is based on standard normal dist.
+      ' = () - ()
+
+ Calculation assumes equal variances for noise and
+  signal+noise distributions
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  22
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  23
+Response Criterion - Beta ()
+
+ Quantifies the position of response criterion
+  (X) along continuum of stimulus intensity
+
+     Beta =  = P (X|S+N) / P (X|N) (at criterion point)
+
+ Ratio of ordinates of signal+noise curve over
+  noise curve at response criterion point
+
+     Beta  Height of signal+noise PDF at X
+                             Height of noise PDF at X
+
+= Hit ordinate / False Alarm ordinate
+= Ordinate(Z(p(H))) / Ordinate(Z(p(FA)))
+
+= (0.5 [Z(p(FA))2­ Z(p(H))2])
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  24
+Normal Ordinates
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  25
+Response criterion shift
+
+ Influencing response criterion (in simple detection task)
+
+ If an operator knows that the likelihood of signals occurring is high...
+
+     As p(signal) (the probability of a signal occurring) increases, what happens to
+      X (response criterion)?
+
+           Shifts to the left/right on continuum of activity
+           Operator is more likely to say yes/no to signal
+           Operator is more likely to say yes/no to
+
+             false alarm
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  26
+Response criterion shift
+
+ Example: If field intelligence indicated
+ that a terrorist had threatened a flight,
+ thus increasing the likelihood of a threat
+ object, the screener would be more likely
+ to regard an alarmed bag as a threat
+ object. That is, as the probability of a
+ signal increases, the response criterion is
+ lowered (reducing ), so that anything
+ remotely suggesting a signal (a threat
+ object in our example) might be called a
+ signal (Sanders & McCormick, 1987).
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  27
+Response criterion shift
+
+ Influencing response criterion (in
+  simple detection task)
+
+ Cost of consequence of miss versus false
+  alarm:
+
+ If cost of false alarm is very high, what
+  happens to position of decision criterion on
+  continuum of sensory activity? Shifts to
+  ____t_o _th_e_ri_gh_t____
+
+       Operator becomes more ___c_o_ns_e_rv_a_ti_v_e ____
+
+       Operator is more likely to say signal is
+         __"_N_o_"___
+
+ If cost of miss is high, what happens to
+  position of decision criterion? Shifts to
+  ___to_t_he_l_ef_t _____
+
+                                                      risky
+
+       Responder becomes _______________
+
+       Responder is more likely to say signal is
+         __"_Y_e_s"____
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  28
+

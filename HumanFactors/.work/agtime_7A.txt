@@ -1,0 +1,400 @@
+Lecture 7A - Work Measurement: Time Studies I
+
+                     EIN 3241: Human Factors and Ergonomics
+                                          Spring 2026
+
+                                       March 30, 2026
+
+                                       Dr. Jad A. Atweh
+ Admin Issues
+
+ Project:
+
+      Progress Report due TONIGHT!
+
+ Quiz:
+
+      Wednesday, April 1
+      Lectures 5F, 5G, 6A, and 6B
+
+ Lab 6: Friday, April 3
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  2
+History of time studies
+
+ Taylor timed how long it took workers to do certain jobs and tried to
+ improve the jobs
+
+ Frank and Lilian Gilbreth later expanded on time studies with time and
+ motion studies
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  3
+Time study
+
+ Approach to calculating the time to complete a job that relies on breaking a job
+  down into work elements and timing how long each one takes
+
+ Standard time: time required for a qualified worker to perform a job using a
+  standard method under normal conditions
+
+      Qualified worker: fully trained for the job
+
+ Standard method: the method on which the standard time is based ­ ideally, the
+  "best" method.
+
+      Methods are described as a sequence of elements
+
+                                                                                                                        Can help with
+                                                                                                                          calculating
+
+                                                                                                                        standard time
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  4
+Introduction
+
+ Standard time is calculated after the standard method has been identified
+
+Documents                  Train and                                     Schedule
+   the job                  assess                                          jobs
+                            workers
+             Improve the                                       Estimate             Pressure
+               standard   Evaluate                               costs             on workers
+                method     waste
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                                  5
+Time study requirements
+
+ What types of jobs are best suited for a time study?
+
+      Job involves manual labor
+      Job involves repetitive cycles
+      Focus on one person
+
+ Operator should be thoroughly familiar with the job (qualified worker)
+ Standard method must be used
+ Operator and supervisor must know that the job is being studied
+
+      Need to obtain approval from both
+      Analyst should not be biased and should refrain from any operator criticism
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                      6
+Time study equipment
+
+Historically
+
+              Stopwatch                                        Time study form      Clipboard
+
+Nowadays                                                                        Check out the
+                                                                                different apps
+              Time study software                              Video camera     available (e.g.,
+                                                                                WorkStudy+)
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING
+                                                                                                           7
+Time study procedure
+
+1. Identify breakpoints for your elements
+2. Determine number of cycles needed
+3. Record the element times
+4. Address difficulties in the data and clean up data
+5. Calculate the elemental times
+6. Performance rate the operator
+7. Assign appropriate allowances
+8. Calculate the standard time
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  8
+Identify breakpoints for your elements
+
+ Make sure your work elements are not less than
+
+      0.04 minutes (~3 seconds)
+
+ Elements might be regular or irregular
+
+      Regular element: happens every cycle
+      Irregular element: does not happen every cycle
+
+ To make elements easier to isolate, identify both sight and sound break points.
+
+                                                                   Note that an     · Operator deviated from
+                                                               abnormal element         standard method
+                                                                is not part of the
+                                                               standard method      · Something goes wrong
+                                                                                    · Operator had to stop for
+
+                                                                                        some reason
+                                                                                    · Interference from other
+
+                                                                                        workers
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                       9
+Example 1
+
+ Develop the standard method and include breakpoints for each one
+
+              Element                                          Start point     End point
+1. Put the batter on the
+                                                                                                Release the
+ machine and spread                                            Grasp the butter wooden compass
+
+   2. Wait for crepe to cook                                      Release the  Grasp knife
+        3. Put ingredients                                     wooden compass
+
+    4. Flip crepe and serve                                     Grasp knife    Release knife
+                                                               Release knife   Crepe on plate
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                                                10
+Time study procedure
+
+1. Identify breakpoints for your elements
+2. Determine number of cycles needed
+3. Record the element times
+4. Address difficulties in the data and clean up data
+5. Calculate the elemental times
+6. Performance rate the operator
+7. Assign appropriate allowances
+8. Calculate the standard time
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  11
+Number of cycles
+
+ Cannot just rely on one recording of the operation
+ How many samples do you need?
+
+      Use an approximate guide
+      Use statistical methods
+
+ Approximate guide: estimate the number of cycles needed based on the cycle
+  time of the operation
+
+      Not very accurate
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  12
+Number of cycles
+
+ Statistical techniques are more accurate
+
+ Need previous estimates, predictions, or a few sample calculations
+
+      Pilot study: record a sample of cycles (< 30) before starting the actual experiment
+      Then estimate the number of cycles  based on the element times of that sample
+      If there are multiple elements, take the highest 
+      Confidence level (CL): typically 90, 95, or 99%
+
+ Number of cycles (sample size) is typically less than 30, so use the -statistic
+
+confidence interval:
+
+ Where
+
+  is the sample mean                                            ±     Margin of error
+  is the -score                                                     
+  is the standard deviation of the sample
+
+  is the desired number of cycles
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                              13
+Number of cycles
+
+  can be found when you know the significance  and degrees of freedom ( - 1)
+
+Degrees of                                                     Two-sided alpha
+freedom =                                                      (given)
+current sample
+size - 1                                                       t values
+                                                               (that you
+                                                               find)
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  Appendix
+                                                               A3.3
+
+                                                                                                                               14
+Number of cycles
+
+ The margin of error can be rewritten as a function of  using , the acceptable fraction of 
+
+                   ±                                           
+
+                   ±                                           
+                                                               
+
+ The acceptable number of cycles n is then (always round up):  = ()2
+
+ Example 2: Assume you had 25 observations of a work element, and the mean of those readings is 0.3
+
+  minutes and the standard deviation is 0.09 minutes. If the acceptable fraction for the error term is 5%,
+  and the desired alpha is 0.05, calculate the targeted number of observations using the statistical
+  technique
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                                15
+Example 3
+
+ What is the recommended number of cycles based on this pilot study?
+
+n Element 1                                                     n=6
+      time (min)                                                 = 0.52 min
+                                                                S = 0.046 min
+1 0.481                                                         K = 0.05
+2 0.465                                                          = 0.05 = 1 - 0.95
+3 0.519
+4 0.537                                                         Degrees of freedom = 5
+5 0.596                                                         t = 2.571
+6 0.525                                                          = ()2= 21 observations
+
+Given CL = 0.95; k = 0.05
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING         16
+Example 4 - What if there is more than 1 element?
+
+ What is the recommended number of cycles based on this pilot study?
+
+n Element 1 Element 2                                               n=6
+      time (min) time (min)                                          = 0.674 min
+                                                                    S = 0.046 min
+1 0.481  0.622                                                      K = 0.05
+                                                                     = 0.05 = 1 - 0.95
+2 0.465  0.610
+                                                                    Degrees of freedom = 5
+3 0.519  0.610                                                      t = 2.571
+                                                                     = ()2= 2 observations
+4 0.537  0.598
+                                                                    Always take the largest n = 21
+5 0.596  0.640
+                                                                                                                               17
+6 0.525  0.611
+
+Given CL = 0.95; k = 0.05
+
+    UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING
+Time study procedure
+
+1. Identify breakpoints for your elements
+2. Determine number of cycles needed
+3. Record the element times
+4. Address difficulties in the data and clean up data
+5. Calculate the elemental times
+6. Performance rate the operator
+7. Assign appropriate allowances
+8. Calculate the standard time
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  18
+Record element times
+
+ Set up your time study form
+
+ Record the times in person or using a video for all the cycles you need
+
+      If this is a pilot study, use the preliminary data to establish 
+
+ Two methods can be used to record element times:
+
+ Snapback technique: Watch is reset back to zero after each recording
+
+ Continuous timing                                             Element 1  Element 2       Element 3   Only normal
+                                                                                                         elements go
+                    Cycle 1                                                                               in the table
+
+                    Cycle 2                                                                                  19
+
+                    Cycle 3
+
+                    Cycle 4
+
+                    Cycle 5
+
+                    Cycle 6
+
+                                                               Indicate the unit of time
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING
+Time study procedure
+
+1. Identify breakpoints for your elements
+2. Determine number of cycles needed
+3. Record the element times
+4. Address difficulties in the data and clean up data
+5. Calculate the elemental times
+6. Performance rate the operator
+7. Assign appropriate allowances
+8. Calculate the standard time
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  20
+Dealing with abnormal elements
+
+ Indicate abnormal elements that occur with a circled label (A, B, etc.), place it where it occurred,
+  and explain in the footnotes
+
+ Case 1: If it occurred in between two normal elements, record in the footnotes for completeness
+  and ignore
+
+ Case 2: If it occurred as part of a normal element
+
+       Case 2a: If the abnormal element is long enough, record its time separately below the table and later
+         subtract it from the element time
+
+       Case 2b: If it is not, just record it as part of the normal element time and circle that element time.
+         Then, we determine if the time is an outlier
+
+                                                                        Element 1       Element 2  Element 3
+
+                                                               Cycle 1            A                        21
+                                                               Cycle 2
+         A: operator talking to another worker                 Cycle 3               B
+         B: operator answering phone call                      Cycle 4
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING
+Example 5
+
+ Is 6 an outlier?
+
+Element            Q1 = 3                                           Element
+13                 Q3 = 4                                           13
+                   (inclusive)
+     3                                                                   3
+     2              IQR = 1                                              2
+     4              1.5*IQR = 1.5                                        4
+     5              6>Q3+1.5IQR= 5.5                                     5
+     6C                                                                  -C
+     4             So 6 is an outlier; remove it from calculations       4
+     4                                                                   4
+     4                                                                   4
+
+C: operator dropped the hammer                                                                    22
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING
+Time study procedure
+
+1. Identify breakpoints for your elements
+2. Determine number of cycles needed
+3. Record the element times
+4. Address difficulties in the data and clean up data
+5. Calculate the elemental times
+6. Performance rate the operator
+7. Assign appropriate allowances
+8. Calculate the standard time
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  23
+Calculate elemental times
+
+ Find the mean elemental times for each element
+ Find the standard deviation for each elemental time
+
+              Element 1                                        Element 2  Element 3
+
+Cycle 1                                                              2          3
+                                                                     2          3
+Cycle 2
+
+Cycle 3
+
+Cycle 4
+
+Cycle 5
+
+Cycle 6
+
+Average       1
+
+Standard dev  1
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                        24
+

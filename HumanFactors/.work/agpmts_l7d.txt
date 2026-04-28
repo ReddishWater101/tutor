@@ -1,0 +1,388 @@
+Lecture 7D - Predetermined Motion Time Systems I
+
+                                   EIN 3241 : Human Factors and Ergonomics
+                                                       Spring 2026
+                                                      April 6, 2026
+
+                                                    Dr. Jad A. Atweh
+Admin Issues
+
+ Friday, April 10: Peer Evaluation 1
+ Wednesday, April 15: Last Quiz (Quiz 6)
+
+       Time Studies, Work Sampling, and PMTS
+
+ April 17, 20, and 22
+
+      Project Presentations
+      Mandatory Attendance
+
+ April 25: Project Report
+ April 26: Peer Evaluation 2
+ April 28: Final Exam
+
+      Cumulative
+      8:00 -10:00 PM in FLG260
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  2
+Example 2
+
+ Consider the following results of a pilot work sampling study. With an operator
+  rating of 110 % and an allowance of 15 %, what is the standard time per unit?
+
+                  Information                                    Data
+              Total working day                                480 min
+           Number of units drilled
+               Working fraction                                  420
+                                                                 85%
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                     3
+Work Measurements
+
+ How to calculate standard time
+
+     Work sampling (Activity Sampling)
+     Time studies
+     Predetermined time systems (PMTS)
+
+           Most popular form of finding standard time today
+           Very useful in large and complex systems
+           Gives you the target standard time
+
+     Standard data
+     Time formulas
+     Task analysis
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  4
+Predetermined motion time system (PMTS)
+
+ Human terms: Break down a job into its most basic parts and then add the time for each
+  part based on predetermined time estimates
+
+ PMTS is a work measurement technique whereby times established for basic human
+  motions are used to build up the time for a job at a defined level of performance.
+
+ PMTS also called predetermined time system (PTS) , is a database of basic motion
+  elements and their associated normal time values, together with a set of procedures for
+  applying the data to analyze manual tasks and establish standard times for the tasks.
+
+ There are some assumption for PMTS which are independent and additive; that is, each
+  element does not affect what happens before or after it.
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                              5
+History of PTS
+
+ First PTS was developed by Maynard, Schwab and Stegemerten when consulting
+  for Westinghouse Brake and Signal Corporation in the 1940 s
+
+      Studied videos frame by frame
+      Established times for reach, grasp, move, etc.
+
+ PTS today:
+
+      Main advantages
+
+             Can be done before the job is set up
+             Does not require any workers, experiments, or subjective ratings
+
+      Main disadvantages
+
+             Can be tedious to do
+             Requires training and certification to be done correctly
+             May not always be entirely realistic
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  6
+Methods Time Measurement (MTM)
+
+ Earliest PTS established (1948)
+ MTM is the result of frame -by-frame analyses of motion picture films
+ Has many different forms
+
+      MTM-1
+      MTM-2
+      MTM-3
+      MTM-V (metal cutting operations)
+      MTM-C (banking and insurance)
+      MTM-M (operator work using a microscope)
+      Others
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING           7
+MTM - 1
+
+ Gives time values for the fundamental motions
+
+      Reach
+      Move
+      Turn
+      Apply pressure
+      Grasp
+      Position
+      Disengage
+      Release
+      Eye travel time and focus
+      Body, leg, and foot motions
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  8
+MTM - 1
+
+ MTM breaks down all basic motions into units of               TMU (time -measurement unit)
+
+      1 TMU = 0.00001 hr
+      1 TMU = 0.0006 min
+      1 TMU = 0.036 sec
+      1 hour = 100,000 TMU
+      1 min = 1667 TMU
+      1 sec = 27.8 TMU
+
+ Times are for a trained (normal) worker working at a normal pace.
+
+ No allowances are included in the times.
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING       9
+MTM - 1
+
+ Steps for determining standard time using MTM -1
+
+    1. Break down the left - and right -hand motions into steps
+    2. Break down the steps into sequences of the basic motions
+    3. Assign the appropriate symbol for each basic motion
+    4. Find the equivalent TMUs from the MTM -1 tables
+    5. Remove the non -limiting values
+    6. Calculate standard time
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING    10
+Break down job into steps
+
+ Document the job
+
+      Even though job might not be set up yet, must know the standard method
+      List the materials, equipment, purpose, etc.
+
+ List the steps needed in order, typically in a table
+
+      Indicate what the left and right hands are doing
+      Can indicate if any steps need to be repeated using a frequency column (e.g., x2)
+      Steps that do not always occur are usually studied separately (linear form is preferred)
+
+ Replace page in a 3 -ring binder (left hand)
+
+      Get binder from shelf to table
+      Open binder
+      Locate correct page
+      Replace page
+      Close binder
+      Put aside
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                                   11
+MTM - 1
+
+ Steps for determining standard time using MTM -1
+
+    1. Break down the left - and right -hand motions into steps
+    2. Break down the steps into sequences of the basic motions
+
+           Indicate the frequency of basic motions if applicable (column F)
+
+    3. Assign the appropriate symbol for each basic motion
+    4. Find the equivalent TMUs from the MTM -1 tables
+    5. Remove the non -limiting values
+    6. Calculate standard time
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                12
+MTM - 1
+
+ Fundamental or basic motions:
+
+     Reach
+     Move
+     Turn
+     Apply pressure
+     Grasp
+     Position
+     Disengage
+     Release
+     Eye travel time and focus
+     Body, leg, and foot motions
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  13
+Break down into basic motions
+
+1. Get binder from shelf to table
+
+    1. Reach to binder
+    2. Grasp binder
+    3. Move binder to desk
+    4. Release
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  14
+MTM - 1
+
+ Steps for determining standard time using MTM -1
+
+    1. Break down the left - and right -hand motions into steps
+    2. Break down the steps into sequences of the basic motions
+    3. Assign the appropriate symbol for each basic motion
+    4. Find the equivalent TMUs from the MTM -1 tables
+    5. Remove the non -limiting values
+    6. Calculate standard time
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING    15
+MTM - 1
+
+ For each of the fundamental or basic motions, assign a symbol to
+ indicate what type it is and how much time it will take
+
+     Reach
+     Move
+     Turn
+     Apply pressure
+     Grasp
+     Position
+     Disengage
+     Release
+     Eye travel time and focus
+     Body, leg, and foot motions
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING      16
+Reach
+
+ Reach involves moving the hand or fingers to a definite destination or to a general
+  location. It depends on:
+
+      Distance
+      Type of reach
+
+              A. Reach to object in fixed location, or to object in other hand, or to object on which other hand rests.
+              B. Reach to single object in location that may vary slightly from cycle to cycle.
+              C. Reach to object jumbled with other objects, requiring search and select as well.
+              D. Reach to a very small object, or an object for which accurate grasp is required.
+              E. Reach to indefinite location to get hand in position for body balance, or for next motion, or out of the way.
+
+ Example: Reaching an object jumbles with others objects in group from 1 inch distance.
+
+ The code:                                                     others objects in group
+
+      R 1 C takes 3.6 TMU = 0.130 sec
+      R: Motion element symbol: Reach
+      1: Distance: 1 inch
+      C: Case description: Reaching an object jumbles with
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                                                                   17
+Reach
+
+                R5B
+
+                     Add 0.8 TMU per inch for each additional inch
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING       18
+Move
+
+ Move involves holding and changing the location of an object. It depends on:
+
+      Distance
+      Weight of object
+      Type of move:
+
+            A. Move object to other hand, or against stop
+            B. Move object to approximate or indefinite location.
+            C. Move object to exact location.
+
+ Move involves holding and changing the location of an object. It depends on:
+
+     There is also a static and dynamic factor that is accounted for:
+     Static factor added when hand has just grasped the object in preparation for move
+
+       (when starting from rest)
+     Dynamic factor accounts for resistance when moving
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                           19
+Move
+
+M12A10                                                           Use the values that are
+(Weight of                                                                higher up
+10 pounds)
+                                                               Divide weight by 2 if both
+                                                               hands moving the object
+
+            Add 0.8 TMU per inch for each additional inch
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  20
+Turn
+
+ Turn is a movement that rotates the hand and wrist. It depends on
+
+      The number of degrees turned
+      The weight of the object or the resistance against which the turn is made
+
+             Small (S)
+             Medium (M)
+             Large (L)
+
+                              T30S
+
+       T45M
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                    21
+Apply pressure
+
+ Apply pressure is the application of force without resultant movement
+
+      Case A: application of pressure
+      Case B: application of pressure with higher precision
+
+              Use when you need to hold something carefully in place
+              Use when there is a position before applying pressure
+
+APA
+                                                                      APB
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING              22
+Grasp
+
+ Gain control of an object; often followed by Move.
+
+     1. Pick up grasp: grasp an individual object
+
+             A. By itself (most common)
+             B. Small object lying against the surface (like a small paper)
+             C. Cylindrical objects (like pens or markers next to each other)
+
+     2. Regrasp: change grasp without relinquishing control; object stays in your hand
+     3. Transfer: control transferred from one hand to the other
+     4. Select: objects jumbled with each other such that search and select often occur
+
+             A. Large
+             B. Medium
+             C. Small
+
+     5. Contact: contact or sliding grasp (like pressing a button); your fingers to do not really hold
+          on to anything
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                                           23
+Grasp
+
+              G 1 C2
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  24
+Position
+
+ Align, orient, and engage one object with another object. Depends on:
+
+       Class of fit (loose, close, exact):
+
+               � Loose: like a cup to its saucer
+               � Close: like a marker cap to a marker
+               � Exact: like a key to its keyhole
+
+       Symmetry (symmetrical, semi -symmetrical, non - symmetrical)
+
+               � Symmetrical: infinity of ways to insert the object (like a pen inside a cup)
+               � Semi -symmetrical: finite ways to insert the object (like a paper into a rectangular cardboard box)
+               � Non -symmetrical: one and only one way to insert the object (like a key inside a keyhole)
+
+       Ease of handling: how easy the object is to hold (slippery, dangerous, sharp...)
+
+                         P1SE
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                                                         25
+

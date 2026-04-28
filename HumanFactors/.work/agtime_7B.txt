@@ -1,0 +1,324 @@
+Lecture 7B - Work Measurement: Time Studies II
+
+                     EIN3241: Human Factors and Ergonomics
+                                         Spring 2026
+                                         April 1, 2026
+
+                                      Dr. Jad A. Atweh
+ Admin Issues
+
+ Lab 6 due Friday
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  2
+What did we learn last time?
+
+ Time Study                                                                  Element 1  Element 2  Element 3
+
+ Equipment                                                     Cycle 1                        2          3
+                                                                                              2          3
+ Procedure                                                     Cycle 2
+
+ Last step we covered: Calculate                               Cycle 3
+  elemental times
+                                                               Cycle 4
+      Find the mean elemental times for each
+        element                                                Cycle 5
+
+      Find the standard deviation for each                     Cycle 6
+        elemental time
+                                                               Average       1
+
+                                                               Standard dev  1
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                                      3
+Time study procedure
+
+1. Identify breakpoints for your elements
+2. Determine number of cycles needed
+3. Record the element times
+4. Address difficulties in the data and clean up data
+5. Calculate the elemental times
+6. Performance rate the operator
+7. Assign appropriate allowances
+8. Calculate the standard time
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  4
+Time study procedure
+
+1. Identify breakpoints for your elements
+2. Determine number of cycles needed
+3. Record the element times
+4. Address difficulties in the data and clean up data
+5. Calculate the elemental times
+6. Performance rate the operator
+7. Assign appropriate allowances
+8. Calculate the standard time
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  5
+Performance rate the operator
+
+ Even if you tried to find a qualified operator, they may not always be performing the
+  standard method at the standard rate
+
+      The operator may be going slower
+      The operator may be going faster
+
+ You need to give the operator a performance rating based on how close the operator is to
+  the standard performance
+
+ Different ways to rate performance
+
+ At each cycle: not practical and hard to do
+
+ For each element:
+
+ Typically done for very long and multi -part jobs (cycle time > 30 min)
+
+ For the whole operation:                                      Elemental times                     Normal time
+
+        Typically used for shorter, more homogeneous jobs
+
+ Rating can be open to criticism                                                Rating > 100
+
+ Different analysts may give different ratings                                  Rating = 100
+ Analyst may be biased                                                               Rating < 100
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                                      6
+Example 1
+
+ Find the normal time if:
+
+    a. The performance ratings are 95%, 100%, and 115% for E1, E2, and E3,
+         respectively
+
+    b. The overall performance rating is 90%
+
+                                                                        Element 1 (s) Element 2 (s) Element 3 (s)
+
+                                                               Cycle 1  3  6    -
+                                                               Cycle 2
+                                                               Cycle 3  4  -    -
+                                                               Cycle 4
+                                                               Cycle 5  3  4    -
+                                                               Cycle 6
+                                                               Cycle 7  2  6    2
+                                                               Average
+                                                                        3  -    -
+
+                                                                        4  -    -
+
+                                                                        2  6    3
+
+                                                                        3  5.5  2.5
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                      7
+Example 1a: If you rate each element
+
+         Element 1 (s) Element 2 (s) Element 3 (s)                                                           
+                                                                                                             100
+Cycle 1  3              6                                      -                    =    ×
+Cycle 2
+Cycle 3  4              -                                      -                 2                              
+Cycle 4                                                                          1                              1
+Cycle 5  3              4                                      -          = 1 +     2 +  +                         
+Cycle 6
+Cycle 7  2              6                                      2
+Average
+ Rating  3              -                                      -        1 should have the highest frequency
+
+         4              -                                      -
+
+         2              6                                      3
+
+         3              5.5  2.5
+
+         95             100  115
+
+1 = 3 × 0.95 = 2.85                                               4  2
+2 = 5.5 × 1 = 5.5         = 2.85 + 5.5 7 + 2.87 7 = 6.78 
+3 = 2.5 × 1.15 = 2.87 
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                                                8
+Example 1b: If you rate the operation as a whole
+
+         Element 1 (s) Element 2 (s) Element 3 (s)
+
+Cycle 1  3     6                                               -        = 1 +  2  2 +  +                        
+Cycle 2  4     -                                               -               1                             1
+Cycle 3
+Cycle 4  3     4                                               -                                        
+Cycle 5                                                              =  × 100
+Cycle 6  2     6                                               2
+Cycle 7
+Average  3     -                                               -
+
+         4     -                                               -
+
+         2     6                                               3
+
+         3  5.5      2.5
+
+            4     2
+          = 3 + 5.5 7 + 2.5 7 = 6.83 seconds
+R = 90%
+
+           = 6.83 × 0.9 = 6.14 seconds
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                                             9
+How to rate an operator
+
+ Rating methods
+
+     Speed rating
+     Westinghouse system
+
+ Speed Rating:
+
+     Consider only the rate of work per unit time
+
+           Easiest to apply
+           Operator is rated based on the speed of work
+           Analyst needs to have complete knowledge of the job and form a mental model of it
+
+     Established Benchmarks:
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                                 10
+Westinghouse system
+
+ The Westinghouse system
+
+     One of the oldest rating systems
+     Considers four factors
+
+           Skill
+           Effort
+           Conditions
+           Consistency
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  11
+Westinghouse system
+
+ Skill: proficiency at following a given method
+
+      Based on operator experience, training, and own aptitude
+      Increases over time
+      Can vary from job to job and over time
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING   12
+Westinghouse system
+
+ Effort: demonstration of the will to work effectively
+
+      Speed at which the skill is applied
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  13
+Westinghouse system
+
+ Conditions: include temperature, ventilation, light, and noise
+
+      Worse than normal conditions result in lower rating
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING    14
+Westinghouse system
+
+ Consistency: how close the element times are to each other in different cycles
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                    15
+Westinghouse system
+
+ As a final step, the ratings of the four factors are combined to get your total
+  performance rating
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING             R = 106
+                                                               Add one to algebraic sum
+
+                                                                                                                                       16
+Time study procedure
+
+1. Identify breakpoints for your elements
+2. Determine number of cycles needed
+3. Record the element times
+4. Address difficulties in the data and clean up data
+5. Calculate the elemental times
+6. Performance rate the operator
+7. Assign appropriate allowances
+8. Calculate the standard time
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  17
+Execution of study
+
+ Allowance : an adjustment made for worker needs and events outside
+ the standard method
+
+Fatigue/ rest                                                  Unavoidable   Personal needs
+  periods                                                         delays
+
+Time required                                                   Setup and    Ab normal
+    to learn                                                   preparat ion  elements
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                                                                 18
+Execution of study
+
+ Standard time : time required for a qualified worker to perform a job using a
+  standard method under normal conditions
+
+  =   (1 +                                                     %
+                                                               100 )
+
+ How to determine how much of an allowance needs to be given?
+
+      Direct observation: study two or three operators over time
+      Work sampling study (next topic)
+      Experiments and physiological data
+
+ Note that sometimes a process might need to be improved first before giving
+  allowances
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                   19
+Types of allowances
+
+ Constant allowances
+
+      Constant values added for any type of job
+      Personal needs (5%) + basic fatigue (4%) = 9%
+
+ Variable fatigue allowances
+
+      Could be physical and/or psychological
+      Main contributors:
+
+             Abnormal posture
+             Muscular force
+             Atmospheric conditions
+             Noise level
+             Illumination level
+             Visual strain
+             Mental strain
+             Monotony
+
+ Special allowances (Unavoidable delays)
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  20
+Final notes
+
+ What if you just want the standard time for each element
+  alone?
+
+      Apply a rating and allowance to each one separately, as applicable
+
+ What do you do if you have more than one worker or multiple
+  stations?
+
+      Get the standard time for each element
+      Create a precedence chart before calculating the final standard time
+
+ Hawthorne effect: workers change their behavior when they
+  know they are being watched
+
+      Named after the Hawthorne Works in Chicago where the studies were
+        done
+
+      Big problem with time studies
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING               21
+

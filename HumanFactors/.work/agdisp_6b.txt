@@ -1,0 +1,405 @@
+Lecture 6 B - Design of Displays and Controls II
+
+                                  EIN 3241 : Human Factors and Ergonomics
+                                                      Spring 2026
+
+                                                    March 27 , 202 6
+
+                                                   Dr. Jad A. Atweh
+ Admin Issues
+
+ Project:
+
+      Progress Report due on Monday, March 30
+
+ Quiz :
+
+      Wednesday, April 1
+      Lectures 5F, 5G, 6A, and 6B
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  2
+What did we learn last time?                                                                 Display Principles
+
+           Control Principles
+
+Attention      Perceptual     Memory      Mental Model Response Selection       Attention      Perceptual                 Memory       Mental Model
+                                                                                                                                      14. Principle of
+1. Proximity   3. Make        7. Knowledge 9. Location    11. Avoid accidental  1. Salience    5. Make displays   10. Knowledge in    pictorial realism
+compatibility  accessible     in the world compatibility  activation            compatibility  legible (audible)  the world           15. Principle of
+                                                                                                                                      the moving part
+2. Avoid       4. Make        8. Be       10.             12. Hick -Hyman Law   2. Minimize    6. Avoid absolute  11. Support visual
+resource       discriminable  consistent  Movement                              information    judgment limits        momentum           3
+competition                               compatibility                         access cost
+
+               5. Exploit                                 13. Decision          3. Proximity   7. Support top -   12. Provide
+               redundancy                                 complexity            compatibility  down processing    predictive aiding
+               gain                                       advantage
+                                                                                4. Avoid       8. Exploit         13. Be consistent
+               6. Avoid                                   14. Fitts's Law       resource       redundancy gain
+               absolute                                                         competition
+               judgement
+               limits
+
+                                                          15. Provide                          9. Make
+                                                          feedback                             discriminable
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING
+Information Theory: Controls
+
+ Taking action (response execution)
+  after information processing
+
+ Primarily involves selection and
+  execution of responses
+
+ Need to know how to support
+  selection of responses and
+  ultimately execution of control
+  actions at system interfaces .
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  4
+Human Factors Applications
+
+ What are Orders of Control?
+
+ Computer cursor control example:
+     Mouse cursor position is controlled with rate (first -order) controller
+     Mouse movement dictates rate/velocity of cursor motion:
+
+              If velocity of control device (mouse) is high, high gain is applied to cursor displacement
+                 (typically well above 1)
+
+              When control device moves slowly, low gain is applied (in some cases less than 1 for high
+                 accuracy cursor positioning )
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                                             5
+Information theory and response selection and execution
+
+ Human select more rapidly and accurately those actions that they expect to
+  carry out than those are surprising to them
+
+                                            Do not expect the car in front of us to come to stop
+                                      We slow in perceiving visual field and in applying the brake
+
+ Information theory mathematically explain the negative impact of uncertainty
+  and complexity that human face in selecting and executing on response time.
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                                       6
+Information theory and response selection and execution
+
+ Hick -Hyman Law and Fitt's Law can quantify these impacts.
+ Response selection time is dependent on number of control selections:
+
+      Fewer selections = faster response
+
+                      Hick -Hyman Law
+
+                                                                =  +  log2 
+
+"The complexity of the controller should match the complexity of the control task  "
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                         7
+RS12. Hick - Hyman Law
+
+ Predicts time (RT) to select a response given the number of response
+  alternatives (N)
+
+       =  +  log2()
+
+ b = slope; additional processing time for each additional bit of information
+  (determined empirically)
+
+ a = sum of processing latencies unrelated to the amount of information
+ Assumes that those choices are equally probable
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                  8
+Choice reaction time findings
+
+ Reaction time (RT) increased as number of equally likely alternatives increased
+ Hick converted number of choices (N) to bits of information (H):  = log2 
+ Found linear relation of RT against H:
+
+                                                                                                              Fitts' time is minimum time to
+                                                                                                                move hand to button (under
+
+                                                                                                                    no choice condition).
+
+ Defined RT as function of H:  =  +  log2 
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                                                                                 9
+Information theory and response selection and execution
+
+ Hick -Hyman Law and Fitt's Law can quantify these impacts.
+
+"The complexity of the controller should match the complexity of the control task"
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                       10
+Information theory and response selection and execution
+
+ Models the movement time required to reach a control
+ Parameters of interest:
+
+      MT: Movement time
+      A: amplitude of movement (how far you need to move)
+      W: amplitude of target (how big the target is, width of the target)
+      a, b: constants
+
+                            2
+      =  +  2(  )
+
+                              Index of difficulty
+
+"The complexity of the controller should match the complexity of the control task"
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                       11
+Fitt 's law                                                                                                 2
+                                                                                      =  +  2(  )
+
+ Interpretation:                                                                     Index of difficulty
+
+      Intercept indicates individual differences in reaction time (unrelated to ID)
+
+ Larger and closer targets are acquired faster than smaller and farther targets
+
+ Performing a target selection task is similar to "transmitting information through a channel"
+
+ Amplitude of movement is the "signal", width is the "noise"
+
+ Quantified by Throughput (bits / second)
+
+                                                                       ID
+                                                               TP = MT
+
+Uses of Fitts's Law:
+
+ Throughput can be compared between different pointing devices (ISO 9241             - 9)
+
+ Fitts's Law can also be used to predict movement times
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                              12
+Control Principles
+
+       Attention   Perceptual                                  Memory  Mental Model   Response Selection
+
+1. Proximity       3. Make accessible  7. Knowledge in                 9. Location    11. Avoid accidental
+compatibility                          the world                       compatibility  activation
+
+2. Avoid resource  4. Make             8. Be consistent                10. Movement   12. Hick -Hyman Law
+competition        discriminable                                       compatibility
+
+                   5. Exploit                                                         13. Decision complexity
+                   redundancy gain                                                    advantage
+
+                   6. Avoid absolute                                                  14. Fitts's Law
+                   judgement limits
+
+                                                                                      15. Provide feedback
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                                                  13
+Control Principles
+
+A. Attention
+
+    1. Proximity compatibility : The same as proximity compatibility for displays.
+    2. Avoid resource competition : When human are performing more than one
+
+         task at the same time, multiple resource theory predicts a benefit of
+         dividing the tasks across different mental resources.
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                       14
+Control Principles
+
+B. Perceptual
+
+     1. Make accessible : The controller should be
+          easily reached.
+
+     2. Make discriminable : Identifying a particular
+          control from an array of controls requires that
+          they are discriminable.
+
+     3. Exploit redundancy gain : Redundancy gain can
+          make controllers easier to identify and
+          discriminate.
+
+     4. Avoid absolute judgment limits : Absolute
+          judgement limits govern how many types of
+          controls can be differentiated by anyone type of
+          code such as color to no more than five to
+          seven (Note: combining codes can expand this
+          number).
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  15
+Control Principles
+
+C. Memory
+
+    1. Knowledge in the world : The actuation of the control should be reflected in the
+         control itself, such that the position of toggle switch indicates its state or when the
+         illumination of the button indicates its state or when the illumination of indicate a
+         system is on.
+
+    2. Be consistent : Consistency makes it possible for people to apply skills from one
+         situation to another, reducing errors and response time . Standardization should be
+         considered for functions within a system as well as across systems (e.g. bad
+         design could be location of light control between cars)
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  16
+Control Principles
+
+D. Mental Model
+
+    1. Location compatibility : Control location should be close to the entity being
+         controlled or the display of the entity.
+
+    2. Movement compatibility : The direction of movement of a control should be
+         congruent with direction both of movement of the displayed indicator and
+         the system movement itself.
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  17
+Control Principles
+
+E. Response Selection
+
+    1. Avoid accidental activation
+    2. Hick -Hyman law
+    3. Fitt's law
+    4. Decision complexity advantage
+    5. Provide feedback
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  18
+RS11. Avoid accidental activation
+
+Control forcing functions:
+
+ Constraint on control operation
+
+ Intended to prevent certain behaviors (usually errors)
+  that would otherwise damage system
+
+      e.g., cannot shift automobile transmission from Park without
+        depressing break
+
+      e.g., cannot shift automobile transmission into reverse when
+        vehicle is in motion
+
+      e.g., putting weight on stairs causes the wheel lock to become
+        engaged
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING         19
+Human factors applications
+
+ Constraint on control operation
+
+ Intended to prevent certain behaviors (usually errors)
+  that would otherwise damage system
+
+      e.g., cannot shift automobile transmission from Park
+        without depressing break
+
+      e.g., cannot shift automobile transmission into reverse
+        when vehicle is in motion
+
+      e.g. hand forklift cannot moved unless hand -brake is
+        grasped and pull -lever is lowered
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  20
+RS13. Decision Complexity Advantage
+
+ What is the best way of going through a large number of options?
+
+ More efficient to require a smaller number of complex decisions than many
+  simple decisions
+
+ Logarithmic relationship between number of stimulus and choice RT from Hick      -
+
+Hyman Law
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                 21
+RS15. Provide Feedback
+
+ System response to control / user input
+
+ Multiple sensory channels can receive feedback:
+
+      Vision
+      Audition
+      Haptic sense
+
+ Factors in real -time feedback effectiveness (e.g., warnings):
+
+      Clarity of presentation
+      Efficiency of presentation
+      Degree of user annoyance
+      User satisfaction
+
+ Factors influencing use of feedback:
+
+      Human perceptual processing time (>200 ms )
+      Human information processing bandwidth
+      Human anticipation of information content or control options
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING       22
+Control Applications
+
+  Discrete
+
+  Continuous
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  23
+Principles for discrete control design
+
+ Size:
+
+      Optimal control size provides optimal performance
+
+ Labels:
+
+      Controls should be clearly labeled (at all times )
+      e.g., Backlit keyboard makes labels clear in dark environments
+
+ Physical feel:
+
+      Must provide sensory feedback
+      e.g., Computer touch -point cursor control ­ Can feel resistance at stick
+      e.g., Computer touch -pad control ­ Textured to provide feel of finger
+
+        motion across surface
+      e.g., Mouse button click as confirmation of control action
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                    24
+Input devices                                                                     Voice
+
+ Control actions are not limited to touch and motion
+ Voice and visual control systems exist
+
+                          Touch
+
+                                            Touchscreens as
+                                              alternatives to
+
+                                          physical keyboards
+
+Visual                                                                                 Siri ­ Voice command
+                                                                                       recognition for phone
+                                                                                      use during multitasking
+
+                                                                                  Motion / Gesture
+
+                                                                                    Kinect ­ Motion tracking
+                                                                                        system for gesture
+                                                                                          recognition and
+                                                                                            commanding
+
+                       Kassner, Moritz, William Patera, and Andreas Bulling.
+                       "Pupil: an open source platform for pervasive eye
+
+Pupil - Eye -ttrracakcinkgianngd msyobsitleegmazefo-rbased
+  disabled uisneterrakcteioyni.n" gPrtoacesekdisngs of the 2014 ACM
+
+                       international joint conference on pervasive and
+
+                          ubiquitous computing: Adjunct publication . ACM, 2014.
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                                                  25
+

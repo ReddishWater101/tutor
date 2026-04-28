@@ -1,0 +1,269 @@
+Lecture 4 B ­ Physical Ergonomics: Work Physiology II
+
+                                     EIN 3241 : Human Factors and Ergonomics
+                                                         Spring 2026
+
+                                                      February 9, 2026
+
+                                                      Dr. Jad A. Atweh
+ Admin Issues
+
+ Lab 1 due Wednesday
+ Homework 3 and Solution posted!
+ Preparation for Occupational Biomechanics: Brush up on statics
+
+       https://www.youtube.com/watch?v=OffvP -cpMnY "Simplification of Forces and Moments"
+       https://www.youtube.com/watch?v= NrL5d -2CabQ "Vector Addition of Coplanar Forces (x -y components )"
+       https://www.youtube.com/watch?v=F8IHrg3pc7g "How to Solve a Scalar Triple Product " (2D mainly)
+       https://www.youtube.com/watch?v=QNNnPZ68STI "Moment of a Force"
+       A lot more...
+
+                https://www.youtube.com/watch?v=rdK0c9YZRYw "Moment About a Specified Axis" (2D mainly )
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  2
+Recap
+
+ Stress & Strain
+
+      Physical
+      Psychomotor
+      Cognitive
+
+ Stress & Performance
+ Bones
+ Muscles
+ Length -Force Relationship
+ Muscular Effort
+ EMG...
+ Metabolism
+ Supporting Systems
+ ....
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  3
+Energy Cost of Work
+
+ What measures implicate an increase in physical work?
+
+      Energy demands increase
+      Oxygen consumption increases
+      Heart rate increases
+      Breathing rate accelerates
+      Tidal volume increases
+      Blood pressure increases
+      Increased heat production causing sweating to dissipate heat
+
+ Stress due to a physical activity can be evaluated using one or preferably a
+  combination of the above objective measures
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                  4
+Energy Cost of Work:  Consumption and Heart Rate
+
+ Oxygen consumption (VO ) and heart rate are the indices most often used to
+  measure physical strain on the body.
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  5
+Energy Cost of Work:  Consumption and Heart Rate
+
+ Resting heart rate (HR) averages between 60 and 85 BPM.
+ With increasing physical work, HR rises to meet 2 demands.
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  6
+Energy Cost of Work:  Consumption and Heart Rate
+
+ Suppose T 1 and T 2 are two different
+  tasks performed by the same person,
+  which task is more difficult?
+
+ Suppose T 1 and T 2 are two different
+  people performing the same task,
+  which person is in better physical
+  shape?
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  7
+Energy Cost of Work:  Consumption and Heart Rate
+
+ There is a maximum attainable heart rate for any person, the primary determinant
+  is age.
+
+ At the age of 65 , one can attain only about 60 % of the heart rate at the age 20 .
+
+ Estimated Max HR = 220 ­ Age (years)
+
+ 2  prediction based on resting HR:
+
+  2                                                              =  15.3  ×   
+                                                                             
+
+   =  - 
+
+
+
+  UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                    8
+Energy Cost of Work:  Consumption and Heart Rate
+
+ Every liter of oxygen consumed, there is an average of 4.8 kcal of energy expended
+ The linear relationship between 2 consumption and HR has been demonstrated
+
+  in laboratory and field studies:
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  9
+Energy Cost of Work: Maximal Aerobic Power
+
+ Maximal Aerobic Power (MAP)
+
+      Highest oxygen uptake an individual can attain during exercise (L/min)
+
+ Good measure of physical fitness
+
+ Young untrained male  3.5 L/min
+
+ Male rowers  6 L/min
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                 10
+Energy Cost of Work: Maximal Aerobic Power
+
+ Example                                                       -hour shift causes notable
+
+      Task demand of oxygen uptake is 2 L/min
+      Person 1 has MAP of 4 L/min  50% of the capacity
+      Person 2 has MAP of 2.5 L/min  80% of the capacity
+
+ Working at more than 30% to 40% of one's MAP in an 8
+  fatigue.
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  11
+Work demands: Maximum Acceptable                               Limits
+
+ For men, a maximum time -weighted average of:
+
+      5 kcal/min for energy cost of work.
+      100 beats/min for HR
+      1.04 L/min for 2 consumption
+
+ For women, a maximum time -weighted average of:
+
+      4 kcal/min for energy cost of work
+      90 beats/min for HR
+      0.83 L/min for 2 consumption
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING          12
+Muscle Fatigue
+
+ Fatigue: reduction in performance ability due to
+  excessive physical/mental demands followed by
+  inadequate recovery time.
+
+ Many factors affect muscle fatigue development:
+
+      Strength
+      External forces
+      Posture
+      Contraction time
+      Recovery time
+
+ Rohmert curve predicts that contractions below
+  15 % MVC can be sustained indefinitely ( 10 min to
+  > 1hr).
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  13
+Strength
+
+ Strength is the maximum
+ force that one can exert
+ voluntarily measured in
+ kilograms (kg) .
+
+ Static strength is measured
+ at static postures, while
+ dynamic strength is
+ measured during work .
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  14
+Strength impacted by posture and force direction
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  15
+Strength
+
+ It is estimated that for right -handed people, the strength of the left hand is
+  approximately 10 % below that of the right hand.
+
+ Strength is at its peak by the late twenties and shows a continuous decline
+  afterwards. At age 65 , one has only 75 % of the strength of a youth (~ 25 -
+  year -old).
+
+ On average, women have two -thirds ( 66.67 %) the strength of men.
+
+ Exercise can increase strength and endurance by as much as    50 %.
+
+ Posture and duration are important factors.
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING         16
+Endurance                                                            Similar to Rohmert's Curve
+
+ Endurance is the ability to maintain activity                                                               17
+  over time.
+
+ If an operator is expected to apply force
+  continuously, the designer must consider
+  endurance.
+
+ Static effort can be maintained at only 20 % of
+  its peak over time, whereas 30 % of peak forces
+  can be maintained over extended periods in
+  dynamic work.
+
+      UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING
+Work - Rest Cycles
+
+                    Where:
+                     K = the energy cost of work (kcal/min)
+                     S = the accepted standard ( 4 kcal/min for
+
+                     females, 5 kcal/min for males)
+
+                     RT = the allowed rest time (min)
+                     T = the total expected duration of task
+
+                     (min)
+                     BM=basal metabolism (kcal/min)
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  18
+Example 1
+
+ Calculate the rest period for the shoveling task that requires  6.8
+
+kcal/min performed over 1.5 hours. This task is performed by a male
+
+operator of basal metabolism 1.2 kcal/min.
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING         19
+Work - Rest Cycles
+
+ Age affects the work -rest cycles
+
+ Age of the worker in Example 1 = 35 years
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  20
+Example 2
+
+ Calculate the rest period for a heavy assembly task that requires  9.2
+
+kcal/min performed over 20 minutes by a 41 years old female
+
+operator with BM = 1.1 kcal/min.
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING       21
+Work - Rest Cycles
+
+ An age allowance is necessary to consider after the RT calculation (as a multiplier).
+ Research suggests that the most effective relief muscular fatigue is through small
+
+  periods of rest taken several times during the duration of work rather than all taken
+  at one time.
+
+ It is customary in industry to allow for a 15 - to 20 -minute coffee break 2 hours
+  after start in the morning and after lunch. These periods may be counted in the
+  total rest duration.
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                            22
+

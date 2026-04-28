@@ -1,0 +1,257 @@
+Lecture 4 C ­ Physical Ergonomics: Occupational
+                           Biomechanics I
+
+                                 EIN 3241 : Human Factors and Ergonomics
+                                                     Spring 2026
+
+                                                 February 13 , 2026
+
+                                                  Dr. Jad A. Atweh
+ Admin Issues
+
+ Lab 2 due Wednesday
+ Quiz 3 Wednesday
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  2
+Learning Objectives
+
+ Biomechanical approach : Principles of physics are used to
+determine the mechanical strain on the body and muscle forces
+needed to counteract the external stresses
+
+   Linear and angular kinematics
+   Joint reaction forces
+   Joint reaction moments
+
+ Understanding multibody mechanics for exploring the risk of
+  injury while human interact with products, tools, equipment,
+  and workstation.
+
+ Design of prosthetics, robotics, implants, and other
+  bioengineering products
+
+      Pre and post movement dynamics
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING   3
+Occupational Biomechanics
+
+ Biomechanics : uses the laws of physics and engineering mechanics to describe:
+
+ The motions of various body segments ( kinematics ) and
+
+ Understand the effects of forces and moments acting on the body (  kinetics ).
+
+ Two major branches of biomechanics:
+
+      Kinematics: the study of motion - used in correlation with measurement of body movements (motion
+        capture ... ). It does not consider "force " component.
+
+      Kinetics: the study of what causes motion - used in correlation with force / torque measurements
+        (force plates, load cells ... ). It includes both force and movement.
+
+               Based measurements which are external to the body.
+
+ Occupational biomechanics : studies the physical interaction of workers with their tools,
+  machines, and materials to enhance worker performance while minimizing risk of
+  musculoskeletal injury.
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                               4
+Occupational Biomechanics
+
+                                        Biomechanics
+
+Kinematics                                                             Kinetics
+
+    Linear     Angular                                         Linear             Angular     Cardiovascular
+(translation)                                                                    (rotation)   Musculoskeletal
+               (rotation) (translation)                                                       Nervous System
+                                                                                              Brain
+
+   Position                                                    Force             Moment/
+   Velocity                                                                       Torque
+Acceleration
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                                                  5
+Occupational Biomechanics
+
+ Biomechanical model : Smaller scale, simplistic representations of real -life
+  situations for evaluating loads acting on different body segments.
+
+ Potentially dangerous conditions can be evaluated without posing any risk to
+  human health.
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                   6
+Describing body positions/ locations
+
+ Body Planes
+
+      Sagittal (left and right halves)
+      Frontal (front and back halves)
+      Transverse (upper and lower halves)
+
+ Anatomical Directions/Positions
+
+      Superior (toward the top)
+      Inferior (toward the bottom)
+      Anterior (toward the front)
+      Posterior (toward the rear)
+      Medial (toward the middle)
+      Lateral (toward the outside)
+      Proximal (closer to the body)
+      Distal (further from the body)
+
+             (proximal and distal deals with limbs)
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  7
+Describing body positions / locations (cont'd)
+
+ Standard Anatomical Posture:
+
+      Standing erect, face forward, holding arms down at side with palms facing forward.
+
+ Other terms used in kinesiology that describe movement:
+
+      Flexion -decreasing the angle between two bones
+      Extension -increasing the angle between two bones
+      Abduction -moving away laterally from mid -body
+      Adduction -moving toward mid -body
+      Rotation -movement of a bone around its long axis
+      Pronation: face -down, or palm -down position
+      Supination: face -up, or palm -up position
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                             8
+Conventions for Moments and Forces
+
+ Equilibrium: If a body is not in motion, the sum of all forces and moments acting
+  on it must be equal to zero.
+
+      Translational equilibrium:  Forces = 0
+      Rotational equilibrium:  Moments = 0
+
+ Resultant or External:
+
+      What the world does to the body (e.g. gravity, contact loading).
+
+ Reactive or Internal:
+
+      What the body does in response (e.g. muscle activation, ligament stretch).
+
+ In equilibrium: Resultant = Reactive
+ Force is measured in Newtons (N), where 1 kg force = 9.81 N
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                       9
+Solving a Biomechanics Model
+
+ There are two approaches to solving a biomechanical model:
+
+    1. Segment -to-segment: treats each body segment as an element in a kinetic
+         chain and works back to all joints affected when handling loads.
+
+    2. One segment: treats all segments as one unit.
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                    10
+Single - Segment Static Model
+
+ Calculate the reaction force and the moment at the elbow joint
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING    11
+Two Segment Static Model                                       It is possible to treat each body segment as an element
+                                                                 in a kinetic chain and work back to all joints affected
+ Calculate the reaction force and the                                                 when handling loads.
+  moment at the shoulder joint
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  12
+Verify Using One Segment Approach
+
+ Calculate the reaction force and the moment at the shoulder joint
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING       13
+Occupational Biomechanics
+
+ Non -Parallel forces and moment arm
+
+     Any force can be treated as the vector sum of any two orthogonal forces.
+
+Non -Parallel forces                                           F sin()         F
+
+                      Direction of force application
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                  Fcos ()
+
+                                                                                            14
+Occupational Biomechanics
+
+Determine the reaction force and moment at the elbow joint
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  15
+Occupational Biomechanics
+
+Decomposition of the forces
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  16
+Occupational Biomechanics
+
+Determine the reaction force and moment at the elbow joint
+
+RE = L2HX + LHY + WF&H 2                                                     M = 0
+                                                               M = LHY × b + (WF&H × a)
+          LHY + WF&H
+ = tan-1       LHX
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                            17
+What if the elbow is at angle?
+
+ Calculate the reaction force and the                          It is possible to treat each body segment as an element
+  moment at the shoulder joint                                   in a kinetic chain and work back to all joints affected
+                                                                                      when handling loads.
+
+30°
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  18
+Another Example
+
+                                                                Calculate the reaction force and
+                                                               the moment at the elbow joint for
+
+                                                                    the following pulling task
+
+                 Direction of force application
+
+Weight of forearm and hand = 15.7 N; L H = 25 kg
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  19
+Another Example                                                       Calculate the reaction force and
+                                                                     the moment at the elbow joint for
+  Elbow
+   joint                                                                  the following pulling task
+
+                         30º                                               Elbow -forearm= 0.172 m
+                                                                             Elbow -hand= 0.355 m
+
+                              Direction of force application
+
++
+                        LH
+
+        Weight of forearm and hand = 15.7 N; L H = 25 kg
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  20
+Biomechanics: Useful Tables
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  22
+Example                                                                    Solve in two approaches:
+
+      UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  1) One Segment Approach
+                                                                           · Which means the arm as one
+                                                                               segment
+
+                                                                     2) Segment -to-Segment Approach
+                                                                           · Which means you have to break
+                                                                               the arm into segments by joints
+                                                                               (wrist, elbow, and shoulder)
+                                                                           · Along the way, prove that:
+                                                                                 ·  = 90.405  
+                                                                                 ·  = 27.78  
+
+                                                                                                                                            23
+

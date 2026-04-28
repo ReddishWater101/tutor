@@ -1,0 +1,511 @@
+          EIN3241: Human Factors and Ergonomics
+
+                                          Spring 2026
+
+                    Practice Final Exam
+
+                                Instructor: Dr. Jad Atweh
+
+ Part I -- Multiple Choice and Fill in the Blank (20
+ points)
+
+1. What key factor during WWII triggered the scientific expansion of HF/E?
+    a. Emergence of labor unions demanding safer work
+    b. Evidence that better tools increased productivity
+    c. Frequent human errors due to poorly designed military equipment
+    d. Advances in aerospace dominance requiring automation
+    e. Rise of repetitive strain injuries in factories
+
+2. The below term describes the time required for a qualified worker to perform a job using
+    a standard method under normal conditions:
+    a. Working time
+    b. Normal time
+    c. Standard time
+    d. Performance time
+    e. Elemental time
+
+3. A job best suited for a time study usually:
+    a. Requires group collaboration
+    b. Involves manual labor and repetitive cycles
+    c. Is done only once per week
+    d. Must use advanced technology
+    e. Must be unpredictable in duration
+
+4. In rating performance using the Westinghouse system, which of the following is not a
+    factor?
+    a. Skill
+    b. Effort
+    c. Consistency
+    d. Posture
+    e. Conditions
+
+5. Allowances account for all the following except:
+    a. Fatigue
+    b. Personal needs
+     c. Unavoidable delays
+     d. Normal time
+     e. Setup and preparation
+
+ 6. 1 TMU equals:
+     a. 1 minute
+     b. 0.6 minutes
+     c. 0.036 seconds
+     d. 1.67 seconds
+     e. 0.1 seconds
+
+ 7. The MTM motion element describing rotating the hand is:
+     a. Reach
+     b. Move
+     c. Grasp
+     d. Turn
+     e. Release
+
+ 8. The principle that important displays should attract attention is:
+     a. Proximity compatibility
+     b. Redundancy gain
+     c. Salience compatibility
+     d. Visual momentum
+     e. Avoid resource competition
+
+ 9. When designing safety alarms in a factory, a 15 dB increase above ambient noise is recom-
+     mended to overcome:
+     a. Pitch masking
+     b. Temporary threshold shift
+     c. Loudness scaling
+     d. Sensorial-neural loss
+     e. Conductive impairment
+
+10. Redundancy gain suggests:
+     a. Use only one signal dimension
+     b. Duplicate controls to reduce cost
+     c. Present information using multiple cues
+     d. Avoid discriminable features
+     e. Remove colors from displays
+
+11. Minimizing information access cost means:
+     a. Fewer controls must be used
+     b. Frequently used items should be easy to reach
+     c. Displays should follow user expectations
+
+                                                                                                                     Page 2 of 16
+     d. Remove rarely used controls
+     e. Place all items close together
+
+12. Avoiding absolute judgment tasks means:
+     a. Using more color levels
+     b. Requiring users to interpret one sensory dimension
+     c. Limiting the number of coded levels
+     d. Eliminating labels from displays
+     e. Using only auditory alarms
+
+13. Peripheral vision is wider in the:
+     a) Vertical plane
+     b) Horizontal plane
+     c) Central field
+     d) Fovea only
+
+14. A "Poor" coupling in lifting tasks refers to:
+     a. An object that allows hands to wrap around it
+     b. An object that is difficult to be grasped, with no handles or cutouts.
+     c. An object that has perfect load symmetry
+     d. An object that allows for horizontal lifting only
+     e. An object that is lifting below knuckle height only
+
+15. A fatigued radiologist examining X-rays is MOST likely to experience:
+     a. Increased hits with decreased correct rejections
+     b. Lower sensitivity, causing increased misses
+     c. Increased  due to conservative bias
+     d. Better detectability due to expectancy effects
+     e. Faster bottom-up detection due to reduced scanning time
+
+16. According to Fitts' Law, movement time will be longest when control targets are:
+     a. Large and far
+     b. Small and far
+     c. Small and near
+     d. Uniformly spaced but similar in color
+     e. Coded using redundant cues
+
+17. A major limitation of A/B testing when used for HF/E evaluation is that:
+     a. It does not measure user performance quantitatively
+     b. It only works in laboratory settings
+     c. It identifies which design performs better but not why
+     d. It requires subjective workload data
+     e. It cannot be used on software or web interfaces
+
+                                                                                                                     Page 3 of 16
+18. Ergonomic problems related to reach distances and body dimensions are classified as:
+     a. Musculoskeletal
+     b. Psychomotor
+     c. Anthropometric
+     d. Organizational
+
+19. Two ROC curves have identical hit rates but differing false alarm rates. The curve with
+     the lower P(FA) indicates:
+     a. Higher sensitivity (d')
+     b. Lower sensitivity but higher 
+     c. Equal d' but different noise distributions
+     d. Unreliable response criteria
+
+20. Which of the following is an advantage of a seated work posture?
+     a. Greater physiological load
+     b. Improved blood circulation and less fatigue development
+     c. Better mobility for extended reaches
+     d. Enhanced ability to apply downward force
+
+                                                                                                                     Page 4 of 16
+ Part II -- Short-Answer Questions (15 points)
+
+1. Drinking water fountains can be more ergonomically designed. Consider designing a NON-
+    ADJUSTABLE drinking water fountain specifically for an adult population.
+      a) (2 points) What percentile and anthropometric measure would you use to determine
+          an appropriate height for the control (e.g. button) used to regulate water flow?
+          Use the 5th percentile of arm reach so that even the smallest adults can comfortably
+          reach the control.
+      b) (2 points) What percentile and anthropometric measure would you use to determine
+          an appropriate height for the actual water fountain from which water flows?
+          Use approximately the 50th percentile of standing elbow height (or just stature) to set
+          the fountain lip height so the average adult can drink comfortably without excessive
+          stooping or reaching.
+
+2. (4 points) One of the features to consider in designing an ergonomic valve wrench is the
+    length of the handle (shown in the image below). Determine what the appropriate length
+    of the handle should be, given that the average and standard deviation of the population's
+    hand breadth is 10 cm and 1.8 cm, respectively.
+
+    Assume hand breadth is normally distributed and design the handle length for the 95th
+    percentile (to accommodate almost all users).
+
+                    L = µ + z0.95 = 10 cm + (1.645)(1.8 cm) = 10 + 2.961  13 cm.
+    So, the appropriate handle length is L  13 cm .
+
+3. (1.5 points) What is the rule of thumb for determining work surface height during standing?
+    Design working heights at 5-10 cm (2-4 in) below elbow height
+
+                                                                                                                   Page 5 of 16
+4. (2 points) One of the research approaches used for addressing manual material handling
+    (MMH) injuries is the "psychophysical approach." Explain what this approach entails.
+    Psychophysical approach lets workers adjust load/task conditions until they feel the setup
+    is "acceptable," revealing perceived limits
+
+5. (3.5 points) Take a look at the picture below. It is supposedly an "ergonomic" workstation
+    for kids. The fact that it is smaller does make it more ergonomic. However, we have learned
+    in class the different ergonomic design considerations for seated workstations. With these
+    design considerations in mind, identify 7 ergonomic problems in this workstation.
+
+      1) Monitor is far too high above eye level, forcing neck extension.
+      2) Keyboard and mouse are positioned too high relative to elbow height, causing elevated
+
+          shoulders and poor wrist posture.
+      3) Chair height is non-adjustable, preventing proper knee angle and foot support.
+      4) No lumbar support: backrest is flat, offering no lower-back contour.
+      5) Seat depth is excessive for a child, preventing the back from contacting the backrest.
+      6) No footrest or floor contact: child's feet dangle, reducing stability and increasing thigh
+
+          pressure.
+      7) Viewing distance is too close due to desk design, increasing visual strain and poor
+
+          posture.
+      8) No arm support
+
+                                                                                                                   Page 6 of 16
+ 9) Seat not cushioned
+10) Others...
+
+                                                                                                              Page 7 of 16
+Part III -- Exercises (65 points)
+
+Problem 1 (10 points)
+
+Assume that a worker is standing in front of a table with nothing in his hands. On the table,
+there is a stack of papers on one side and a stapler on another side that is mixed together
+with other office items in a basket.
+
+Using the breakdown shown in the table below, fill in the MTM-1 basic motions, their
+symbols, their times in TMU, and finally find the standard time of this job in seconds. Use
+your best estimates for all the distances and weights. State any assumptions below your
+table.
+
+     Left hand description            Right hand description
+Put the papers in the stapler  Get the stapler
+                               Align the stapler exactly to the top left
+                               of the papers
+                               Staple the papers
+                               Open the drawer under the table
+                               Put the stapler anywhere in the drawer
+                               and close the drawer
+
+Standard time (no simultaneous motions) = 247.8 TMU = 8.92 seconds
+
+                                                                    Page 8 of 16
+Problem 2 (10 points)
+You performed a time study for a factory operation and obtained the following table
+
+Element 1 (min)               Element 2 (min)          Element 3 (min)
+          22                            15                        -
+          23                            20                        4
+          21                            21                        -
+          20                            18                        -
+          21                            19                        3
+
+Assume that you gave the participant a rating of 100% and used a 9% total allowance only.
+Assume that one operator produced 14 pieces in one day. Also assume that a standard hour
+plan is adopted for this operation and that the wage rate is $10/hr.
+
+a) What are the operator earned hours for this operation?
+
+Average elemental times:
+
+            ET1 =             22 + 23 + 21 + 20 + 21   = 21.4 min
+
+                                            5
+
+            ET2 =             15 + 20 + 21 + 18 + 19   = 18.6 min
+
+                                            5
+
+                                       4+3
+                              ET3 = 2 = 3.5 min
+
+Frequencies: element 1 in all 5 cycles (f1 = 5), element 2 also 5 times (f2 = 5), element
+3 only 2 times (f3 = 2).
+
+Average elemental time for the operation:
+
+ET  =  ET1  +  f2  E      T2  +  f3  E  T3  =  21.4 +  5          2       =  41.4  min
+               f1                f1                     (18.6) +   (3.5)
+
+                                                       5          5
+
+Rating is 100%, so
+                                R
+
+             N T = ET × = 41.4 × 1 = 41.4 min (normal time per piece)
+                               100
+
+Standard time with 9% allowance:
+                                                   9
+
+                          ST = 41.4 × (1 + ) = 45.13 min per piece
+                                                 100
+
+Operator earned hours for this operation
+Operator produced 14 pieces:
+
+                                                                                   Page 9 of 16
+Earned minutes = 14 × ST = 14 × 45.13  631.82 min
+
+Earned hours =   631.82   10.53 h
+
+                     60
+
+b) What is the operator efficiency if it really takes 8 hours to produce 14 pieces?
+
+Efficiency =  10.53   1.32  132%
+
+              8
+
+c) What is the direct labor cost for this operation for this day? Assume that this worker
+   is the only one working on this operation.
+
+Direct labor cost = HE × wage rate = 10.53 × $10  $105.3
+
+                                                          Page 10 of 16
+Problem 3 (7 points)
+
+During the course of a workday, a machine operator is simultaneously exposed to sound from
+three metal presses in his work cell. The measured levels of noise exposure in dB for each
+press are listed in the table below.
+
+                       Machine    dB Level
+                       Machine A       88
+                       Machine B       87
+                       Machine C       86
+
+a) Considering the dB levels, calculate the permissible noise exposure limit for each ma-
+    chine.
+
+b) Assume that exposure to each machine are as follows: Machine A = 5 hrs; Machine B
+    = 2 hrs; Machine C = 1 hr. What is the accumulated noise dose for the worker?
+
+c) Given the calculated dosage, what is the 8-hr. time-weighted average (TWA) exposure
+    for the worker?
+
+d) Does the calculated TWA exceed the OSHA maximum permissible limit for an 8-hour
+    workday?
+
+a) Permissible exposure limit for each machine (hours):
+
+               8                  LT B  12.13 hr,               LT C  13.93 hr
+LT,A = 2(88-90)/5  10.56 hr,
+
+b) Noise dose:         D=  5  +   2  +  1                 0.71
+c) 8-hr TWA exposure:
+                           10.56 12.13 13.93
+
+TWA = 16.61 log10(D) + 90  16.61 log10(0.71) + 90  87.53 dBA
+
+d) Since 87.53 < 90 dBA, the calculated TWA does not exceed the OSHA maximum
+    permissible limit for an 8-hour workday.
+
+                                                                Page 11 of 16
+Problem 4 (13 points)
+
+Below is a data set of observations on human performance in a Fitts' task. It includes the
+amplitude of motion, the target size and motion times.
+
+MT (sec.)                               A (in.)  W (in.)
+     1.5                                    8        4
+     2.5                                   15        4
+     3.0                                   18        2
+     3.5                                   20       1.5
+     4.5                                   30        1
+
+a) Calculate the Index of Difficulty (ID), rounded to the nearest integer, for each task
+    condition.
+
+b) The linear two-parameter motor performance model for this operator is given by:
+
+                                        M T  0.2 + 0.7 ID (seconds) .
+
+Below are the linear two-parameter models for Operators 2 and 3. Who is the most
+productive operator among the three operators and how do you know this? Which
+operator will produce the shortest MTs and why? (Be specific about the reason.)
+
+Operator Two-parameter model
+
+Operator 2                              MT = 1 + 2*ID
+
+Operator 3                              MT = 2 + 3*ID
+
+c) What two (2) suggestions would you make if you wanted to reduce total movement
+   time?
+
+                            2A
+a) Using ID = log2 W :
+
+Condition                       A (in)  W (in)    ID (bits, rounded)
+     1                             8       4
+     2                            15       4        log2(4) = 2  2
+     3                            18       2     log2(7.5)  2.91  3
+     4                            20      1.5     log2(18)  4.17  4
+     5                            30       1     log2(26.6)  4.74  5
+                                                  log2(60)  5.91  6
+
+b) For the three operators:
+
+                                Operator 1: M T = 0.2 + 0.7 ID,
+                                Operator 2: M T = 1 + 2 ID,
+                                Operator 3: M T = 2 + 3 ID.
+
+                                                                      Page 12 of 16
+A lower MT means faster movements, which means more output per unit time.
+
+For any ID > 0,
+
+                 0.2 + 0.7 ID < 1 + 2 ID < 2 + 3 ID,
+
+so Operator 1 is the most productive and will always have the shortest movement times,
+because both its intercept and slope are smallest (lower base time and less increase in
+time as ID grows).
+
+c) To reduce total movement time, you should reduce the Index of Difficulty ID. Two
+   concrete design suggestions:
+
+· Decrease movement amplitude A: place targets (buttons, icons, controls) closer
+  to the starting position.
+
+· Increase target width W : make the targets larger / wider so they are easier to
+  hit.
+
+Since ID = log2(2A/W ), decreasing A and increasing W both reduce ID, and therefore
+reduce M T .
+
+                                                      Page 13 of 16
+Problem 5 (12 points)
+A barista was trying to see whether a customer could distinguish between regular iced coffee
+and the fancier "cold-brew" coffee (the target in this example). There were 20 trials, divided
+evenly between the iced-coffee and the cold-brew coffee (10 each). The customer indicated
+that he drank cold-brew coffee in 11 of the trials. However, only 9 of these trials were actually
+cold-brew coffee.
+
+  (a) (5 pts) Calculate the hit, miss, false alarm, and correct rejection rates.
+       Number of hits: 9 Hit rate = 9/10 = 0.9
+       Number of misses: 1 Miss rate = 1/10 = 0.1
+       Number of false alarms: 2 False alarm rate = 2/10 = 0.2
+       Number of correct rejections: 8 Correct rejection rate = 8/10 = 0.8
+
+ (b) (7 pts) What are the d and  of the customer?
+       z(P (H)) = z(0.9) = 1.28
+       z(P (F A)) = z(0.2) = -0.84
+       O(1.28) = 0.1758, O(-0.84) = 0.2803
+       d = z(p(H)) - z(p(F A)) = 1.28 - (-0.84) = 2.12
+        = O(z(H))/O(z(F A)) = 0.1758/0.2803 = 0.627
+       Therefore, d = 2.12 and  = 0.627.
+
+                                                                                                                Page 14 of 16
+Problem 6 (13 points)
+
+A worker is required to move tote boxes from an incoming flat conveyor to an outgoing
+J-hook at a rate of approximately three boxes per minute. Each box weighs 15 lbs, and this
+task is performed continuously for 8 hours per day. The worker can comfortably grasp the
+box, and it is assumed that the horizontal distance between the ankles and the hands is 16
+in and remains relatively constant during the lift. During the transfer to the conveyor, it is
+estimated that the worker must twist their torso approximately 80.
+
+Compute the Lifting Index (LI) for this task. What conclusions can you make about the job
+design?
+
+Given:
+
+         L = 15 lb, H = 16 in, V = 44 in, V2 = 62 in,
+        D = |62 - 44| = 18 in, A = 80, F  3 lifts/min,
+
+8-hour shift (long duration), good coupling, and load constant LC = 51 lb.
+
+The Revised NIOSH Lifting Equation is
+
+        RW L = LC · HM · V M · DM · AM · F M · CM.
+
+Horizontal multiplier:            10 10
+Vertical multiplier:    HM = = = 0.625.
+
+                                  H 16
+
+        V M = 1 - 0.0075|V - 30| = 1 - 0.0075|44 - 30| = 0.895.
+
+                                                                            Page 15 of 16
+Distance multiplier:
+
+                             1.8                               1.8
+                      DM = 0.82 + = 0.82 + = 0.92.
+                             D                                 18
+
+Asymmetry multiplier:
+
+                      AM = 1 - 0.0032A = 1 - 0.0032(80) = 0.744.
+
+Frequency multiplier: for F = 3 lifts/min, long duration, V > 30 in,
+                                                   F M = 0.55.
+
+Coupling multiplier: good coupling, V > 30 in,
+                                                    CM = 1.0.
+
+Thus,
+
+       RW L = 51 × 0.625 × 0.895 × 0.92 × 0.744 × 0.55 × 1.0
+                10.74 lb.
+
+The Lifting Index is
+
+                       LI =  L    =  15                         1.4.
+
+                             RW L 10.74
+
+Therefore, the lifting task has a lifting index of approximately
+
+                             LI  1.4 ,
+
+indicating an elevated risk (LI > 1) The job needs to be redesigned.
+
+                                                                      Page 16 of 16
+

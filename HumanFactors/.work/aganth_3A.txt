@@ -1,0 +1,320 @@
+Lecture 3A ­ Engineering Anthropometry I
+
+                                   EIN 3241: Human Factors and Ergonomics
+                                                        Spring 2026
+
+                                                    January 28, 2026
+
+                                                      Dr. Jad Atweh
+ Admin Issues
+
+ Quiz 2
+
+      Wednesday February 4 th
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  2
+Learning Objectives
+
+ Understand the importance of anthropometry in engineering design
+ Define key anthropometric terms and body dimensions
+ Explore types of anthropometric data
+ Review how anthropometric data is collected
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING      3
+What is Anthropometry?
+
+ Anthropometry: Anthro (man) ­ pometry (measurements)
+
+      Literal meaning: "measurement of humans"
+
+ Anthropometry is:
+
+      The study and measurement of human body structures.
+      The study of human dimensions
+
+Design of workplaces  Design of consumer products                Biomechanical modeling
+
+   Examples:          Examples:                                             Example:
+
+1. Workstation for    1. Automobiles                           Stress imposed on workers ' joints
+    standing or       2. Furniture                                   or muscles during work
+    seated work       3. Hand tools                                         performance
+                      4. Clothes
+2. Machinery                                                                                                                  4
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING
+Design Applications
+
+ Primary areas of application of anthropometric data are:
+
+      Clothing design
+      Workspace design
+      Design of equipment, tools, and machinery
+      Consumer product design
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  5
+Importance in Engineering Design
+
+ Designer should accommodate body dimensions of
+  the population that will be using the equipment
+
+ Universal operability is always desired; at least
+  90% to 95% must be able to use the design
+
+      Universal operability can be achieved by adjustable
+        designs.
+
+ Certain aspects of design may call for:
+
+      Only one set of dimensions to be used.
+      Consider 5th, 50th, and 95th percentiles.
+
+ Fit, Reach, Clearance, Posture & Performance...
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  6
+Measurement Devices and Techniques
+
+Spread Caliper                                                 Tape         Anthropometer
+
+Sliding (Straight) Caliper                                     Dynamometer  Weight Scale
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                                           7
+Measurement Devices and Techniques
+
+Morant technique :
+ A set of grids is used to aid measurement.
+ Grids are perpendicular to each other.
+ Projections of body landmarks on grids are
+
+  used as measurements.
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  8
+Measurement Devices and Techniques
+
+ Photographic/videotaping methods
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  9
+ Measurement Devices and Techniques
+
+Manikins:
+ Manikins (2D or 3D) and computerized models can be used to simulate the
+
+   anthropometric characteristics of a user population and evaluate proposed designs.
+
+   ­ E.g. HumanCad Software
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  10
+Factors that affect anthropometric data
+
+ Age:
+
+     Body size increases from birth to early/late 20s.
+     Stature reached at median age of 21.2 for males and 17.3 for females.
+     Body begins to shrink around 40, and more so with females
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING               11
+Factors that affect anthropometric                             data
+
+ Gender:
+
+      Men are in general larger than women at any
+        given percentile and body dimensions except
+        for hip and thigh area.
+
+      Gender differences also varies between ethnic
+        groups.
+
+ Ethnic Background
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING        12
+ Factors that affect anthropometric data
+
+ Body position
+
+      Posture affects body size
+      Slumping is one of the major reasons for the variability in height measures (affects by about 2 cm)
+
+ Clothing
+
+      Adds to body size e.g. shoes , gloves, jacket.
+      "Furthermore, all anthropometric measurements are taken in nude."
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  13
+Two Categories of Anthropometric                               Data
+
+ Structural dimensions (static anthropometry)
+
+      Taken with the body in various standard and still positions.
+      Deals with simple dimensions of the stationary human being.
+      E.g., weight, stature or height of the subject during standing, standing eye height, standing
+
+        shoulder height, standing elbow height, chest depth, abdominal depth...
+
+ Functional dimensions (dynamic anthropometry)
+
+      Taken during physical activity (e.g., crawling height in mines)
+      Photographic/videotaping methods.
+      E.g., reach zones during standing, forward grip reach, vertical grip reach, side grip reach...
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                                         14
+A Few Anthropometric                                           Measures
+
+No Subject #                       1 2 3 4 5 6 7 8 9 10 11 12
+
+Name
+
+1 Gender (F/M)
+
+2 Age (year)
+
+3 Weight (kg)
+
+4 Stature (cm)
+
+5 Eye Height, Standing (cm)
+
+6 Acromial Ht., Standing (cm)
+
+7 Knuckle Ht., Standing (cm)
+
+8 Sitting Height (cm)
+
+9 Knee Height, Sitting (cm)
+
+10 Popliteal Height, Sitting (cm)
+
+11 Elbow Rest Ht., Sitting (cm)
+
+12 Hip Breadth, Sitting (cm)
+
+13 Elbow-to-Elbow Breadth (cm)
+
+14 Thigh Clearance, Sitting (cm)
+
+15 Eye Height, Sitting (cm)
+
+16 Arm Reach (cm)
+
+17 Hand Length (cm)
+
+18 Foot Length (cm)
+
+19 Chest Depth (cm)
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING            15
+Static Anthropometry (Structural Dimensions)
+
+                           Stature : With the subject standing erect and looking straight ahead, this is the
+                           measure taken from the standing surface to the top of the head. Add 2.5 cm (1
+                           in.) for men's shoes, 2 cm (0.8 in.) for caps, up to 8 cm (3.1 in.) for women's
+                           shoes, and 3.8 cm (1.5 in.) for steel helmet.
+
+Sitting Height : This is the vertical distance between the seat surface and the
+top of the head with the subject sitting erect, looking straight ahead and the
+knees at the right angles. For heavy clothing, add 1.2 cm (0.5 in.); add 2 cm (0.8
+in.) for caps) and 3.8 cm (1.5 in.) for steel helmets.
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  16
+Static Anthropometry (Structural Dimensions)
+
+                             Knuckle Height : The vertical distance from the floor to the knuckle (typically
+                             the third joint) with arms hanging naturally at the sides in a relaxed standing
+                             position.
+
+Acromial Height : The vertical distance from the floor to the acromion
+process (the bony tip of the shoulder) when standing upright.
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                                                 17
+Static Anthropometry (Structural Dimensions)
+
+                             Eye Height : The vertical distance from the floor to the inner corner of the
+                             eye (canthus) when standing erect
+
+Eye Height (Sitting) : The vertical distance from the sitting surface to the
+inner corner of the eye while seated with erect posture.
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                                              18
+Static Anthropometry (Structural Dimensions)
+
+                            Knee Height: Vertical distance is measured from the floor to the upper most
+                            point on the knee. For light clothing and men's shoes, add 3 cm (1.2 in.); for boots
+                            add 4.5 cm (3 in); for women shoes and light clothing, add up to 8 cm (3.1 in).
+
+Popliteal Height: This is the vertical distance from the floor to the underside
+of the thigh next to the knee with the subject sitting erect, knees at right
+angles, and the bottom of the thigh and the back of the knee barely touching
+the seat pan. Clothing adjustments are similar to knee height data.
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  19
+Static Anthropometry (Structural Dimensions)
+
+                           Hip breadth, sitting : This is the maximum horizontal distance across the hips
+                           with the subject sitting erect and knees together. Add 1.5 cm (0.6 in.) for light
+                           clothing and 4 cm (1.6 in.) for heavy clothing.
+
+Elbow -to-elbow breadth, sitting : This is the horizontal distance between the
+lateral surfaces of the two elbows. The subject sits erect, hips and knees
+together, upper arms vertical and touching the sides of the body lightly. Add 1.5
+cm (0.6 in.) for light clothing and 12 cm (4.8 in.) or more for heavy clothing.
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  20
+Static Anthropometry (Structural Dimensions)
+
+                             Arm reach: Horizontal distance is measured between the tip of the middle
+                             finger and the posterior surface of the right shoulder. Subject stands erect with
+                             ankles and knees together . The arm is extended to its maximum. Add 1.5 cm
+                             (0.6 in.) for light clothing and light gloves. Add 2 cm (0.8 in.) or more for heavy
+                             clothing and gloves. For manipulation by fingers, subtract 8 cm (3.2 in.); for
+                             whole hand manipulation, subtract 12 cm (4.8 in.).
+
+Elbow rest height (Sitting) : Vertical distance from the seat surface to the
+underside of the elbow .
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                 21
+Static Anthropometry (Structural Dimensions)
+
+                             Head length : This is the maximum length of the head from the most front to
+                             the most rear of the head. Adjustment must be made due to the type of
+                             head gear worn.
+
+Thigh clearance (sitting) : This the vertical distance between the seat surface
+and the point of intersection of the thigh with the abdomen. Add 0.5 cm for
+light clothing and 3.5 cm or more for heavy clothing.
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                                             22
+Static Anthropometry (Structural Dimensions)
+
+                      Hand length : This is the distance from the base of the thumb to the tip of the
+                      middle finger of the right hand. The hand is extended straight on the arm. Add
+                      0.4 cm (0.16 in.) for light gloves, and 0.8 cm (0.32 in.) or more for heavy gloves.
+
+Foot length : This is the horizontal distance from the back of the heel to the tip
+of the longest toe. Subject stands erect with his weight equally distributed on
+both feet. Add 3 cm (1.2 in.) for men's shoes, 3.7 cm (1.5 in.) boots, and 2 cm
+(0.8 in.) for women's shoes.
+
+Chest Depth (Anterior ­Posterior Thorax Depth) : The horizontal distance from the
+most anterior point on the chest (typically the sternum) to the most posterior point
+on the back (usually the spine/scapula) at the same vertical level.
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING                       23
+What did we learn today?
+
+ What is anthropometry
+ Design applications
+ Measurement devices and techniques
+ Factors that affect anthropometric data
+ Structural dimensions...
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  24
+Next Time...
+
+ Human Variability & Correlations  of Body
+  Measurements
+
+ Calculating Percentiles...
+ Anthropometry Process...
+ Anthropometry Principles....
+
+UNIVERSITY OF FLORIDA HERBERT WERTHEIM COLLEGE OF ENGINEERING  25
+
