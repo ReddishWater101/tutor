@@ -1,45 +1,96 @@
-# deterministic inventory
-## 1. Gainesville Pasta EOQ with Finite Lead Time | Source: Assignments/ProblemSet_1_EOQ.pdf, Page 1
-A local grocery store in Gainesville sells an average of 15 boxes of a certain brand and type of pasta every day. The store manager wants to decide on how much of this product to order so that she minimizes the average monthly cost of order and inventory holding. Placing an order with the distribution center costs $10 per order. The manager estimates that the inventory holding cost for this item is $0.5/box/month. Assume that a month is 30 days.
+# Problem 1 - Found in Exams/StudyGuide_Exam3.pdf, Exams/FormulaSheet_Exam3.pdf, Assignments/ProblemSet_1_EOQ.pdf Problems 1 and 5
 
-a. Determine how much and how frequently, the manager should order this type of pasta. The order size does not have to be an integer value. State the order and inventory holding costs per month explicitly under the ordering policy you suggest.
+Gator Controls purchases a sensor used in a production line. Demand is
+2,000 sensors per month, and the company operates 360 days per year.
+Each order costs $900 to place. The annual inventory carrying rate is
+24 percent. The supplier uses the following all-units discount schedule:
 
-b. Suppose now that it takes 2 days for the distribution center to deliver an order to the store after the manager places the order. Update your inventory ordering policy accordingly. The reorder level does not have to be an integer value.
+| Order quantity | Unit price |
+|---:|---:|
+| 0 <= q < 4,000 | $22.00 |
+| 4,000 <= q < 8,000 | $20.00 |
+| 8,000 <= q | $18.75 |
 
-c. How would your answer to part (b) above change, if it takes 12 days for the distribution center to deliver the order?
+The supplier lead time is constant at 18 days.
 
+a. Find the candidate order quantities under the all-units discount
+scheme.
 
+b. Find the optimal order quantity and the minimum average annual total
+cost.
 
-# stochastic inventory
-## 2. Automotive Oil Filter (q,r) Policy Under Full Backlogging | Source: Assignments/ProblemSet_3_qrpolicy.pdf, Pages 1-2
-An automotive warehouse stocks a variety of parts that are sold at neighborhood stores. The warehouse purchases a popular brand of oil filter for $1.50 each. It is estimated that the cost of order processing and receipt is $100 per order. The company uses an inventory carrying charge based on a 28 percent annual interest rate. The monthly demand for the filter follows a normal distribution with mean 280 and standard deviation 77. Order lead time is assumed to be five months. Assume that if a filter is demanded when the warehouse is out of stock, then the demand is back-ordered, and the cost assessed for each back-ordered demand is $12.80.
+c. Find the inventory cycle length in days.
 
-a. What are the optimal order quantity and the reorder level?
+d. Find the reorder level.
 
-b. What is the expected safety stock level?
+# Problem 2 - Found in Exams/StudyGuide_Exam3.pdf, Exams/FormulaSheet_Exam3.pdf, Assignments/ProblemSet_3_qrpolicy.pdf Problem 1
 
-c. What is the expected average annual total cost?
+An automotive parts warehouse sells a replacement module. Monthly
+demand is normally distributed with mean 500 units and standard
+deviation 100 units. Lead time is constant at 2 months. The warehouse
+operates all year and uses a continuous-review (q, r) policy.
 
+The unit purchase cost is $10, the fixed ordering cost is $250/order,
+and the annual inventory carrying rate is 20 percent. If demand occurs
+when the warehouse is out of stock, demand is backordered and a shortage
+cost of $25/unit is charged.
 
+a. Determine the mean and standard deviation of demand during lead time.
 
-# logistics
-## 3. Stryker Regional Distribution Centers vs. Central Warehouse | Source: Assignments/Homework_5_solution.pdf, Pages 3-4
-Stryker is a manufacturer of surgical medical devices used in knee and hip replacement surgeries. Currently, these devices are distributed to hospitals around the nation via Stryker's 18 regional distribution centers. The weekly demand for these medical devices at a distribution center appears to follow an approximately normal distribution with a mean of 645 devices and a standard deviation of 48 devices. The weekly demand at the distribution centers are independent and are identically distributed. It costs Stryker $50/unit per device. Stryker uses an annual inventory carrying rate of 30% on site, and 15% in transit. Stryker strives towards for a Type I service level of 90%. Stryker outsources the shipment of medical devices from their manufacturing facility in Florida to the 18 distribution centers to Cone Logistics that allows Stryker to choose the shipment quantity and charges Stryker $3,000 per shipment and guarantees a delivery lead time of 2 weeks to anywhere in the nation. Assume that there are 48 weeks in a year.
+b. Using the iterative full-backlogging (q, r) procedure, find the
+optimal order quantity and reorder level. Stop when the z-value is
+stable to two decimals.
 
-a. What are the total annual logistics costs for Stryker?
+c. Find the expected safety stock.
 
-b. Suppose now that a third-party logistics provider has offered to take over distribution operations of Stryker. Specifically, they offer to operate a single warehouse in Macon, GA from where the devices are to be shipped directly to hospitals via overnight delivery. The warehouse in Macon, GA, will be replenished once a week from Stryker's facility in Florida, and the delivery lead time would be less than 6 hours and hence, in-transit inventory holding costs would be negligible. Suppose that an average hospital order is 15 devices, and the third-party logistics company will charge Stryker $80 per direct hospital delivery and will also charge Stryker a flat fee of $30,000 per year for warehouse space. Should Stryker accept this offer?
+d. Find the expected average annual total cost.
 
+# Problem 3 - Found in Exams/StudyGuide_Exam3.pdf, Exams/FormulaSheet_Exam3.pdf, Assignments/Homework_6_solution.pdf Problem 2, Assignments/ProblemSet_4_Logistics.pdf Problems 1 and 4
 
+Sable Appliances assembles two products at two plants. Product X is
+assembled in Denver at 70 units/day and requires 2 units of component A
+and 1 unit of component B. Product Y is assembled in Reno at 50
+units/day and requires 1 unit of component A and 3 units of component B.
 
-# supply chain management
-## 4. Sony and Best Buy Channel Coordination | Source: Lectures/Lecture_9_Supply Chain.pdf, Pages 31-35
-Sony markets its televisions through Best Buy stores all around the nation as well as other brick-and-mortar and online channels. Suppose that the demand for a particular television type at a particular Best Buy retail location can be assumed to be constant. Therefore, both Sony and the Best Buy store use economic order quantity approach to determine the replenishment quantity. Suppose that the unit cost for the television set is $1,200. The fixed order cost for Sony is $12,000, whereas the fixed order cost for Best Buy is $250. The annual inventory holding rate is 25% for Sony and 40% for Best Buy. Suppose that the annual demand for the television is 450 units per year.
+Component A is supplied from Albany, and component B is supplied from
+Baton Rouge. The plants operate 360 days/year. Trucks can carry 2,400
+units of either component and cost $2,800 per trip. Direct lead times
+from Albany to either plant are 5 days. Direct lead times from Baton
+Rouge to either plant are 4 days.
 
-a. If Sony has the channel power, i.e., Sony determines the replenishment quantity using its fixed ordering cost and inventory holding rate, calculate the corresponding economic order quantity. Calculate the inventory ordering and holding costs incurred by Sony and Best Buy.
+On-site inventory holding cost is $0.30/unit/day. In-transit inventory
+holding cost is $0.20/unit/day.
 
-b. If Best Buy has the channel power, i.e., Best Buy determines the replenishment quantity using its fixed ordering cost and inventory holding rate, calculate the corresponding economic order quantity. Calculate the inventory ordering and holding costs incurred by Sony and Best Buy.
+a. Calculate total annual logistics cost if direct full-truckload
+shipments are used for every supplier-plant route. Include
+transportation, in-transit inventory holding, and on-site inventory
+holding costs.
 
-c. If Sony and Best Buy were to determine an ordering quantity together, determine the corresponding economic order quantity and calculate the total cost incurred by Sony and Best Buy.
+b. Calculate total annual logistics cost if direct shipments are still
+used, but each route uses its optimal shipment size when that size is
+less than truck capacity.
 
-d. Which decision structure gives the lowest total channel cost?
+c. Which direct-shipment policy is cheaper?
+
+# Problem 4 - Found in Exams/StudyGuide_Exam3.pdf and Lectures/Lecture_9_Supply Chain.pdf Example 8.1
+
+A supplier-retailer pair sells a product with annual demand of 600
+units/year. The product cost is $800/unit.
+
+For the retailer, the fixed order cost is $300/order and the annual
+inventory carrying rate is 35 percent. For the supplier, the fixed order
+cost is $9,000/order and the annual inventory carrying rate is 18
+percent.
+
+a. If the supplier has channel power, find the replenishment order size.
+Then calculate the supplier's cost, the retailer's cost, and the total
+channel cost.
+
+b. If the retailer has channel power, find the replenishment order size.
+Then calculate the supplier's cost, the retailer's cost, and the total
+channel cost.
+
+c. If the two agents integrate their replenishment decision, find the
+integrated order size and the total channel cost.
+
+d. Which setting has the lowest total channel cost?
