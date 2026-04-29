@@ -657,7 +657,7 @@
 
   <div class="subbar reveal d2">
     <span>Document · gradesheet.html</span>
-    <span>Generated · 04.26.2026</span>
+    <span>Generated · 04.29.2026</span>
     <span>Currency · grant.sherman</span>
   </div>
 
@@ -687,9 +687,9 @@
 
     <div class="row">
       <div class="row-num">04</div>
-      <div class="row-name">Creative Thinking<span class="sub" id="ct-sub">2 of 3 graded</span></div>
+      <div class="row-name">Creative Writing<span class="sub" id="ct-sub">2 of 5 entered</span></div>
       <div class="row-weight">8%</div>
-      <div class="row-score" id="ct-score">66.67<span class="pct">%</span></div>
+      <div class="row-score" id="ct-score">32.26<span class="pct">%</span></div>
     </div>
 
     <div class="row">
@@ -728,6 +728,14 @@
       <div class="input-cell">
         <label class="input-label" for="tp3">Creative Poem 3<span class="max">/ 10</span></label>
         <input type="number" id="tp3" min="0" max="10" step="0.5" placeholder="—">
+      </div>
+      <div class="input-cell">
+        <label class="input-label" for="consent">Informed Consent<span class="max">/ 10</span></label>
+        <input type="number" id="consent" min="0" max="10" step="0.5" placeholder="—">
+      </div>
+      <div class="input-cell">
+        <label class="input-label" for="lookback">Lookback Assignment<span class="max">/ 22</span></label>
+        <input type="number" id="lookback" min="0" max="22" step="0.5" placeholder="—">
       </div>
     </div>
   </section>
@@ -776,13 +784,13 @@
     <div class="result-side">
       <div class="result-eyebrow">§ IV. Projected Final Grade</div>
       <div class="result-percent" id="total-pct">
-        <span id="total-int">71</span><span class="decimal">.<span id="total-dec">98</span></span><span class="pctsign">%</span>
+        <span id="total-int">56</span><span class="decimal">.<span id="total-dec">26</span></span><span class="pctsign">%</span>
       </div>
-      <div class="delta" id="delta">-0.52 below raw C minimum (72.5)</div>
+      <div class="delta" id="delta">-16.24 below raw C minimum (72.5)</div>
     </div>
     <div class="result-side" style="align-items:flex-end; text-align:right;">
-      <div class="result-letter failing" id="result-letter">C-</div>
-      <div class="status failing" id="status">Below C - Major Req Unmet</div>
+      <div class="result-letter failing" id="result-letter">E</div>
+      <div class="status failing" id="status">Failing</div>
     </div>
   </section>
 
@@ -826,11 +834,15 @@
     creativeThinking: {
       weight: 0.08,
       fixed: [
-        { name: 'Creative Thinking Poem 1', earned: 10, possible: 10 },
-        { name: 'Creative Thinking Poem 2', earned: 10, possible: 10 },
+        { name: 'Creative Writing Poem 1', earned: 10, possible: 10 },
+        { name: 'Creative Writing Poem 2', earned: 10, possible: 10 },
       ],
-      pending: { name: 'Creative Thinking Poem 3', possible: 10 },
-      totalCount: 3,
+      pending: {
+        tp3: { name: 'Creative Writing Poem 3', possible: 10 },
+        consent: { name: 'Informed Consent', possible: 10 },
+        lookback: { name: 'A lookback: Poems, Cartoons, and everything else', possible: 22 },
+      },
+      totalCount: 5,
     },
     supplyChain: { weight: 0.06, fixed: [{ name: 'Supply Chain Analysis 1', earned: 20, possible: 20 }] },
     inClass: {
@@ -893,16 +905,18 @@
     };
   }
 
-  function computeCreative(tp3) {
-    const all = [
-      ...config.creativeThinking.fixed,
-      { ...config.creativeThinking.pending, earned: tp3 ?? 0 },
+  function computeCreative(tp3, consent, lookback) {
+    const pending = [
+      { ...config.creativeThinking.pending.tp3, earned: tp3 ?? 0, entered: tp3 !== null },
+      { ...config.creativeThinking.pending.consent, earned: consent ?? 0, entered: consent !== null },
+      { ...config.creativeThinking.pending.lookback, earned: lookback ?? 0, entered: lookback !== null },
     ];
+    const all = [...config.creativeThinking.fixed, ...pending];
     const earned = all.reduce((s, x) => s + x.earned, 0);
     const possible = all.reduce((s, x) => s + x.possible, 0);
     return {
       score: (earned / possible) * 100,
-      graded: config.creativeThinking.fixed.length + (tp3 !== null ? 1 : 0),
+      graded: config.creativeThinking.fixed.length + pending.filter(x => x.entered).length,
     };
   }
 
@@ -963,18 +977,20 @@
     const hw5       = parseInput('hw5', 20);
     const hw6       = parseInput('hw6', 16);
     const tp3       = parseInput('tp3', 10);
+    const consent   = parseInput('consent', 10);
+    const lookback  = parseInput('lookback', 22);
     const takeHome  = parseInput('takehome', config.finalExam.takeHome.rawMax);
     const inClass   = parseInput('inclass', config.finalExam.inClass.finalPoints);
 
     const hw = computeHomework(hw5, hw6);
-    const ct = computeCreative(tp3);
+    const ct = computeCreative(tp3, consent, lookback);
     const finalExam = computeFinalExam(takeHome, inClass);
 
     // Ledger updates
     document.getElementById('hw-score').innerHTML  = `${hw.score.toFixed(2)}<span class="pct">%</span>`;
     document.getElementById('hw-sub').textContent  = `Top 4 of 6 - ${hw.submitted} entered`;
     document.getElementById('ct-score').innerHTML  = `${ct.score.toFixed(2)}<span class="pct">%</span>`;
-    document.getElementById('ct-sub').textContent  = `${ct.graded} of 3 graded`;
+    document.getElementById('ct-sub').textContent  = `${ct.graded} of ${config.creativeThinking.totalCount} entered`;
     document.getElementById('final-sub').textContent =
       `Take-home ${finalExam.takeHomePoints.toFixed(1)}/16.5 + in-class ${finalExam.inClassPoints.toFixed(1)}/83.5`;
     document.getElementById('final-score-display').innerHTML =
@@ -1052,7 +1068,7 @@
   }
 
   // Wire inputs
-  ['hw5','hw6','tp3','takehome','inclass'].forEach(id => {
+  ['hw5','hw6','tp3','consent','lookback','takehome','inclass'].forEach(id => {
     document.getElementById(id).addEventListener('input', update);
   });
 

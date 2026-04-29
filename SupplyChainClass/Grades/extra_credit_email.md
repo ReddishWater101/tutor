@@ -1,16 +1,32 @@
-Subject: Extra credit project proposal
+Extra assignments:
 
-Dr. Akçalı,
 
-I'm writing to ask if you'd be willing to let me do a small extra credit project to help boost my grade on the final. I've been pretty stressed about it for the last two weeks. I know this is an unusual request and I really appreciate you taking the time to consider it.
+# Posted Apr 29 10:40am
+Dear All,
 
-To give you some context on why this matters so much to me. I'll be starting a full-time job at Tesla as an Associate Master Scheduler this June, where forecasting is going to be a huge part of what I do. EIN 4343 is the last final between me and graduating, and I've already signed a lease in Austin to be there for the June 1 start date. To be straight with you, if I don't pass this class, I lose the job. There is a lot riding on this final for me.
+In the next hour or so, I will be releasing two more assignments that will provide with you with some additional points towards your final grade to build in some more buffer.
 
-I've been studying really hard. I've put in well over 20 hours of focused studying so far, and I've skipped a few last hangouts with friends in these final weeks of college because I know how important passing this class is. I'm confident I'll pass with or without any extra credit, but I would really love the chance to do a project that could give me a little cushion on my grade and take some of the stress off these last few days.
+They will be short and non-technical in nature, asking  you to look back on some non-traditional experiences you might have had in this course.
 
-What I'd like to propose is a small software project using a tool from Google Research called TimesFM. The simple way to describe it is that it's an AI forecasting model that you can hand a sales history to and it produces a forecast right away, with a confidence range around it. My idea is to apply it to a demand series similar to the Banana Cafe or coffee shop examples we worked through in class, compare its results against the methods we actually learned (moving averages, single exponential smoothing, and Holt's), and score each one using MAD, MSE, and MAPE the way we did in lecture. I'd write up a short summary and hand over the code at the end. It's something you could keep, play around with on your own, or use with future students if you wanted to. The topic also ties directly into what I'll be doing at Tesla, so it would let me put some of this energy into a project that's relevant to both the class and the role I'm about to start.
+Warm regards,
 
-I would leave the scope and the amount of credit entirely up to you. If extra credit isn't something you typically offer, or you'd rather I take it in a different direction, I completely understand. Thank you again for reading this.
+Dr. A.
 
-Best,
-Grant Sherman
+
+
+# Posted Apr 26 3:45pm
+Dear All,
+
+Some of you were in class, when I shared a recent research call from the Department of Energy, which, in my opinion, accelerates the timeline for the integration of AI tools into our lives.
+
+As a result, I have decided to try something new this year, and decided to split your grade for the final exam into two parts by designing a task where you can collaborate with a GenAI tool just to see if I can change the way I assess student learning and abilities. Specifically, there will be two elements that make up your final exam score:
+
+16.5 points: A take-home, open-ended question that you complete by yourself with the help of a GenAI tool at your own pace. You can complete this anytime between now and Friday, May 1, 5:00PM. The assignment has a set of pre-survey questions and two sets of post-survey questions to help me understand how I can improve the design of assignments like this. Please answer these survey questions thoughtfully and truthfully. Your score for these survey questions will not depend on what your answer is but whether or not you answered the survey question.
+83.5 points: An in-class part that you complete as a traditional, comprehensive exam. This exam will NOT have any T/F or essay questions (as I mentioned before but primarily be a problem-solving exam. One problem on deterministic inventory modeling, one on stochastic inventory modeling, one on logistics, and one on supply chain management. You will take this in-class exam on Wednesday, April 29, 3:00-5:00PM
+When I release the assignment in a few minutes, it will appear as if it has a total of 50.5 points, but in fact, each of you will have a maximum of 33 points to collect, as each person will have two options to choose from, namely  A and B. If you choose A and do everything for it, your possible maximum score will be 33 points. Also, if you choose B and do everything for it, your possible maximum score will be 33 points again. Canvas did not allow what I wanted to do, and I had to settle with a McGyver-ed solution.
+
+If you have any questions about this assignment, please contact me (akcali@ise.ufl.edu). One of the TAs for course, Miss Golbarg Nazari (golbargnazari@ufl.edu) will also be on call for this assignment only, you may reach out to her as well.
+
+Warm regards,
+
+Dr. A.
